@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wichtige Informationen zu Die wichtigsten Aufgaben eines Staates
+####  Was der Staat für uns tut
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Definition eines modernen Staates
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Definition eines modernen Staates: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Ein moderner Staat ist eine **politische Ordnung**, die **Herrschaftsgewalt** über ein **bestimmtes Gebiet** und die dort **lebende Bevölkerung** ausübt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> Er **garantiert** seinen Bürgern **Sicherheit** und **Wohlstand**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> Der Staat **verfügt** über ein **Gewaltmonopol**, d.h., er darf als Einziger **legitim Gewalt anwenden**, um die **öffentliche Ordnung** zu sichern.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Regeln** und **Gesetze** bilden die **Grundlage** für ein **geregeltes Zusammenleben**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Institutionen** wie **Parlament**, **Regierung** und **Gerichte** **nehmen** die **Aufgaben** des Staates **wahr**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Definition eines modernen Staates im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Staatsgebiet:** Das Staatsgebiet ist der **räumliche Geltungsbereich** der staatlichen Herrschaft. Es umfasst das **Landgebiet**, das **Hoheitsgewässer** und den **Luftraum**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Staatsvolk:** Das Staatsvolk ist die **Gesamtheit** der **Menschen**, die die **Staatsangehörigkeit** des betreffenden Staates besitzen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Staatsgewalt:** Die Staatsgewalt ist die **Fähigkeit** des Staates, **seinen Willen** innerhalb seines Staatsgebietes **durchzusetzen**. Sie umfasst die **legislative Gewalt** (Gesetzgebung), die **exekutive Gewalt** (Regierung und Verwaltung) und die **judikative Gewalt** (Rechtsprechung).
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aufgaben des Staates (BV 2)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aufgaben des Staates (BV 2): Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Schutz der Freiheit:** Der Staat **garantiert** die **Grundrechte** seiner Bürger, wie z. B. **Meinungsfreiheit**, **Religionsfreiheit** und **Versammlungsfreiheit**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Gewährleistung der Sicherheit:** Der Staat **schützt** seine Bürger vor **inneren** und **äusseren Gefahren**, wie z. B. **Kriminalität**, **Terrorismus** und **Krieg**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Förderung des Gemeinwohls:** Der Staat **sorgt** für das **Wohl** seiner Bürger, indem er z. B. **Bildung**, **Gesundheit** und **soziale Sicherheit** **fördert**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Nachhaltige Entwicklung:** Der Staat **trägt** dafür **Sorge**, dass die **natürlichen Lebensgrundlagen** auch für **zukünftige Generationen erhalten** bleiben.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aufgaben des Staates (BV 2) im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Schutz der Grundrechte:** Zu den wichtigsten Grundrechten gehören die **Menschenwürde**, die **Freiheit**, die **Gleichheit**, die **Rechtsstaatlichkeit** und die **Demokratie**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Innere Sicherheit:** Der Staat sorgt für die **öffentliche Ordnung** und **Sicherheit** im **Inneren**. Zu den wichtigsten **Instrumenten** gehören die **Polizei**, die **Justiz** und der **Strafvollzug**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Äussere Sicherheit:** Der Staat **schützt** sein **Territorium** und seine **Bevölkerung** vor **äusseren Bedrohungen**. Zu den wichtigsten Instrumenten gehören die **Armee**, die **Diplomatie** und die **Zusammenarbeit** mit **anderen Staaten**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Sozialstaat:** Der Staat **sorgt** für ein **soziales Netz**, das die **Bürger** in **Notsituationen** **auffängt**. Zu den wichtigsten **Instrumenten** gehören die **Sozialhilfe**, die **Arbeitslosenversicherung** und die **Altersvorsorge**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Bildung und Forschung:** Der Staat **fördert** das **Bildungswesen** und die **Forschung**, um den **zukünftigen Wohlstand** des Landes zu **sichern**.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aktuelle politische Herausforderungen
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aktuelle politische Herausforderungen: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Globalisierung:** Die **zunehmende Vernetzung** der Welt stellt den Staat vor neue Herausforderungen, wie z. B. die **Regulierung** der **Finanzmärkte** oder die **Bekämpfung** des **Terrorismus**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Digitalisierung:** Die **rasante Entwicklung** der **Informationstechnologie** hat **Auswirkungen** auf alle **Lebensbereiche** und stellt den Staat vor neue Herausforderungen, wie z. B. die **Regulierung** des **Datenschutzes** oder die **Bekämpfung** der **Cyberkriminalität**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Klimawandel:** Der **menschengemachte Klimawandel** ist eine der grössten Herausforderungen unserer Zeit. Der Staat muss **Massnahmen** ergreifen, um den **Klimawandel** zu **bekämpfen** und seine **Folgen** zu **begrenzen**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Migration:** Die **zunehmende Migration** stellt den Staat vor grosse Herausforderungen, wie z. B. die **Integration** von **Migranten** oder die **Sicherung** der **Grenzen**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Demografischer Wandel:** Die **Überalterung** der **Gesellschaft** stellt den Staat vor grosse Herausforderungen, wie z. B. die **Finanzierung** der **Altersvorsorge** oder die **Sicherung** der **Gesundheitsversorgung**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aktuelle politische Herausforderungen im Detail (1)
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Globalisierung:** Die Globalisierung hat zu einer **starken Zunahme** des **internationalen Handels** und des **Kapitalverkehrs** geführt. Dies hat zu einem **Wachstum** der **Weltwirtschaft** geführt, aber auch zu **neuen Herausforderungen**, wie z. B. der **Zunahme** der **Ungleichheit** oder der **Verlagerung** von **Arbeitsplätzen** in **Niedriglohnländer**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Digitalisierung:** Die Digitalisierung hat zu einer **Revolution** in der **Informations- und Kommunikationstechnologie** geführt. Dies hat zu **neuen Möglichkeiten** in vielen Bereichen geführt, wie z. B. der **Kommunikation**, der **Bildung** oder der **Medizin**. Gleichzeitig hat die Digitalisierung aber auch zu **neuen Herausforderungen** geführt, wie z. B. der **Zunahme** der **Cyberkriminalität** oder der **Verbreitung** von **Fake News**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aktuelle politische Herausforderungen im Detail (2)
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Migration:** Die Migration ist ein **weltweites Phänomen**. Menschen migrieren aus verschiedenen Gründen, wie z. B. **Armut**, **Krieg**, **Verfolgung** oder **Naturkatastrophen**. Die Migration kann **positive** und **negative Auswirkungen** auf die **Herkunfts-** und die **Zielstaaten** haben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Demografischer Wandel:** Der demografische Wandel ist durch eine **steigende Lebenserwartung** und eine **sinkende Geburtenrate** gekennzeichnet. Dies führt zu einer **Überalterung** der **Gesellschaft**. Die Überalterung hat **Auswirkungen** auf die **staatlichen Haushalte**, die **Sozialsysteme** und den **Arbeitsmarkt**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Aktuelle politische Herausforderungen im Detail (3)
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Klimawandel:** Der Klimawandel ist eine der grössten Herausforderungen unserer Zeit. Er führt zu einem **Anstieg** der **durchschnittlichen Temperatur** auf der Erde, was zu **extremen Wetterereignissen**, wie z. B. **Hitzewellen**, **Dürren**, **Überschwemmungen** und **Stürmen**, führt. Der Klimawandel hat auch **Auswirkungen** auf die **menschliche Gesundheit**, die **Nahrungsmittelsicherheit** und die **Biodiversität**.
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
