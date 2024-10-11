@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wichtige Informationen zu Haftpflichtversicherungen
+#### Was Sie unbedingt wissen müssen
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Motorfahrzeughaftpflichtversicherung
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Motorfahrzeughaftpflichtversicherung: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Die Motorfahrzeughaftpflichtversicherung ist in der Schweiz **gesetzlich obligatorisch**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Sie deckt **Schäden**, die Sie mit Ihrem Fahrzeug **gegenüber Dritten** verursachen (Personen- und Sachschäden).
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Ohne** diese Versicherung erhalten Sie **kein Nummernschild** für Ihr Fahrzeug.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Die **Prämie** hängt von verschiedenen Faktoren ab, wie z.B. dem **Fahrzeugtyp**, Ihrem **Wohnort** und Ihrer **Fahrzeugnutzung**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Es gibt verschiedene **Selbstbehaltsstufen**, die Sie wählen können.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Motorfahrzeughaftpflichtversicherung im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Umfang der Deckung:** Die Motorfahrzeughaftpflichtversicherung deckt die **gesetzliche Haftpflicht** des Fahrzeughalters, des Lenkers und aller Personen, die das Fahrzeug mit Zustimmung des Halters benutzen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Deckungssumme:** Die **gesetzliche Mindestdeckungssumme** beträgt in der Schweiz **100 Millionen Franken**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Bonus-Malus-System:** Die Prämie für die Motorfahrzeughaftpflichtversicherung wird durch das Bonus-Malus-System beeinflusst. Das **Bonus-Malus-System** belohnt schadensfreies Fahren mit einer **Prämienreduktion** (Bonus) und bestraft Schadensfälle durch eine **Prämienerhöhung** (Malus). Dieses System motiviert zu einem **verantwortungsvollen Fahrverhalten**, um Prämienkosten zu reduzieren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Kündigung:** Die Motorfahrzeughaftpflichtversicherung kann in der Regel **jährlich gekündigt** werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Regress:** Bei **grober Fahrlässigkeit**, wie z.B. Trunkenheit am Steuer, kann die Versicherung **Regress** nehmen. Das bedeutet, dass der Versicherer **einen Teil der geleisteten Zahlungen** vom Versicherungsnehmer zurückfordert.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Privathaftpflichtversicherung
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Privathaftpflichtversicherung: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Die Privathaftpflichtversicherung ist **freiwillig**, aber **sehr empfehlenswert**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Sie deckt **Schäden**, die Sie im **privaten Bereich** **anderen** zufügen (Personen- und Sachschäden).
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Die Versicherung schützt Sie auch vor den **finanziellen Folgen** von **Kausalhaftung**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Die **Prämie** ist im Vergleich zur Motorfahrzeughaftpflichtversicherung relativ **günstig**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Es gibt **verschiedene Deckungsvarianten**, aus denen Sie wählen können.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Privathaftpflichtversicherung im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Umfang der Deckung:** Die Privathaftpflichtversicherung deckt die **gesetzliche Haftpflicht** des Versicherungsnehmers, seiner **Familienangehörigen** und in der Regel auch seiner **Haustiere**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Deckungssumme:** Die **Deckungssumme** für die Privathaftpflichtversicherung beträgt in der Regel **5 bis 10 Millionen Franken**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Selbstbehalt:** Die meisten Privathaftpflichtversicherungen sehen einen **Selbstbehalt** von **100 bis 200 Franken** pro Schadenfall vor.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Kündigung:** Die Privathaftpflichtversicherung kann in der Regel **jährlich gekündigt** werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Kausalhaftung:** Die **Kausalhaftung** bedeutet, dass Sie auch dann haftbar gemacht werden können, wenn Sie **keine direkte Schuld** am Schaden tragen. Zum Beispiel haften Eltern für Schäden, die ihre Kinder verursachen, oder Tierhalter für Schäden, die durch ihre Haustiere entstehen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="6" -->**Regress:** Auch bei der Privathaftpflichtversicherung kann der Versicherer **Regress** nehmen, wenn der Schaden durch **grobe Fahrlässigkeit** oder **bewusstes Fehlverhalten** verursacht wurde.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Regress
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Regress: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Regress** bedeutet, dass die Versicherung **Zahlungen** vom Versicherungsnehmer **zurückfordern** kann.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Dies kommt vor, wenn der Versicherungsnehmer den Schaden durch **grobe Fahrlässigkeit** oder **bewusstes Fehlverhalten** verursacht hat.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Regress im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Grobe Fahrlässigkeit:** Beispiele für grobe Fahrlässigkeit sind **Trunkenheit am Steuer** oder **Missachtung wichtiger Sicherheitsvorschriften**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Rückforderung:** Der Versicherer kann **einen Teil der geleisteten Entschädigungen** zurückfordern, wenn der Versicherungsnehmer erheblich gegen die Sorgfaltspflichten verstossen hat.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Regress in der Motorfahrzeughaftpflicht:** Bei Unfällen, die durch grobe Fahrlässigkeit des Fahrers verursacht wurden, kann die Versicherung **Regress nehmen** und einen Teil der Kosten vom Versicherungsnehmer zurückverlangen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Regress in der Privathaftpflicht:** Auch im privaten Bereich kann Regress genommen werden, wenn der Versicherungsnehmer grob fahrlässig gehandelt hat.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Kausalhaftung
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Kausalhaftung: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Bei der **Kausalhaftung** haften Sie auch dann, wenn Sie **keine direkte Schuld** am Schaden tragen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Beispiele sind die **Haftung von Eltern** für ihre Kinder oder die **Tierhalterhaftung**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Kausalhaftung im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Elternhaftung:** Eltern haften für Schäden, die ihre **minderjährigen Kinder** verursachen, auch wenn sie den Schaden nicht direkt verursacht haben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Tierhalterhaftung:** Tierhalter haften für Schäden, die ihre **Haustiere** verursachen, unabhängig davon, ob sie den Schaden hätten verhindern können.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Gesetzliche Grundlage:** Die Kausalhaftung ist im **Schweizerischen Obligationenrecht** geregelt und dient dem Schutz von Dritten, die durch das Verhalten von abhängigen Personen oder Tieren geschädigt werden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Bonus-Malus-System
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Bonus-Malus-System: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Das **Bonus-Malus-System** beeinflusst die **Prämienhöhe** der Motorfahrzeughaftpflichtversicherung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Schadensfreies Fahren** führt zu einem **Bonus** (Prämienreduktion), während **Schadensfälle** zu einem **Malus** (Prämienerhöhung) führen.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Bonus-Malus-System im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Bonus:** Wenn der Versicherungsnehmer **über einen längeren Zeitraum** keinen Schaden verursacht, wird er mit einem **Bonus** belohnt, der die Prämie reduziert.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Malus:** Bei **Schadensfällen** erhöht sich die Prämie durch den **Malus**, um das erhöhte Risiko auszugleichen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Ziel des Systems:** Das Bonus-Malus-System soll den Versicherungsnehmer zu einem **verantwortungsvollen Verhalten** motivieren, um das Risiko von Schäden zu minimieren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Prämienanpassung:** Nach einem Schadenfall wird die Prämie im folgenden Jahr **erhöht**, während schadensfreie Jahre zu einer **Reduktion der Prämien** führen.
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
