@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wichtige Informationen zu Der Lehrvertrag: Rechte und Pflichten
+####  Was Sie als angehende Lernende wissen müssen
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abschluss und Genehmigung des Lehrvertrags
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abschluss und Genehmigung des Lehrvertrags: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Ein **Lehrvertrag** ist ein **zweiseitiger Vertrag**, der zwischen Ihnen und dem Lehrbetrieb geschlossen wird.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Er muss **schriftlich** abgeschlossen werden und beinhaltet alle wichtigen Punkte Ihrer Ausbildung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Beide Parteien** müssen den Vertrag **unterschreiben**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Der Lehrvertrag muss von der kantonalen Behörde **genehmigt** werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Erst mit der **Genehmigung** ist der Lehrvertrag **rechtsgültig**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abschluss und Genehmigung des Lehrvertrags im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Vertragsparteien:** Im Lehrvertrag werden Sie als Lernende/r und der Lehrbetrieb als Vertragspartner festgehalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Schriftform:** Der Lehrvertrag muss schriftlich abgeschlossen werden, um Missverständnisse zu vermeiden und beide Parteien abzusichern.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Unterschriften:** Sowohl Sie als auch eine vertretungsberechtigte Person des Lehrbetriebs müssen den Lehrvertrag unterschreiben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Genehmigung:** Die zuständige kantonale Behörde prüft den Lehrvertrag auf die Einhaltung der gesetzlichen Vorgaben. 
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Rechtsgültigkeit:** Erst nach der Genehmigung durch die kantonale Behörde ist der Lehrvertrag rechtsgültig und Ihre Ausbildung kann beginnen.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalt des Lehrvertrags
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalt des Lehrvertrags: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> Der Lehrvertrag enthält alle wichtigen **Regelungen** zu Ihrer **Ausbildung**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Obligatorische Inhalte** sind gesetzlich vorgeschrieben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Zusätzliche Vereinbarungen** können individuell getroffen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> Der Vertrag dient Ihrer **Sicherheit** und schafft **Klarheit** über die **gegenseitigen Erwartungen**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Prüfen Sie den Vertrag** sorgfältig, bevor Sie ihn unterschreiben!
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalt des Lehrvertrags im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Art und Dauer der beruflichen Ausbildung:**  Im Lehrvertrag wird festgehalten, welchen Beruf Sie erlernen und wie lange Ihre Ausbildung dauert.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Probezeit:** Die Probezeit gibt Ihnen und dem Lehrbetrieb die Möglichkeit, sich kennenzulernen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Arbeitszeit:** Im Lehrvertrag wird Ihre regelmässige Arbeitszeit festgelegt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Lohn:** Sie haben Anspruch auf einen angemessenen Lohn während Ihrer Lehrzeit.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Ferien:** Im Lehrvertrag wird Ihre Ferienanspruch geregelt.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Probezeit
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Probezeit: Das Wichtigste in Kürze
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Die **Probezeit** dient dazu, festzustellen, ob die berufliche Wahl für beide Parteien passend ist.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Sie wird im **Lehrvertrag** festgelegt und dauert **mindestens einen Monat** und **höchstens drei Monate**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->In besonderen Fällen kann die Probezeit mit Zustimmung der kantonalen Behörde auf **bis zu sechs Monate** verlängert werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Während der Probezeit kann der **Lehrvertrag** mit einer **Kündigungsfrist von sieben Tagen** von beiden Parteien jederzeit aufgelöst werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Die Probezeit beginnt mit dem **Antritt der beruflichen Grundbildung**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="6" -->Rechtliche Grundlagen: **BBV Art. 8**, **OR Art. 344a Abs. 3**, **OR Art. 346 Abs. 1**.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Probezeit im Detail
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Dauer:** Die Probezeit beträgt **mindestens einen Monat** und **höchstens drei Monate**. Sie kann durch schriftliche Abrede der Parteien und mit Zustimmung der kantonalen Behörde auf **maximal sechs Monate** verlängert werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Zweck:** Die Probezeit gibt sowohl der lernenden Person als auch dem Lehrbetrieb die Möglichkeit, die Berufswahl zu überprüfen und sicherzustellen, dass sie zueinander passen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Beginn der Probezeit:** Die Probezeit beginnt mit dem **Antritt der beruflichen Grundbildung**, auch wenn die Grundbildung zu Beginn einen längeren schulischen Teil enthält.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Kündigung während der Probezeit:** Während der Probezeit kann der Lehrvertrag von beiden Seiten mit einer Kündigungsfrist von **sieben Tagen** jederzeit aufgelöst werden. Die kantonale Behörde muss in diesem Fall **sofort schriftlich informiert** werden.
+</div></script></section></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
