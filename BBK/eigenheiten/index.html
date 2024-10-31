@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 1: Einführung -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Das Wichtigste in Kürze</h2>
+<h3 style="text-align: left; width: 100%;">Die Rolle des Berufsbildners / der Berufsbildnerin bei der Begleitung von 15- bis 20-jährigen Lernenden</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <p>Jugendliche in der beruflichen Grundbildung befinden sich in einer <strong>wichtigen Entwicklungsphase</strong>. Sie bringen <strong>frischen Wind und neue Perspektiven</strong> in die Betriebe, sind oft <strong>neugierig und offen für neue Technologien</strong>. Gleichzeitig benötigen sie <strong>Unterstützung und Begleitung</strong> durch die Berufsbildner, um die <strong>Herausforderungen dieser Lebensphase</strong> zu meistern und ihr <strong>volles Potenzial</strong> zu entfalten.</p>
+    <ul>
+      <li class="fragment">Die <strong>Anerkennung ihrer Leistungen</strong> und das <strong>Verständnis für ihre Bedürfnisse</strong> sind entscheidend für eine <strong>erfolgreiche Ausbildung</strong>.</li>
+      <li class="fragment">Eine <strong>positive Lernumgebung</strong> und <strong>klare Regeln</strong> bieten den Jugendlichen <strong>Orientierung und Sicherheit</strong>.</li>
+      <li class="fragment">Die <strong>individuelle Begleitung</strong> hilft den Jugendlichen, ihre <strong>Stärken zu erkennen und zu fördern</strong> und ihre <strong>Schwächen zu überwinden</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 2: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment">Der Reifeprozess</li>
+      <li class="fragment">Spannungsfeld zwischen Kindheit und Erwachsenenalter</li>
+      <li class="fragment">Ablösung von zu Hause</li>
+      <li class="fragment">Die Adoleszenz: eine Zeit des Experimentierens</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 3: Theorie - Der Reifeprozess -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Der Reifeprozess</h2>
+<h3 style="text-align: left; width: 100%;">Entwicklung von der Kindheit zum Erwachsenen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Körperliche Entwicklung:</strong>  Pubertät, körperliche Veränderungen.</li>
+      <li class="fragment"><strong>Geistige Entwicklung:</strong> Abstraktes Denkvermögen, kritische Reflexion.</li>
+      <li class="fragment"><strong>Soziale Entwicklung:</strong> Wunsch nach Unabhängigkeit, Suche nach dem Platz in der Gesellschaft.</li>
+      <li class="fragment"><strong>Identitätsfindung:</strong> Wer bin ich? Was will ich? Wohin will ich?</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 4: Im Detail: Der Reifeprozess -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Der Reifeprozess im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Individuelle Entwicklung und Herausforderungen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Pubertät:</strong>  Hormonelle Veränderungen, körperliche Reifung.</li>
+      <li class="fragment"><strong>Kognitive Entwicklung:</strong> Komplexeres Denken, Problemlösung, kritisches Hinterfragen.</li>
+      <li class="fragment"><strong>Soziale Entwicklung:</strong> Bedeutung von Freundschaften, Einfluss der Peergroup.</li>
+      <li class="fragment"><strong>Identitätsfindung:</strong>  Suche nach Werten, Normen und Zielen.</li>
+      <li class="fragment"><strong>Emotionale Entwicklung:</strong> Starke Emotionen, Stimmungsschwankungen.</li>
+      <li class="fragment"><strong>Autonomieentwicklung:</strong> Wunsch nach Unabhängigkeit von den Eltern.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 5: Quote - Der Reifeprozess -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Reifeprozess</h2>
+<h3 style="text-align: left; width: 100%;">Entwicklung zu Selbstständigkeit und Eigenverantwortung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="text-align: left; margin-top: 100px; padding-right: 20px;">
+    <p style="font-style: italic;">"Der <strong>Reifeprozess</strong> beschreibt die <strong>Entwicklung von der Kindheit zum Erwachsenenalter</strong>. Er umfasst <strong>körperliche, geistige und soziale Veränderungen</strong> und führt zur <strong>wachsenden Selbstständigkeit und Eigenverantwortung</strong>."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+```html
+<!-- Slide #: Theorie - Ablösung von zu Hause -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ablösung von zu Hause</h2>
+<h3 style="text-align: left; width: 100%;">Theorie - Schritt zur Selbstständigkeit</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Loslösung vom Elternhaus:</strong> Jugendliche beginnen, sich emotional und räumlich von ihren Eltern zu lösen.</li>
+      <li class="fragment"><strong>Entwicklung zur Selbstständigkeit:</strong> Die Ablösung ist ein wichtiger Schritt auf dem Weg zur Eigenständigkeit und Unabhängigkeit.</li>
+      <li class="fragment"><strong>Herausforderungen für die Familie:</strong> Die Ablösung kann zu Konflikten und Spannungen innerhalb der Familie führen.</li>
+      <li class="fragment"><strong>Bedeutung der Unterstützung:</strong> Die Jugendlichen brauchen in dieser Phase die Unterstützung ihrer Familie und Freunde.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Im Detail: Ablösung von zu Hause -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ablösung von zu Hause im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Eigenständigkeit, Autonomie und neue Beziehungen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Eigenständigkeit:</strong>  Jugendliche übernehmen Verantwortung für ihr eigenes Leben.</li>
+      <li class="fragment"><strong>Autonomie:</strong> Sie treffen eigene Entscheidungen und gestalten ihren Alltag selbstständig.</li>
+      <li class="fragment"><strong>Loslösung von den Eltern:</strong> Die emotionale Bindung zu den Eltern verändert sich.</li>
+      <li class="fragment"><strong>Neue Beziehungen:</strong> Freundschaften und Partnerschaften gewinnen an Bedeutung.</li>
+      <li class="fragment"><strong>Herausforderungen:</strong> Die Ablösung kann mit Schwierigkeiten und Konflikten verbunden sein.</li>
+      <li class="fragment"><strong>Bedeutung der Unterstützung:</strong> Jugendliche brauchen die Unterstützung ihrer Familie und Freunde.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Quote - Ablösung von zu Hause -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Ablösung von zu Hause</h2>
+<h3 style="text-align: left; width: 100%;">Übergang ins Erwachsenenalter</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="text-align: left; margin-top: 100px; padding-right: 20px;">
+    <p style="font-style: italic;">"Die <strong>Ablösung von zu Hause</strong> beschreibt den <strong>Prozess der Loslösung vom Elternhaus</strong> und der <strong>Entwicklung zur Selbstständigkeit</strong>.  Sie ist ein <strong>wichtiger Schritt im Reifeprozess</strong> und markiert den <strong>Übergang ins Erwachsenenalter</strong>."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Theorie - Die Adoleszenz: eine Zeit des Experimentierens -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Adoleszenz: eine Zeit des Experimentierens</h2>
+<h3 style="text-align: left; width: 100%;">Theorie - Selbstfindung und Risikobereitschaft</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Ausprobieren:</strong> Die Jugendlichen testen Grenzen aus, probieren verschiedene Rollen und Verhaltensweisen aus.</li>
+      <li class="fragment"><strong>Identitätsfindung:</strong> Durch das Experimentieren finden sie heraus, wer sie sind und was sie wollen.</li>
+      <li class="fragment"><strong>Risikobereitschaft:</strong> Die Neugier und der Drang nach neuen Erfahrungen können zu riskantem Verhalten führen.</li>
+      <li class="fragment"><strong>Bedeutung der Begleitung:</strong> Berufsbildner können die Jugendlichen in dieser Phase begleiten und unterstützen, indem sie ihnen Orientierung und Halt geben.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Im Detail: Die Adoleszenz: eine Zeit des Experimentierens -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Adoleszenz: eine Zeit des Experimentierens im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Rollen, Grenzen und die Suche nach der Identität</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 3; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Ausprobieren von Rollen:</strong> Jugendliche experimentieren mit verschiedenen Rollen (z.B. Rebell, Macho, Verführerin).</li>
+      <li class="fragment"><strong>Testen von Grenzen:</strong> Sie setzen sich über Regeln und Normen hinweg, um ihre Grenzen auszuloten.</li>
+      <li class="fragment"><strong>Suche nach Identität:</strong> Das Experimentieren hilft ihnen, ihre eigene Identität zu finden.</li>
+      <li class="fragment"><strong>Risikoverhalten:</strong>  Neugier und Drang nach neuen Erfahrungen können zu riskantem Verhalten führen (z.B. Drogenkonsum).</li>
+      <li class="fragment"><strong>Bedeutung von Grenzen:</strong> Klare Regeln und Grenzen bieten Jugendlichen Orientierung.</li>
+      <li class="fragment"><strong>Unterstützung durch Berufsbildner:</strong>  Berufsbildner bieten Unterstützung durch Verständnis und Feedback.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Quote - Die Adoleszenz: eine Zeit des Experimentierens -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Experimentieren in der Adoleszenz</h2>
+<h3 style="text-align: left; width: 100%;">Identitätsfindung und Grenzerfahrung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="text-align: left; margin-top: 100px; padding-right: 20px;">
+    <p style="font-style: italic;">"Das <strong>Experimentieren</strong> ist ein <strong>wesentlicher Bestandteil der Adoleszenz</strong>. Jugendliche <strong>probieren verschiedene Verhaltensweisen, Rollen und Stile</strong> aus, um ihre <strong>Identität zu finden</strong> und ihre <strong>Grenzen zu erkunden</strong>."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide #: Diskussion-Slide -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Diskussion und Aufgaben</h2>
+<h3 style="text-align: left; width: 100%;">Herausforderungen und Chancen in der Ausbildungspraxis</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <p>Lesen Sie die Seiten 267-268 im Handbuch. Merken Sie sich die <strong>wichtigsten Aspekte des Reifeprozesses, des Spannungsfeldes zwischen Kindheit und Erwachsenenalter, der Ablösung von zu Hause und der Bedeutung des Experimentierens in der Adoleszenz.</strong> Denken Sie dabei an Ihren eigenen Berufs- oder Praxis-Kontext und an entsprechende Beispiele.</p>
+    <p><strong>Gruppendiskussion:</strong> Besprechen Sie, welche Herausforderungen und Chancen die Eigenheiten der 15- bis 20-jährigen Lernenden für Ihre Ausbildungspraxis mit sich bringen. Nutzen Sie das Miro-Board, um Ihre Ergebnisse festzuhalten.</p>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><em>Wie können Sie als Berufsbildner die Lernenden in dieser Entwicklungsphase optimal unterstützen?</em></li>
+      <li class="fragment"><em>Wie gehen Sie mit Stimmungsschwankungen und unberechenbarem Verhalten um?</em></li>
+      <li class="fragment"><em>Wie setzen Sie klare Regeln und Grenzen, ohne die Selbstständigkeit einzuschränken?</em></li>
+      <li class="fragment"><em>Wie fördern Sie die Motivation und die Begeisterung für die Ausbildung?</em></li>
+      <li class="fragment"><em>Wie lösen Sie Konflikte konstruktiv?</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
