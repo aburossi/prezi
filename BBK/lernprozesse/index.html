@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lernprozesse im Betrieb -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Lernprozesse im Betrieb</h2>
+<h3 style="text-align: left; width: 100%;">Integration und Förderung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;"> 
+    <p style="font-size: 1.1em; color: #05a6a1">
+      <strong>Lernprozesse im Betrieb</strong> sind entscheidend für den <strong>Ausbildungserfolg</strong>. Die <strong>Integration</strong> der Lernenden in den <strong>Arbeitsalltag</strong>, das <strong>Team</strong> und die <strong>Betriebskultur</strong> spielt eine zentrale Rolle. <strong>Berufsbildner/innen</strong> tragen die <strong>Verantwortung</strong> für die <strong>Gestaltung</strong> dieser Lernprozesse. 
+      <li>Sie müssen sowohl <strong>fachlich anleiten</strong> als auch den <strong>Lernprozess begleiten</strong> und <strong>unterstützen</strong>.
+      Dabei müssen <strong>individuelle Lernvoraussetzungen</strong> wie <strong>Motivation</strong>, <strong>Vorwissen</strong> und <strong>Lerntechniken</strong> berücksichtigt werden, um den Lernprozess optimal zu gestalten.
+      <strong></li>
+      <li>Klare Ziele</strong>, <strong>verständliche Aufgaben</strong> und <strong>regelmäiges Feedback</strong> fördern den <strong>Lernerfolg</strong> und die <strong>Motivation</strong> der Lernenden.</li>
+      <li>Die <strong>aktive Beteiligung</strong> der Lernenden am Lernprozess und die <strong>Übernahme von Verantwortung</strong> stärken ihre <strong>Selbstständigkeit</strong> und <strong>Kompetenzen</strong>.</li>
+    </p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <ul>
+      <li>Die Doppelrolle der Berufsbildner/innen</li>
+      <li>Integration in den Arbeitsprozess</li>
+      <li>Lernvoraussetzungen</li>
+      <li>Handlungskompetenzen erwerben</li>
+      <li>Auftrag</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Die Doppelrolle der Berufsbildner/innen -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Doppelrolle der Berufsbildner/innen</h2>
+<h3 style="text-align: left; width: 100%;">Fachliche Anleitung und Lernprozessbegleitung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Fachliche Anleitung</strong>:  Die Berufsbildner/innen vermitteln den Lernenden die notwendigen <strong>fachlichen Kenntnisse</strong> und <strong>Fertigkeiten</strong> ihres Berufs.</li>
+      <li class="fragment"><strong>Lernprozessbegleitung</strong>: Sie unterstützen die Lernenden bei der <strong>Planung</strong>, <strong>Durchführung</strong> und <strong>Reflexion</strong> ihres Lernprozesses.</li>
+      <li class="fragment"><strong>Förderung der Selbstständigkeit</strong>:  Sie ermutigen die Lernenden zur <strong>Eigenverantwortung</strong> und helfen ihnen, ihren Lernprozess <strong>selbstständig</strong> zu gestalten.</li>
+      <li class="fragment"><strong>Feedback und Beurteilung</strong>: Sie geben den Lernenden <strong>regelmässiges Feedback</strong> zu ihren Leistungen und beurteilen ihren <strong>Lernfortschritt</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Die Doppelrolle der Berufsbildner/innen im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Doppelrolle der Berufsbildner/innen im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 125 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Fachliche Expertise</strong>: Berufsbildner/innen müssen über <strong>fundierte Fachkenntnisse</strong> und <strong>praktische Erfahrung</strong> in ihrem Beruf verfügen.</li>
+      <li class="fragment"><strong>Pädagogische Kompetenz</strong>: Sie benötigen <strong>pädagogisches Geschick</strong>, um die Lernenden <strong>individuell</strong> zu fördern und zu motivieren.</li>
+      <li class="fragment"><strong>Kommunikationsfähigkeit</strong>:  Eine <strong>klare und verständliche Kommunikation</strong> ist unerlässlich, um die Lernenden anzuleiten und zu unterstützen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Die Doppelrolle der Berufsbildner/innen im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Doppelrolle der Berufsbildner/innen im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 125 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Organisationsgeschick</strong>:  Berufsbildner/innen müssen den Lernprozess <strong>strukturieren</strong> und die Lerninhalte <strong>effektiv vermitteln</strong>.</li>
+      <li class="fragment"><strong>Empathie und Geduld</strong>:  Sie sollten <strong>Verständnis</strong> für die Lernenden aufbringen und ihnen mit <strong>Geduld</strong> und <strong>Respekt</strong> begegnen.</li>
+      <li class="fragment"><strong>Reflexionsfähigkeit</strong>:  Die <strong>regelmässige Reflexion</strong> des eigenen Handelns und des Lernprozesses der Lernenden ist wichtig, um die Ausbildungsqualität kontinuierlich zu verbessern.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Integration in den Arbeitsprozess -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Integration in den Arbeitsprozess</h2>
+<h3 style="text-align: left; width: 100%;">Praktische Anwendung und reale Arbeitsumgebung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Praktische Anwendung</strong>: Die Lernenden sollen das Gelernte <strong>direkt im Arbeitsalltag anwenden</strong> und <strong>erproben</strong>.</li>
+      <li class="fragment"><strong>Reale Arbeitsumgebung</strong>: Der Lernprozess findet in einer <strong>authentischen Arbeitsumgebung</strong> statt, was die <strong>Motivation</strong> und den <strong>Lernerfolg</strong> steigert.</li>
+      <li class="fragment"><strong>Teamwork</strong>: Die Lernenden werden in das Team integriert und lernen die <strong>Zusammenarbeit</strong> mit Kollegen/innen.</li>
+      <li class="fragment"><strong>Betriebskultur</strong>: Die Lernenden lernen die <strong>Werte</strong>, <strong>Normen</strong> und <strong>Abläufe</strong> des Betriebs kennen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Integration in den Arbeitsprozess im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Integration in den Arbeitsprozess im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 125, 126 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Einbindung in den Arbeitsalltag</strong>: Die Lernenden werden von Anfang an in die <strong>täglichen Arbeitsabläufe</strong> eingebunden und übernehmen <strong>verantwortungsvolle Aufgaben</strong>.</li>
+      <li class="fragment"><strong>Begleitung durch erfahrene Mitarbeiter/innen</strong>:  Die Lernenden werden von erfahrenen Mitarbeitern/innen <strong>unterstützt</strong> und <strong>angeleitet</strong>.</li>
+      <li class="fragment"><strong>Feedback und Reflexion</strong>:  <strong>Regelmässiges Feedback</strong> und die <strong>gemeinsame Reflexion</strong> der Arbeitsergebnisse fördern den Lernprozess.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Integration in den Arbeitsprozess im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Integration in den Arbeitsprozess im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 125, 126 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Verknüpfung von Theorie und Praxis</strong>:  Die Lernenden lernen, die <strong>theoretischen Kenntnisse</strong> in der <strong>Praxis anzuwenden</strong> und zu <strong>verknüpfen</strong>.</li>
+      <li class="fragment"><strong>Förderung der Selbstständigkeit</strong>:  Die Lernenden werden schrittweise an <strong>selbstständiges Arbeiten</strong> herangeführt.</li>
+      <li class="fragment"><strong>Integration in das Team</strong>:  Die Lernenden werden als <strong>vollwertige Teammitglieder</strong> akzeptiert und in die <strong>Teamkultur</strong> integriert.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lernvoraussetzungen -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Lernvoraussetzungen</h2>
+<h3 style="text-align: left; width: 100%;">Individuelle Voraussetzungen und Förderung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Individuelle Voraussetzungen</strong>: Jeder Lernende bringt <strong>unterschiedliche Voraussetzungen</strong> mit, die den Lernprozess beeinflussen.</li>
+      <li class="fragment"><strong>Identifizierung der Voraussetzungen</strong>: Es ist wichtig, die <strong>individuellen Lernvoraussetzungen</strong> zu kennen, um den Lernprozess <strong>anzupassen</strong>.</li>
+      <li class="fragment"><strong>Förderung der Voraussetzungen</strong>:  <strong>Lernvoraussetzungen</strong> können durch <strong>gezielte Massnahmen</strong> gefördert werden.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Definition: Lernvoraussetzungen -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Lernvoraussetzungen</h2>
+<h3 style="text-align: left; width: 100%;"></h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"<strong>Lernvoraussetzungen</strong> sind die <strong>individuellen Fähigkeiten</strong>, <strong>Kenntnisse</strong>, <strong>Erfahrungen</strong> und <strong>Motivationen</strong>, die ein Lernender mitbringt und die den Lernprozess beeinflussen."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lernvoraussetzungen im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Lernvoraussetzungen im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 126 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Vorwissen</strong>:  Das <strong>vorhandene Wissen</strong> der Lernenden bildet die <strong>Grundlage</strong> für den weiteren Lernprozess.</li>
+      <li class="fragment"><strong>Fähigkeiten</strong>:  <strong>Kognitive Fähigkeiten</strong>, <strong>praktische Fertigkeiten</strong> und <strong>soziale Kompetenzen</strong> beeinflussen den Lernerfolg.</li>
+      <li class="fragment"><strong>Motivation</strong>:  Die <strong>Motivation</strong> der Lernenden ist entscheidend für die <strong>aktive Teilnahme</strong> am Lernprozess.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lernvoraussetzungen im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Lernvoraussetzungen im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 126 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Lernstrategien</strong>:  Die <strong>individuellen Lernstrategien</strong> der Lernenden bestimmen, wie sie <strong>Informationen aufnehmen</strong> und <strong>verarbeiten</strong>.</li>
+      <li class="fragment"><strong>Persönlichkeit</strong>:  <strong>Persönlichkeitsmerkmale</strong> wie <strong>Selbstvertrauen</strong>, <strong>Ausdauer</strong> und <strong>Offenheit</strong> für Neues spielen eine wichtige Rolle.</li>
+      <li class="fragment"><strong>Soziokultureller Hintergrund</strong>: Der <strong>soziokulturelle Hintergrund</strong> der Lernenden kann den Lernprozess beeinflussen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Handlungskompetenzen erwerben -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Handlungskompetenzen erwerben</h2>
+<h3 style="text-align: left; width: 100%;">Kompetenzorientierung und Anwendungsorientierung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Kompetenzorientierung</strong>: Die Ausbildung zielt auf die <strong>Entwicklung von Handlungskompetenzen</strong>, die über die fachlichen Anforderungen hinausgehen.</li>
+      <li class="fragment"><strong>Methoden-, Sozial- und Selbstkompetenz</strong>: Neben der Fachkompetenz werden auch <strong>Methodenkompetenz</strong>, <strong>Sozialkompetenz</strong> und <strong>Selbstkompetenz</strong> gefördert.</li>
+      <li class="fragment"><strong>Anwendungsorientierung</strong>: Die Lernenden sollen die erworbenen Kompetenzen in <strong>realen Arbeitssituationen anwenden</strong> können.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Definition: Handlungskompetenz -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Handlungskompetenz</h2>
+<h3 style="text-align: left; width: 100%;"></h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"<strong>Handlungskompetenz</strong> ist die <strong>Fähigkeit</strong>, in <strong>bestimmten Situationen</strong> <strong>selbstständig</strong> und <strong>verantwortungsvoll</strong> zu handeln. Sie umfasst <strong>Fachkompetenz</strong>, <strong>Methodenkompetenz</strong>, <strong>Sozialkompetenz</strong> und <strong>Selbstkompetenz</strong>."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Handlungskompetenzen erwerben im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Handlungskompetenzen erwerben im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 126 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Fachkompetenz</strong>:  Die Lernenden erwerben das <strong>notwendige Fachwissen</strong> und die <strong>praktischen Fertigkeiten</strong> ihres Berufs.</li>
+      <li class="fragment"><strong>Methodenkompetenz</strong>: Sie lernen, <strong>verschiedene Arbeitsmethoden</strong> und <strong>Techniken</strong> anzuwenden und <strong>Probleme</strong> zu lösen.</li>
+      <li class="fragment"><strong>Sozialkompetenz</strong>:  Sie entwickeln <strong>Teamfähigkeit</strong>, <strong>Kommunikationsfähigkeit</strong> und <strong>Konfliktfähigkeit</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Handlungskompetenzen erwerben im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Handlungskompetenzen erwerben im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 126 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Selbstkompetenz</strong>:  Sie lernen, <strong>eigenverantwortlich</strong> zu arbeiten, sich <strong>selbst zu organisieren</strong> und ihren <strong>Lernprozess</strong> zu steuern.</li>
+      <li class="fragment"><strong>Praxisbezug</strong>:  Die Lernenden wenden die erworbenen Kompetenzen in <strong>realen Arbeitssituationen</strong> an.</li>
+      <li class="fragment"><strong>Reflexion und Feedback</strong>:  <strong>Regelmässige Reflexion</strong> und <strong>Feedback</strong> fördern die <strong>Weiterentwicklung</strong> der Handlungskompetenzen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Diskussion -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Diskussion</h2>
+<h3 style="text-align: left; width: 100%;">Gruppenarbeit und Diskussion</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); color: #05a6a1;">
+      <p><strong>Gruppendiskussion:</strong> Überfliegen Sie die Seiten 125-126 im Handbuch. Merken Sie sich die <strong>Doppelrolle der Berufsbildner/innen</strong> und die Bedeutung der <strong>Integration der Lernenden in den Arbeitsprozess</strong>. Besprechen Sie in Ihrer Gruppe, wie Sie die <strong>Lernvoraussetzungen</strong> ermitteln und Sie die <strong>Handlungskompetenzen</strong> Ihrer Lernenden im Betrieb fördern können. 
+      <p><strong>Welche konkreten Aufgaben und Projekte eignen sich dafür? Wie können Sie die Lernenden bei der Reflexion ihrer Lernerfahrungen unterstützen?</strong></p>
+    </div>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><em>Wie stellen Sie sicher, dass die Lernenden den <strong>Sinn und Zweck</strong> der Aufgaben verstehen und motiviert sind?</em></li>
+      <li class="fragment"><em>Welche <strong>Methoden</strong> verwenden Sie, um den Lernenden <strong>Feedback</strong> zu geben und ihren <strong>Lernfortschritt</strong> zu <strong>bewerten</strong>?</em></li>
+      <li class="fragment"><em>Wie gehen Sie mit <strong>Herausforderungen</strong> um, die im Zusammenhang mit den Lernprozessen im Betrieb auftreten können?</em></li>
+      <li class="fragment"><em>Wie gestalten Sie die <strong>Zusammenarbeit</strong> mit den Lernenden und fördern deren <strong>Selbstständigkeit</strong>?</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
