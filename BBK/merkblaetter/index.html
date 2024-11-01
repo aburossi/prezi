@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Einführung -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Gleiche Chancen und korrekter Umgang</h2>
+<h3 style="text-align: left; width: 100%;">Das Wichtigste in Kürze</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;"> 
+    <p style="font-size: 1.1em; color: #05a6a1">
+      <strong>Gleiche Chancen</strong> ermöglichen allen Lernenden unabhängig von <strong>Geschlecht, Herkunft oder Beeinträchtigung</strong> den <strong>gleichen Zugang</strong> zur <strong>beruflichen Bildung</strong>. Ein <strong>korrekter Umgang</strong> am Arbeitsplatz fördert ein <strong>positives Lernklima</strong> und beugt <strong>Diskriminierung</strong> und <strong>Belästigung</strong> vor. </p>
+      <li>Die <strong>Fürsorgepflicht</strong> des Lehrbetriebs umfasst den <strong>Schutz</strong> der Lernenden vor <strong>gesundheitlichen Schädigungen</strong> und <strong>schlechten Einflüssen</strong>. </li>
+      <li><strong>Kompetentes Handeln</strong> der Berufsbildenden ist gefragt, um <strong>Konflikte und Schwierigkeiten</strong> anzugehen und <strong>Lösungen</strong> zu finden.</li>
+      <li><strong>Frühzeitiges Thematisieren</strong> von Problemen und die <strong>Etablierung</strong> von <strong>klaren Richtlinien</strong> sind wichtig für die <strong>Prävention</strong>.
+    </p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <ul>
+      <li>Fürsorgepflicht des Lehrbetriebs</li>
+      <li>Vertrauen schaffen</li>
+      <li>Drei Dinge sind dabei besonders zu beachten</li>
+      <li>Auftrag: Podcast-Reihe</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Fürsorgepflicht des Lehrbetriebs -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Fürsorgepflicht des Lehrbetriebs</h2>
+<h3 style="text-align: left; width: 100%;">Schutz und Unterstützung der Lernenden</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Schutz der Lernenden</strong>:  Der Lehrbetrieb und die Berufsbildner*innen haben eine besondere <strong>Fürsorgepflicht</strong> gegenüber den Lernenden, da diese <strong>besonders verletzlich</strong> sind und einen <strong>erhöhten Schutz</strong> benötigen.</li>
+      <li class="fragment"><strong>Gesetzliche Grundlagen</strong>: Die Fürsorgepflicht ist im <strong>Arbeitsgesetz (ArG)</strong> verankert und verpflichtet den Lehrbetrieb zum Schutz der Lernenden vor <strong>gesundheitlichen Schädigungen</strong> und <strong>schlechten Einflüssen</strong>.</li>
+      <li class="fragment"><strong>Kompetentes Handeln</strong>:  Die Berufsbildner*innen müssen <strong>kompetent handeln</strong>, um die Fürsorgepflicht zu erfüllen. Dies beinhaltet das <strong>Erkennen von Gefahrensituationen</strong>, das <strong>Einleiten von Schutzmassnahmen</strong> und die <strong>Unterstützung</strong> der Lernenden bei Problemen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Definition: Fürsorgepflicht -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Fürsorgepflicht</h2>
+<h3 style="text-align: left; width: 100%;">Verantwortung des Arbeitgebers</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"Die <strong>Fürsorgepflicht</strong> ist die <strong>gesetzliche Verpflichtung</strong> des Arbeitgebers, die <strong>Persönlichkeit</strong>, die <strong>Gesundheit</strong> und die <strong>Sicherheit</strong> seiner Mitarbeitenden zu schützen. In der beruflichen Grundbildung gilt dies in besonderem Masse für die Lernenden."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Fürsorgepflicht des Lehrbetriebs Im Detail -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Fürsorgepflicht des Lehrbetriebs Im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Aspekte der Fürsorgepflicht</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment">Die Lernenden sind aufgrund ihres Alters und ihrer <strong>Abhängigkeit</strong> vom Lehrbetrieb <strong>besonders schutzbedürftig</strong>.</li>
+      <li class="fragment">Der Lehrbetrieb muss die Lernenden vor <strong>Diskriminierung, Belästigung und Gewalt</strong> schützen.</li>
+      <li class="fragment">Der Lehrbetrieb muss die Lernenden über ihre <strong>Rechte und Pflichten</strong> informieren.</li>
+      <li class="fragment">Der Lehrbetrieb muss den Lernenden eine <strong>sichere und gesunde Arbeitsumgebung</strong> bieten.</li>
+      <li class="fragment">Der Lehrbetrieb muss den Lernenden bei <strong>persönlichen Problemen</strong> Unterstützung anbieten.</li>
+      <li class="fragment">Der Lehrbetrieb muss die Lernenden bei der <strong>beruflichen Entwicklung</strong> fördern.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Vertrauen schaffen -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Vertrauen schaffen</h2>
+<h3 style="text-align: left; width: 100%;">Grundlage für eine erfolgreiche Ausbildung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Offene Kommunikation</strong>:  Ein <strong>Klima des Vertrauens</strong> zwischen Lernenden und Berufsbildner*innen ist essentiell für eine <strong>erfolgreiche Ausbildung</strong>.  Lernende sollten sich bei <strong>Schwierigkeiten</strong> an ihre Berufsbildner*innen wenden können.</li>
+      <li class="fragment"><strong>Ressourcenorientierung</strong>:  Berufsbildner*innen sollten die <strong>Ressourcen</strong> der Lernenden erkennen und fördern, um ihnen bei der <strong>Bewältigung von Problemen</strong> zu helfen.</li>
+      <li class="fragment"><strong>Unterstützung und Zuhören</strong>:  <strong>Aktives Zuhören</strong> und <strong>angemessene Unterstützung</strong> durch die Berufsbildner*innen sind wichtig, um das <strong>Vertrauen</strong> der Lernenden zu gewinnen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Definition: Vertrauen -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Vertrauen</h2>
+<h3 style="text-align: left; width: 100%;">Basis für positive Beziehungen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"<strong>Vertrauen</strong> ist die <strong>Zuversicht</strong>, dass eine Person sich in einer bestimmten Situation <strong>verlässlich</strong> und <strong>integer</strong> verhalten wird.  Es ist die <strong>Grundlage</strong> für eine <strong>positive Beziehung</strong> zwischen Menschen."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Vertrauen schaffen Im Detail -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Vertrauen schaffen Im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Praktische Tipps für Berufsbildner*innen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Ansprechperson sein</strong>:  Die Berufsbildner*innen sollten den Lernenden als <strong>Ansprechperson</strong> für Probleme zur Verfügung stehen.</li>
+      <li class="fragment"><strong>Vertrauliche Gespräche</strong>:  Gespräche über persönliche Probleme sollten <strong>vertraulich</strong> behandelt werden.</li>
+      <li class="fragment"><strong>Aktives Zuhören</strong>:  Die Berufsbildner*innen sollten den Lernenden <strong>aktiv zuhören</strong> und ihre <strong>Sichtweise verstehen</strong>.</li>
+      <li class="fragment"><strong>Unterstützung anbieten</strong>:  Die Berufsbildner*innen sollten den Lernenden <strong>konkrete Unterstützung</strong> bei der <strong>Lösung von Problemen</strong> anbieten.</li>
+      <li class="fragment"><strong>Ressourcenorientierung</strong>:  Die Berufsbildner*innen sollten die <strong>Stärken und Fähigkeiten</strong> der Lernenden erkennen und fördern.</li>
+      <li class="fragment"><strong>Positive Beziehung</strong>:  Die Berufsbildner*innen sollten eine <strong>positive Beziehung</strong> zu den Lernenden aufbauen, die auf <strong>Respekt und Wertschätzung</strong> basiert.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Drei Dinge sind dabei besonders zu beachten -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Drei Dinge sind dabei besonders zu beachten</h2>
+<h3 style="text-align: left; width: 100%;">Kompetenz, Fachstellen, Prävention</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Kompetenz der Berufsbildner*innen</strong>:  Berufsbildner*innen sollten in der Lage sein, <strong>Konflikte und Schwierigkeiten</strong> anzugehen und <strong>Lösungen</strong> zu finden.  Sie können dabei auf ihre <strong>Menschenkenntnis</strong> und <strong>Sozialkompetenz</strong> zurückgreifen.</li>
+      <li class="fragment"><strong>Einbezug von Fachstellen</strong>:  Bei <strong>Unsicherheiten</strong> oder <strong>komplexen Problemen</strong> sollten Berufsbildner*innen <strong>frühzeitig Fachstellen</strong> hinzuziehen.</li>
+      <li class="fragment"><strong>Prävention</strong>:  <strong>Präventive Massnahmen</strong> wie die <strong>Erarbeitung von Richtlinien</strong> und die <strong>Schulung der Mitarbeitenden</strong> können dazu beitragen, Probleme zu vermeiden.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Drei Dinge sind dabei besonders zu beachten Im Detail -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Drei Dinge sind dabei besonders zu beachten Im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Handlungsempfehlungen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Eigene Kompetenzen nutzen</strong>:  Berufsbildner*innen können auf ihre <strong>Erfahrung</strong> und ihr <strong>Wissen</strong> zurückgreifen, um <strong>Konflikte zu lösen</strong>.</li>
+      <li class="fragment"><strong>Grenzen erkennen</strong>:  Berufsbildner*innen sind <strong>keine Therapeuten</strong>. Bei komplexen Problemen sollten sie <strong>professionelle Hilfe</strong> in Anspruch nehmen.</li>
+      <li class="fragment"><strong>Fachstellen einbeziehen</strong>:  Es gibt verschiedene <strong>Beratungsstellen und Fachleute</strong>, die bei Problemen unterstützen können.</li>
+      <li class="fragment"><strong>Präventive Massnahmen ergreifen</strong>:  <strong>Klare Regeln und Richtlinien</strong> sowie <strong>Schulungen</strong> können dazu beitragen, Probleme zu vermeiden.</li>
+      <li class="fragment"><strong>Offene Kommunikation</strong>:  Eine <strong>offene Kommunikation</strong> im Betrieb kann helfen, Probleme frühzeitig zu erkennen.</li>
+      <li class="fragment"><strong>Tabuthemen ansprechen</strong>:  Auch <strong>sensible Themen</strong> wie <strong>sexuelle Belästigung</strong> oder <strong>Drogenkonsum</strong> sollten im Betrieb thematisiert werden.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Diskussion -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Vertiefung</h2>
+<h3 style="text-align: left; width: 100%;">Podcast-Reihe "Gleiche Chancen - Korrekter Umgang</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); color: #05a6a1;">
+      <p>In diesem Auftrag vertiefen Sie Ihr Wissen zum Thema <strong>Gleiche Chancen und korrekter Umgang</strong> im Berufsalltag, indem Sie verschiedene Aspekte durch <strong>Themen-Podcasts</strong> erkunden. 
+      <li>Jeder Podcast beleuchtet ein spezifisches Thema, das für den respektvollen und chancengerechten Umgang mit Lernenden relevant ist.</li>
+      <li> Sie haben die Möglichkeit, sich <strong>eigenständig mit einem Thema</strong> auseinanderzusetzen und Ihre Erkenntnisse mit den anderen Teilnehmern zu teilen.</li>
+    </div>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><em>Wählen Sie ein <strong>Thema</strong> aus der Liste der verfügbaren Podcasts aus, das für Ihre Rolle als Berufsbildner/in besonders relevant ist.</em></li>
+      <li class="fragment"><em>Hören Sie den Podcast aufmerksam an und notieren Sie sich <strong>wichtige Erkenntnisse und Empfehlungen</strong>, die im Podcast vorgestellt werden.</em></li>
+      <li class="fragment"><em>Sammeln Sie Ihre <strong>Erkenntnisse, Ideen und Empfehlungen</strong> auf Post-its und ordnen Sie sie auf dem Miro-Board so an, dass sie für andere klar verständlich sind.</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
