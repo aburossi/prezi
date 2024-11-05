@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 1: Einführung-->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Die Rolle des Berufsbildners / der Berufsbildnerin</h2>
+<h3 style="text-align: left; width: 100%;">Das Wichtigste in Kürze</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;"> 
+    <p style="font-size: 1.1em; color: #05a6a1">Die Rolle des <strong>Berufsbildners</strong> ist <strong>vielschichtig</strong> und geht weit über die reine <strong>Wissensvermittlung</strong> hinaus. Berufsbildner agieren als <strong>Vorbilder</strong>, die <strong>Verhaltensmuster</strong>, <strong>Einstellungen</strong> und <strong>Arbeitsweisen</strong> prägen.</p>
+    <ul>
+      <li>Sie sind <strong>Coaches</strong>, die Lernende <strong>individuell fördern</strong> und bei der <strong>Entwicklung ihrer Selbstständigkeit</strong> unterstützen.</li>
+      <li>Schaffen eine <strong>positive Lernumgebung</strong>, geprägt von <strong>Vertrauen</strong>, <strong>Offenheit</strong> und <strong>Fehlertoleranz</strong>.</li>
+      <li>Stehen als <strong>Begleiter</strong> zur Seite, geben <strong>Orientierung</strong> und <strong>Feedback</strong> und helfen, <strong>Herausforderungen</strong> zu meistern.</li>
+      <li>Durch ihre <strong>Begeisterung</strong> für den Beruf fördern sie die <strong>berufliche Identifikation</strong> und <strong>Motivation</strong> der Lernenden.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 2: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <ul style="font-size: 1.5em;">
+      <li>Berufsbildner/in als Vorbild</li>
+      <li>Berufsbildner/in als Coach</li>
+      <li>Massgebender Führungsstil</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 3: Theorie - Berufsbildner/in als Vorbild -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Berufsbildner/in als Vorbild</h2>
+<h3 style="text-align: left; width: 100%;">Theorie - Vorbildfunktion und positive Lernhaltung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Lernende orientieren</strong> sich am Verhalten und den Einstellungen ihrer Berufsbildner/innen.</li>
+      <li class="fragment"><strong>Positive Vorbilder</strong> zeichnen sich durch <strong>Echtheit, Engagement, Freude am Beruf</strong> und <strong>Selbstvertrauen</strong> aus.</li>
+      <li class="fragment"><strong>Ziel:</strong> Die Lernenden sollen sich mit dem Beruf und dem Betrieb identifizieren und eine positive Lernhaltung entwickeln.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lutz Jäncke - Weshalb sind Berufsbildner so wichtig? -->
+<h2 style="text-align: left; width: 100%;">Lutz Jäncke - Weshalb sind Berufsbildner so wichtig?</h2>
+
+<div style="display: flex; width: 100%; align-items: flex-start;">
+  <!-- Left Column: Placeholder for Bullet List -->
+  <div style="flex: 1; padding-right: 20px;">
+    <ul>
+      <li>Ist es wahr, dass man in der Jugendzeit am meisten von anderen Menschen fasziniert ist? Warum oder warum nicht?</li>
+      <li>Wie kann man Jugendliche davon überzeugen, dass das, was sie lernen, "cool" ist?</li>
+    </ul>
+  </div>
+  
+  <!-- Right Column: Video Embed -->
+  <div style="flex: 2;">
+    <iframe src="https://www.nanoo.tv/link/v/yoKbbkMg?autoplay=0" 
+            style="width: 80%; height: 600px; border: none; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" 
+            scrolling="no" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- Footer -->
+<div style="width: 100%; text-align: right; margin-top: 10px;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+<hr style="border: 3px solid currentColor; width: 100%; margin-top: 10px;">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lehrer Berufung 50/50 Layout -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Herzliche Gratulation zur Berufung als Lehrer!</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Herzliche Gratulation zur Berufung als Lehrer!</h2>
+<h3 style="text-align: left; width: 100%;">Egal wie leer du im Kopf bist - manche Leute sind Lehrer.</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="font-size: 1.5em; flex: 1; padding-right: 20px; text-align: left;">
+    <p class="fragment">1. a) Kenntnisse vermitteln, Vorlesungen halten,</p>
+    <p class="fragment">b) ein bestimmtes Fach unterrichten</p>
+    <p class="fragment">2. In einer bestimmten Tätigkeit unterweisen; (jemandem) etwas beibringen</p>
+    <p class="fragment">3. Deutlich zeigen, deutlich werden lassen</p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/Pasted image 20241102161849.png" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Was heißt lehren? 3-Block Layout -->
+<h2 style="text-align: left; width: 100%;">Was heißt lehren?</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+
+<div style="display: flex; justify-content: space-between; width: 100%; height: 80vh;">
+  <!-- Block 1 -->
+  <div style="flex: 1; padding-right: 10px; text-align: left;" class="fragment">
+    <p style="font-style: italic; font-size: 0.9em;">1. a) Kenntnisse vermitteln, Vorlesungen halten, b) ein bestimmtes Fach unterrichten</p>
+    <p style="font-weight: bold;">Die eigenen Kenntnisse am Arbeitsplatz vermitteln</p>
+    <p>❓ Was weiss man besser als die Lernenden? Was wissen die Lernenden besser?</p>
+    <p>❓ Welches Fach unterrichten wir?</p>
+  </div>
+
+  <!-- Block 2 -->
+  <div style="flex: 1; padding-left: 10px; padding-right: 10px; text-align: left;" class="fragment">
+	<p style="font-style: italic; font-size: 0.9em;">2. in einer bestimmten Tätigkeit unterweisen; (jemandem) etwas beibringen</p>
+    <p style="font-weight: bold;">Etwas beibringen</p>
+    <p>❓ Wie kann man etwas jemandem beibringen?</p>
+    <p>❓ Wie unterscheidet sich das Beibringen bei Kindern, Heranwachsenden und Erwachsenen?</p>
+  </div>
+
+  <!-- Block 3 -->
+  <div style="flex: 1; padding-left: 10px; text-align: left;" class="fragment">
+    <p style="font-style: italic; font-size: 0.9em;">3. deutlich zeigen, deutlich werden lassen</strong></p>
+    <p style="font-weight: bold;">Sage es mir, und ich werde es vergessen. Zeige es mir, und ich werde es vielleicht behalten. Lass es mich tun, und ich werde es können. - Konfuzius</p>
+    <p>❓ Wie lernt man in deinem Beruf?</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Berufsbildner/in als Vorbild im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Berufsbildner/in als Vorbild im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Umsetzung der Vorbildfunktion (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Echtheit:</strong> Authentisches Verhalten und Handeln, Übereinstimmung von Worten und Taten.</li>
+      <li class="fragment"><strong>Empathie und Engagement:</strong> Einfühlungsvermögen und Verständnis für die Situation der Lernenden, aktives Zuhören und Unterstützung.</li>
+      <li class="fragment"><strong>Freude am Beruf und an der Berufsbildung:</strong> Begeisterung für den Beruf und die Ausbildungstätigkeit vermitteln.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Berufsbildner/in als Vorbild im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Berufsbildner/in als Vorbild im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Umsetzung der Vorbildfunktion (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Mut zum Unvollkommensein:</strong> Souveräner Umgang mit den eigenen Stärken und Schwächen, Fehler als Lernchance begreifen.</li>
+      <li class="fragment"><strong>Klare Kommunikation:</strong> Erwartungen, Regeln und Grenzen klar und deutlich kommunizieren.</li>
+      <li class="fragment"><strong>Konstruktives Feedback:</strong> Regelmässiges, konstruktives Feedback geben, um die Lernenden in ihrer Entwicklung zu unterstützen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 5: Quote - Berufsbildner/in als Vorbild -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Vorbildfunktion</h2>
+<h3 style="text-align: left; width: 100%;">Einfluss und Prägung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 800%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"Die Vorbildfunktion beschreibt die besondere Verantwortung von Personen in Ausbildungsberufen. Ihr Verhalten, ihre Einstellungen und Werte wirken auf die Lernenden und prägen deren berufliche Entwicklung."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Lutz Jäncke - Was zeichnet einen guten Berufsbildner aus?-->
+<h2 style="text-align: center; width: 100%;">Lutz Jäncke - Was zeichnet einen guten Berufsbildner aus?</h2>
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <!-- Centered Video Embed -->
+  <iframe src="https://www.nanoo.tv/link/v/mMYiVBga" 
+          style="width: 55%; height: 600px; border: none; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" 
+          scrolling="no" 
+          frameborder="0" 
+          allowfullscreen>
+  </iframe>
+</div>
+
+
+<!-- Footer -->
+<div style="width: 100%; text-align: right; margin-top: 10px;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+<hr style="border: 3px solid currentColor; width: 100%; margin-top: 10px;">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 6: Theorie - Berufsbildner/in als Coach -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Berufsbildner/in als Coach</h2>
+<h3 style="text-align: left; width: 100%;">Theorie - Förderung der Selbstständigkeit</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Berufsbildner/innen unterstützen</strong> die Lernenden  dabei,  ihren eigenen Lernweg zu finden und  ihre  Potenziale  zu  entfalten.</li>
+      <li class="fragment"><strong>Handlungsorientierung,  Selbstinitiative</strong> und  <strong>Mitbestimmung</strong>  sind  zentrale  Elemente  des  Coachings.</li>
+      <li class="fragment"><strong>Ziel:</strong> Die Lernenden sollen  zu  selbstständigen,  verantwortungsbewussten  und  handlungskompetenten  Fachkräften  ausgebildet  werden.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 7: Im Detail: Berufsbildner/in als Coach -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Berufsbildner/in als Coach im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Coaching-Methoden</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Handlungsspielräumen:</strong> Lernenden Verantwortung übertragen und ihnen die Möglichkeit geben, eigene Ideen einzubringen und umzusetzen.</li>
+      <li class="fragment"><strong>Lernen durch Tun:</strong> Praktische Erfahrungen fördern und den Lernenden ermöglichen, Gelerntes in die Praxis umzusetzen.</li>
+      <li class="fragment"><strong>Selbstinitiiertes Lernen:</strong> Die Eigeninitiative fördern und sie dabei unterstützen, ihren Lernprozess aktiv mitzugestalten.</li>
+      <li class="fragment"><strong>Mitbestimmung:</strong> Lernende in Entscheidungen einbeziehen, die ihre Ausbildung betreffen.</li>
+      <li class="fragment"><strong>Unabhängigkeit, Kreativität und Selbstvertrauen:</strong> Lernende ermutigen, eigene Lösungswege zu finden, kreativ zu sein und selbstbewusst aufzutreten.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 8: Quote - Berufsbildner/in als Coach -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Coaching</h2>
+<h3 style="text-align: left; width: 100%;">Strukturierte Begleitung und Förderung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="text-align: left; margin-top: 100px; padding-right: 20px;">
+    <p style="font-style: italic;">"Coaching im Ausbildungskontext ist ein strukturierter Prozess, bei dem der Coach (Berufsbildner/in) den Coachee (Lernenden) unterstützt, seine beruflichen und persönlichen Ziele zu erreichen. Der Fokus liegt dabei auf der Förderung von Selbstreflexion, Eigenverantwortung und Lösungsorientierung."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 9: Theorie - Massgebender Führungsstil -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Massgebender Führungsstil</h2>
+<h3 style="text-align: left; width: 100%;">Theorie - Positives Lernklima und Wertschätzung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Ein partnerschaftlicher und vertrauensvoller Führungsstil</strong> ist die Grundlage für ein positives Lernklima.</li>
+      <li class="fragment"><strong>Offene Kommunikation, Wertschätzung</strong> und <strong>Respekt</strong> sind essenzielle Elemente eines massgebenden Führungsstils.</li>
+      <li class="fragment"><strong>Ziel:</strong> Die Lernenden sollen sich wohlfühlen, wertgeschätzt fühlen und gerne lernen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 10: Im Detail: Massgebender Führungsstil -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Massgebender Führungsstil im Detail</h2>
+<h3 style="text-align: left; width: 100%;">Konkrete Umsetzung des Führungsstils</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: auto;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><strong>Partnerschaftliche Zusammenarbeit:</strong> Lernende als gleichwertige Partner im Ausbildungsprozess betrachten und ihre Meinung ernst nehmen.</li>
+      <li class="fragment"><strong>Klare Erwartungen und Ziele:</strong> Gemeinsam klare Erwartungen und Ziele vereinbaren und diese transparent kommunizieren.</li>
+      <li class="fragment"><strong>Regelmässiges Feedback:</strong> Regelmässiges, konstruktives Feedback geben, um die Lernenden in ihrer Entwicklung zu unterstützen.</li>
+      <li class="fragment"><strong>Fehlerkultur:</strong> Eine Fehlerkultur etablieren, in der Fehler als Lernchance begriffen werden und offen darüber gesprochen werden kann.</li>
+      <li class="fragment"><strong>Wertschätzung und Respekt:</strong> Den Lernenden Wertschätzung und Respekt entgegenbringen und ihre Leistungen anerkennen.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 11: Diskussion-Slide -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Diskussion</h2>
+<h3 style="text-align: left; width: 100%;">Zusammenhänge und Herausforderungen</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); color: #05a6a1;">
+      <p><strong>Gruppendiskussion:</strong> Überfliegen Sie die Seiten 252-253 im Handbuch. Merken Sie sich die <strong>vier Merkmale eines positiven Vorbilds</strong>.</p>
+      <p>Diskutieren Sie in Ihrer Gruppe, inwiefern die drei vorgestellten theoretischen Ansätze (Berufsbildner/innen als Vorbilder, Berufsbildner/innen als Coaches, Massgebender Führungsstil) miteinander zusammenhängen und sich gegenseitig ergänzen.</p>
+    </div>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li class="fragment"><em>Wie können Sie im Berufsalltag als positives Vorbild für Ihre Lernenden agieren?</em></li>
+      <li class="fragment"><em>Mit welchen konkreten Methoden können Sie Ihre Lernenden im Sinne des Coachings unterstützen?</em></li>
+      <li class="fragment"><em>Was zeichnet einen massgebenden Führungsstil in der Berufsausbildung aus?</em></li>
+      <li class="fragment"><em>Welche Herausforderungen sehen Sie in Bezug auf die drei Ansätze und wie könnten Sie diese meistern?</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
