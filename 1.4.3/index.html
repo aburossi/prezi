@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wichtige Informationen zu Rechte der Lernenden
+#### Was Sie als Lernender wissen müssen
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohn
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohn: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Der **Lohn** wird für die gesamte Ausbildungsdauer im **Lehrvertrag** festgelegt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Die Höhe des Lehrlingslohns ist **gesetzlich nicht geregelt**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Der Lohn richtet sich meist nach den **Empfehlungen der Berufsverbände**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Kein Anspruch** auf einen **13. Monatslohn** oder **Gratifikation**, ausser wenn im Lehrvertrag vereinbart.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Transparenz** im Lehrvertrag ist wichtig.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohn im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Individuelle Vereinbarung:** Der Lohn wird zwischen Lehrbetrieb und Lernendem vereinbart und im Lehrvertrag festgehalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Empfehlungen beachten:** Berufsverbände geben Richtlinien für faire Löhne.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Zusätzliche Leistungen:** Ohne entsprechende Vereinbarung gibt es keinen Anspruch auf zusätzliche Zahlungen.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnfortzahlungspflicht
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnfortzahlungspflicht: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Bei **Krankheit**, **Unfall** oder **Militärdienst** muss der Lehrbetrieb den Lohn **für eine gewisse Zeit** weiterzahlen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Im **ersten Lehrjahr** besteht eine Lohnfortzahlungspflicht von **drei Wochen** pro Jahr.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Die Dauer der Lohnfortzahlung steigt mit der Dienstzeit.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Unverschuldete Verhinderung** des Lernenden ist Voraussetzung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlage:** OR Art. 324a.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnfortzahlungspflicht im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Staffelung:** Je länger das Arbeitsverhältnis, desto länger die Lohnfortzahlung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Mitteilungspflicht:** Der Lernende muss den Lehrbetrieb unverzüglich informieren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Ärztliches Attest:** Kann vom Lehrbetrieb verlangt werden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnabzüge
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnabzüge: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Übliche Abzüge** wie AHV, IV, EO und ALV sind zulässig.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Nichtberufsunfallversicherung (NBU):** Beitrag wird oft vom Lohn abgezogen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Schadensfälle:** Bei **fahrlässigem** oder **absichtlichem** Schaden kann der Betrag abgezogen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Transparenz:** Lohnabzüge müssen nachvollziehbar sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlage:** OR Art. 323b.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnabzüge im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Sozialversicherungen:** Gesetzlich vorgeschriebene Abzüge sind Pflicht.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Schadenersatz:** Abzüge wegen Schäden nur bei Nachweis von Verschulden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Grenzen:** Unzulässige oder überhöhte Abzüge sind nicht erlaubt.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Arbeitszeit
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Arbeitszeit: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Gleiche Arbeitszeit** wie andere Arbeitnehmer im Betrieb.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Jugendliche unter 18 Jahren:** Tägliche Höchstarbeitszeit von **8 Stunden**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Maximale Arbeitszeit:** Mit Überstunden max. **9 Stunden pro Tag**, **45 Stunden pro Woche**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Berufsschule:** Unterrichtszeit wird auf Arbeitszeit angerechnet.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlage:** ArG Art. 31.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Arbeitszeit im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Pausenregelung:** Gesetzlich vorgeschriebene Pausen sind einzuhalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Nachtruhe und Ruhezeiten:** Besondere Schutzbestimmungen für Jugendliche.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Sonderregelungen:** Für bestimmte Branchen können abweichende Regelungen gelten.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Überstunden
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Überstunden: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Überstunden** sind Arbeitszeiten, die über die vertraglich vereinbarte Arbeitszeit hinausgehen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Müssen mit **Freizeit** gleicher Dauer oder mit **25% Lohnzuschlag** abgegolten werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Regelung im Lehrvertrag** kann spezifische Bestimmungen enthalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Überstunden sollten die **Ausnahme** bleiben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlage:** OR Art. 321c.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Überstunden im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Anordnung:** Überstunden müssen betriebsnotwendig sein und angeordnet werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Zumutbarkeit:** Berücksichtigung der persönlichen Situation des Lernenden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Dokumentation:** Überstunden sollten erfasst und nachweisbar sein.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfremde Arbeiten
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfremde Arbeiten: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Lernende müssen **grundsätzlich nur Arbeiten verrichten**, die mit dem **erlernten Beruf** zu tun haben.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Ausnahmen** sind gelegentlich zulässig, dürfen aber nicht überwiegen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Ausbildungszweck:** Steht im Vordergrund, nicht die Arbeitsleistung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Gesetzliche Grundlage:** OR Art. 345a.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfremde Arbeiten im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Verbot von Ausnutzung:** Lernende dürfen nicht als günstige Arbeitskräfte missbraucht werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Recht auf Ausbildung:** Lernende haben Anspruch auf berufsspezifische Ausbildung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Beschwerdemöglichkeit:** Bei Missbrauch können Lernende sich an die zuständige Behörde wenden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Anspruch auf mindestens **fünf Wochen** bezahlte Ferien pro Jahr bis zum **20. Altersjahr**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Ferienzeitpunkt:** Wird vom Berufsbildner bestimmt, Wünsche des Lernenden werden berücksichtigt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Schulfreie Zeit:** Ferien sollen möglichst in dieser Zeit genommen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Keine Abgeltung:** Ferien dürfen nicht durch Geldleistungen ersetzt werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlage:** OR Art. 329a und OR Art. 345a.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Erholungseffekt:** Ferien dienen der Erholung und sind wichtig für die Gesundheit.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Ferienkürzung:** Unter bestimmten Bedingungen möglich, z.B. bei längerer Krankheit.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Freizeitaktivitäten:** Lernende sollten in den Ferien frei über ihre Zeit verfügen können.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Freikurse, Stützkurse und Berufsmatura
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Weiterbildungsmöglichkeiten: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Freikurse**, **Stützkurse** und **Berufsmatura** dürfen ohne Lohnabzug besucht werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Keine Einschränkung:** Abmachungen, die den Besuch ausschliessen oder einschränken, sind **ungültig**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Förderung:** Lehrbetriebe sollen den Besuch dieser Kurse unterstützen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Gesetzliche Grundlagen:** BBG Art. 22, 25 / BBV Art. 20.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Weiterbildungsmöglichkeiten im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Berufsmaturität:** Ermöglicht den Zugang zu Fachhochschulen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Stützkurse:** Helfen bei Schwierigkeiten in bestimmten Fächern.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Freikurse:** Bieten die Möglichkeit, zusätzliche Kompetenzen zu erwerben.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Qualifikationsverfahren (QV)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Qualifikationsverfahren: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Anmeldung:** Die Berufsbildenden müssen Lernende zum QV anmelden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Freistellung:** Für die Prüfungszeit gibt es **Lohnfortzahlung** und **Freistellung**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Wiederholungen:** Das QV kann **zweimal wiederholt** werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Teilprüfungen:** Nur nicht bestandene Fächer müssen wiederholt werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Gesetzliche Grundlagen:** BBV Art. 30ff.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Qualifikationsverfahren im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Vorbereitung:** Lernende sollten sich frühzeitig auf das QV vorbereiten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Unterstützung:** Lehrbetriebe und Berufsfachschulen bieten Hilfestellungen an.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Erfolgreicher Abschluss:** Ist Voraussetzung für das Erlangen des Fähigkeitszeugnisses.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abmachungen über die Lehrzeit hinaus
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abmachungen über die Lehrzeit hinaus: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Unzulässige Einschränkungen:** Abmachungen, die die Berufswahl nach der Lehre einschränken, sind **nichtig**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Freie Berufswahl:** Lernende können nach der Lehre frei über ihre berufliche Zukunft entscheiden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Keine Bindung:** Verpflichtungen über die Lehrzeit hinaus sind rechtlich unwirksam.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Gesetzliche Grundlage:** OR Art. 344a.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Abmachungen im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Konkurrenzverbote:** Sind in der Lehre nicht zulässig.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Vertragsfreiheit:** Lernende können frei entscheiden, ob sie im Lehrbetrieb bleiben möchten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Berufliche Entwicklung:** Lernende sollen ohne Einschränkungen ihre Karriere planen können.
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+**Bei Fragen oder Unsicherheiten stehen Ihnen Ihre Berufsbildner und Lehrpersonen gerne zur Verfügung. Ihre Rechte sind ein wichtiger Bestandteil Ihrer Ausbildung und tragen zu einem erfolgreichen Lehrabschluss bei. Nutzen Sie die angebotenen Möglichkeiten und informieren Sie sich bei Bedarf ausführlich!**
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
