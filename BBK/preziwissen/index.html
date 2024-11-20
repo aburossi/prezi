@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 1: Einführung-->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Wissen & Können vermitteln</h2>
+<h3 style="text-align: left; width: 100%;">Das Wichtigste in Kürze</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;"> 
+    <p style="font-size: 1.1em; color: #05a6a1">Methodische Hinweise und die <strong>Planung der Ausbildungsschritte</strong> sind <strong>entscheidend</strong> für eine erfolgreiche Ausbildung. Die Auswahl der richtigen Instruktionsmethode ermöglicht eine effektive Wissensvermittlung. Eine sorgfältige Planung der Ausbildungsschritte stellt sicher, dass die Lernenden die notwendigen Kompetenzen erwerben.</p>
+    <ul>
+      <li><strong>Methodische Hinweise:</strong> Auswahl der richtigen Instruktionsmethode für effektive Wissensvermittlung.</li>
+      <li><strong>Planung der Ausbildungsschritte:</strong>  Sicherstellung des Kompetenzerwerbs der Lernenden.</li>
+      <li><strong>Begleitung und Unterstützung:</strong>  Essenzielle Rolle des Berufsbildners.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 2: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; font-size: 1.5em; text-align: left;">
+    <ul>
+      <li>Instruktionsmethoden</li>
+      <li>Ausbildungsplanung</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 3: Instruktionsmethoden -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Instruktionsmethoden</h2>
+<h3 style="text-align: left; width: 100%;">Theorie</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Demonstrieren:</strong> Zeigen und Erklären der Tätigkeit, anschliessendes Nachmachen durch die Lernenden.</li>
+      <li><strong>Instruieren:</strong> Erklärung der Schritte und Anweisungen, selbstständige Ausführung durch Lernende.</li>
+      <li><strong>Begleiten:</strong> Unterstützung bei der Ausführung, Hinweise, Fehlerkorrektur und Feedback.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 4: Instruktionsmethoden im Detail -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Instruktionsmethoden im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 239</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Demonstrieren:</strong> Praktische, visuell darstellbare Tätigkeiten. Klare Vorführung, Möglichkeit zum Nachmachen.</li>
+      <li><strong>Instruieren:</strong>  Theoretisches Wissen, Anleitungen. Klare Kommunikation der Informationen.</li>
+      <li><strong>Begleiten:</strong> Förderung der Selbstständigkeit. Individuelle Unterstützung und Feedback, komplexe Aufgaben.</li>
+      <li><strong>Kombination von Methoden:</strong> Optimierung des Lernprozesses.</li>
+      <li><strong>Situationsgerechte Anwendung:</strong> Abhängig von Situation, Lernenden und Inhalten.</li>
+      <li><strong>Kontinuierliche Anpassung:</strong> Überprüfung und Anpassung der Methode.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 5: Instruktionsmethoden - Quote -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Instruktionsmethoden</h2>
+<h3 style="text-align: left; width: 100%;">Handbuch S. 239</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"Bei der Auswahl der richtigen Methode sind u.a. die Komplexität, inhaltliche und fachliche Voraussetzungen, Lerntyp und die jeweilige Situation zu berücksichtigen."</p>
+  </div>
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 6: Ausbildungsplanung -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ausbildungsplanung</h2>
+<h3 style="text-align: left; width: 100%;">Theorie</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Auswahl geeigneter Arbeiten und Aufträge:</strong> Lernzielen entsprechen, herausfordernde und machbare Aufgaben.</li>
+      <li><strong>Festlegen von Lernzielen:</strong> Klare und messbare Formulierung der Erwartungen.</li>
+      <li><strong>Erstellen von Arbeitsplänen:</strong> Struktur und Überblick über Ausbildungsschritte.</li>
+      <li><strong>Begleitung und Unterstützung:</strong> Feedback und Hilfestellung durch den Berufsbildner.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 7: Ausbildungsplanung im Detail -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ausbildungsplanung im Detail</h2>
+<h3 style="text-align: left; width: 100%;">S. 136-137</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Analyse der Ausbildungsordnung:</strong> Identifizierung der Lernziele und Inhalte.</li>
+      <li><strong>Bedarfsanalyse:</strong> Berücksichtigung der Vorkenntnisse und Lernziele der Lernenden.</li>
+      <li><strong>Festlegung von Zeitrahmen:</strong> Realistische Zeitplanung für die Ausbildungsschritte.</li>
+      <li><strong>Auswahl geeigneter Lernmethoden:</strong> Abstimmung auf Lerninhalte und Lerntyp.</li>
+      <li><strong>Dokumentation der Ausbildungsplanung:</strong> Überblick und Transparenz.</li>
+      <li><strong>Kontinuierliche Anpassung:</strong> Regelmässige Überprüfung und Anpassung.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 8: Ausbildungsplanung - Quote -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Ausbildungsplanung</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 70%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"Die Ausbildungsplanung ist ein strukturierter Prozess, der die systematische Planung und Organisation der Ausbildungsinhalte und -aktivitäten umfasst. Sie dient dazu, die Lernziele der Ausbildung zu erreichen und den Lernenden eine optimale Lernumgebung zu bieten."</p>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 12: Diskussion-Slide -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Diskussion</h2>
+<h3 style="text-align: left; width: 100%;">Instruktionsmethoden und Ausbildungsplanung</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); color: #05a6a1;">
+    <p>Lesen Sie die Seiten 239-241 im Handbuch. Merken Sie sich die verschiedenen <strong>Instruktionsmethoden</strong>, die <strong>Schritte der Ausbildungsplanung</strong> und die Bedeutung der <strong>Reflexion der Ausbildungspraxis</strong>.</p>
+    <p><strong>Gruppendiskussion:</strong> Besprechen Sie in Ihrer Gruppe, welche Instruktionsmethoden Sie in Ihrem Betrieb anwenden und welche Erfahrungen Sie mit der Ausbildungsplanung gemacht haben.</p>
+	  </div>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li><em>Welche Herausforderungen sehen Sie bei der Anwendung der verschiedenen Instruktionsmethoden?</em></li>
+      <li><em>Welche konkreten Schritte der Ausbildungsplanung sind in Ihrem Betrieb besonders wichtig?</em></li>
+      <li><em>Wie können Sie die Lernenden aktiv in die Ausbildungsplanung einbeziehen?</em></li>
+      <li><em>Welche Methoden der Reflexion der Ausbildungspraxis wenden Sie an?</em></li>
+      <li><em>Wie stellen Sie sicher, dass die Reflexion zu konkreten Verbesserungen führt?</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>

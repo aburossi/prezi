@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/moon.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Einführung -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Führen & Motivieren</h2>
+<h3 style="text-align: left; width: 100%;">Das Wichtigste in Kürze</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;"> 
+    <p style="font-size: 1.1em; color: #05a6a1">
+      <strong>Motivation</strong> ist die <strong>treibende Kraft</strong> hinter dem <strong>Engagement</strong> und der <strong>Leistungsbereitschaft</strong> der Lernenden und beeinflusst direkt den <strong>Lernerfolg</strong>. <strong>Motivierte Lernende</strong> sind <strong>aufmerksam</strong>, <strong>interessiert</strong> und <strong>bringen</strong> bessere <strong>Leistungen</strong>.  
+      <li>Eine <strong>positive Lernumgebung</strong>, die die <strong>Motivation</strong> fördert, ist daher <strong>essentiell</strong> für eine <strong>erfolgreiche Ausbildung</strong>. </li>
+      <li>Die <strong>Motivation</strong> der Lernenden kann durch <strong>verschiedene Faktoren</strong> beeinflusst werden, darunter <strong>klare Ziele</strong>, <strong>Eigenverantwortung</strong> und <strong>Anerkennung</strong>. </li>
+      <li><strong>Berufsbildner</strong> spielen eine <strong>entscheidende Rolle</strong> bei der <strong>Förderung</strong> und <strong>Pflege</strong> der <strong>Motivation</strong> ihrer Lernenden.  Die <strong>Motivation</strong> der Lernenden zu <strong>erhalten</strong> und zu <strong>steigern</strong>, ist eine <strong>kontinuierliche Aufgabe</strong>, die <strong>Anpassung</strong> und <strong>Flexibilität</strong> erfordert.</li>
+    </p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/keypoints.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Inhalte -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Inhalte</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <ul style="font-size: 1.5em;">
+      <li>Ziele der Motivation</li>
+      <li>Herausforderungen der Motivationspflege</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/ablauf.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 1: Wieso bin ich hier im Berufsbildnerkurs? -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: center; width: 100%;">Wieso bin ich hier im Berufsbildnerkurs?</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 80px;">
+<div style="display: flex; align-items: center; justify-content: space-around; width: 100%; height: 80vh;">
+  <div style="border-right: 2px solid yellow; height: 60vh; width: 0;"></div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 2: Extrinsische Motivation -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Extrinsische Motivation</h2>
+<h3 style="text-align: left; width: 100%;">('Ex' = von aussen)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 2; padding-right: 20px; text-align: left;">
+    <ul>
+      <li>Lob und Anerkennung</li>
+      <li>Monetäre Anreize</li>
+      <li>Beförderung</li>
+      <li>Weiterbildung</li>
+    </ul>
+    <p>📌 <strong>Extrinsische Motivation</strong> fokussiert sich auf das Ergebnis.</p>
+    <p>📌 Du wirst kurzfristig aber dafür sehr stark motiviert sein.</p>
+    <p>📌 Sie basiert ausschliesslich auf Gedanken, die um das Ergebnis einer Arbeit kreisen und kurzfristig stimulieren.</p>
+    <p>📌 Sie wird dir nicht dabei helfen, kontinuierlich an einer Sache dranzubleiben, um das Ergebnis zu erreichen.</p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Pasted image 20241120052456.png" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 3: Intrinsische Motivation -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Intrinsische Motivation</h2>
+<h3 style="text-align: left; width: 100%;">Freude an der Sache selbst</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 2; padding-right: 20px; text-align: left;">
+    <ul>
+      <li>Freude am Gestalten</li>
+      <li>Selbstverwirklichung</li>
+      <li>Verantwortung</li>
+      <li>Freude am Lernen</li>
+    </ul>
+    <p>📌 <strong>Intrinsische Motivation</strong> fokussiert sich auf den Prozess.</p>
+    <p>📌 Du wirst langfristig und kontinuierlich motiviert sein.</p>
+    <p>📌 Sie basiert auf positiven Gefühlen und Emotionen, welche du direkt mit dem Prozess verbindest.</p>
+    <p>📌 Sie bringt dich in einen Zustand von Flow, welcher dich über einen langen Zeitraum hinweg antreibt.</p>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Pasted image 20241120052333.png" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 4: Gegenüberstellung -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: center; width: 100%;">Gegenüberstellung: Extrinsische vs. Intrinsische Motivation</h2>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <h3 style="text-align: center;">Extrinsisch</h3>
+    <ul style="font-size: 1.3em;">
+      <li class="fragment" data-fragment-index="0">Fokussiert auf das Ergebnis</li>
+      <li class="fragment" data-fragment-index="2">Kurzfristig motivierend</li>
+      <li class="fragment" data-fragment-index="4">Ergebnisorientiert</li>
+      <li class="fragment" data-fragment-index="6">Abhängig von äusseren Anreizen</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <h3 style="text-align: center;">Intrinsisch</h3>
+    <ul style="font-size: 1.3em;">
+      <li class="fragment" data-fragment-index="1">Fokussiert auf den Prozess</li>
+      <li class="fragment" data-fragment-index="3">Langfristig motivierend</li>
+      <li class="fragment" data-fragment-index="5">Gefühls- und prozessorientiert</li>
+      <li class="fragment" data-fragment-index="7">Selbstbestimmt und nachhaltig</li>
+    </ul>
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Gymi-->
+<h2 style="text-align: center; width: 100%;">Motivation</h2>
+
+<div style="display: flex; justify-content: center; width: 100%;">
+  <!-- Centered Video Embed -->
+  <iframe src="https://www.nanoo.tv/link/v/qgKGnsJj" 
+          style="width: 55%; height: 600px; border: none; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);" 
+          scrolling="no" 
+          frameborder="0" 
+          allowfullscreen>
+  </iframe>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 1: Ziele der Motivation (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ziele der Motivation</h2>
+<h3 style="text-align: left; width: 100%;">Theorie (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Steigerung des Lernerfolgs</strong>: Motivierte Lernende lernen <strong>effektiver</strong> und <strong>erreichen</strong> bessere <strong>Ergebnisse</strong>.</li>
+      <li><strong>Förderung des Engagements</strong>: Motivation führt zu <strong>aktiver Teilnahme</strong> am <strong>Lernprozess</strong> und <strong>Eigeninitiative</strong>.</li>
+      <li><strong>Entwicklung von Selbstvertrauen</strong>: <strong>Erfolge</strong> durch <strong>Motivation</strong> stärken das <strong>Selbstvertrauen</strong> und die <strong>Motivation</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide 2: Ziele der Motivation (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ziele der Motivation</h2>
+<h3 style="text-align: left; width: 100%;">Theorie (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Positive Lernatmosphäre</strong>: <strong>Motivierte Lernende</strong> tragen zu einem <strong>positiven Lernklima</strong> bei.</li>
+      <li><strong>Stärkung der Selbstständigkeit</strong>: <strong>Motivation</strong> fördert die <strong>Eigenverantwortung</strong> für das <strong>Lernen</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Definition: Motivation -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Definition - Motivation</h2>
+<h3 style="text-align: left; width: 100%;"></h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 80vh;">
+  <div style="background-color: #f0f0f0; padding: 40px; border-radius: 10px; max-width: 95%; text-align: center; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    <p style="font-style: italic; font-size: 1.5em; line-height: 1.4em; color: #333;">"<strong>Motivation</strong> ist der <strong>Antrieb</strong>, der eine Person dazu bewegt, eine bestimmte <strong>Handlung</strong> auszuführen oder ein bestimmtes <strong>Ziel</strong> zu erreichen. Sie ist ein <strong>komplexer Prozess</strong>, der von <strong>verschiedenen Faktoren</strong> beeinflusst wird, darunter <strong>interne Faktoren</strong> wie <strong>Interessen</strong> und <strong>Werte</strong> sowie <strong>externe Faktoren</strong> wie <strong>Belohnungen</strong> und <strong>Anerkennung</strong>."</p>
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Ziele der Motivation im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ziele der Motivation</h2>
+<h3 style="text-align: left; width: 100%;">Im Detail S. 158-159 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Steigerung des Lernerfolgs</strong>: <strong>Motivation</strong> ist ein <strong>Schlüsselelement</strong> für den <strong>Lernerfolg</strong>. <strong>Motivierte Lernende</strong> sind <strong>eifriger</strong>, <strong>konzentrierter</strong> und <strong>lernen</strong> schneller und <strong>effektiver</strong>.</li>
+      <li><strong>Förderung des Engagements</strong>: <strong>Motivation</strong> führt zu <strong>aktiver Teilnahme</strong> am <strong>Unterricht</strong>, <strong>Eigeninitiative</strong> bei <strong>Projekten</strong> und <strong>Bereitschaft</strong>, sich <strong>über</strong> den <strong>Unterrichtsstoff hinaus</strong> zu <strong>engagieren</strong>.</li>
+      <li><strong>Entwicklung von Selbstvertrauen</strong>: <strong>Erfolge</strong>, die durch <strong>Motivation</strong> erzielt werden, stärken das <strong>Selbstvertrauen</strong> der Lernenden. Dies wiederum <strong>erhöht</strong> die <strong>Motivation</strong> und führt zu einem <strong>positiven Kreislauf</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Ziele der Motivation im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Ziele der Motivation</h2>
+<h3 style="text-align: left; width: 100%;">Im Detail S. 158-159 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Positive Lernatmosphäre</strong>: <strong>Motivierte Lernende</strong> tragen zu einem <strong>angenehmen</strong> und <strong>produktiven Lernklima</strong> bei. Sie sind <strong>offener</strong> für <strong>Neues</strong>, <strong>arbeiten</strong> gerne <strong>zusammen</strong> und <strong>motivieren</strong> sich <strong>gegenseitig</strong>.</li>
+      <li><strong>Stärkung der Selbstständigkeit</strong>: <strong>Motivation</strong> fördert die <strong>Eigenverantwortung</strong> für das <strong>Lernen</strong>. <strong>Motivierte Lernende</strong> sind <strong>bereit</strong>, <strong>selbstständig</strong> zu <strong>arbeiten</strong>, sich <strong>Informationen</strong> zu <strong>beschaffen</strong> und <strong>Lösungen</strong> zu <strong>finden</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Herausforderungen der Motivationspflege -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Herausforderungen der Motivationspflege</h2>
+<h3 style="text-align: left; width: 100%;">Theorie: Herausforderungen der Motivationspflege</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Individuelle Unterschiede</strong>: Jeder Lernende hat <strong>unterschiedliche Interessen</strong>, <strong>Bedürfnisse</strong> und <strong>Motivationsfaktoren</strong>.</li>
+      <li><strong>Abnehmende Motivation</strong>:  Die <strong>Motivation</strong> kann im <strong>Verlauf</strong> der <strong>Ausbildung</strong> <strong>nachlassen</strong>.</li>
+      <li><strong>Externe Faktoren</strong>:  <strong>Probleme</strong> im <strong>privaten Umfeld</strong> oder <strong>berufliche Schwierigkeiten</strong> können die <strong>Motivation</strong> <strong>beeinträchtigen</strong>.</li>
+      <li><strong>Mangelndes Feedback</strong>:  <strong>Fehlendes</strong> oder <strong>unklares Feedback</strong> kann zu <strong>Demotivation</strong> führen.</li>
+      <li><strong>Unrealistische Erwartungen</strong>:  <strong>Zu hohe</strong> oder <strong>zu niedrige Erwartungen</strong> können die <strong>Motivation</strong> <strong>mindern</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/theorie.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Herausforderungen der Motivationspflege im Detail (1) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Herausforderungen der Motivationspflege</h2>
+<h3 style="text-align: left; width: 100%;">Im Detail S. 158-159 (1)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Individuelle Unterschiede</strong>: Es ist <strong>wichtig</strong>, die <strong>individuellen Bedürfnisse</strong> und <strong>Interessen</strong> der Lernenden zu <strong>berücksichtigen</strong> und <strong>unterschiedliche Lernmethoden</strong> und <strong>-materialien</strong> anzubieten.</li>
+      <li><strong>Abnehmende Motivation</strong>: <strong>Regelmässige Feedbackgespräche</strong>, <strong>neue Herausforderungen</strong> und <strong>Abwechslung</strong> im <strong>Ausbildungsalltag</strong> können helfen, die <strong>Motivation</strong> <strong>aufrechtzuerhalten</strong>.</li>
+      <li><strong>Externe Faktoren</strong>: <strong>Gespräche</strong> mit den <strong>Lernenden</strong>, <strong>Unterstützung</strong> bei <strong>Schwierigkeiten</strong> und <strong>flexible Lösungen</strong> können helfen, <strong>negative Einflüsse</strong> zu <strong>minimieren</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Herausforderungen der Motivationspflege im Detail (2) -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Herausforderungen der Motivationspflege</h2>
+<h3 style="text-align: left; width: 100%;">Im Detail S. 158-159 (2)</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: center; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 4; padding-right: 20px; text-align: left;">
+    <ul>
+      <li><strong>Mangelndes Feedback</strong>: <strong>Regelmässiges</strong>, <strong>konstruktives Feedback</strong> ist <strong>essentiell</strong>, um den <strong>Lernenden</strong> zu <strong>zeigen</strong>, wo sie <strong>stehen</strong> und wie sie sich <strong>verbessern</strong> können.</li>
+      <li><strong>Unrealistische Erwartungen</strong>: <strong>Klare Ziele</strong> und <strong>realistische Erwartungen</strong> helfen den <strong>Lernenden</strong>, ihren <strong>Fortschritt</strong> zu <strong>erkennen</strong> und <strong>motiviert</strong> zu <strong>bleiben</strong>.</li>
+    </ul>
+  </div>
+  <div style="flex: 1; padding-left: 20px;">
+<img src="Links/assets/tips.webp" alt="" style="object-fit: scale-down">
+
+  </div>
+</div>
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+<!-- Slide: Diskussion -->
+<div style="width: 100%; text-align: right;">
+  <p style="font-size: 28px; margin: 0;">Berufsbildnerkurs BBW Winterthur</p>
+</div>
+
+<h2 style="text-align: left; width: 100%;">Diskussion</h2>
+<h3 style="text-align: left; width: 100%;">Motivation in der Praxis</h3>
+<hr style="border: 3px solid currentColor; width: 100%; margin-bottom: 40px;">
+<div style="display: flex; align-items: flex-start; justify-content: space-between; width: 100%; height: 80vh;">
+  <div style="flex: 1; padding-right: 20px; text-align: left;">
+    <div style="background-color: #f0f0f0; padding: 20px; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); color: #05a6a1;">
+      <p><strong>Gruppendiskussion:</strong> Überfliegen Sie die Seiten 158-159 im Handbuch. Merken Sie sich die verschiedenen <strong>Motivationsfaktoren</strong> und die <strong>Checkliste</strong> «<strong>Motivation fördern und pflegen</strong>».
+
+Besprechen Sie in Ihrer Gruppe, welche Herausforderungen Sie im Umgang mit der Motivation von Lernenden in Ihrem Berufsfeld erleben.</p>
+    </div>
+  </div>  
+  <div style="flex: 1; padding-left: 20px; text-align: left;">
+    <ul>
+      <li><em>Wie erkennen Sie, ob ein/e Lernende/r <strong>motiviert</strong> oder <strong>demotiviert</strong> ist?</em></li>
+      <li><em>Welche <strong>Strategien</strong> wenden Sie an, um die <strong>Motivation</strong> Ihrer Lernenden zu <strong>fördern</strong>?</em></li>
+      <li><em>Wie gehen Sie mit <strong>demotivierten Lernenden</strong> um?</em></li>
+      <li><em>Welche <strong>Rolle</strong> spielt Ihrer Meinung nach die <strong>eigene Motivation</strong> als <strong>Berufsbildner/in</strong>?</em></li>
+      <li><em>Wie können Sie die im Handbuch beschriebenen <strong>Motivationsfaktoren</strong> in Ihrem <strong>Berufsalltag</strong> umsetzen?</em></li>
+    </ul>
+  </div>
+</div>
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
