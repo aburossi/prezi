@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Neue Lebensphase
+#### Pflichten der Berufsbildenden
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ausbildungspflicht
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ausbildungspflicht: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Berufsbildende müssen die Lernenden fachgemäss, systematisch und verständnisvoll ausbilden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Als Berufsbildnerin oder Berufsbildner gelten die Betriebsinhaberin bzw. der Betriebsinhaber oder eine von ihnen bestimmte Person.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Stellvertreter müssen die gleichen Anforderungen erfüllen wie die Berufsbildenden und werden im Lehrvertrag genannt.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ausbildungspflicht im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Fachgemäss:** Die Ausbildung muss den fachlichen Standards des Berufs entsprechen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Systematisch:** Ein strukturierter Ausbildungsplan ist einzuhalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Verständnisvoll:** Lernende müssen auf ihre individuellen Bedürfnisse eingegangen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Stellvertreter:** Sicherstellung, dass auch Stellvertreter qualifiziert sind und ihre Rolle im Lehrvertrag dokumentiert ist.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnzahlungspflicht
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnzahlungspflicht: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Berufsbildende sind verpflichtet, den im Lehrvertrag vereinbarten Lohn zu zahlen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Pünktliche und vollständige Lohnzahlungen sind sicherzustellen.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lohnzahlungspflicht im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Vertragliche Vereinbarung:** Der genaue Lohnbetrag und die Zahlungsmodalitäten müssen im Lehrvertrag festgehalten sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Pünktlichkeit:** Löhne müssen termingerecht ausgezahlt werden, wie im Vertrag vereinbart.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Vollständigkeit:** Der gesamte vereinbarte Betrag muss ohne unberechtigte Abzüge gezahlt werden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Versicherungspflicht
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Versicherungspflicht: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Lernende müssen gegen Unfälle versichert sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Die Berufsunfallversicherung wird vom Lehrbetrieb bezahlt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Die Prämie für die Nichtberufsunfallversicherung wird im Lehrvertrag geregelt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Ab dem 1. Januar des Jahres, in dem der Lernende 18 Jahre alt wird, werden die Beiträge für AHV, IV, EO und ALV direkt vom Lohn abgezogen.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Versicherungspflicht im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Berufsunfallversicherung:** Deckt Unfälle ab, die während der Ausbildung oder auf dem direkten Arbeitsweg passieren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Nichtberufsunfallversicherung:** Schutz vor Unfällen ausserhalb der beruflichen Tätigkeit; die Kostenregelung muss vertraglich festgelegt sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Sozialversicherungen:** Ab dem 18. Lebensjahr sind Lernende automatisch in die AHV, IV, EO und ALV integriert, und die Beiträge werden direkt vom Lohn abgezogen.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Berufsbildende müssen den Lernenden die gesetzlichen Ferien gewähren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Zwei Ferienwochen müssen zusammenhängend bezogen werden, um ausreichende Erholung zu gewährleisten.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Ferien im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Gesetzlicher Anspruch:** Mindestens fünf Wochen bezahlte Ferien pro Jahr bis zum 20. Altersjahr.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Zusammenhängende Ferien:** Mindestens zwei Wochen sollen ununterbrochen genommen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Planung:** Ferienzeiten sollten im Einklang mit der schulfreien Zeit geplant werden, um die Erholung zu maximieren.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Gesundheit:** Ausreichende Erholung ist wichtig für die Gesundheit und das Wohlbefinden der Lernenden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Urlaub für ausserschulische Jugendarbeit (OR 329e)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Urlaub für ausserschulische Jugendarbeit: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Lernende haben Anspruch auf zusätzlich eine Woche unbezahlten Urlaub für ausserschulische Jugendarbeit.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Beispiele für ausserschulische Jugendarbeit: J+S-Leitertätigkeiten, Lagerbetreuung, soziale Tätigkeiten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Bei fehlender Einigung muss der Urlaub gewährt werden, wenn das Gesuch mindestens zwei Monate im Voraus eingereicht wird.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Urlaub für ausserschulische Jugendarbeit im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Unbezahlt:** Der zusätzliche Urlaub für Jugendarbeit wird nicht bezahlt.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Voraussetzungen:** Lernende müssen ihre Teilnahme mindestens zwei Monate vor Beginn anmelden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Beispiele:** Tätigkeiten, die der persönlichen und sozialen Entwicklung dienen, fallen darunter.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Vertragsbedingungen:** Ohne entsprechende Vereinbarung sind diese Urlaube obligatorisch.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfachschulunterricht und überbetriebliche Kurse (OR 345a)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfachschulunterricht und überbetriebliche Kurse: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Berufsbildende müssen Lernenden den Besuch von Pflicht-, Berufsmatur- und Stützkursen sowie Freikursen und dem Qualifikationsverfahren ohne Lohnabzug ermöglichen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Für überbetriebliche Kurse dürfen keine zusätzlichen Kosten auf die Lernenden zukommen.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Berufsfachschulunterricht und überbetriebliche Kurse im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Pflichtunterricht:** Teilnahme am Berufsfachschulunterricht ist verpflichtend und darf nicht zum Nachteil der Lernenden sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Kostenfreiheit:** Überbetriebliche Kurse müssen kostenlos angeboten werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Unterstützung:** Lehrbetriebe sollen den Besuch dieser Kurse aktiv unterstützen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Qualifikationsverfahren:** Freistellung und Lohnfortzahlung müssen für Prüfungszeiten gewährleistet sein.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lehrzeugnis (OR 346a)
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lehrzeugnis: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Am Ende der Lehrzeit müssen Berufsbildende ein Zeugnis ausstellen, das den erlernten Beruf und die Dauer der Lehre dokumentiert.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Auf Verlangen muss das Zeugnis auch die Fähigkeiten, Leistungen und das Verhalten der Lernenden bewerten.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Lehrzeugnis im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Inhalt:** Das Zeugnis sollte detaillierte Informationen über die Ausbildung und die erbrachten Leistungen enthalten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Bewertung:** Bei Bedarf müssen zusätzliche Bewertungen zu Fähigkeiten, Leistungen und Verhalten aufgenommen werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Übergabe:** Das Lehrzeugnis sollte zum Abschluss der Lehrzeit ausgehändigt werden.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Weiterbeschäftigung
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Weiterbeschäftigung: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Es besteht keine gesetzliche Pflicht zur Weiterbeschäftigung der Lernenden nach Beendigung des Lehrverhältnisses.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Lernende sollten rechtzeitig klären, ob eine Weiterbeschäftigung im Betrieb möglich ist.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Bei Weiterbeschäftigung wird die Lehrzeit auf das neue Arbeitsverhältnis angerechnet, was Auswirkungen auf Kündigungs- und Lohnfortzahlungspflichten hat.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Weiterbeschäftigung im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Freiwilligkeit:** Die Entscheidung zur Weiterbeschäftigung liegt beim Lehrbetrieb und der lernenden Person.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Anrechnung der Lehrzeit:** Bereits absolvierte Ausbildungszeit kann bei der Anstellung berücksichtigt werden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Vertragsbedingungen:** Neue Arbeitsverträge sollten die Anrechnung der Lehrzeit und die daraus resultierenden Pflichten klar regeln.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Planung:** Frühzeitige Kommunikation zwischen Lehrbetrieb und Lernendem ist essenziell für eine mögliche Weiterbeschäftigung.
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1600px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+**Bei Fragen oder Unsicherheiten stehen Ihnen Ihre Berufsbildner und Lehrpersonen gerne zur Verfügung. Ihre Pflichten als Berufsbildende sind ein wichtiger Bestandteil der Ausbildung und tragen zu einem erfolgreichen Lehrabschluss bei. Nutzen Sie die angebotenen Möglichkeiten und informieren Sie sich bei Bedarf ausführlich!**
+</div></script></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1600,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
