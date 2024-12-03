@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/solarized.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Wichtige Informationen zu Leasing
+#### Autofahren ohne Eigentum
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingarten
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingarten: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Direktes Leasing:** Vertrag direkt mit dem Hersteller.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Indirektes Leasing:** Vertrag mit einer Leasinggesellschaft.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Direktes Leasing kann **günstigere Konditionen** bieten.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Indirektes Leasing bietet oft **mehr Flexibilität**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Die Wahl der Leasingart hängt von den **individuellen Bedürfnissen** ab.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingarten im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Direktes Leasing:**  Der Leasingnehmer schließt den Vertrag direkt mit dem Hersteller oder dessen captive Leasinggesellschaft ab. Dies kann Vorteile wie günstigere Konditionen oder spezielle Angebote mit sich bringen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Indirektes Leasing:** Der Leasingnehmer schließt den Vertrag mit einer unabhängigen Leasinggesellschaft ab. Diese kann eine größere Auswahl an Fahrzeugen und flexiblere Vertragsbedingungen anbieten.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalte Leasingvertrag
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalte Leasingvertrag: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Klarheit und Transparenz:** Alle wichtigen Punkte sollten verständlich im Vertrag festgehalten sein.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Identifikation der Vertragsparteien:**  Name und Adresse von Leasinggeber und Leasingnehmer.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Beschreibung des Leasingobjekts:**  Marke, Modell, Ausstattung des Fahrzeugs.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Leasingdauer und Kilometerleistung:**  Festlegung der Vertragslaufzeit und der maximalen Kilometerleistung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Leasingrate und Zahlungsbedingungen:**  Höhe der monatlichen Raten und Zahlungsmodalitäten.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Inhalte Leasingvertrag im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Beschreibung des Leasingobjekts:**  Der Leasingvertrag muss eine genaue Beschreibung des Leasingobjekts enthalten, einschliesslich aller relevanten Details wie Marke, Modell, Ausstattung, etc.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Leasingdauer:**  Die Leasingdauer ist die im Vertrag festgelegte Zeitspanne, für die das Leasingobjekt dem Leasingnehmer zur Verfügung gestellt wird.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Leasingrate:**  Die Leasingrate ist die monatliche Zahlung, die der Leasingnehmer an den Leasinggeber zu leisten hat.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Zusätzliche Kosten:**  Im Leasingvertrag sollten alle zusätzlichen Kosten, die neben der Leasingrate anfallen, transparent aufgeführt sein.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingkosten
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingkosten: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Leasingrate:**  Die monatliche Zahlung für die Nutzung des Fahrzeugs.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Anzahlung:**  Einmalige Zahlung zu Beginn des Leasingvertrags.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Restwert:**  Der Wert des Fahrzeugs am Ende der Leasingdauer.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Zusatzkosten:**  Kosten für Versicherung, Wartung, Reparaturen, etc.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Gesamtkosten:**  Summe aller Kosten über die gesamte Leasingdauer.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Leasingkosten im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Leasingrate:** Die Leasingrate wird anhand des Kaufpreises, der Leasingdauer, des Restwerts und des Zinssatzes berechnet.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Anzahlung:** Die Höhe der Anzahlung kann vom Leasingnehmer frei gewählt werden und beeinflusst die Höhe der Leasingrate.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Restwert:** Der Restwert ist der geschätzte Wert des Fahrzeugs am Ende der Leasingdauer.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Zusatzkosten:** Zu den Zusatzkosten gehören unter anderem die Kosten für Versicherung, Wartung, Reparaturen, Reifen und Treibstoff.
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Vorzeitige Auflösung
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Vorzeitige Auflösung: Das Wichtigste in Kürze
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Gründe:**  Jobverlust, finanzielle Schwierigkeiten, Veränderung der Lebensumstände.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Konsequenzen:**  Neuberechnung der Leasingraten, mögliche Nachzahlungen.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Verhandlung mit dem Leasinggeber:**  Versuch einer einvernehmlichen Lösung.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Alternativen:**  Übernahme des Leasingvertrags durch Dritte.
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" --> **Rechtliche Beratung:**  Im Zweifelsfall anwaltliche Unterstützung suchen.
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 1900px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### Vorzeitige Auflösung im Detail
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Gründe für eine vorzeitige Auflösung:**  Es gibt verschiedene Gründe, warum ein Leasingnehmer den Vertrag vorzeitig auflösen möchte.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Konsequenzen einer vorzeitigen Auflösung:**  Die vorzeitige Auflösung eines Leasingvertrags hat in der Regel finanzielle Konsequenzen für den Leasingnehmer.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" --> **Verhandlung mit dem Leasinggeber:**  In vielen Fällen ist es möglich, mit dem Leasinggeber eine einvernehmliche Lösung zu finden.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" --> **Alternativen zur vorzeitigen Auflösung:**  Anstelle einer vorzeitigen Auflösung kann der Leasingnehmer versuchen, den Leasingvertrag an Dritte zu übertragen.
+</div></script></section></section><section  data-markdown><script type="text/template"></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+		  RevealMenu,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":1900,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
