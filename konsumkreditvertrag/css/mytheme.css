@@ -1,0 +1,133 @@
+/* Advanced Slides Theme for Obsidian */
+
+/* CSS Variables for Easy Customization */
+:root {
+    --primary-color: #1e90ff;
+    --secondary-color: #ff6347;
+    --background-color: #1e1e1e;
+    --text-color: #ffffff;
+    --header-font: 'Montserrat', sans-serif;
+    --body-font: 'Helvetica Neue', Arial, sans-serif;
+    --footer-text: "Lehrbuch Allgemeinbildung"; /* Footer Text */
+    --footer-font-size: 0.9em;
+    --footer-color: #7f7f7f;
+    --footer-padding: 20px 30px;
+}
+
+/* General Slide Background */
+.slide {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    position: relative; /* Ensure footer is positioned relative to slide */
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Header Styles */
+.slide h1, .slide h2, .slide h3, .slide h4, .slide h5, .slide h6 {
+    font-family: var(--header-font);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+/* Paragraph Text */
+.slide p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #dcdcdc;
+}
+
+/* Links */
+.slide a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.slide a:hover {
+    text-decoration: underline;
+}
+
+/* Code Blocks */
+.slide pre, .slide code {
+    background-color: #2d2d2d;
+    color: #c5c5c5;
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Lists */
+.slide ul, .slide ol {
+    margin-left: 1.5em;
+    color: #e0e0e0;
+}
+
+.slide li {
+    margin-bottom: 0.5em;
+}
+
+/* Images */
+.slide img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Blockquotes */
+.slide blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1em;
+    color: #b0b0b0;
+    font-style: italic;
+    margin: 1em 0;
+}
+
+/* Tables */
+.slide table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.slide th, .slide td {
+    border: 1px solid #444444;
+    padding: 0.5em;
+    text-align: left;
+}
+
+.slide th {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.slide tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+/* Footer */
+.slide::after {
+    content: var(--footer-text);
+    position: absolute;
+    bottom: var(--footer-padding);
+    right: var(--footer-padding);
+    font-size: var(--footer-font-size);
+    color: var(--footer-color);
+    font-family: var(--body-font);
+}
+
+/* Transition Effects */
+/* Fade Transition */
+.slide-transition-fade {
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Slide Transition */
+.slide-transition-slide {
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Zoom Transition */
+.slide-transition-zoom {
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
