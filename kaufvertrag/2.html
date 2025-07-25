@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einführung in den Kaufvertrag</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            font-family: 'Merriweather', serif;
+            color: #1a365d;
+        }
+        h2 {
+            font-family: 'Merriweather', serif;
+            color: #2d3748;
+        }
+        .swiss-cross {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: #ff0000;
+            font-size: 32px;
+        }
+        .footer {
+            background-color: #e2e8f0;
+            padding: 10px 0;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        .definition-box {
+            border-left: 4px solid #3182ce;
+            background-color: #ebf8ff;
+        }
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e2e8f0;
+            color: #2d3748;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide p-16 relative">
+        <!-- Schweizer Kreuz -->
+        <div class="swiss-cross">
+            <i class="fas fa-plus"></i>
+        </div>
+        
+        <!-- Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold">Einführung: Was ist ein Kaufvertrag?</h1>
+            <div class="w-20 h-1 bg-blue-700 mt-2"></div>
+        </div>
+        
+        <!-- Hauptinhalt -->
+        <div class="flex-grow flex flex-col">
+            <!-- Definition -->
+            <div class="definition-box p-6 mb-8">
+                <h2 class="text-2xl font-semibold mb-3">Definition nach OR Art. 184</h2>
+                <p class="text-xl">Durch den Kaufvertrag verpflichtet sich der Verkäufer, dem Käufer den Kaufgegenstand zu übergeben und ihm das Eigentum daran zu verschaffen, und der Käufer verpflichtet sich, den Preis der Kaufsache zu bezahlen.</p>
+            </div>
+            
+            <!-- Bedeutung und Häufigkeit -->
+            <div class="grid grid-cols-2 gap-8 mb-8">
+                <div class="flex items-start">
+                    <div class="icon-box mr-4 flex-shrink-0">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Rechtliche Bedeutung</h3>
+                        <ul class="list-disc pl-5 text-lg">
+                            <li>Einer der häufigsten Vertragstypen im Schweizer Rechtsverkehr</li>
+                            <li>Grundlage für Eigentumserwerb und -übertragung</li>
+                            <li>Regelt die gegenseitigen Rechte und Pflichten</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="flex items-start">
+                    <div class="icon-box mr-4 flex-shrink-0">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2">Allgemeine Bedeutung</h3>
+                        <ul class="list-disc pl-5 text-lg">
+                            <li>Kommt auch ohne Unterschrift zustande (z.B. Bäcker)</li>
+                            <li>Rechtsgrundlage für Eigentumsumschichtung</li>
+                            <li>Unterliegt grundsätzlich der Vertragsfreiheit</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Häufigkeit -->
+            <div class="bg-gray-100 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-3 flex items-center">
+                    <i class="fas fa-chart-line mr-2 text-blue-700"></i>
+                    Häufigkeit im Rechtsverkehr
+                </h3>
+                <div class="grid grid-cols-3 gap-4 text-center">
+                    <div class="bg-white p-4 rounded shadow">
+                        <i class="fas fa-shopping-cart text-3xl text-blue-700 mb-2"></i>
+                        <p class="font-semibold">Alltägliche Einkäufe</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <i class="fas fa-home text-3xl text-blue-700 mb-2"></i>
+                        <p class="font-semibold">Immobilienkäufe</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <i class="fas fa-car text-3xl text-blue-700 mb-2"></i>
+                        <p class="font-semibold">Fahrzeugverkäufe</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer mt-8 flex justify-between items-center px-8">
+            <div>Rechtsinformationen</div>
+            <div>Kaufvertrag in der Schweiz | Seite 2</div>
+        </div>
+    </div>
+</body>
+</html>
