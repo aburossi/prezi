@@ -3,46 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Slide Viewer</title>
+    <title>Slide Viewer</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            overflow: hidden;
-        }
-        #viewer-container {
+            background: #f5f5f5;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            height: 100vh;
         }
-        #slide-wrapper {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            overflow: auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        #slide-frame {
-            border: none;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            transform-origin: top center;
-        }
-        #controls {
-            padding: 10px;
+        #header {
             background: #333;
             color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        #viewer-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+        #slide-frame {
+            width: 95%;
+            height: 90%;
+            border: none;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        #controls {
+            background: #333;
+            color: white;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-shrink: 0;
         }
         button {
             background: #555;
@@ -51,220 +51,127 @@
             padding: 8px 15px;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 1em;
         }
         button:hover {
             background: #666;
         }
+        button:disabled {
+            background: #333;
+            color: #777;
+            cursor: not-allowed;
+        }
         #slide-info {
-            font-size: 14px;
+            font-size: 1em;
         }
-        #folder-selector {
-            margin-left: 20px;
-            padding: 5px;
+        #progress-container {
+            flex: 1;
+            height: 5px;
+            background: #444;
+            margin: 0 20px;
+            border-radius: 5px;
+            overflow: hidden;
         }
-        .nav-group {
-            display: flex;
-            gap: 10px;
+        #progress-bar {
+            height: 100%;
+            background: #f00;
+            width: 0%;
+            transition: width 0.3s;
         }
     </style>
 </head>
 <body>
+    <div id="header">
+        <div id="slide-info">Loading presentation...</div>
+    </div>
+    
     <div id="viewer-container">
-        <div id="slide-wrapper">
-            <iframe id="slide-frame" src="about:blank"></iframe>
+        <iframe id="slide-frame" src="about:blank"></iframe>
+    </div>
+    
+    <div id="controls">
+        <button id="prev-btn" disabled>← Previous</button>
+        <div id="progress-container">
+            <div id="progress-bar"></div>
         </div>
-        <div id="controls">
-            <div class="nav-group">
-                <button id="prev-btn">← Previous</button>
-                <button id="next-btn">Next →</button>
-            </div>
-            <div id="slide-info">Slide 1 of 1</div>
-            <div class="nav-group">
-                <select id="folder-selector">
-                    <option value="">Select folder</option>
-                </select>
-                <button id="fit-width-btn">Fit Width</button>
-                <button id="original-size-btn">Original Size</button>
-            </div>
-        </div>
+        <button id="next-btn" disabled>Next →</button>
     </div>
 
     <script>
-        // Configuration
-        const MAX_SLIDES_PER_FOLDER = 100;
-        const DEFAULT_FOLDER = "default";
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const folder = urlParams.get('folder') || 'slides'; // Default folder name
         
         // DOM elements
         const slideFrame = document.getElementById('slide-frame');
-        const slideWrapper = document.getElementById('slide-wrapper');
+        const slideInfo = document.getElementById('slide-info');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
-        const slideInfo = document.getElementById('slide-info');
-        const folderSelector = document.getElementById('folder-selector');
-        const fitWidthBtn = document.getElementById('fit-width-btn');
-        const originalSizeBtn = document.getElementById('original-size-btn');
+        const progressBar = document.getElementById('progress-bar');
         
         // State
-        let currentFolder = DEFAULT_FOLDER;
         let currentSlide = 1;
-        let maxSlideInFolder = 1;
-        let fitToWidth = true;
-        let slideAspectRatio = 16/9; // Default aspect ratio
+        let totalSlides = 0;
+        let isLoading = true;
         
         // Initialize
         function init() {
-            // Parse URL parameters
-            const urlParams = new URLSearchParams(window.location.search);
-            const folderParam = urlParams.get('folder');
-            const slideParam = urlParams.get('slide');
-            const fitParam = urlParams.get('fit');
-            
             // Set up event listeners
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
-            folderSelector.addEventListener('change', changeFolder);
-            fitWidthBtn.addEventListener('click', () => setFitMode(true));
-            originalSizeBtn.addEventListener('click', () => setFitMode(false));
-            window.addEventListener('resize', adjustSlideSize);
+            document.addEventListener('keydown', handleKeyDown);
             
-            // Set up keyboard navigation
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowLeft') prevSlide();
-                if (e.key === 'ArrowRight') nextSlide();
-            });
-            
-            // Load available folders
-            loadAvailableFolders();
-            
-            // Set initial state from URL
-            if (folderParam) {
-                currentFolder = folderParam;
-                folderSelector.value = folderParam;
-            }
-            if (slideParam) {
-                currentSlide = parseInt(slideParam);
-            }
-            if (fitParam) {
-                fitToWidth = fitParam !== 'false';
-            }
-            
-            loadFolder(currentFolder);
-        }
-        
-        // Load available folders
-        function loadAvailableFolders() {
-            // In a real implementation, fetch this from server
-            const mockFolders = ['parliament', 'government', 'elections'];
-            
-            mockFolders.forEach(folder => {
-                const option = document.createElement('option');
-                option.value = folder;
-                option.textContent = folder;
-                folderSelector.appendChild(option);
+            // Detect number of slides in folder
+            detectTotalSlides().then(count => {
+                totalSlides = count;
+                if (totalSlides > 0) {
+                    isLoading = false;
+                    updateControls();
+                    loadCurrentSlide();
+                } else {
+                    slideInfo.textContent = `No slides found in ${folder} folder`;
+                }
+            }).catch(error => {
+                slideInfo.textContent = `Error loading slides from ${folder} folder`;
+                console.error(error);
             });
         }
         
-        // Change folder
-        function changeFolder() {
-            const newFolder = folderSelector.value;
-            if (newFolder && newFolder !== currentFolder) {
-                currentFolder = newFolder;
-                currentSlide = 1;
-                updateUrl();
-                loadFolder(newFolder);
-            }
+        // Detect total number of slides by checking sequentially
+        function detectTotalSlides() {
+            return new Promise((resolve) => {
+                let count = 0;
+                let maxChecks = 100; // Maximum number of slides to check
+                let checksDone = 0;
+                
+                function checkSlideExists(slideNumber) {
+                    fetch(`${folder}/${slideNumber}.html`)
+                        .then(response => {
+                            if (response.ok) {
+                                count = slideNumber;
+                                checkSlideExists(slideNumber + 1);
+                            } else {
+                                resolve(count);
+                            }
+                        })
+                        .catch(() => resolve(count))
+                        .finally(() => {
+                            checksDone++;
+                            if (checksDone >= maxChecks) resolve(count);
+                        });
+                }
+                
+                checkSlideExists(1);
+            });
         }
         
-        // Set fit mode
-        function setFitMode(fit) {
-            fitToWidth = fit;
-            updateUrl();
-            adjustSlideSize();
-        }
-        
-        // Load a folder
-        function loadFolder(folder) {
-            // Reset to first slide
-            currentSlide = 1;
-            maxSlideInFolder = MAX_SLIDES_PER_FOLDER;
-            
-            // Load the first slide
-            loadCurrentSlide();
-        }
-        
-        // Load the current slide
+        // Load current slide
         function loadCurrentSlide() {
-            const slideUrl = `${currentFolder}/${currentSlide}.html`;
+            if (isLoading) return;
             
-            fetch(slideUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error('Slide not found');
-                    return response.text();
-                })
-                .then(html => {
-                    // Create a temporary div to parse the HTML
-                    const tempDiv = document.createElement('div');
-                    tempDiv.innerHTML = html;
-                    
-                    // Find the slide element (assuming it has class 'slide')
-                    const slideElement = tempDiv.querySelector('.slide');
-                    if (slideElement) {
-                        // Get original dimensions
-                        const originalWidth = parseInt(slideElement.style.width) || 1280;
-                        const originalHeight = parseInt(slideElement.style.height) || 720;
-                        slideAspectRatio = originalWidth / originalHeight;
-                    }
-                    
-                    // Load in iframe
-                    slideFrame.src = slideUrl;
-                    updateSlideInfo();
-                    
-                    // Wait for iframe to load, then adjust size
-                    slideFrame.onload = function() {
-                        adjustSlideSize();
-                    };
-                })
-                .catch(error => {
-                    if (currentSlide > 1) {
-                        currentSlide--;
-                        loadCurrentSlide();
-                    } else {
-                        slideFrame.srcdoc = `<html><body><h1>No slides found in ${currentFolder} folder</h1></body></html>`;
-                        updateSlideInfo();
-                    }
-                });
-        }
-        
-        // Adjust slide size based on current fit mode
-        function adjustSlideSize() {
-            if (!fitToWidth) {
-                // Original size
-                slideFrame.style.width = '';
-                slideFrame.style.height = '';
-                slideFrame.style.transform = '';
-                return;
-            }
-            
-            // Fit to width
-            const wrapperWidth = slideWrapper.clientWidth - 40; // Account for padding
-            const wrapperHeight = slideWrapper.clientHeight - 40;
-            
-            // Calculate dimensions maintaining aspect ratio
-            let slideWidth = wrapperWidth;
-            let slideHeight = slideWidth / slideAspectRatio;
-            
-            // If too tall, scale down to fit height
-            if (slideHeight > wrapperHeight) {
-                slideHeight = wrapperHeight;
-                slideWidth = slideHeight * slideAspectRatio;
-            }
-            
-            // Apply dimensions
-            slideFrame.style.width = `${slideWidth}px`;
-            slideFrame.style.height = `${slideHeight}px`;
-            
-            // Center the slide
-            slideFrame.style.transform = '';
+            slideFrame.src = `${folder}/${currentSlide}.html`;
+            updateInfo();
+            updateUrl();
         }
         
         // Navigation functions
@@ -272,54 +179,53 @@
             if (currentSlide > 1) {
                 currentSlide--;
                 loadCurrentSlide();
-                updateUrl();
             }
         }
         
         function nextSlide() {
-            if (currentSlide < maxSlideInFolder) {
+            if (currentSlide < totalSlides) {
                 currentSlide++;
                 loadCurrentSlide();
-                updateUrl();
             }
         }
         
-        // Update the URL
-        function updateUrl() {
-            const newUrl = `${window.location.pathname}?folder=${currentFolder}&slide=${currentSlide}&fit=${fitToWidth}`;
-            window.history.pushState({}, '', newUrl);
+        // Handle keyboard navigation
+        function handleKeyDown(e) {
+            if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowRight') nextSlide();
         }
         
-        // Update slide information
-        function updateSlideInfo() {
-            slideInfo.textContent = `Slide ${currentSlide} of ${maxSlideInFolder} (${currentFolder})`;
+        // Update controls state
+        function updateControls() {
+            prevBtn.disabled = currentSlide <= 1 || isLoading;
+            nextBtn.disabled = currentSlide >= totalSlides || isLoading;
+        }
+        
+        // Update slide info
+        function updateInfo() {
+            slideInfo.textContent = `Slide ${currentSlide} of ${totalSlides}`;
+            const progress = (currentSlide / totalSlides) * 100;
+            progressBar.style.width = `${progress}%`;
+            updateControls();
+        }
+        
+        // Update URL without reload
+        function updateUrl() {
+            const newUrl = `${window.location.pathname}?folder=${folder}&slide=${currentSlide}`;
+            window.history.pushState({}, '', newUrl);
         }
         
         // Handle back/forward navigation
         window.addEventListener('popstate', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const folderParam = urlParams.get('folder');
-            const slideParam = urlParams.get('slide');
-            const fitParam = urlParams.get('fit');
-            
-            if (folderParam && folderParam !== currentFolder) {
-                currentFolder = folderParam;
-                folderSelector.value = folderParam;
-                loadFolder(currentFolder);
-            }
-            
-            if (slideParam && parseInt(slideParam) !== currentSlide) {
-                currentSlide = parseInt(slideParam);
+            const params = new URLSearchParams(window.location.search);
+            const newSlide = parseInt(params.get('slide')) || 1;
+            if (newSlide !== currentSlide) {
+                currentSlide = newSlide;
                 loadCurrentSlide();
-            }
-            
-            if (fitParam) {
-                fitToWidth = fitParam !== 'false';
-                adjustSlideSize();
             }
         });
         
-        // Initialize the viewer
+        // Initialize
         init();
     </script>
 </body>
