@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leasing vs. Kaufvertrag in der Schweiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .feature-box:hover {
+            transform: translateY(-3px);
+            transition: transform 0.2s ease;
+        }
+        .swiss-cross {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(
+                to bottom,
+                #ff0000 0%, #ff0000 40%,
+                white 40%, white 60%,
+                #ff0000 60%, #ff0000 100%
+            );
+            border-radius: 50%;
+        }
+        .swiss-cross:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 40%;
+            width: 20%;
+            height: 100%;
+            background: white;
+        }
+        .swiss-cross:after {
+            content: "";
+            position: absolute;
+            top: 40%;
+            left: 0;
+            width: 100%;
+            height: 20%;
+            background: white;
+        }
+    </style>
+</head>
+<body class="font-['Open_Sans'] bg-gray-100 flex justify-center items-center min-h-screen p-8">
+    <div class="slide bg-white rounded-2xl shadow-xl w-full max-w-6xl p-10 flex flex-col relative">
+        <!-- Swiss Cross Symbol -->
+        <div class="swiss-cross"></div>
+        
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold font-['Merriweather'] text-gray-800 mb-2">Leasing vs. Kaufvertrag in der Schweiz</h1>
+            <p class="text-gray-600">Rechtliche und finanzielle Unterschiede im Überblick</p>
+        </header>
+        
+        <!-- Main Content -->
+        <main class="flex-grow">
+            <!-- Essentials Card -->
+            <div class="essentials-card border-l-4 border-blue-600 bg-blue-50 rounded-r-lg p-6 mb-10">
+                <h2 class="text-xl font-bold font-['Merriweather'] text-gray-800 mb-4">Wesentliche Unterschiede</h2>
+                <div class="grid grid-cols-3 gap-4">
+                    <!-- Feature Box 1 -->
+                    <div class="feature-box bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-file-contract text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Vertragstyp</h3>
+                        <p class="text-gray-600 text-sm">Leasing: Mietvertrag<br>Kauf: Eigentumsübertragung</p>
+                    </div>
+                    
+                    <!-- Feature Box 2 -->
+                    <div class="feature-box bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-hand-holding-usd text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Finanzierung</h3>
+                        <p class="text-gray-600 text-sm">Leasing: regelmässige Raten<br>Kauf: einmalige oder finanzierte Zahlung</p>
+                    </div>
+                    
+                    <!-- Feature Box 3 -->
+                    <div class="feature-box bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-3">
+                            <i class="fas fa-balance-scale text-blue-600 text-xl"></i>
+                        </div>
+                        <h3 class="font-bold text-gray-800 mb-2">Risikoverteilung</h3>
+                        <p class="text-gray-600 text-sm">Leasing: Leasinggeber trägt Risiko<br>Kauf: Käufer trägt Risiko</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Details Section -->
+            <div class="grid grid-cols-2 gap-6">
+                <!-- Leasing Column -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-alt text-red-500 mr-2"></i>
+                        <h3 class="font-bold text-gray-800">Leasing-Vertrag</h3>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Kein Eigentumserwerb</li>
+                        <li>Flexible Laufzeiten (meist 24-48 Monate)</li>
+                        <li>Option auf Kauf am Ende (Leasing mit Kaufoption)</li>
+                        <li>Wartung und Versicherung oft inklusive</li>
+                        <li>Kündigung meist mit Gebühren verbunden</li>
+                        <li>Steuerlich als Betriebsausgabe absetzbar</li>
+                    </ul>
+                </div>
+                
+                <!-- Kaufvertrag Column -->
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-file-signature text-green-500 mr-2"></i>
+                        <h3 class="font-bold text-gray-800">Kaufvertrag</h3>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                        <li>Sofortiger Eigentumsübergang</li>
+                        <li>Einmalige Zahlung oder Finanzierung möglich</li>
+                        <li>Volle Entscheidungsfreiheit über das Objekt</li>
+                        <li>Volles wirtschaftliches Risiko beim Käufer</li>
+                        <li>Wertverlust trägt der Käufer</li>
+                        <li>Steuerlich als Investition behandelbar</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="mt-8 pt-5 border-t border-gray-200 text-sm text-gray-500">
+            <p>Rechtliche Beratung wird empfohlen - Schweizer Obligationenrecht (OR) Art. 184ff (Kaufvertrag), Art. 253ff (Mietvertrag)</p>
+        </footer>
+    </div>
+</body>
+</html>
