@@ -29,19 +29,23 @@
             overflow: hidden;
             position: relative;
         }
+        
+        /* === CSS MODIFIED HERE === */
         #slide-frame {
-            /* Set maximum dimensions based on your original values */
-            max-width: 95%;
-            max-height: 90%;
-        
-            /* Force the aspect ratio of the slide content (960px by 700px) */
-            aspect-ratio: 960 / 700;
-        
-            /* Keep your original border and shadow */
+            /* Set the iframe to the native resolution of the slides */
+            width: 960px; 
+            height: 700px;
+
+            /* The transform property will be set by JavaScript */
+            transform-origin: center center;
+            transition: transform 0.2s ease; /* Smooth scaling on resize */
+
+            /* Original styles */
             border: none;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
         }
+
         #controls {
             background: #333;
             color: white;
@@ -109,6 +113,7 @@
         const folder = urlParams.get('folder') || 'slides'; // Default folder name
         
         // DOM elements
+        const viewerContainer = document.getElementById('viewer-container'); // Get the container
         const slideFrame = document.getElementById('slide-frame');
         const slideInfo = document.getElementById('slide-info');
         const prevBtn = document.getElementById('prev-btn');
@@ -120,13 +125,37 @@
         let totalSlides = 0;
         let isLoading = true;
         
+        // === JAVASCRIPT ADDED HERE ===
+        // This function calculates and applies the correct scale to the iframe
+        function scaleSlideFrame() {
+            if (!viewerContainer || !slideFrame) return;
+
+            const contentWidth = 960;  // Native width of the slide content
+            const contentHeight = 700; // Native height of the slide content
+
+            // Calculate available space, leaving a small margin (like original 95%/90%)
+            const availableWidth = viewerContainer.clientWidth * 0.95;
+            const availableHeight = viewerContainer.clientHeight * 0.90;
+
+            // Calculate the scale ratio for both width and height
+            const scaleX = availableWidth / contentWidth;
+            const scaleY = availableHeight / contentHeight;
+
+            // Use the smaller of the two ratios to ensure the content fits completely
+            const scale = Math.min(scaleX, scaleY);
+
+            // Apply the scale transform to the iframe
+            slideFrame.style.transform = `scale(${scale})`;
+        }
+
         // Initialize
         function init() {
             // Set up event listeners
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
             document.addEventListener('keydown', handleKeyDown);
-            
+            window.addEventListener('resize', scaleSlideFrame); // Re-scale on window resize
+
             // Detect number of slides in folder
             detectTotalSlides().then(count => {
                 totalSlides = count;
@@ -134,6 +163,8 @@
                     isLoading = false;
                     updateControls();
                     loadCurrentSlide();
+                    // Perform initial scaling after a brief moment to ensure layout is stable
+                    setTimeout(scaleSlideFrame, 100); 
                 } else {
                     slideInfo.textContent = `No slides found in ${folder} folder`;
                 }
@@ -148,10 +179,13 @@
             return new Promise((resolve) => {
                 let count = 0;
                 let maxChecks = 100; // Maximum number of slides to check
-                let checksDone = 0;
                 
                 function checkSlideExists(slideNumber) {
-                    fetch(`${folder}/${slideNumber}.html`)
+                    if (slideNumber > maxChecks) {
+                        resolve(count);
+                        return;
+                    }
+                    fetch(`${folder}/${slideNumber}.html`, { method: 'HEAD' }) // Use HEAD for efficiency
                         .then(response => {
                             if (response.ok) {
                                 count = slideNumber;
@@ -160,11 +194,7 @@
                                 resolve(count);
                             }
                         })
-                        .catch(() => resolve(count))
-                        .finally(() => {
-                            checksDone++;
-                            if (checksDone >= maxChecks) resolve(count);
-                        });
+                        .catch(() => resolve(count));
                 }
                 
                 checkSlideExists(1);
@@ -210,24 +240,34 @@
         // Update slide info
         function updateInfo() {
             slideInfo.textContent = `Slide ${currentSlide} of ${totalSlides}`;
-            const progress = (currentSlide / totalSlides) * 100;
+            const progress = totalSlides > 0 ? ((currentSlide -1) / (totalSlides -1)) * 100 : 0;
             progressBar.style.width = `${progress}%`;
             updateControls();
+            scaleSlideFrame(); // Ensure scaling is correct on slide change
         }
         
         // Update URL without reload
         function updateUrl() {
             const newUrl = `${window.location.pathname}?folder=${folder}&slide=${currentSlide}`;
-            window.history.pushState({}, '', newUrl);
+            window.history.pushState({ slide: currentSlide }, '', newUrl);
         }
         
         // Handle back/forward navigation
-        window.addEventListener('popstate', () => {
-            const params = new URLSearchParams(window.location.search);
-            const newSlide = parseInt(params.get('slide')) || 1;
-            if (newSlide !== currentSlide) {
-                currentSlide = newSlide;
-                loadCurrentSlide();
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.slide) {
+                const newSlide = parseInt(event.state.slide);
+                 if (newSlide !== currentSlide) {
+                    currentSlide = newSlide;
+                    loadCurrentSlide();
+                }
+            } else {
+                // Fallback for initial state
+                const params = new URLSearchParams(window.location.search);
+                const newSlide = parseInt(params.get('slide')) || 1;
+                 if (newSlide !== currentSlide) {
+                    currentSlide = newSlide;
+                    loadCurrentSlide();
+                }
             }
         });
         
