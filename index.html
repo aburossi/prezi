@@ -5,292 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide Viewer</title>
     <style>
-        body {
+        /* Remove all margins and make the page full-screen */
+        body, html {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        #header {
-            background: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
-            font-size: 1.2em;
-        }
-        #viewer-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        /* === CSS MODIFIED HERE === */
-        #slide-frame {
-            /* Use max-width/height and aspect-ratio to fill space correctly */
-            max-width: 95%;
-            max-height: 95%; /* Increased slightly for a better fit */
-            aspect-ratio: 960 / 700; /* The native aspect ratio of your slides */
-        
-            /* Original styles */
-            border: none;
-            background: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.2);
-        }
-
-        #controls {
-            background: #333;
-            color: white;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        button {
-            background: #555;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1em;
-        }
-        button:hover {
-            background: #666;
-        }
-        button:disabled {
-            background: #333;
-            color: #777;
-            cursor: not-allowed;
-        }
-        #slide-info {
-            font-size: 1em;
-        }
-        #progress-container {
-            flex: 1;
-            height: 5px;
-            background: #444;
-            margin: 0 20px;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        #progress-bar {
             height: 100%;
-            background: #f00;
-            width: 0%;
-            transition: width 0.3s;
+            width: 100%;
+            overflow: hidden; /* Prevent any scrollbars on the main page */
+        }
+        /* Make the iframe fill the entire page seamlessly */
+        #slide-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <div id="header">
-        <div id="slide-info">Loading presentation...</div>
-    </div>
-    
-    <div id="viewer-container">
-        <iframe id="slide-frame" src="about:blank"></iframe>
-    </div>
-    
-    <div id="controls">
-        <button id="prev-btn" disabled>← Previous</button>
-        <div id="progress-container">
-            <div id="progress-bar"></div>
-        </div>
-        <button id="next-btn" disabled>Next →</button>
-    </div>
+    <iframe id="slide-frame" src="about:blank"></iframe>
 
     <script>
+        // DOM element
+        const slideFrame = document.getElementById('slide-frame');
+
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const folder = urlParams.get('folder') || 'slides'; // Default folder name
-        
-        // DOM elements
-        const viewerContainer = document.getElementById('viewer-container'); // Get the container
-        const slideFrame = document.getElementById('slide-frame');
-        const slideInfo = document.getElementById('slide-info');
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
-        const progressBar = document.getElementById('progress-bar');
+        const folder = urlParams.get('folder') || 'slides';
+        let currentSlide = parseInt(urlParams.get('slide')) || 1;
 
-        // NEW: Add a 'load' event listener to the iframe
-        slideFrame.addEventListener('load', () => {
-            try {
-                // Access the document inside the iframe
-                const iframeDoc = slideFrame.contentDocument || slideFrame.contentWindow.document;
-                if (!iframeDoc) return;
-
-                // Create a style element
-                const style = iframeDoc.createElement('style');
-                
-                // This CSS rule tells the content inside the iframe to hide any overflow, removing the scrollbars
-                style.textContent = 'body { overflow: hidden !important; }';
-                
-                // Append the style to the iframe's head
-                iframeDoc.head.appendChild(style);
-            } catch (e) {
-                console.warn("Could not modify iframe CSS, likely due to cross-origin policies.");
-            }
-        });
-        
-        
-        // State
-        let currentSlide = 1;
-        let totalSlides = 0;
-        let isLoading = true;
-        
-        // === JAVASCRIPT ADDED HERE ===
-        // This function calculates and applies the correct scale to the iframe
-        function scaleSlideFrame() {
-            if (!viewerContainer || !slideFrame) return;
-
-            const contentWidth = 960;  // Native width of the slide content
-            const contentHeight = 700; // Native height of the slide content
-
-            // Calculate available space, leaving a small margin (like original 95%/90%)
-            const availableWidth = viewerContainer.clientWidth * 0.95;
-            const availableHeight = viewerContainer.clientHeight * 0.90;
-
-            // Calculate the scale ratio for both width and height
-            const scaleX = availableWidth / contentWidth;
-            const scaleY = availableHeight / contentHeight;
-
-            // Use the smaller of the two ratios to ensure the content fits completely
-            const scale = Math.min(scaleX, scaleY);
-
-            // Apply the scale transform to the iframe
-            slideFrame.style.transform = `scale(${scale})`;
-        }
-
-        // Initialize
-        function init() {
-            // Set up event listeners
-            prevBtn.addEventListener('click', prevSlide);
-            nextBtn.addEventListener('click', nextSlide);
-            document.addEventListener('keydown', handleKeyDown);
-            window.addEventListener('resize', scaleSlideFrame); // Re-scale on window resize
-
-            // Detect number of slides in folder
-            detectTotalSlides().then(count => {
-                totalSlides = count;
-                if (totalSlides > 0) {
-                    isLoading = false;
-                    updateControls();
-                    loadCurrentSlide();
-                    // Perform initial scaling after a brief moment to ensure layout is stable
-                    setTimeout(scaleSlideFrame, 100); 
-                } else {
-                    slideInfo.textContent = `No slides found in ${folder} folder`;
-                }
-            }).catch(error => {
-                slideInfo.textContent = `Error loading slides from ${folder} folder`;
-                console.error(error);
-            });
-        }
-        
-        // Detect total number of slides by checking sequentially
-        function detectTotalSlides() {
-            return new Promise((resolve) => {
-                let count = 0;
-                let maxChecks = 100; // Maximum number of slides to check
-                
-                function checkSlideExists(slideNumber) {
-                    if (slideNumber > maxChecks) {
-                        resolve(count);
-                        return;
-                    }
-                    fetch(`${folder}/${slideNumber}.html`, { method: 'HEAD' }) // Use HEAD for efficiency
-                        .then(response => {
-                            if (response.ok) {
-                                count = slideNumber;
-                                checkSlideExists(slideNumber + 1);
-                            } else {
-                                resolve(count);
-                            }
-                        })
-                        .catch(() => resolve(count));
-                }
-                
-                checkSlideExists(1);
-            });
-        }
-        
-        // Load current slide
+        /**
+         * Loads the current slide into the iframe.
+         * The #slide number in the URL is used by the slide content itself.
+         */
         function loadCurrentSlide() {
-            if (isLoading) return;
+            // The Reveal.js slides use the URL hash to go to a specific slide
+            slideFrame.src = `${folder}/#/${currentSlide}`;
+        }
+        
+        /**
+         * Updates the browser's URL when the slide changes inside the iframe.
+         */
+        function updateUrl(slideNumber) {
+            // Only update if the slide number has actually changed
+            if (slideNumber === currentSlide) return;
             
-            slideFrame.src = `${folder}/${currentSlide}.html`;
-            updateInfo();
-            updateUrl();
-        }
-        
-        // Navigation functions
-        function prevSlide() {
-            if (currentSlide > 1) {
-                currentSlide--;
-                loadCurrentSlide();
-            }
-        }
-        
-        function nextSlide() {
-            if (currentSlide < totalSlides) {
-                currentSlide++;
-                loadCurrentSlide();
-            }
-        }
-        
-        // Handle keyboard navigation
-        function handleKeyDown(e) {
-            if (e.key === 'ArrowLeft') prevSlide();
-            if (e.key === 'ArrowRight') nextSlide();
-        }
-        
-        // Update controls state
-        function updateControls() {
-            prevBtn.disabled = currentSlide <= 1 || isLoading;
-            nextBtn.disabled = currentSlide >= totalSlides || isLoading;
-        }
-        
-        // Update slide info
-        function updateInfo() {
-            slideInfo.textContent = `Slide ${currentSlide} of ${totalSlides}`;
-            const progress = totalSlides > 0 ? ((currentSlide -1) / (totalSlides -1)) * 100 : 0;
-            progressBar.style.width = `${progress}%`;
-            updateControls();
-            scaleSlideFrame(); // Ensure scaling is correct on slide change
-        }
-        
-        // Update URL without reload
-        function updateUrl() {
+            currentSlide = slideNumber;
             const newUrl = `${window.location.pathname}?folder=${folder}&slide=${currentSlide}`;
-            window.history.pushState({ slide: currentSlide }, '', newUrl);
+            // Use replaceState to avoid cluttering browser history
+            window.history.replaceState({ slide: currentSlide }, '', newUrl);
         }
-        
-        // Handle back/forward navigation
-        window.addEventListener('popstate', (event) => {
-            if (event.state && event.state.slide) {
-                const newSlide = parseInt(event.state.slide);
-                 if (newSlide !== currentSlide) {
-                    currentSlide = newSlide;
-                    loadCurrentSlide();
-                }
-            } else {
-                // Fallback for initial state
-                const params = new URLSearchParams(window.location.search);
-                const newSlide = parseInt(params.get('slide')) || 1;
-                 if (newSlide !== currentSlide) {
-                    currentSlide = newSlide;
-                    loadCurrentSlide();
-                }
+
+        /**
+         * Listens for messages from the iframe.
+         * The Reveal.js slides can be configured to "post" their state,
+         * which allows us to sync the URL.
+         */
+        window.addEventListener('message', event => {
+            // Security: Check if the message is from our iframe's content window
+            if (event.source !== slideFrame.contentWindow) {
+                return;
+            }
+
+            // The Reveal.js 'slidechanged' event data structure
+            if (event.data && typeof event.data.indexh !== 'undefined') {
+                const newSlideNumber = event.data.indexh + 1; // Reveal.js is 0-indexed, we use 1-indexed
+                updateUrl(newSlideNumber);
             }
         });
-        
-        // Initialize
-        init();
+
+        /**
+         * Handles the browser's back/forward buttons.
+         */
+        window.addEventListener('popstate', () => {
+            const params = new URLSearchParams(window.location.search);
+            const slideFromUrl = parseInt(params.get('slide')) || 1;
+            if (slideFromUrl !== currentSlide) {
+                currentSlide = slideFromUrl;
+                loadCurrentSlide();
+            }
+        });
+
+        // Initial load
+        loadCurrentSlide();
     </script>
 </body>
 </html>
