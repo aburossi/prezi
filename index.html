@@ -116,6 +116,27 @@
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const progressBar = document.getElementById('progress-bar');
+
+        // NEW: Add a 'load' event listener to the iframe
+        slideFrame.addEventListener('load', () => {
+            try {
+                // Access the document inside the iframe
+                const iframeDoc = slideFrame.contentDocument || slideFrame.contentWindow.document;
+                if (!iframeDoc) return;
+
+                // Create a style element
+                const style = iframeDoc.createElement('style');
+                
+                // This CSS rule tells the content inside the iframe to hide any overflow, removing the scrollbars
+                style.textContent = 'body { overflow: hidden !important; }';
+                
+                // Append the style to the iframe's head
+                iframeDoc.head.appendChild(style);
+            } catch (e) {
+                console.warn("Could not modify iframe CSS, likely due to cross-origin policies.");
+            }
+        });
+        
         
         // State
         let currentSlide = 1;
