@@ -32,14 +32,11 @@
         
         /* === CSS MODIFIED HERE === */
         #slide-frame {
-            /* Set the iframe to the native resolution of the slides */
-            width: 960px; 
-            height: 700px;
-
-            /* The transform property will be set by JavaScript */
-            transform-origin: center center;
-            transition: transform 0.2s ease; /* Smooth scaling on resize */
-
+            /* Use max-width/height and aspect-ratio to fill space correctly */
+            max-width: 95%;
+            max-height: 95%; /* Increased slightly for a better fit */
+            aspect-ratio: 960 / 700; /* The native aspect ratio of your slides */
+        
             /* Original styles */
             border: none;
             background: white;
