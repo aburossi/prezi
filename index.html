@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Slide Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+        #viewer-container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        #slide-frame {
+            flex-grow: 1;
+            border: none;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        #controls {
+            padding: 10px;
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #666;
+        }
+        #slide-info {
+            font-size: 14px;
+        }
+        #folder-selector {
+            margin-left: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="viewer-container">
+        <iframe id="slide-frame" src="about:blank"></iframe>
+        <div id="controls">
+            <div>
+                <button id="prev-btn">← Previous</button>
+                <button id="next-btn">Next →</button>
+            </div>
+            <div id="slide-info">Slide 1 of 1</div>
+            <div>
+                <select id="folder-selector">
+                    <option value="">Select folder</option>
+                    <!-- Folders will be populated dynamically -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const MAX_SLIDES_PER_FOLDER = 100;
+        const DEFAULT_FOLDER = "default"; // Fallback folder if none specified
+        
+        // DOM elements
+        const slideFrame = document.getElementById('slide-frame');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const slideInfo = document.getElementById('slide-info');
+        const folderSelector = document.getElementById('folder-selector');
+        
+        // State
+        let currentFolder = DEFAULT_FOLDER;
+        let currentSlide = 1;
+        let maxSlideInFolder = 1;
+        
+        // Initialize
+        function init() {
+            // Parse URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const folderParam = urlParams.get('folder');
+            
+            // Set up event listeners
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+            folderSelector.addEventListener('change', changeFolder);
+            
+            // Set up keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') prevSlide();
+                if (e.key === 'ArrowRight') nextSlide();
+            });
+            
+            // Load available folders (this would be replaced with actual folder detection)
+            loadAvailableFolders();
+            
+            // Load initial folder
+            if (folderParam) {
+                currentFolder = folderParam;
+                folderSelector.value = folderParam;
+            }
+            loadFolder(currentFolder);
+        }
+        
+        // Load available folders (mock - in reality you'd need server-side code)
+        function loadAvailableFolders() {
+            // In a real implementation, you would fetch this from your server
+            const mockFolders = ['parliament', 'government', 'elections'];
+            
+            mockFolders.forEach(folder => {
+                const option = document.createElement('option');
+                option.value = folder;
+                option.textContent = folder;
+                folderSelector.appendChild(option);
+            });
+        }
+        
+        // Change folder
+        function changeFolder() {
+            const newFolder = folderSelector.value;
+            if (newFolder && newFolder !== currentFolder) {
+                currentFolder = newFolder;
+                currentSlide = 1;
+                updateUrl();
+                loadFolder(newFolder);
+            }
+        }
+        
+        // Load a folder and determine how many slides it contains
+        function loadFolder(folder) {
+            // Reset to first slide
+            currentSlide = 1;
+            
+            // In a real implementation, you would check how many slides exist in this folder
+            // For this demo, we'll assume all folders have MAX_SLIDES_PER_FOLDER slides
+            maxSlideInFolder = MAX_SLIDES_PER_FOLDER;
+            
+            // Load the first slide
+            loadCurrentSlide();
+        }
+        
+        // Load the current slide
+        function loadCurrentSlide() {
+            const slideUrl = `${currentFolder}/${currentSlide}.html`;
+            
+            // Try to load the slide
+            fetch(slideUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Slide not found');
+                    }
+                    return response.text();
+                })
+                .then(() => {
+                    // If fetch succeeds, load in iframe
+                    slideFrame.src = slideUrl;
+                    updateSlideInfo();
+                })
+                .catch(error => {
+                    // If slide doesn't exist, try previous slides
+                    if (currentSlide > 1) {
+                        currentSlide--;
+                        loadCurrentSlide();
+                    } else {
+                        slideFrame.srcdoc = `<html><body><h1>No slides found in ${currentFolder} folder</h1></body></html>`;
+                        updateSlideInfo();
+                    }
+                });
+        }
+        
+        // Navigation functions
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                loadCurrentSlide();
+                updateUrl();
+            }
+        }
+        
+        function nextSlide() {
+            if (currentSlide < maxSlideInFolder) {
+                currentSlide++;
+                loadCurrentSlide();
+                updateUrl();
+            }
+        }
+        
+        // Update the URL without reloading
+        function updateUrl() {
+            const newUrl = `${window.location.pathname}?folder=${currentFolder}&slide=${currentSlide}`;
+            window.history.pushState({}, '', newUrl);
+        }
+        
+        // Update slide information display
+        function updateSlideInfo() {
+            slideInfo.textContent = `Slide ${currentSlide} of ${maxSlideInFolder} (${currentFolder})`;
+        }
+        
+        // Handle back/forward navigation
+        window.addEventListener('popstate', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const folderParam = urlParams.get('folder');
+            const slideParam = urlParams.get('slide');
+            
+            if (folderParam && folderParam !== currentFolder) {
+                currentFolder = folderParam;
+                folderSelector.value = folderParam;
+                loadFolder(currentFolder);
+            }
+            
+            if (slideParam && parseInt(slideParam) !== currentSlide) {
+                currentSlide = parseInt(slideParam);
+                loadCurrentSlide();
+            }
+        });
+        
+        // Initialize the viewer
+        init();
+    </script>
+</body>
+</html>
