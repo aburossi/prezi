@@ -5,88 +5,191 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slide Viewer</title>
     <style>
-        /* Remove all margins and make the page full-screen */
+        /* Make the page full-screen */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden; /* Prevent any scrollbars on the main page */
+            overflow: hidden;
+            font-family: Arial, sans-serif;
         }
-        /* Make the iframe fill the entire page seamlessly */
+
+        /* Make the iframe fill the entire page */
         #slide-frame {
             width: 100%;
             height: 100%;
             border: none;
+            background: #f5f5f5; /* Background color while slide loads */
+        }
+
+        /* Container for the new overlay controls */
+        #overlay-controls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Allow clicks to pass through to the iframe */
+            opacity: 0; /* Hidden by default, shown by JS */
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Style for the navigation arrows */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 28px;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.4);
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            cursor: pointer;
+            pointer-events: all; /* Make the arrows clickable */
+            user-select: none;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+        .nav-arrow:hover {
+            color: black;
+            background-color: white;
+        }
+        .nav-arrow.left { left: 20px; }
+        .nav-arrow.right { right: 20px; }
+
+        /* Style for the slide number indicator */
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 16px;
+            font-size: 14px;
+            pointer-events: auto;
+            user-select: none;
         }
     </style>
 </head>
 <body>
     <iframe id="slide-frame" src="about:blank"></iframe>
 
+    <div id="overlay-controls">
+        <div class="nav-arrow left" id="overlay-prev-btn">‹</div>
+        <div class="slide-number" id="overlay-slide-info"></div>
+        <div class="nav-arrow right" id="overlay-next-btn">›</div>
+    </div>
+
     <script>
-        // DOM element
+        // DOM elements
         const slideFrame = document.getElementById('slide-frame');
+        const overlayControls = document.getElementById('overlay-controls');
+        const prevBtn = document.getElementById('overlay-prev-btn');
+        const nextBtn = document.getElementById('overlay-next-btn');
+        const slideInfo = document.getElementById('overlay-slide-info');
 
-        // Get URL parameters
+        // State from URL
         const urlParams = new URLSearchParams(window.location.search);
-        const folder = urlParams.get('folder') || 'slides';
+        const folder = urlParams.get('folder');
         let currentSlide = parseInt(urlParams.get('slide')) || 1;
+        let totalSlides = 0;
 
-        /**
-         * Loads the current slide into the iframe.
-         * The #slide number in the URL is used by the slide content itself.
-         */
-        function loadCurrentSlide() {
-            // The Reveal.js slides use the URL hash to go to a specific slide
-            slideFrame.src = `${folder}/#/${currentSlide}`;
-        }
-        
-        /**
-         * Updates the browser's URL when the slide changes inside the iframe.
-         */
-        function updateUrl(slideNumber) {
-            // Only update if the slide number has actually changed
-            if (slideNumber === currentSlide) return;
-            
-            currentSlide = slideNumber;
-            const newUrl = `${window.location.pathname}?folder=${folder}&slide=${currentSlide}`;
-            // Use replaceState to avoid cluttering browser history
-            window.history.replaceState({ slide: currentSlide }, '', newUrl);
-        }
+        // --- Core Functions ---
 
-        /**
-         * Listens for messages from the iframe.
-         * The Reveal.js slides can be configured to "post" their state,
-         * which allows us to sync the URL.
-         */
-        window.addEventListener('message', event => {
-            // Security: Check if the message is from our iframe's content window
-            if (event.source !== slideFrame.contentWindow) {
+        async function initialize() {
+            if (!folder) {
+                document.body.innerHTML = '<h1>Error: No folder specified in URL.</h1><p>Please add `?folder=your_folder_name` to the URL.</p>';
                 return;
             }
-
-            // The Reveal.js 'slidechanged' event data structure
-            if (event.data && typeof event.data.indexh !== 'undefined') {
-                const newSlideNumber = event.data.indexh + 1; // Reveal.js is 0-indexed, we use 1-indexed
-                updateUrl(newSlideNumber);
+            totalSlides = await detectTotalSlides();
+            if (totalSlides > 0) {
+                loadCurrentSlide();
+                updateUI();
+                overlayControls.style.opacity = '1';
+            } else {
+                document.body.innerHTML = `<h1>Error: No slides found in folder "${folder}".</h1>`;
             }
+        }
+
+        function loadCurrentSlide() {
+            slideFrame.src = `${folder}/${currentSlide}.html`;
+        }
+
+        function changeSlide(direction) {
+            const newSlide = currentSlide + direction;
+            if (newSlide >= 1 && newSlide <= totalSlides) {
+                currentSlide = newSlide;
+                loadCurrentSlide();
+                updateUrl();
+                updateUI();
+            }
+        }
+
+        // --- UI and State Management ---
+
+        function updateUI() {
+            slideInfo.textContent = `${currentSlide} / ${totalSlides}`;
+            prevBtn.style.display = currentSlide === 1 ? 'none' : 'block';
+            nextBtn.style.display = currentSlide === totalSlides ? 'none' : 'block';
+        }
+
+        function updateUrl() {
+            const newUrl = `${window.location.pathname}?folder=${folder}&slide=${currentSlide}`;
+            window.history.pushState({ slide: currentSlide }, '', newUrl);
+        }
+
+        function detectTotalSlides() {
+            return new Promise(resolve => {
+                let count = 0;
+                const maxChecks = 100;
+                const check = (num) => {
+                    if (num > maxChecks) {
+                        resolve(count);
+                        return;
+                    }
+                    fetch(`${folder}/${num}.html`, { method: 'HEAD' })
+                        .then(res => {
+                            if (res.ok) {
+                                count = num;
+                                check(num + 1);
+                            } else {
+                                resolve(count);
+                            }
+                        }).catch(() => resolve(count));
+                };
+                check(1);
+            });
+        }
+        
+        // --- Event Listeners ---
+
+        prevBtn.addEventListener('click', () => changeSlide(-1));
+        nextBtn.addEventListener('click', () => changeSlide(1));
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
         });
 
-        /**
-         * Handles the browser's back/forward buttons.
-         */
         window.addEventListener('popstate', () => {
             const params = new URLSearchParams(window.location.search);
             const slideFromUrl = parseInt(params.get('slide')) || 1;
             if (slideFromUrl !== currentSlide) {
                 currentSlide = slideFromUrl;
                 loadCurrentSlide();
+                updateUI();
             }
         });
 
-        // Initial load
-        loadCurrentSlide();
+        // Start the presentation
+        initialize();
     </script>
 </body>
 </html>
