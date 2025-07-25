@@ -10,17 +10,30 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background: #f0f0f0;
+            overflow: hidden;
         }
         #viewer-container {
             display: flex;
             flex-direction: column;
             height: 100vh;
         }
-        #slide-frame {
+        #slide-wrapper {
             flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow: auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #slide-frame {
             border: none;
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            transform-origin: top center;
         }
         #controls {
             padding: 10px;
@@ -29,6 +42,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-shrink: 0;
         }
         button {
             background: #555;
@@ -48,22 +62,29 @@
             margin-left: 20px;
             padding: 5px;
         }
+        .nav-group {
+            display: flex;
+            gap: 10px;
+        }
     </style>
 </head>
 <body>
     <div id="viewer-container">
-        <iframe id="slide-frame" src="about:blank"></iframe>
+        <div id="slide-wrapper">
+            <iframe id="slide-frame" src="about:blank"></iframe>
+        </div>
         <div id="controls">
-            <div>
+            <div class="nav-group">
                 <button id="prev-btn">← Previous</button>
                 <button id="next-btn">Next →</button>
             </div>
             <div id="slide-info">Slide 1 of 1</div>
-            <div>
+            <div class="nav-group">
                 <select id="folder-selector">
                     <option value="">Select folder</option>
-                    <!-- Folders will be populated dynamically -->
                 </select>
+                <button id="fit-width-btn">Fit Width</button>
+                <button id="original-size-btn">Original Size</button>
             </div>
         </div>
     </div>
@@ -71,30 +92,40 @@
     <script>
         // Configuration
         const MAX_SLIDES_PER_FOLDER = 100;
-        const DEFAULT_FOLDER = "default"; // Fallback folder if none specified
+        const DEFAULT_FOLDER = "default";
         
         // DOM elements
         const slideFrame = document.getElementById('slide-frame');
+        const slideWrapper = document.getElementById('slide-wrapper');
         const prevBtn = document.getElementById('prev-btn');
         const nextBtn = document.getElementById('next-btn');
         const slideInfo = document.getElementById('slide-info');
         const folderSelector = document.getElementById('folder-selector');
+        const fitWidthBtn = document.getElementById('fit-width-btn');
+        const originalSizeBtn = document.getElementById('original-size-btn');
         
         // State
         let currentFolder = DEFAULT_FOLDER;
         let currentSlide = 1;
         let maxSlideInFolder = 1;
+        let fitToWidth = true;
+        let slideAspectRatio = 16/9; // Default aspect ratio
         
         // Initialize
         function init() {
             // Parse URL parameters
             const urlParams = new URLSearchParams(window.location.search);
             const folderParam = urlParams.get('folder');
+            const slideParam = urlParams.get('slide');
+            const fitParam = urlParams.get('fit');
             
             // Set up event listeners
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
             folderSelector.addEventListener('change', changeFolder);
+            fitWidthBtn.addEventListener('click', () => setFitMode(true));
+            originalSizeBtn.addEventListener('click', () => setFitMode(false));
+            window.addEventListener('resize', adjustSlideSize);
             
             // Set up keyboard navigation
             document.addEventListener('keydown', (e) => {
@@ -102,20 +133,27 @@
                 if (e.key === 'ArrowRight') nextSlide();
             });
             
-            // Load available folders (this would be replaced with actual folder detection)
+            // Load available folders
             loadAvailableFolders();
             
-            // Load initial folder
+            // Set initial state from URL
             if (folderParam) {
                 currentFolder = folderParam;
                 folderSelector.value = folderParam;
             }
+            if (slideParam) {
+                currentSlide = parseInt(slideParam);
+            }
+            if (fitParam) {
+                fitToWidth = fitParam !== 'false';
+            }
+            
             loadFolder(currentFolder);
         }
         
-        // Load available folders (mock - in reality you'd need server-side code)
+        // Load available folders
         function loadAvailableFolders() {
-            // In a real implementation, you would fetch this from your server
+            // In a real implementation, fetch this from server
             const mockFolders = ['parliament', 'government', 'elections'];
             
             mockFolders.forEach(folder => {
@@ -137,13 +175,17 @@
             }
         }
         
-        // Load a folder and determine how many slides it contains
+        // Set fit mode
+        function setFitMode(fit) {
+            fitToWidth = fit;
+            updateUrl();
+            adjustSlideSize();
+        }
+        
+        // Load a folder
         function loadFolder(folder) {
             // Reset to first slide
             currentSlide = 1;
-            
-            // In a real implementation, you would check how many slides exist in this folder
-            // For this demo, we'll assume all folders have MAX_SLIDES_PER_FOLDER slides
             maxSlideInFolder = MAX_SLIDES_PER_FOLDER;
             
             // Load the first slide
@@ -154,21 +196,35 @@
         function loadCurrentSlide() {
             const slideUrl = `${currentFolder}/${currentSlide}.html`;
             
-            // Try to load the slide
             fetch(slideUrl)
                 .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Slide not found');
-                    }
+                    if (!response.ok) throw new Error('Slide not found');
                     return response.text();
                 })
-                .then(() => {
-                    // If fetch succeeds, load in iframe
+                .then(html => {
+                    // Create a temporary div to parse the HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = html;
+                    
+                    // Find the slide element (assuming it has class 'slide')
+                    const slideElement = tempDiv.querySelector('.slide');
+                    if (slideElement) {
+                        // Get original dimensions
+                        const originalWidth = parseInt(slideElement.style.width) || 1280;
+                        const originalHeight = parseInt(slideElement.style.height) || 720;
+                        slideAspectRatio = originalWidth / originalHeight;
+                    }
+                    
+                    // Load in iframe
                     slideFrame.src = slideUrl;
                     updateSlideInfo();
+                    
+                    // Wait for iframe to load, then adjust size
+                    slideFrame.onload = function() {
+                        adjustSlideSize();
+                    };
                 })
                 .catch(error => {
-                    // If slide doesn't exist, try previous slides
                     if (currentSlide > 1) {
                         currentSlide--;
                         loadCurrentSlide();
@@ -177,6 +233,38 @@
                         updateSlideInfo();
                     }
                 });
+        }
+        
+        // Adjust slide size based on current fit mode
+        function adjustSlideSize() {
+            if (!fitToWidth) {
+                // Original size
+                slideFrame.style.width = '';
+                slideFrame.style.height = '';
+                slideFrame.style.transform = '';
+                return;
+            }
+            
+            // Fit to width
+            const wrapperWidth = slideWrapper.clientWidth - 40; // Account for padding
+            const wrapperHeight = slideWrapper.clientHeight - 40;
+            
+            // Calculate dimensions maintaining aspect ratio
+            let slideWidth = wrapperWidth;
+            let slideHeight = slideWidth / slideAspectRatio;
+            
+            // If too tall, scale down to fit height
+            if (slideHeight > wrapperHeight) {
+                slideHeight = wrapperHeight;
+                slideWidth = slideHeight * slideAspectRatio;
+            }
+            
+            // Apply dimensions
+            slideFrame.style.width = `${slideWidth}px`;
+            slideFrame.style.height = `${slideHeight}px`;
+            
+            // Center the slide
+            slideFrame.style.transform = '';
         }
         
         // Navigation functions
@@ -196,13 +284,13 @@
             }
         }
         
-        // Update the URL without reloading
+        // Update the URL
         function updateUrl() {
-            const newUrl = `${window.location.pathname}?folder=${currentFolder}&slide=${currentSlide}`;
+            const newUrl = `${window.location.pathname}?folder=${currentFolder}&slide=${currentSlide}&fit=${fitToWidth}`;
             window.history.pushState({}, '', newUrl);
         }
         
-        // Update slide information display
+        // Update slide information
         function updateSlideInfo() {
             slideInfo.textContent = `Slide ${currentSlide} of ${maxSlideInFolder} (${currentFolder})`;
         }
@@ -212,6 +300,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const folderParam = urlParams.get('folder');
             const slideParam = urlParams.get('slide');
+            const fitParam = urlParams.get('fit');
             
             if (folderParam && folderParam !== currentFolder) {
                 currentFolder = folderParam;
@@ -222,6 +311,11 @@
             if (slideParam && parseInt(slideParam) !== currentSlide) {
                 currentSlide = parseInt(slideParam);
                 loadCurrentSlide();
+            }
+            
+            if (fitParam) {
+                fitToWidth = fitParam !== 'false';
+                adjustSlideSize();
             }
         });
         
