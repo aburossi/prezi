@@ -30,8 +30,14 @@
             position: relative;
         }
         #slide-frame {
-            width: 95%;
-            height: 90%;
+            /* Set maximum dimensions based on your original values */
+            max-width: 95%;
+            max-height: 90%;
+        
+            /* Force the aspect ratio of the slide content (960px by 700px) */
+            aspect-ratio: 960 / 700;
+        
+            /* Keep your original border and shadow */
             border: none;
             background: white;
             box-shadow: 0 0 10px rgba(0,0,0,0.2);
