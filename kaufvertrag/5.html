@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Bundesversammlung der Schweiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+        }
+        .swiss-cross {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.1;
+            font-size: 120px;
+            color: red;
+        }
+        .chamber-card {
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .chamber-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center">
+    <div class="slide bg-white flex flex-col p-12 shadow-xl">
+        <!-- Swiss Cross Decoration -->
+        <div class="swiss-cross">
+            <i class="fas fa-plus"></i>
+        </div>
+        
+        <!-- Header -->
+        <header class="mb-8">
+            <h1 class="text-4xl font-bold text-center text-gray-800">Die Bundesversammlung der Schweiz</h1>
+            <p class="text-xl text-center text-gray-600 mt-2">Das Parlament der Schweizerischen Eidgenossenschaft</p>
+        </header>
+        
+        <!-- Main Content Grid -->
+        <main class="grid grid-cols-1 md:grid-cols-2 gap-8 flex-grow">
+            <!-- Nationalrat Card -->
+            <div class="chamber-card bg-white border border-gray-200 p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-users text-red-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Nationalrat</h2>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 flex-grow">
+                    <li>200 Mitglieder (Volksvertretung)</li>
+                    <li>Wird proportional zur Bevölkerung der Kantone gewählt</li>
+                    <li>Legislaturperiode: 4 Jahre</li>
+                    <li>Vertritt das Schweizer Volk</li>
+                    <li>Präsidium wechselt jährlich</li>
+                </ul>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm italic text-gray-600">Beispiel: Im Nationalrat sitzen Vertreter aller grösseren Parteien gemäss ihrem Wähleranteil.</p>
+                </div>
+            </div>
+            
+            <!-- Ständerat Card -->
+            <div class="chamber-card bg-white border border-gray-200 p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-landmark text-blue-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Ständerat</h2>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 flex-grow">
+                    <li>46 Mitglieder (Kantonsvertretung)</li>
+                    <li>Jeder Kanton wählt 2 Vertreter (6 Halbkantone je 1)</li>
+                    <li>Legislaturperiode: 4 Jahre</li>
+                    <li>Vertritt die Schweizer Kantone</li>
+                    <li>Präsidium wechselt jährlich</li>
+                </ul>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm italic text-gray-600">Beispiel: Zürich hat 2 Ständeräte, genau wie Uri, obwohl die Bevölkerungszahl stark differiert.</p>
+                </div>
+            </div>
+            
+            <!-- Gemeinsame Aufgaben Card -->
+            <div class="chamber-card bg-white border border-gray-200 p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-handshake text-green-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Gemeinsame Aufgaben</h2>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 flex-grow">
+                    <li>Beschlussfassung über Bundesgesetze</li>
+                    <li>Wahl des Bundesrates und der Bundesrichter</li>
+                    <li>Genehmigung internationaler Verträge</li>
+                    <li>Budgetbewilligung</li>
+                    <li>Oberaufsicht über die Bundesverwaltung</li>
+                </ul>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm italic text-gray-600">Beispiel: Bei Uneinigkeit zwischen den Räten kommt es zum Differenzbereinigungsverfahren.</p>
+                </div>
+            </div>
+            
+            <!-- Besonderheiten Card -->
+            <div class="chamber-card bg-white border border-gray-200 p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-star text-yellow-600 text-2xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">Besonderheiten</h2>
+                </div>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 mb-4 flex-grow">
+                    <li>Milizsystem: Viele Parlamentarier üben ihren Beruf weiter aus</li>
+                    <li>Keine Fraktionsdisziplin wie in anderen Ländern</li>
+                    <li>Vereinigte Bundesversammlung für bestimmte Aufgaben</li>
+                    <li>Keine Regierungsmehrheit/Opposition im klassischen Sinn</li>
+                    <li>Starke Kommissionsarbeit</li>
+                </ul>
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <p class="text-sm italic text-gray-600">Beispiel: Ein Nationalrat kann Lehrer sein und parallel im Parlament tätig sein.</p>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="mt-8 py-4 border-t border-gray-200">
+            <div class="flex justify-between items-center text-sm text-gray-600">
+                <div>Schweizer Politisches System</div>
+                <div>Bundesversammlung</div>
+                <div>Seite 1 von 1</div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
