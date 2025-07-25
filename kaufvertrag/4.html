@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nationalrat und Ständerat - Schweizer Parlament</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slide {
+            width: 100%;
+            max-width: 1280px;
+            min-height: 720px;
+            margin: 0 auto;
+        }
+        .swiss-cross {
+            background-color: #FF0000;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+        }
+        .definition-box {
+            border-left: 4px solid #FF0000;
+        }
+        .icon-box {
+            width: 64px;
+            height: 64px;
+        }
+        @media (max-width: 768px) {
+            .icon-box {
+                width: 48px;
+                height: 48px;
+            }
+        }
+        h1 {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+        }
+        h2 {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+        }
+        p, li {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="slide bg-white shadow-lg flex flex-col p-8">
+        <!-- Header -->
+        <header class="flex justify-between items-center mb-8 relative">
+            <h1 class="text-3xl font-bold text-red-700">Das Schweizer Parlament: Nationalrat und Ständerat</h1>
+            <div class="swiss-cross w-12 h-12">
+                <span class="text-white font-bold">CH</span>
+            </div>
+        </header>
+        
+        <!-- Separator -->
+        <div class="border-t-2 border-gray-200 mb-8"></div>
+        
+        <!-- Main Content -->
+        <main class="flex-grow flex flex-col gap-8">
+            <!-- Definition Box -->
+            <div class="definition-box bg-gray-50 p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-semibold mb-4">Die beiden Kammern des Parlaments</h2>
+                <p class="mb-4">Die Schweiz hat ein <strong>Zweikammersystem</strong> bestehend aus Nationalrat (Volksvertretung) und Ständerat (Kantonsvertretung). Zusammen bilden sie die Bundesversammlung.</p>
+                <p>Dieses System gewährleistet sowohl die <strong>demokratische Repräsentation</strong> der Bevölkerung als auch die <strong>Berücksichtigung kantonaler Interessen</strong>.</p>
+            </div>
+            
+            <!-- Significance Sections -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Nationalrat -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="icon-box bg-red-100 rounded-full flex items-center justify-center">
+                            <span class="text-red-700 text-2xl">👥</span>
+                        </div>
+                        <h2 class="text-2xl font-semibold">Nationalrat</h2>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Vertretung des Volkes (200 Mitglieder)</li>
+                        <li>Sitze nach Bevölkerungszahl der Kantone</li>
+                        <li>Wahl alle 4 Jahre durch das Volk</li>
+                        <li>Präsident wechselt jährlich</li>
+                        <li>Beschlüsse benötigen Mehrheit der Stimmen</li>
+                    </ul>
+                </div>
+                
+                <!-- Ständerat -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="icon-box bg-red-100 rounded-full flex items-center justify-center">
+                            <span class="text-red-700 text-2xl">🏛️</span>
+                        </div>
+                        <h2 class="text-2xl font-semibold">Ständerat</h2>
+                    </div>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Vertretung der Kantone (46 Mitglieder)</li>
+                        <li>Jeder Kanton hat 2 Sitze (Ausnahmen: 6 Halbkantone mit je 1 Sitz)</li>
+                        <li>Wahlverfahren variiert nach Kanton</li>
+                        <li>Präsident wechselt jährlich</li>
+                        <li>Beschlüsse benötigen Mehrheit der Stimmen</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Responsibilities Section -->
+            <div class="mt-4">
+                <h2 class="text-2xl font-semibold mb-4">Gemeinsame Aufgaben</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                        <h3 class="font-bold mb-2">Gesetzgebung</h3>
+                        <p>Verabschiedung von Bundesgesetzen und -beschlüssen</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                        <h3 class="font-bold mb-2">Budget</h3>
+                        <p>Genehmigung des Bundeshaushalts und der Staatsrechnung</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow border-l-4 border-red-500">
+                        <h3 class="font-bold mb-2">Aufsicht</h3>
+                        <p>Kontrolle der Bundesverwaltung und der Bundesratswahlen</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="mt-8 pt-4 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center">
+            <p class="text-sm text-gray-600">Schweizerische Bundesversammlung</p>
+            <p class="text-sm text-gray-600">Politiksystem Schweiz | Seite 1</p>
+        </footer>
+    </div>
+</body>
+</html>
