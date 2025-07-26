@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Bund: Das 'Grosse Ganze'</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .essentials-card {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .feature-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .feature-box .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* bg-blue-500 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .secondary-info-card {
+            background-color: #f9fafb; /* bg-gray-50 */
+            border-left: 6px solid #6b7280; /* border-gray-500 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .tertiary-info-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Der Bund: Das 'Grosse Ganze'</h1>
+
+        <div class="essentials-card w-full max-w-5xl mx-auto">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Die nationale Ebene der Schweiz</h2>
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Der Bund ist die oberste staatliche Ebene in der Schweiz. Er kümmert sich um Angelegenheiten, die das ganze Land betreffen und die nicht von den Kantonen oder Gemeinden effizient geregelt werden können.
+            </p>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-gavel"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Gesetzgebung</h3>
+                    <p class="text-gray-700 text-sm">Erstellung und Verabschiedung von Bundesgesetzen (z.B. Zivil- und Strafrecht).</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-landmark"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Aussenpolitik</h3>
+                    <p class="text-gray-700 text-sm">Vertretung der Schweiz im Ausland, Abschluss von Staatsverträgen.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Landesverteidigung</h3>
+                    <p class="text-gray-700 text-sm">Verantwortung für die Armee und die Sicherheit des Landes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 w-full max-w-5xl mx-auto mb-10">
+            <div class="secondary-info-card">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Wichtige Organe des Bundes</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li><span class="font-semibold">Bundesverfassung:</span> Das oberste Gesetz der Schweiz.</li>
+                    <li><span class="font-semibold">Bundesrat:</span> Die Regierung (7 Mitglieder).</li>
+                    <li><span class="font-semibold">Bundesversammlung:</span> Das Parlament (National- und Ständerat).</li>
+                    <li><span class="font-semibold">Bundesgericht:</span> Die höchste richterliche Instanz.</li>
+                </ul>
+            </div>
+            <div class="secondary-info-card">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Weitere Kompetenzen</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Währungspolitik (Nationalbank)</li>
+                    <li>Zollwesen</li>
+                    <li>Eisenbahn- und Luftverkehr</li>
+                    <li>Sozialversicherungen (AHV, IV)</li>
+                    <li>Grenzschutz</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 5 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

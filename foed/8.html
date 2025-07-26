@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ein Blick in die Kantone: Vielfalt erleben</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .definition-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .guarantee-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .guarantee-card .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* bg-blue-500 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .rules-section {
+            background-color: #fffbeb; /* bg-amber-50 */
+            border-left: 6px solid #f59e0b; /* border-amber-500 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .rules-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .rules-list li .fas {
+            margin-right: 10px;
+            margin-top: 4px; /* Align icon with text */
+            color: #3b82f6; /* blue-500 */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Ein Blick in die Kantone: Vielfalt erleben</h1>
+
+        <div class="definition-box w-full max-w-5xl mx-auto">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Kantonale Unterschiede im Alltag</h2>
+            <p class="text-xl text-gray-700 leading-relaxed">
+                Die kantonale Autonomie führt zu einer grossen Vielfalt in der Schweiz. Das betrifft nicht nur Gesetze, sondern auch den Alltag der Menschen.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 w-full max-w-5xl mx-auto mb-10">
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-book-open"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Schulsysteme</h3>
+                <p class="text-gray-700">Die Schulferien, die Dauer der Primarschule oder die Art der Notengebung können sich von Kanton zu Kanton unterscheiden.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-calendar-alt"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Feiertage</h3>
+                <p class="text-gray-700">Nationale Feiertage sind fix, aber viele weitere Feiertage sind kantonal geregelt (z.B. Mariä Himmelfahrt, Allerheiligen).</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-road"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Strassenverkehrsregeln</h3>
+                <p class="text-gray-700">Grundlegende Regeln sind schweizweit gleich, aber kantonale oder kommunale Bestimmungen können Details beeinflussen (z.B. Parkvorschriften).</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-video"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Video: Kantonale Eigenheiten</h3>
+                <p class="text-gray-700">Stell dir hier ein kurzes Video vor, das humorvoll oder informativ kantonale Unterschiede im Alltag zeigt (z.B. Dialekte, lokale Spezialitäten).</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 8 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

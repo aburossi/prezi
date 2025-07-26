@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Föderalismus im Alltag & Weiterführendes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .intro-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .option-card-large {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .option-card-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: #3b82f6;
+        }
+        .vs-badge {
+            background-color: #3b82f6; /* blue-500 */
+            color: white;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            font-size: 1.2em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .additional-options-grid {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .additional-option-card {
+            background-color: #f9fafb; /* bg-gray-50 */
+            border-left: 6px solid #6b7280; /* border-gray-500 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .critical-notice {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            border-left: 6px solid #ef4444; /* border-red-500 */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Föderalismus im Alltag & Weiterführendes</h1>
+
+        <div class="intro-box">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Dein Einfluss im föderalistischen System</h2>
+            <p class="text-xl text-gray-700 leading-relaxed">
+                Der Föderalismus ist nicht nur ein theoretisches Konzept, sondern prägt deinen Alltag und bietet dir vielfältige Möglichkeiten zur Mitgestaltung.
+            </p>
+        </div>
+
+        <div class="relative flex justify-center items-center w-full max-w-5xl mx-auto mt-8">
+            <div class="option-card-large w-1/2 mr-4">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3"><i class="fas fa-hand-point-right text-blue-500 mr-2"></i> Deine Beteiligung</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Stimm- und Wahlrecht auf allen Ebenen (Bund, Kanton, Gemeinde).</li>
+                    <li>Möglichkeit zur Einreichung von Initiativen und Referenden.</li>
+                    <li>Engagement in Jugendparlamenten oder lokalen Vereinen.</li>
+                    <li>Informiere dich über lokale und kantonale Abstimmungen.</li>
+                </ul>
+            </div>
+            <div class="vs-badge">ODER</div>
+            <div class="option-card-large w-1/2 ml-4">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3"><i class="fas fa-lightbulb text-blue-500 mr-2"></i> Föderalismus verstehen</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Beobachte die Nachrichten: Welche Themen werden wo entschieden?</li>
+                    <li>Vergleiche Regelungen in verschiedenen Kantonen (z.B. Schulferien).</li>
+                    <li>Diskutiere mit Freunden und Familie über politische Themen.</li>
+                    <li>Besuche eine Gemeindeversammlung oder Parlamentssitzung.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="additional-options-grid">
+            <div class="additional-option-card">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2"><i class="fas fa-link text-gray-600 mr-2"></i> Weiterführende Links</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                    <li><a href="#" class="text-blue-600 hover:underline">admin.ch (Bundesverwaltung)</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">ch.ch (Offizielles Portal der Schweiz)</a></li>
+                    <li><a href="#" class="text-blue-600 hover:underline">easyvote.ch (Infos für junge Wählende)</a></li>
+                </ul>
+            </div>
+            <div class="additional-option-card">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2"><i class="fas fa-book-reader text-gray-600 mr-2"></i> Ressourcen & Bücher</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-1 text-sm">
+                    <li>Bücher zur Schweizer Politik und Geschichte in deiner Bibliothek.</li>
+                    <li>Dokumentationen über die Schweizer Demokratie.</li>
+                    <li>Lehrmittel zum Staatskundeunterricht.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="critical-notice">
+            <p class="text-lg font-semibold text-red-700"><i class="fas fa-exclamation-triangle mr-2"></i> Dein Engagement zählt!</p>
+            <p class="text-gray-700">Der Föderalismus lebt von der aktiven Teilnahme seiner Bürgerinnen und Bürger. Nutze deine Möglichkeiten!</p>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 14 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

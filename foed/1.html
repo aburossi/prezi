@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Föderalismus in der Schweiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .swiss-cross {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 100px;
+            height: 100px;
+            background-color: #FF0000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .swiss-cross::before, .swiss-cross::after {
+            content: '';
+            position: absolute;
+            background-color: white;
+        }
+        .swiss-cross::before {
+            width: 60%;
+            height: 20%;
+        }
+        .swiss-cross::after {
+            width: 20%;
+            height: 60%;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="swiss-cross"></div>
+        <div class="content-area">
+            <h1 class="text-7xl font-bold text-gray-800 leading-tight mb-6">
+                Föderalismus in der Schweiz:
+            </h1>
+            <h2 class="text-5xl text-gray-600 font-light">
+                Warum die Schweiz so 'dezentral' ist
+            </h2>
+            <p class="mt-10 text-2xl text-gray-700 max-w-3xl">
+                Eine ansprechende Einführung, die das Thema Föderalismus in der Schweiz vorstellt und Neugier weckt.
+            </p>
+        </div>
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 1 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

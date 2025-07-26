@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wissenstest: Die Kantone</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        .question-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 80%;
+            max-width: 900px;
+            text-align: center;
+        }
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            width: 80%;
+            max-width: 900px;
+        }
+        .option-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: center;
+        }
+        .option-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            background-color: #f0f4f8;
+        }
+        .option-card .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* bg-blue-500 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 auto 15px auto;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Wissenstest: Die Kantone</h1>
+
+        <div class="question-box">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Welcher Bereich wird hauptsächlich von den Kantonen geregelt?</h2>
+        </div>
+
+        <div class="options-grid">
+            <div class="option-card">
+                <div class="icon-circle"><i class="fas fa-plane"></i></div>
+                <h3 class="text-xl font-semibold text-gray-800">Internationale Flugabkommen</h3>
+            </div>
+            <div class="option-card">
+                <div class="icon-circle"><i class="fas fa-school"></i></div>
+                <h3 class="text-xl font-semibold text-gray-800">Das Schulsystem und die Lehrpläne</h3>
+            </div>
+            <div class="option-card">
+                <div class="icon-circle"><i class="fas fa-coins"></i></div>
+                <h3 class="text-xl font-semibold text-gray-800">Die nationale Währungspolitik</h3>
+            </div>
+            <div class="option-card">
+                <div class="icon-circle"><i class="fas fa-users"></i></div>
+                <h3 class="text-xl font-semibold text-gray-800">Die Armee und Landesverteidigung</h3>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 9 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

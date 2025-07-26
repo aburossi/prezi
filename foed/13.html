@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Föderalismus-Check</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            justify-content: center;
+            align-items: center;
+        }
+        .quiz-container {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 1000px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .question-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            width: 90%;
+            text-align: left;
+        }
+        .question-card .options-list li {
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+        .question-card .options-list li:hover {
+            background-color: #f0f4f8;
+        }
+        .question-card .options-list li .fas {
+            margin-right: 10px;
+            color: #3b82f6;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Dein Föderalismus-Check</h1>
+
+        <div class="quiz-container">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Teste dein Wissen über den Schweizer Föderalismus!</h2>
+
+            <div class="question-card">
+                <p class="text-xl font-semibold mb-4">1. Wer ist in der Schweiz für die Landesverteidigung zuständig?</p>
+                <ul class="options-list text-lg text-gray-700">
+                    <li><i class="fas fa-circle"></i> a) Die Gemeinden</li>
+                    <li><i class="fas fa-circle"></i> b) Die Kantone</li>
+                    <li><i class="fas fa-circle"></i> c) Der Bund</li>
+                    <li><i class="fas fa-circle"></i> d) Die UNO</li>
+                </ul>
+            </div>
+
+            <div class="question-card">
+                <p class="text-xl font-semibold mb-4">2. Welches ist ein typisches Beispiel für kantonale Autonomie?</p>
+                <ul class="options-list text-lg text-gray-700">
+                    <li><i class="fas fa-circle"></i> a) Die Festlegung der nationalen Währung</li>
+                    <li><i class="fas fa-circle"></i> b) Die Organisation des Schulsystems</li>
+                    <li><i class="fas fa-circle"></i> c) Der Abschluss von internationalen Staatsverträgen</li>
+                    <li><i class="fas fa-circle"></i> d) Die Ausgabe von Schweizer Pässen</li>
+                </ul>
+            </div>
+
+            <div class="question-card">
+                <p class="text-xl font-semibold mb-4">3. Welche Aufgabe fällt in den Zuständigkeitsbereich der Gemeinden?</p>
+                <ul class="options-list text-lg text-gray-700">
+                    <li><i class="fas fa-circle"></i> a) Die Aussenpolitik der Schweiz</li>
+                    <li><i class="fas fa-circle"></i> b) Die Gesundheitsversorgung im ganzen Land</li>
+                    <li><i class="fas fa-circle"></i> c) Die Abfallentsorgung und Strassenreinigung vor Ort</li>
+                    <li><i class="fas fa-circle"></i> d) Die Gesetzgebung für das gesamte Strafrecht</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 13 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

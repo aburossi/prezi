@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda: Föderalismus in der Schweiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .toc-item {
+            position: relative;
+            background-color: white;
+            border-left: 4px solid #0050b3; /* Swiss Blue */
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .toc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .toc-number {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            font-size: 6rem;
+            font-weight: bold;
+            color: rgba(0, 80, 179, 0.1); /* Light Swiss Blue */
+            z-index: 0;
+            line-height: 1;
+        }
+        .toc-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #0050b3; /* Swiss Blue */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-right: 25px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-12 text-center">Was du heute lernst & unser Fahrplan</h1>
+
+        <div class="flex-grow w-full max-w-4xl mx-auto">
+            <div class="toc-item flex items-center">
+                <span class="toc-number">1</span>
+                <div class="toc-icon"><i class="fas fa-landmark"></i></div>
+                <div class="z-10">
+                    <h3 class="text-2xl font-semibold text-gray-800">Was ist Föderalismus?</h3>
+                    <p class="text-gray-600 mt-1">Grundlagen und Bedeutung für die Schweiz.</p>
+                </div>
+            </div>
+
+            <div class="toc-item flex items-center">
+                <span class="toc-number">2</span>
+                <div class="toc-icon"><i class="fas fa-globe-europe"></i></div>
+                <div class="z-10">
+                    <h3 class="text-2xl font-semibold text-gray-800">Der Bund: Das 'Grosse Ganze'</h3>
+                    <p class="text-gray-600 mt-1">Aufgaben und Kompetenzen der nationalen Ebene.</p>
+                </div>
+            </div>
+
+            <div class="toc-item flex items-center">
+                <span class="toc-number">3</span>
+                <div class="toc-icon"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="z-10">
+                    <h3 class="text-2xl font-semibold text-gray-800">Die Kantone: Eigene Regeln, eigene Kultur</h3>
+                    <p class="text-gray-600 mt-1">Vielfalt und Autonomie der regionalen Ebene.</p>
+                </div>
+            </div>
+
+            <div class="toc-item flex items-center">
+                <span class="toc-number">4</span>
+                <div class="toc-icon"><i class="fas fa-home"></i></div>
+                <div class="z-10">
+                    <h3 class="text-2xl font-semibold text-gray-800">Die Gemeinden: Dein Zuhause, deine Entscheidungen</h3>
+                    <p class="text-gray-600 mt-1">Direkte Auswirkungen auf den Alltag.</p>
+                </div>
+            </div>
+
+            <div class="toc-item flex items-center">
+                <span class="toc-number">5</span>
+                <div class="toc-icon"><i class="fas fa-handshake"></i></div>
+                <div class="z-10">
+                    <h3 class="text-2xl font-semibold text-gray-800">Zusammenspiel & Föderalismus im Alltag</h3>
+                    <p class="text-gray-600 mt-1">Wie alles zusammenhängt und was es für dich bedeutet.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 2 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

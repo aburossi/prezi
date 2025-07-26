@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die Kantone: Eigene Regeln, eigene Kultur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .essentials-card {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .feature-box {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .feature-box .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* bg-blue-500 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .secondary-info-card {
+            background-color: #f9fafb; /* bg-gray-50 */
+            border-left: 6px solid #6b7280; /* border-gray-500 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .tertiary-info-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Die Kantone: Eigene Regeln, eigene Kultur</h1>
+
+        <div class="essentials-card w-full max-w-5xl mx-auto">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Die regionale Ebene der Schweiz</h2>
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Die 26 Kantone der Schweiz sind eigenständige Gliedstaaten mit grosser Autonomie. Sie haben eigene Verfassungen, Parlamente und Regierungen und regeln viele wichtige Bereiche selbst.
+            </p>
+            <div class="grid grid-cols-3 gap-6">
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Bildungswesen</h3>
+                    <p class="text-gray-700 text-sm">Schulen, Lehrpläne und Bildungssysteme sind kantonal geregelt – daher gibt es Unterschiede.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-hospital"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Gesundheitswesen</h3>
+                    <p class="text-gray-700 text-sm">Spitäler, Gesundheitsversorgung und Prävention liegen in kantonaler Verantwortung.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle"><i class="fas fa-user-shield"></i></div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Polizei & Justiz</h3>
+                    <p class="text-gray-700 text-sm">Die Organisation der Kantonspolizei und der kantonalen Gerichte.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 w-full max-w-5xl mx-auto mb-10">
+            <div class="secondary-info-card">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Wichtige Organe der Kantone</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li><span class="font-semibold">Kantonsverfassung:</span> Das oberste Gesetz des Kantons.</li>
+                    <li><span class="font-semibold">Kantonsparlament:</span> Legislative (z.B. Grosser Rat, Landrat).</li>
+                    <li><span class="font-semibold">Kantonsregierung:</span> Exekutive (z.B. Regierungsrat, Staatsrat).</li>
+                    <li><span class="font-semibold">Kantonsgericht:</span> Richterliche Instanz.</li>
+                </ul>
+            </div>
+            <div class="secondary-info-card">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-3">Weitere kantonale Zuständigkeiten</h3>
+                <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                    <li>Steuern (kantonal und kommunal)</li>
+                    <li>Strassenbau (kantonal)</li>
+                    <li>Raumplanung</li>
+                    <li>Kirchenfragen</li>
+                    <li>Kulturförderung</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 7 / 14</span>
+        </div>
+    </div>
+</body>
+</html>

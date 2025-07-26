@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zusammenspiel: Bund, Kantone, Gemeinden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .swiss-bg-red {
+            background-color: #FF0000; /* Swiss Red */
+        }
+        .swiss-red-text {
+            color: #FF0000;
+        }
+        .mermaid {
+            margin: 0 auto;
+            max-width: 90%; /* Adjust as needed for content */
+            height: auto;
+        }
+        .summary-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #FF0000; /* Swiss Red border */
+            width: 75%; /* w-3/4 */
+            margin-top: 40px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header with Swiss Cross accent -->
+        <div class="w-full py-6 px-10 flex items-center">
+            <div class="w-12 h-12 mr-4 swiss-bg-red flex items-center justify-center rounded-full">
+                <i class="fas fa-network-wired text-white text-2xl"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800">Zusammenspiel: Bund, Kantone, Gemeinden</h1>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex-grow flex flex-col items-center justify-center px-10 pb-10">
+            <!-- Mermaid mind map -->
+            <div class="mermaid" id="mindmap">
+                graph TD
+                    A((Schweizer Föderalismus)) --> B(Bund)
+                    A --> C(Kantone)
+                    A --> D(Gemeinden)
+
+                    B -- Bundesgesetze --> C
+                    B -- Finanzhilfen --> C
+                    C -- Kantonale Gesetze --> D
+                    C -- Aufsicht --> D
+                    D -- Umsetzung --> C
+                    D -- Steuern --> C
+                    C -- Vertretung --> B
+                    C -- Mitwirkung --> B
+
+                    subgraph Bund
+                        B1(Aussenpolitik)
+                        B2(Landesverteid
+                        B3(Währung)
+                    end
+
+                    subgraph Kantone
+                        C1(Bildung)
+                        C2(Gesundheit)
+                        C3(Polizei)
+                    end
+
+                    subgraph Gemeinden
+                        D1(Abfallentsorgung)
+                        D2(Lokale Strassen)
+                        D3(Schulen vor Ort)
+                    end
+            </div>
+            
+            <!-- Key information box -->
+            <div class="summary-box">
+                <h3 class="text-xl font-bold mb-2 swiss-red-text">Wichtige Erkenntnisse</h3>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                    <li><span class="font-semibold">Aufgabenteilung:</span> Jede Ebene hat ihre eigenen Zuständigkeiten, aber auch Bereiche der Zusammenarbeit.</li>
+                    <li><span class="font-semibold">Subsidiarität:</span> Aufgaben werden möglichst auf der untersten, bürgernächsten Ebene gelöst.</li>
+                    <li><span class="font-semibold">Kooperation:</span> Bund, Kantone und Gemeinden arbeiten eng zusammen, um die Schweiz zu gestalten.</li>
+                    <li><span class="font-semibold">Vielfalt:</span> Der Föderalismus ermöglicht es, regionale Besonderheiten zu bewahren und zu leben.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 12 / 14</span>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: false, htmlLabels: true },
+            themeVariables: {
+                primaryColor: '#0050b3', /* Swiss Blue for main nodes */
+                primaryBorderColor: '#0050b3',
+                lineColor: '#6b7280', /* Gray for connections */
+                secondaryColor: '#e0f2fe', /* Light blue for subgraphs */
+                tertiaryColor: '#f9fafb', /* Light gray for sub-subgraphs */
+                nodeBorder: '#3b82f6',
+                nodeTextColor: '#1f2937'
+            }
+        });
+    </script>
+</body>
+</html>

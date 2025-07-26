@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warum ist die Schweiz föderalistisch organisiert?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body { font-family: 'Roboto', sans-serif; }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background-color: #f4f7f6;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+        }
+        .definition-box {
+            background-color: #e0f2fe; /* bg-blue-50 */
+            border-left: 8px solid #3b82f6; /* border-blue-500 */
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .guarantee-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        .guarantee-card .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* bg-blue-500 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .rules-section {
+            background-color: #fffbeb; /* bg-amber-50 */
+            border-left: 6px solid #f59e0b; /* border-amber-500 */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+        .rules-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        .rules-list li .fas {
+            margin-right: 10px;
+            margin-top: 4px; /* Align icon with text */
+            color: #3b82f6; /* blue-500 */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #334155;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <h1 class="text-5xl font-bold text-gray-800 mb-10 text-center">Warum ist die Schweiz föderalistisch organisiert?</h1>
+
+        <div class="definition-box w-full max-w-5xl mx-auto">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-4">Einzigartige Geschichte und Vielfalt</h2>
+            <p class="text-xl text-gray-700 leading-relaxed">
+                Der Föderalismus ist tief in der Schweizer Geschichte und Kultur verwurzelt. Er ist keine zufällige Wahl, sondern eine Antwort auf die besonderen Gegebenheiten des Landes.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8 w-full max-w-5xl mx-auto mb-10">
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-history"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Historische Entwicklung</h3>
+                <p class="text-gray-700">Die Schweiz entstand aus einem Bündnis unabhängiger Kantone. Diese Tradition der Autonomie wurde beibehalten und weiterentwickelt.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-language"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Sprachliche & Kulturelle Vielfalt</h3>
+                <p class="text-gray-700">Die Schweiz hat vier Landessprachen und viele kulturelle Eigenheiten pro Region. Föderalismus erlaubt es, diese Vielfalt zu leben und zu schützen.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-vote-yea"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Direkte Demokratie</h3>
+                <p class="text-gray-700">Föderalismus und direkte Demokratie (Volksabstimmungen, Initiativen) ergänzen sich. Bürger können auf allen Ebenen mitentscheiden.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon-circle"><i class="fas fa-map-pin"></i></div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-2">Bürgernähe & Effizienz</h3>
+                <p class="text-gray-700">Entscheidungen werden oft näher am Bürger getroffen, was zu massgeschneiderten Lösungen und einer effizienteren Verwaltung führen kann.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <span>Einblicke in den Schweizer Staatsaufbau</span>
+            <span>Slide 4 / 14</span>
+        </div>
+    </div>
+</body>
+</html>
