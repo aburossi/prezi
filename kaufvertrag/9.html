@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            display: flex;
+            flex-direction: column;
+        }
+        .case-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        }
+        .case-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .case-body {
+            padding: 1.5rem;
+        }
+        .model-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .model-badge:hover {
+            transform: translateY(-2px);
+        }
+        .model-badge.selected {
+            box-shadow: 0 0 0 2px #3b82f6;
+        }
+        .reasoning-box {
+            background-color: #f0f9ff;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .highlight-text {
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <div class="h-16 bg-blue-600 w-full flex items-center justify-between px-8">
+            <h2 class="text-white text-2xl font-medium">Fallstudien-Analyse</h2>
+            <div class="text-white text-lg font-light">Wählen Sie die passende Versicherung für verschiedene Lebenssituationen</div>
+        </div>
+        
+        <div class="flex-grow flex flex-col px-12 py-8">
+            <div class="mb-6">
+                <h1 class="text-4xl font-bold text-blue-700">Fallstudien: Die richtige Versicherung wählen</h1>
+                <div class="w-32 h-1 bg-blue-500 mt-2"></div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-8 flex-grow">
+                <div class="case-card flex flex-col">
+                    <div class="case-header bg-gradient-to-r from-blue-50 to-indigo-50">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/seed/young-professional/120/120.jpg" alt="Young professional" class="avatar mr-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Fall 1: Junge Fachkraft</h3>
+                                <p class="text-gray-600">27 Jahre, gesund, Single, keine regelmäßigen Arztbesuche</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-body flex-grow">
+                        <div class="mb-4">
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Sie ist neu in der Schweiz und muss sich innerhalb von 3 Monaten versichern. Sie ist finanziell eingeschränkt und sucht nach einer kostengünstigen Lösung.</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-question-circle text-yellow-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Welches Versicherungsmodell ist am besten für sie geeignet?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap mt-4">
+                            <div class="model-badge bg-blue-100 text-blue-700">
+                                <i class="fas fa-hospital-user mr-2"></i>
+                                Standardmodell
+                            </div>
+                            <div class="model-badge bg-green-100 text-green-700">
+                                <i class="fas fa-user-md mr-2"></i>
+                                Hausarztmodell
+                            </div>
+                            <div class="model-badge bg-purple-100 text-purple-700">
+                                <i class="fas fa-network-wired mr-2"></i>
+                                HMO-Modell
+                            </div>
+                            <div class="model-badge bg-yellow-100 text-yellow-700">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                Telmed-Modell
+                            </div>
+                        </div>
+                        
+                        <div class="reasoning-box hidden">
+                            <h4 class="font-bold text-blue-700 mb-2">Lösung:</h4>
+                            <p class="text-gray-700">Für eine junge, gesunde Person, die selten ärztliche Hilfe benötigt, bietet das <span class="highlight-text">HMO-Modell</span> die größte Prämienersparnis (bis zu 20%) ohne große Einschränkungen, da sie wahrscheinlich selten medizinische Leistungen in Anspruch nehmen wird.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card flex flex-col">
+                    <div class="case-header bg-gradient-to-r from-green-50 to-teal-50">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/seed/family-with-children/120/120.jpg" alt="Family with children" class="avatar mr-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Fall 2: Familie mit Kindern</h3>
+                                <p class="text-gray-600">35 & 33 Jahre, 2 Kinder (3 & 7 Jahre), regelmäßige Vorsorgeuntersuchungen</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-body flex-grow">
+                        <div class="mb-4">
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Die Familie sucht eine umfassende Versicherung für alle Mitglieder. Die Kinder benötigen jährliche Vorsorgeuntersuchungen und Impfungen.</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-question-circle text-yellow-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Welches Versicherungsmodell ist für diese Familie am besten geeignet?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap mt-4">
+                            <div class="model-badge bg-blue-100 text-blue-700">
+                                <i class="fas fa-hospital-user mr-2"></i>
+                                Standardmodell
+                            </div>
+                            <div class="model-badge bg-green-100 text-green-700">
+                                <i class="fas fa-user-md mr-2"></i>
+                                Hausarztmodell
+                            </div>
+                            <div class="model-badge bg-purple-100 text-purple-700">
+                                <i class="fas fa-network-wired mr-2"></i>
+                                HMO-Modell
+                            </div>
+                            <div class="model-badge bg-yellow-100 text-yellow-700">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                Telmed-Modell
+                            </div>
+                        </div>
+                        
+                        <div class="reasoning-box hidden">
+                            <h4 class="font-bold text-blue-700 mb-2">Lösung:</h4>
+                            <p class="text-gray-700">Für eine Familie mit Kindern, die regelmäßig Vorsorgeuntersuchungen benötigen, ist das <span class="highlight-text">Hausarztmodell</span> ideal. Es bietet eine moderate Prämienersparnis (ca. 10%) und einen festen Ansprechpartner für alle Familienmitglieder, was besonders bei Kindern wichtig ist.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card flex flex-col">
+                    <div class="case-header bg-gradient-to-r from-red-50 to-orange-50">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/seed/person-with-chronic-illness/120/120.jpg" alt="Person with chronic illness" class="avatar mr-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Fall 3: Person mit chronischer Erkrankung</h3>
+                                <p class="text-gray-600">45 Jahre, Diabetes Typ 2, regelmäßig Medikamente und Arztbesuche</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-body flex-grow">
+                        <div class="mb-4">
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Diese Person benötigt regelmäßig medizinische Betreuung und verschreibungspflichtige Medikamente. Sie ist bereit, mehr für eine flexible Versicherung zu bezahlen.</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-question-circle text-yellow-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Welches Versicherungsmodell ist hier am besten geeignet?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap mt-4">
+                            <div class="model-badge bg-blue-100 text-blue-700">
+                                <i class="fas fa-hospital-user mr-2"></i>
+                                Standardmodell
+                            </div>
+                            <div class="model-badge bg-green-100 text-green-700">
+                                <i class="fas fa-user-md mr-2"></i>
+                                Hausarztmodell
+                            </div>
+                            <div class="model-badge bg-purple-100 text-purple-700">
+                                <i class="fas fa-network-wired mr-2"></i>
+                                HMO-Modell
+                            </div>
+                            <div class="model-badge bg-yellow-100 text-yellow-700">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                Telmed-Modell
+                            </div>
+                        </div>
+                        
+                        <div class="reasoning-box hidden">
+                            <h4 class="font-bold text-blue-700 mb-2">Lösung:</h4>
+                            <p class="text-gray-700">Für eine Person mit chronischer Erkrankung, die regelmäßig medizinische Leistungen in Anspruch nimmt, ist das <span class="highlight-text">Standardmodell</span> am besten geeignet. Die höheren Prämien werden durch die größere Flexibilität und den freien Zugang zu Spezialisten ohne Umwege aufgewogen.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="case-card flex flex-col">
+                    <div class="case-header bg-gradient-to-r from-purple-50 to-indigo-50">
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/seed/retiree-couple/120/120.jpg" alt="Retired couple" class="avatar mr-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800">Fall 4: Rentnerpaar</h3>
+                                <p class="text-gray-600">68 & 65 Jahre, im Ruhestand, gelegentliche Arztbesuche, auf Prämienersparnis bedacht</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="case-body flex-grow">
+                        <div class="mb-4">
+                            <div class="flex items-start mb-2">
+                                <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Das Paar ist im Ruhestand und lebt von einer festen Rente. Sie suchen eine kostengünstige Versicherung mit guter medizinischer Abdeckung.</p>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <i class="fas fa-question-circle text-yellow-500 mt-1 mr-2"></i>
+                                <p class="text-gray-700">Welches Versicherungsmodell passt am besten zu den Bedürfnissen des Paares?</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-wrap mt-4">
+                            <div class="model-badge bg-blue-100 text-blue-700">
+                                <i class="fas fa-hospital-user mr-2"></i>
+                                Standardmodell
+                            </div>
+                            <div class="model-badge bg-green-100 text-green-700">
+                                <i class="fas fa-user-md mr-2"></i>
+                                Hausarztmodell
+                            </div>
+                            <div class="model-badge bg-purple-100 text-purple-700">
+                                <i class="fas fa-network-wired mr-2"></i>
+                                HMO-Modell
+                            </div>
+                            <div class="model-badge bg-yellow-100 text-yellow-700">
+                                <i class="fas fa-phone-alt mr-2"></i>
+                                Telmed-Modell
+                            </div>
+                        </div>
+                        
+                        <div class="reasoning-box hidden">
+                            <h4 class="font-bold text-blue-700 mb-2">Lösung:</h4>
+                            <p class="text-gray-700">Für das Rentnerpaar, das auf Prämienersparnis bedacht ist, aber dennoch regelmäßige medizinische Betreuung benötigt, bietet das <span class="highlight-text">Telmed-Modell</span> eine gute Balance. Es ermöglicht eine signifikante Prämienersparnis (bis zu 15%) und bietet durch die telefonische Beratung eine zusätzliche Sicherheit für ältere Personen.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-white p-4 rounded-lg shadow-sm">
+                <div class="flex items-center">
+                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                        <i class="fas fa-lightbulb text-blue-600 text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-gray-800">Wichtige Erkenntnisse</h3>
+                        <p class="text-gray-600">Die Wahl des Versicherungsmodells sollte auf Ihrer individuellen Situation, Ihrem Gesundheitszustand und Ihren finanziellen Möglichkeiten basieren.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="h-12 bg-blue-600 w-full flex items-center justify-between px-8">
+            <span class="text-white text-sm">Fallstudien-Analyse</span>
+            <span class="text-white text-sm">5/8</span>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle reasoning boxes when model badges are clicked
+        document.addEventListener('DOMContentLoaded', function() {
+            const caseCards = document.querySelectorAll('.case-card');
+            
+            caseCards.forEach(card => {
+                const badges = card.querySelectorAll('.model-badge');
+                const reasoningBox = card.querySelector('.reasoning-box');
+                
+                badges.forEach(badge => {
+                    badge.addEventListener('click', function() {
+                        // Remove selected class from all badges in this case
+                        badges.forEach(b => b.classList.remove('selected'));
+                        
+                        // Add selected class to clicked badge
+                        this.classList.add('selected');
+                        
+                        // Show reasoning box
+                        reasoningBox.classList.remove('hidden');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
