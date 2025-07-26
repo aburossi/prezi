@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was du heute lernst & unser Fahrplan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8; /* Light background */
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c;
+        }
+        .slide-container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .toc-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+            overflow: hidden; /* For the number positioning */
+            border-left: 4px solid #cbd5e1; /* Default border color */
+            text-align: left;
+        }
+        .toc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+            background-color: #e0f2fe; /* Light blue on hover */
+            border-left-color: #3b82f6; /* Blue border on hover */
+        }
+        .toc-number {
+            position: absolute;
+            top: 50%;
+            left: 15px; /* Adjust as needed */
+            transform: translateY(-50%);
+            font-size: 5rem; /* Large number */
+            font-weight: 700;
+            color: rgba(203, 213, 224, 0.4); /* Semi-transparent light gray */
+            z-index: 1; /* Behind other content */
+            line-height: 1;
+            transition: color 0.3s ease;
+        }
+        .toc-item:hover .toc-number {
+            color: rgba(59, 130, 246, 0.2); /* Semi-transparent blue on hover */
+        }
+        .toc-content {
+            flex-grow: 1;
+            padding-left: 100px; /* Space for number and icon */
+            z-index: 2; /* Above the number */
+        }
+        .toc-icon {
+            flex-shrink: 0;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #3b82f6; /* Blue icon background */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-right: 20px;
+            z-index: 2; /* Above the number */
+        }
+        .toc-item:hover .toc-icon {
+            background-color: #2563eb; /* Darker blue on hover */
+        }
+        .toc-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 5px;
+        }
+        .toc-description {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="text-4xl font-bold mb-10 text-gray-800">Was du heute lernst & unser Fahrplan</h1>
+
+        <div class="toc-item">
+            <div class="toc-number">01</div>
+            <div class="toc-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+            <div class="toc-content">
+                <h2 class="toc-title">Unsere Lernziele heute</h2>
+                <p class="toc-description">Was du am Ende dieser Präsentation wissen und können wirst.</p>
+            </div>
+        </div>
+
+        <div class="toc-item">
+            <div class="toc-number">02</div>
+            <div class="toc-icon">
+                <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="toc-content">
+                <h2 class="toc-title">Einnahmen verstehen</h2>
+                <p class="toc-description">Quellen des Geldes erkennen und bewerten.</p>
+            </div>
+        </div>
+
+        <div class="toc-item">
+            <div class="toc-number">03</div>
+            <div class="toc-icon">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="toc-content">
+                <h2 class="toc-title">Ausgaben im Blick behalten</h2>
+                <p class="toc-description">Kategorisierung und Nachverfolgung deiner Ausgaben.</p>
+            </div>
+        </div>
+
+        <div class="toc-item">
+            <div class="toc-number">04</div>
+            <div class="toc-icon">
+                <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="toc-content">
+                <h2 class="toc-title">Deinen Budgetplan erstellen</h2>
+                <p class="toc-description">Schritt-für-Schritt zum persönlichen Finanzplan.</p>
+            </div>
+        </div>
+
+        <div class="toc-item">
+            <div class="toc-number">05</div>
+            <div class="toc-icon">
+                <i class="fas fa-piggy-bank"></i>
+            </div>
+            <div class="toc-content">
+                <h2 class="toc-title">Effektiv Sparen lernen</h2>
+                <p class="toc-description">Strategien und Tipps, um deine Sparziele zu erreichen.</p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

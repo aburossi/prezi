@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schritt 2: Deine Ausgaben verstehen – Fix vs. Variabel</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .essentials-card {
+            border: 2px solid #3b82f6;
+            background-color: #eff6ff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .feature-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .feature-box .icon-circle {
+            background-color: #3b82f6;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .info-card {
+            background-color: #f9fafb;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .info-card.bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        .info-card.bg-blue-50 {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+        ul li::before {
+            content: "\f00c"; /* Checkmark icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">Schritt 2: Deine Ausgaben verstehen – Fix vs. Variabel</h1>
+
+        <div class="essentials-card">
+            <h2 class="text-3xl font-semibold text-center mb-6 text-blue-800">Deine Ausgaben im Überblick: Fix oder Variabel?</h2>
+            <p class="text-lg text-center mb-10 text-gray-700 max-w-3xl mx-auto">
+                Um ein Budget zu planen, ist es entscheidend, deine Ausgaben in zwei Hauptkategorien zu unterteilen: fixe und variable Kosten. Diese Unterscheidung hilft dir, deine Finanzen besser zu kontrollieren und Sparpotenziale zu erkennen.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-money-check-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Fixe Ausgaben</h3>
+                    <p class="text-gray-600">
+                        Regelmässige Kosten, die sich in ihrer Höhe kaum ändern und oft vertraglich festgelegt sind (z.B. Handy-Abo, ÖV-Abo).
+                    </p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Variable Ausgaben</h3>
+                    <p class="text-gray-600">
+                        Kosten, die in Höhe und Häufigkeit schwanken und von deinen Entscheidungen abhängen (z.B. Freizeit, Essen, Kleidung).
+                    </p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Warum die Unterscheidung wichtig ist</h3>
+                    <p class="text-gray-600">
+                        Sie ermöglicht dir, einen klaren Überblick über deine monatlichen Fixkosten zu erhalten und zu sehen, wie viel Geld für flexible Ausgaben übrig bleibt.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <div class="info-card bg-gray-50">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Typische Fixe Ausgaben</h3>
+                <ul>
+                    <li><strong>Handy-Abo:</strong> Monatliche Kosten für dein Smartphone-Abonnement.</li>
+                    <li><strong>ÖV-Abo:</strong> Kosten für das Abonnement für öffentliche Verkehrsmittel (z.B. GA, Halbtax).</li>
+                    <li><strong>Streaming-Dienste:</strong> Abos für Netflix, Spotify oder andere Dienste.</li>
+                    <li><strong>Vereinsbeiträge:</strong> Mitgliedsbeiträge für Sportvereine oder andere Organisationen.</li>
+                    <li><strong>Versicherungen:</strong> Prämien für Haftpflicht- oder Krankenversicherung (falls selbst bezahlt).</li>
+                </ul>
+            </div>
+            <div class="info-card bg-gray-50">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Typische Variable Ausgaben</h3>
+                <ul>
+                    <li><strong>Essen & Getränke:</strong> Ausgaben für Snacks, Mittagessen auswärts, Cafés.</li>
+                    <li><strong>Freizeit & Hobbys:</strong> Kino, Konzerte, Sportaktivitäten, Gaming, Ausflüge.</li>
+                    <li><strong>Kleidung & Accessoires:</strong> Neue Kleider, Schuhe, Schmuck.</li>
+                    <li><strong>Taschengeld:</strong> Dein frei verfügbares Geld für spontane Dinge.</li>
+                    <li><strong>Geschenke:</strong> Ausgaben für Geburtstage oder andere Anlässe.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Kontrolle & Planung</h3>
+                <p class="text-gray-700">
+                    Fixe Ausgaben sind deine Basis. Wenn du diese kennst, kannst du besser planen, wie viel Geld dir für variable Ausgaben zur Verfügung steht.
+                </p>
+            </div>
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Flexibilität im Budget</h3>
+                <p class="text-gray-700">
+                    Variable Ausgaben sind der Bereich, in dem du am flexibelsten bist. Hier kannst du am einfachsten sparen, indem du bewusste Entscheidungen triffst.
+                </p>
+            </div>
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Sparpotenziale erkennen</h3>
+                <p class="text-gray-700">
+                    Durch die Trennung siehst du schnell, wo dein Geld hingeht und wo du eventuell Ausgaben reduzieren könntest, um Sparziele zu erreichen.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bleib am Ball! Tipps & Ressourcen für deine Finanzen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Option Cards (Adapting .right-card concept for two options) */
+        .option-card {
+            flex: 1;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 3px solid transparent; /* Default border */
+        }
+        .option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        .left-card {
+            border-color: #4CAF50; /* Green for proactive action */
+        }
+        .left-card:hover {
+            border-color: #388E3C;
+        }
+        .right-card {
+            border-color: #2196F3; /* Blue for learning/resources */
+        }
+        .right-card:hover {
+            border-color: #1976D2;
+        }
+
+        .option-card .icon-large {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #3b82f6; /* Default icon color */
+        }
+        .left-card .icon-large {
+            color: #4CAF50;
+        }
+        .right-card .icon-large {
+            color: #2196F3;
+        }
+
+        /* VS Badge */
+        .vs-badge {
+            position: absolute;
+            background-color: #ef4444; /* Red for emphasis */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.25rem;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transform: translateY(-50%); /* Center vertically */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap; /* Prevent "OR" from wrapping */
+        }
+
+        /* Resource Cards in Grid */
+        .resource-card {
+            background-color: #f9fafb;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .resource-card .icon-small {
+            font-size: 30px;
+            color: #60a5fa;
+            margin-bottom: 15px;
+        }
+
+        /* Critical Notice */
+        .critical-notice {
+            background-color: #fffbeb; /* Light yellow for caution */
+            border-left: 5px solid #f59e0b;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .critical-notice h3 {
+            color: #d97706;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+        ul li::before {
+            content: "\f00c"; /* Checkmark icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 18px;
+        }
+        .option-card ul li::before {
+            color: inherit; /* Inherit color from card */
+        }
+        .left-card ul li::before {
+            color: #4CAF50;
+        }
+        .right-card ul li::before {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-6 text-gray-800">Bleib am Ball! Tipps & Ressourcen für deine Finanzen</h1>
+        <p class="text-lg text-center mb-12 text-gray-700 max-w-3xl mx-auto">
+            Finanzielle Fitness ist eine Reise, kein Ziel! Hier sind Wege, wie du am Ball bleiben und deine Kenntnisse weiter vertiefen kannst.
+        </p>
+
+        <div class="relative flex flex-col lg:flex-row justify-center items-stretch gap-8 mb-16">
+            <!-- Option 1: Kontinuierlich Budgetieren & Sparen -->
+            <div class="option-card left-card">
+                <i class="fas fa-chart-line icon-large"></i>
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Kontinuierlich Budgetieren & Sparen</h2>
+                <p class="text-gray-600 mb-6">
+                    Mache Budgetierung zur Gewohnheit und finde smarte Wege, um deine Sparziele zu erreichen.
+                </p>
+                <ul class="text-left w-full">
+                    <li>Regelmässige Überprüfung deines Budgets.</li>
+                    <li>Automatisiere Sparbeträge.</li>
+                    <li>Setze dir klare, erreichbare Sparziele.</li>
+                    <li>Überdenke regelmässig deine Ausgaben.</li>
+                </ul>
+            </div>
+
+            <div class="vs-badge">ODER</div>
+
+            <!-- Option 2: Wissen erweitern & Unterstützung nutzen -->
+            <div class="option-card right-card">
+                <i class="fas fa-lightbulb icon-large"></i>
+                <h2 class="text-3xl font-semibold mb-4 text-gray-800">Wissen erweitern & Unterstützung nutzen</h2>
+                <p class="text-gray-600 mb-6">
+                    Nutze die vielfältigen Ressourcen, um dein Finanzwissen stetig auszubauen und bei Bedarf Hilfe zu suchen.
+                </p>
+                <ul class="text-left w-full">
+                    <li>Informiere dich über neue Finanzprodukte.</li>
+                    <li>Tausche dich mit Gleichgesinnten aus.</li>
+                    <li>Suche professionellen Rat bei komplexen Fragen.</li>
+                    <li>Bleibe über Wirtschaftsnachrichten informiert.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold text-center mb-8 text-gray-800">Deine Werkzeuge für finanzielle Autonomie</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 mb-10">
+            <!-- Grid Item 1: Praktische Spartipps -->
+            <div class="resource-card">
+                <i class="fas fa-piggy-bank icon-small text-green-600"></i>
+                <h3 class="text-xl font-semibold mb-3 text-gray-800">Praktische Spartipps für den Alltag</h3>
+                <ul class="text-gray-700">
+                    <li>"30-Tage-Regel" für grössere Anschaffungen.</li>
+                    <li>Vergleiche Preise vor jedem Kauf.</li>
+                    <li>Koche mehr zu Hause, weniger auswärts essen.</li>
+                    <li>Nutze öffentliche Verkehrsmittel oder Velo.</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 2: Digitale Helfer & Apps -->
+            <div class="resource-card">
+                <i class="fas fa-mobile-alt icon-small text-purple-600"></i>
+                <h3 class="text-xl font-semibold mb-3 text-gray-800">Digitale Helfer & Apps</h3>
+                <ul class="text-gray-700">
+                    <li><strong>Budget-Apps:</strong> YNAB, Mint, Zak (Schweiz).</li>
+                    <li><strong>Banking-Apps:</strong> Mobile Banking deiner Bank.</li>
+                    <li><strong>Vergleichsportale:</strong> Comparis, Moneyland.</li>
+                    <li><strong>Investment-Apps:</strong> Neon, True Wealth (Schweiz).</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 3: Bücher & Finanzbildungs-Websites -->
+            <div class="resource-card">
+                <i class="fas fa-book-open icon-small text-yellow-600"></i>
+                <h3 class="text-xl font-semibold mb-3 text-gray-800">Bücher & Finanzbildungs-Websites</h3>
+                <ul class="text-gray-700">
+                    <li>"Rich Dad Poor Dad" (Kiyosaki) für Mindset.</li>
+                    <li>"Der reichste Mann von Babylon" (Clason) für Grundlagen.</li>
+                    <li><strong>Schweizer Websites:</strong> Finanzdepartement, Finanzmonitor.ch.</li>
+                    <li>Online-Kurse zu Finanzthemen.</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 4: Lokale Schweizer Angebote & Jugendbanken -->
+            <div class="resource-card">
+                <i class="fas fa-handshake icon-small text-blue-600"></i>
+                <h3 class="text-xl font-semibold mb-3 text-gray-800">Lokale Schweizer Angebote & Jugendbanken</h3>
+                <ul class="text-gray-700">
+                    <li><strong>Jugendkonten:</strong> Spezielle Angebote für junge Leute.</li>
+                    <li><strong>Finanzberatung:</strong> Bei Banken oder unabhängigen Beratern.</li>
+                    <li><strong>Schuldnerberatung:</strong> Bei finanziellen Schwierigkeiten.</li>
+                    <li><strong>Konsumentenschutz:</strong> Für deine Rechte als Konsument.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="critical-notice">
+            <h3 class="text-2xl font-bold mb-3">Wichtiger Hinweis: Finanzielle Eigenverantwortung</h3>
+            <p class="text-gray-700">
+                Die hier gegebenen Tipps sind allgemeiner Natur. Jede finanzielle Entscheidung sollte auf deiner individuellen Situation basieren. Bei komplexen Fragen oder Unsicherheiten ist es immer ratsam, professionelle Finanzberatung in Anspruch zu nehmen. Bleib kritisch und informiere dich umfassend!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

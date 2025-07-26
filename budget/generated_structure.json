@@ -1,0 +1,210 @@
+{
+  "structure_strategy": "The Explanatory Deep Dive",
+  "section_intro": {
+    "title": "Grundlagen der Budgetierung",
+    "description": "Führt in das Thema Budgetierung ein und erklärt, warum es für Jugendliche wichtig ist."
+  },
+  "section_main": {
+    "title": "Schritt für Schritt zum persönlichen Budget",
+    "description": "Erläutert die Kernschritte der Budgeterstellung und -verwaltung."
+  },
+  "section_conclusion": {
+    "title": "Dein Weg zur finanziellen Unabhängigkeit",
+    "description": "Fasst die wichtigsten Erkenntnisse zusammen und gibt Ausblick auf die Anwendung im Alltag."
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Dein Geld im Griff: Grundlagen der Budgetierung für Jugendliche",
+      "content_description": "Eine ansprechende Einführung, die das Thema Budgetierung vorstellt und die Relevanz für junge Menschen in der Schweiz hervorhebt.",
+      "goal": "Die Lernenden für die Bedeutung der Budgetierung sensibilisieren und Neugier wecken.",
+      "layout": "title_slide",
+      "key_informations": [
+        "Budgetierung",
+        "Finanzen",
+        "Jugendliche",
+        "Schweiz",
+        "Geldmanagement"
+      ]
+    },
+    {
+      "slide_number": 2,
+      "title": "Was du heute lernst & unser Fahrplan",
+      "content_description": "Klare Lernziele und eine Übersicht über die Präsentationsstruktur, um Erwartungen zu setzen und einen roten Faden zu bieten.",
+      "goal": "Den Lernenden einen Überblick über die Inhalte und den Ablauf der Präsentation geben und die Lernziele transparent machen.",
+      "layout": "table_of_contents",
+      "key_informations": [
+        "Lernziele",
+        "Agenda",
+        "Einnahmen",
+        "Ausgaben",
+        "Budgetplan",
+        "Sparen"
+      ]
+    },
+    {
+      "slide_number": 3,
+      "title": "Was ist Budgetierung überhaupt?",
+      "content_description": "Eine einfache Definition von Budgetierung als Planung von Einnahmen und Ausgaben, mit einer Analogie zum 'finanziellen Fahrplan'.",
+      "goal": "Ein grundlegendes Verständnis des Begriffs 'Budgetierung' vermitteln und seine allgemeine Funktionsweise erklären.",
+      "layout": "Informational_Breakdown",
+      "key_informations": [
+        "Definition Budget",
+        "Finanzplanung",
+        "Einnahmen",
+        "Ausgaben",
+        "Überblick"
+      ]
+    },
+    {
+      "slide_number": 4,
+      "title": "Warum ist Budgetierung für dich wichtig?",
+      "content_description": "Erklärung der Vorteile der Budgetierung für Jugendliche: finanzielle Unabhängigkeit, Schuldenvermeidung, Erreichen von Sparzielen (z.B. Handy, Reise, Führerschein).",
+      "goal": "Die Lernenden motivieren, indem die praktischen Vorteile und die Relevanz der Budgetierung für ihr Leben aufgezeigt werden.",
+      "layout": "Informational_Breakdown",
+      "key_informations": [
+        "Finanzielle Unabhängigkeit",
+        "Schuldenprävention",
+        "Sparziele",
+        "Stressreduktion",
+        "Zukunft planen"
+      ]
+    },
+    {
+      "slide_number": 5,
+      "title": "Schritt 1: Deine Einnahmen kennen",
+      "content_description": "Anleitung zur Identifizierung und Auflistung aller Einnahmequellen (Taschengeld, Nebenjob, Geschenke, Lehrlingslohn). Betonung der Wichtigkeit, den genauen Betrag zu kennen.",
+      "goal": "Lernende befähigen, ihre Einnahmequellen genau zu identifizieren und zu quantifizieren.",
+      "layout": "Component_Breakdown",
+      "key_informations": [
+        "Einnahmen",
+        "Taschengeld",
+        "Lohn",
+        "Geschenke",
+        "Quellen",
+        "Übersicht"
+      ]
+    },
+    {
+      "slide_number": 6,
+      "title": "Wissenstest: Deine Einnahmen",
+      "content_description": "Eine einfache Multiple-Choice-Frage zur Überprüfung des Verständnisses der Einnahmequellen.",
+      "goal": "Das sofortige Verständnis der Lernenden bezüglich der Identifizierung von Einnahmen überprüfen.",
+      "layout": "Multiple_Choice_Assessment",
+      "key_informations": [
+        "Einnahmenprüfung",
+        "Verständnischeck",
+        "Quiz"
+      ]
+    },
+    {
+      "slide_number": 7,
+      "title": "Schritt 2: Deine Ausgaben verstehen – Fix vs. Variabel",
+      "content_description": "Erklärung des Unterschieds zwischen fixen Ausgaben (z.B. Handy-Abo, ÖV-Abo) und variablen Ausgaben (z.B. Freizeit, Essen, Kleidung), mit relevanten Beispielen für Schweizer Jugendliche.",
+      "goal": "Lernende befähigen, ihre Ausgaben effektiv zu kategorisieren.",
+      "layout": "Component_Breakdown",
+      "key_informations": [
+        "Ausgaben",
+        "Fixkosten",
+        "Variable Kosten",
+        "Kategorisierung",
+        "Beispiele"
+      ]
+    },
+    {
+      "slide_number": 8,
+      "title": "Ausgaben verfolgen: Tools & Tipps",
+      "content_description": "Vorstellung praktischer Methoden und Tools zur Ausgabenverfolgung (z.B. Notizbuch, Tabellenkalkulation, Budget-Apps wie Yuh, Zak, Neon oder spezifische Schweizer Bank-Apps).",
+      "goal": "Praktische Methoden und digitale Tools zur Überwachung der Ausgaben vorstellen und zur Anwendung anregen.",
+      "layout": "Informational_Breakdown",
+      "key_informations": [
+        "Ausgabenverfolgung",
+        "Budget-Apps",
+        "Notizbuch",
+        "Tipps",
+        "Digitalisierung"
+      ]
+    },
+    {
+      "slide_number": 9,
+      "title": "Wissenstest: Deine Ausgaben",
+      "content_description": "Eine einfache Multiple-Choice-Frage zur Überprüfung des Verständnisses der Ausgabenkategorisierung.",
+      "goal": "Das sofortige Verständnis der Lernenden bezüglich der Ausgabenkategorisierung überprüfen.",
+      "layout": "Multiple_Choice_Assessment",
+      "key_informations": [
+        "Ausgabenprüfung",
+        "Verständnischeck",
+        "Quiz"
+      ]
+    },
+    {
+      "slide_number": 10,
+      "title": "Schritt 3: Dein persönliches Budget erstellen",
+      "content_description": "Anleitung zum Zusammenführen von Einnahmen und Ausgaben. Was tun, wenn Ausgaben die Einnahmen übersteigen. Einführung der 50/30/20-Regel (Bedürfnisse/Wünsche/Sparen) angepasst für Jugendliche.",
+      "goal": "Lernende durch den Prozess der Erstellung eines grundlegenden Budgetplans führen.",
+      "layout": "Component_Breakdown",
+      "key_informations": [
+        "Budgetplan",
+        "Einnahmen-Ausgaben-Rechnung",
+        "Sparziele",
+        "50/30/20 Regel",
+        "Prioritäten setzen"
+      ]
+    },
+    {
+      "slide_number": 11,
+      "title": "Wissenstest: Dein Budgetplan",
+      "content_description": "Eine einfache Multiple-Choice-Frage zum Ausgleich des Budgets oder zur Priorisierung von Ausgaben.",
+      "goal": "Das sofortige Verständnis der Lernenden bezüglich der Prinzipien der Budgeterstellung überprüfen.",
+      "layout": "Multiple_Choice_Assessment",
+      "key_informations": [
+        "Budgetplanung",
+        "Verständnischeck",
+        "Priorisierung",
+        "Quiz"
+      ]
+    },
+    {
+      "slide_number": 12,
+      "title": "Dein Weg zum Budget-Profi: Die wichtigsten Schritte",
+      "content_description": "Eine visuelle Zusammenfassung (z.B. Flussdiagramm oder Mindmap) des Budgetierungsprozesses: 1. Einnahmen kennen, 2. Ausgaben verfolgen, 3. Budget erstellen, 4. Regelmässig überprüfen.",
+      "goal": "Die Hauptschritte der Budgetierung in einer einprägsamen Übersicht konsolidieren.",
+      "layout": "Mind_map",
+      "key_informations": [
+        "Budgetprozess",
+        "Zusammenfassung",
+        "Einnahmen",
+        "Ausgaben",
+        "Planen",
+        "Überprüfen"
+      ]
+    },
+    {
+      "slide_number": 13,
+      "title": "Dein Budget-Check: Was hast du gelernt?",
+      "content_description": "Ein kurzer Quiz (3-5 Multiple-Choice-Fragen), der das gesamte Thema abdeckt (Definitionen, Kategorisierung, Vorteile), um das Gesamtverständnis zu testen.",
+      "goal": "Das Gesamtverständnis der Lernenden für die Budgetierungskonzepte und deren Anwendung umfassend überprüfen.",
+      "layout": "Multiple_Choice_Assessment",
+      "key_informations": [
+        "Abschlusstest",
+        "Gesamtverständnis",
+        "Quiz",
+        "Anwendung"
+      ]
+    },
+    {
+      "slide_number": 14,
+      "title": "Bleib am Ball! Tipps & Ressourcen für deine Finanzen",
+      "content_description": "Ermutigung zur kontinuierlichen Budgetierung, Spartipps und Vorschläge für weiterführende Ressourcen (z.B. Finanzbildungs-Websites in der Schweiz, Jugendbanken, Apps, Bücher).",
+      "goal": "Zur fortgesetzten Anwendung des Gelernten anregen und Wege für weitere Lern- und Unterstützungsmöglichkeiten aufzeigen.",
+      "layout": "Options_and_Remedies",
+      "key_informations": [
+        "Finanztipps",
+        "Sparen",
+        "Weiterführende Ressourcen",
+        "Finanzielle Bildung",
+        "Schweizer Angebote"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schritt 3: Dein persönliches Budget erstellen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .essentials-card {
+            border: 2px solid #3b82f6;
+            background-color: #eff6ff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        .feature-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .feature-box .icon-circle {
+            background-color: #3b82f6;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .info-card {
+            background-color: #f9fafb;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .info-card.bg-gray-50 {
+            background-color: #f9fafb;
+        }
+        .info-card.bg-blue-50 {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+        }
+        ul li::before {
+            content: "\f00c"; /* Checkmark icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #10b981;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-800">Schritt 3: Dein persönliches Budget erstellen</h1>
+
+        <div class="essentials-card">
+            <h2 class="text-3xl font-semibold text-center mb-6 text-blue-800">Einnahmen & Ausgaben zusammenführen</h2>
+            <p class="text-lg text-center mb-10 text-gray-700 max-w-3xl mx-auto">
+                Ein Budget hilft dir, den Überblick über dein Geld zu behalten. Es zeigt dir, wie viel Geld du hast und wofür du es ausgibst.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">1. Einnahmen erfassen</h3>
+                    <p class="text-gray-600">Liste alle Quellen auf, aus denen du Geld erhältst: Taschengeld, Geschenke, Nebenjobs, etc.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">2. Ausgaben verfolgen</h3>
+                    <p class="text-gray-600">Notiere, wofür du dein Geld ausgibst: Snacks, Hobbys, Transport, Kleidung, etc.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">3. Bilanz ziehen</h3>
+                    <p class="text-gray-600">Vergleiche deine Einnahmen mit deinen Ausgaben. Hast du mehr ausgegeben, als du eingenommen hast?</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+            <div class="info-card bg-gray-50">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Was tun, wenn Ausgaben > Einnahmen?</h3>
+                <ul>
+                    <li><strong>Ausgaben kürzen:</strong> Überlege, wo du sparen kannst (z.B. weniger Snacks kaufen, öfter zu Fuss gehen).</li>
+                    <li><strong>Einnahmen erhöhen:</strong> Gibt es Möglichkeiten, etwas dazuzuverdienen (z.B. Nachbarschaftshilfe, kleine Jobs)?</li>
+                    <li><strong>Prioritäten setzen:</strong> Unterscheide zwischen "Muss" (Bedürfnisse) und "Kann" (Wünsche).</li>
+                </ul>
+            </div>
+            <div class="info-card bg-gray-50">
+                <h3 class="text-2xl font-semibold mb-4 text-gray-800">Die 50/30/20-Regel (Angepasst für Jugendliche)</h3>
+                <ul>
+                    <li><strong>50% Bedürfnisse:</strong> Geld für Dinge, die du wirklich brauchst (Schulmaterial, Transport, Essen).</li>
+                    <li><strong>30% Wünsche:</strong> Geld für Dinge, die du gerne hättest (Games, Kino, neue Kleidung, Hobbys).</li>
+                    <li><strong>20% Sparen:</strong> Geld, das du für grössere Ziele zurücklegst (neues Handy, Urlaub, Führerschein).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Regelmässige Überprüfung</h3>
+                <p class="text-gray-700">Dein Budget ist nicht in Stein gemeisselt! Überprüfe es regelmässig (z.B. monatlich) und passe es an, wenn sich deine Einnahmen oder Ausgaben ändern.</p>
+            </div>
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Sparziele setzen</h3>
+                <p class="text-gray-700">Ein klares Sparziel (z.B. ein neues Fahrrad, eine Reise) motiviert dich, dein Budget einzuhalten und diszipliniert zu bleiben.</p>
+            </div>
+            <div class="info-card bg-blue-50">
+                <h3 class="text-xl font-semibold mb-3 text-blue-800">Flexibilität bewahren</h3>
+                <p class="text-gray-700">Ein Budget ist ein Werkzeug, das dir helfen soll, nicht dich einschränken. Erlaube dir auch mal kleine Belohnungen, solange du im Plan bleibst.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

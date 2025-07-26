@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wissenstest: Deine Einnahmen</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* A neutral background for the page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px; /* Max-width for large screens */
+            min-height: 720px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 16px;
+        }
+        .quiz-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            transition: all 0.2s ease;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #f0f9ff;
+            border-color: #93c5fd;
+        }
+        .option.correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            animation: pulse-green 1.5s infinite;
+        }
+        .option.incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            animation: pulse-red 1.5s infinite;
+        }
+        .feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            border-radius: 8px;
+        }
+        .feedback.show {
+            max-height: 200px; /* Adjust based on content */
+            margin-top: 1rem; /* Add space when it appears */
+            padding: 0.75rem; /* This is equivalent to Tailwind's p-3 */
+        }
+        .progress-bar-bg {
+            background-color: #e5e7eb;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
+            transition: width 0.5s ease-out;
+        }
+        .quiz-header {
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+        }
+        .quiz-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .nav-button {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header with blue accent -->
+        <div class="h-16 bg-blue-600 w-full flex items-center justify-between px-8 rounded-t-lg">
+            <h2 class="text-white text-2xl font-medium">Wissenstest</h2>
+            <div class="text-white text-lg font-light">Überprüfe dein Verständnis von Einnahmen</div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="flex-grow flex flex-col px-12 py-8">
+            <!-- Title -->
+            <div class="mb-6">
+                <h1 class="text-4xl font-bold text-gray-800">Wissenstest: Deine Einnahmen</h1>
+                <div class="w-32 h-1 bg-blue-500 mt-2 rounded"></div>
+            </div>
+            
+            <!-- Progress bar -->
+            <div class="w-full progress-bar-bg rounded-full mb-8">
+                <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+            </div>
+            
+            <!-- Quiz content -->
+            <div class="quiz-card p-6 mb-6">
+                <!-- Question 1 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">Welche der folgenden Aussagen beschreibt 'Einnahmen' im Kontext eines persönlichen Budgets am besten?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Alle finanziellen Mittel, die einer Person oder einem Haushalt innerhalb eines bestimmten Zeitraums zufliessen, einschliesslich Lohn, Renten, Zinsen und Dividenden.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Die Gesamtsumme der monatlichen Ausgaben für feste Kosten wie Miete, Versicherungen und Abonnements, zuzüglich variabler Ausgaben für Lebensmittel, Transport und Freizeitaktivitäten, die sorgfältig überwacht werden müssen, um ein Defizit zu vermeiden und die finanzielle Gesundheit langfristig zu sichern.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Der verbleibende Betrag nach Abzug aller Ausgaben von den anfänglichen Vermögenswerten.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Die Wertsteigerung von Investitionen über einen bestimmten Zeitraum.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium">Die korrekte Antwort ist die erste Option. Einnahmen umfassen alle Gelder, die in einem bestimmten Zeitraum in Ihr Budget fliessen, wie Lohn, Zinsen, Mieteinnahmen oder andere Zuflüsse.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="flex justify-between mt-auto pt-6">
+                <button id="resetButton" class="nav-button bg-gray-200 text-gray-700 px-6 py-3 rounded-lg flex items-center font-medium">
+                    <i class="fas fa-redo mr-2"></i>
+                    <span>Zurücksetzen</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="h-12 bg-blue-600 w-full flex items-center justify-between px-8 rounded-b-lg">
+            <span class="text-white text-sm">Wissenstest: Einnahmen</span>
+            <span id="progressText" class="text-white text-sm">0/1</span>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Get all necessary elements ---
+            const questions = document.querySelectorAll('.quiz-question');
+            const resetButton = document.getElementById('resetButton');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const totalQuestions = questions.length;
+            let questionsAnswered = 0;
+
+            // --- Function to update the progress bar and text ---
+            function updateProgress() {
+                // Only increment if not already answered (handled by 'answered' flag per question)
+                // This function is called *after* 'answered' is set to true for the current question
+                questionsAnswered = document.querySelectorAll('.quiz-question .option.correct, .quiz-question .option.incorrect').length > 0 ? 1 : 0; // Simple for single question
+                const percentage = (questionsAnswered / totalQuestions) * 100;
+                progressBar.style.width = `${percentage}%`;
+                progressText.textContent = `${questionsAnswered}/${totalQuestions}`;
+            }
+
+            // Initialize progress text for the single question
+            progressText.textContent = `0/${totalQuestions}`;
+
+            // --- Initialize each question ---
+            questions.forEach((question) => {
+                const options = question.querySelectorAll('.option');
+                const feedbackElement = question.querySelector('.feedback');
+                const feedbackParagraph = feedbackElement.querySelector('p');
+                const correctExplanationHTML = feedbackParagraph.innerHTML; // Store original feedback
+                let answered = false; // Flag to prevent re-answering a single question
+
+                // Hide feedback initially by ensuring it has no 'show' class
+                feedbackElement.classList.remove('show');
+
+                options.forEach(option => {
+                    option.addEventListener('click', function() {
+                        if (answered) return; // Prevent re-answering
+                        answered = true; // Mark this question as answered
+
+                        // Disable all options in this question after answering
+                        options.forEach(opt => {
+                            opt.style.pointerEvents = 'none';
+                            opt.style.cursor = 'default';
+                        });
+
+                        const isCorrect = this.getAttribute('data-correct') === 'true';
+                        const radioCircle = this.querySelector('.w-6');
+
+                        if (isCorrect) {
+                            // --- Correct answer logic ---
+                            this.classList.add('correct');
+                            radioCircle.classList.remove('border-gray-300');
+                            radioCircle.classList.add('bg-green-500', 'border-green-500');
+                            radioCircle.innerHTML = `<i class="fas fa-check text-white text-xs flex items-center justify-center h-full"></i>`;
+
+                            // Style and populate feedback for correct answer
+                            feedbackElement.classList.add('bg-green-50');
+                            feedbackParagraph.classList.add('text-green-700');
+                            feedbackParagraph.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${correctExplanationHTML}`;
+
+                        } else {
+                            // --- Incorrect answer logic ---
+                            this.classList.add('incorrect');
+                            radioCircle.classList.remove('border-gray-300');
+                            radioCircle.classList.add('bg-red-500', 'border-red-500');
+                            radioCircle.innerHTML = `<i class="fas fa-times text-white text-xs flex items-center justify-center h-full"></i>`;
+
+                            // Highlight the correct option
+                            const correctOption = question.querySelector('.option[data-correct="true"]');
+                            if (correctOption) {
+                                correctOption.classList.add('correct');
+                                const correctRadio = correctOption.querySelector('.w-6');
+                                correctRadio.classList.remove('border-gray-300');
+                                correctRadio.classList.add('bg-green-500', 'border-green-500');
+                                correctRadio.innerHTML = `<i class="fas fa-check text-white text-xs flex items-center justify-center h-full"></i>`;
+                            }
+                            
+                            // Style and populate feedback for incorrect answer
+                            feedbackElement.classList.add('bg-red-50');
+                            feedbackParagraph.classList.add('text-red-700');
+                            // Replace the original feedback with an "incorrect" message
+                            feedbackParagraph.innerHTML = `<i class="fas fa-times-circle mr-2"></i><b>Leider falsch.</b> ${correctExplanationHTML}`;
+                        }
+
+                        // Show the feedback element
+                        feedbackElement.classList.add('show');
+                        updateProgress(); // Update progress after an answer is given
+                    });
+                });
+            });
+
+            // --- Reset button functionality ---
+            resetButton.addEventListener('click', () => {
+                location.reload(); // Reloads the page to reset the quiz
+            });
+        });
+    </script>
+</body>
+</html>
