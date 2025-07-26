@@ -101,6 +101,29 @@
         let currentSlide = parseInt(urlParams.get('slide')) || 1;
         let totalSlides = 0;
 
+
+        // --- ADD THIS CODE SNIPPET ---
+        // This function will run every time a new slide is loaded into the iframe.
+        slideFrame.addEventListener('load', function() {
+            try {
+                // Access the document inside the iframe
+                const iframeDoc = slideFrame.contentDocument || slideFrame.contentWindow.document;
+
+                // Find the .slide element
+                const slideElement = iframeDoc.querySelector('.slide');
+
+                if (slideElement) {
+                    // Apply the necessary style changes to fix the clipping issue
+                    slideElement.style.height = 'auto';
+                    slideElement.style.overflow = 'visible';
+                    slideElement.style.minHeight = '720px';
+                    slideElement.style.paddingBottom = '80px';
+                }
+            } catch (e) {
+                console.error("Could not access iframe content. This might be due to a cross-origin security policy.", e);
+            }
+        });
+
         // --- Core Functions ---
 
         async function initialize() {
