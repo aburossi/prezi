@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zusammenfassung: Der Berufsbildner als Entwicklungspartner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f0f4f8, #e0e7ef); /* Light blue-grey gradient */
+            position: relative;
+            color: #333;
+        }
+        .accent-color {
+            color: #007bff; /* A professional blue */
+        }
+        .bg-accent {
+            background-color: #007bff;
+        }
+        .mermaid {
+            margin: 0 auto;
+        }
+        /* Custom Mermaid theme variables for better integration */
+        .mermaid-container {
+            /* This div wraps the mermaid diagram to control its width */
+            max-width: 1100px; /* Adjust as needed for content fit */
+            width: 90%; /* Proportional width */
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col">
+        <!-- Header -->
+        <div class="w-full py-6 px-10 flex items-center bg-white shadow-sm">
+            <div class="w-16 h-16 rounded-full bg-accent flex items-center justify-center mr-6 shadow-md">
+                <i class="fas fa-handshake text-white text-3xl"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800">Zusammenfassung: Der Berufsbildner als Entwicklungspartner</h1>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex-grow flex flex-col items-center justify-center px-10 pb-10">
+            <!-- Mermaid mind map container -->
+            <div class="mermaid-container">
+                <div class="mermaid" id="mindmap">
+                    mindmap
+                        root((Berufsbildner als Entwicklungspartner))
+                            Entwicklungspsychologie
+                                Jugendliche-Phasen
+                                Ganzheitliches Verständnis
+                                Individuelle Förderung
+                                Selbstwirksamkeit
+                            Rolle des Berufsbildners
+                                Begleiter
+                                Mentor
+                                Vorbild
+                                Vertrauensperson
+                            Praktische Tipps
+                                Respektvoller Umgang
+                                Geduld & Empathie
+                                Offene Kommunikation
+                                Theorie & Praxis-Verknüpfung
+                                Feedback-Kultur
+                            Kernbotschaft
+                                Wichtiger Wegbegleiter
+                                Potenzialentfaltung
+                                Zukunft gestalten
+                </div>
+            </div>
+            
+            <!-- Key information box -->
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-xl w-3/4 border-l-4 border-accent-color transform hover:scale-105 transition-transform duration-300 summary-box">
+                <h3 class="text-2xl font-bold mb-3 accent-color flex items-center">
+                    <i class="fas fa-lightbulb mr-3"></i> Kernbotschaften
+                </h3>
+                <ul class="list-disc pl-6 space-y-2 text-lg text-gray-700">
+                    <li>**Ganzheitliches Verständnis** für die Entwicklung Jugendlicher</li>
+                    <li>Der Berufsbildner als **Entwicklungspartner** und Begleiter</li>
+                    <li>Effektive Verknüpfung von **Theorie & Praxis**</li>
+                    <li>Fokus auf **individuelle Förderung** und Stärken</li>
+                    <li>Grundlagen: **Respekt** und **Geduld**</li>
+                    <li>Schaffung einer vertrauensvollen Lernumgebung</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="w-full py-3 px-10 flex justify-between items-center bg-gray-100 text-gray-600 text-sm">
+            <div>Berufsbildung Schweiz</div>
+            <div>Slide 13</div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default', // Or 'neutral', 'dark'
+            securityLevel: 'loose', // Needed for some advanced features, but use with caution
+            mindmap: {
+                // Specific mindmap styling options
+                padding: 15,
+                maxTextLength: 60,
+                // These themeVariables override the 'default' theme for mindmaps
+                themeVariables: {
+                    primaryColor: '#007bff', // Blue for root
+                    primaryBorderColor: '#007bff',
+                    primaryTextColor: '#ffffff',
+                    lineColor: '#6c757d', // Grey lines
+                    secondaryColor: '#6c757d', // Darker grey for secondary nodes
+                    secondaryBorderColor: '#6c757d',
+                    secondaryTextColor: '#ffffff',
+                    tertiaryColor: '#adb5bd', // Lighter grey for tertiary nodes
+                    tertiaryBorderColor: '#adb5bd',
+                    tertiaryTextColor: '#ffffff',
+                    nodeBorder: '1px solid',
+                    mainBkg: '#007bff',
+                    mainBorder: '#007bff',
+                    taskBkg: '#6c757d',
+                    taskBorder: '#6c757d',
+                    activeBkg: '#adb5bd',
+                    activeBorder: '#adb5bd',
+                    doneBkg: '#e9ecef',
+                    doneBorder: '#e9ecef'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

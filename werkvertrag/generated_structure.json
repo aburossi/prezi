@@ -1,0 +1,218 @@
+{
+  "structure_strategy": "The Case Study / Problem-Based Challenge",
+  "section_intro": {
+    "title": "Einführung in den Werkvertrag",
+    "description": "Stellt das Konzept des Werkvertrags im Schweizer Privatrecht vor und führt in die Problemstellung ein."
+  },
+  "section_main": {
+    "title": "Analyse und Anwendung des Werkvertrags",
+    "description": "Vertiefte Auseinandersetzung mit den rechtlichen Grundlagen und deren Anwendung anhand eines Fallbeispiels."
+  },
+  "section_conclusion": {
+    "title": "Zusammenfassung und Praxisbezug",
+    "description": "Fasst die Kernkonzepte zusammen und bietet praktische Handlungsempfehlungen für den Arbeitsalltag."
+  },
+  "slides": [
+    {
+      "slide_number": 1,
+      "title": "Der defekte Traktor: Ein Werkvertrag-Dilemma",
+      "content_description": "Eine ansprechende Einführung, die ein realistisches Problem aus dem Arbeitsalltag eines Werkstattleiters präsentiert, um Neugier zu wecken und den Bezug zum Thema herzustellen.",
+      "goal": "Die Lernenden für die Relevanz von Werkverträgen im Arbeitsalltag sensibilisieren und eine konkrete Problemstellung als Ausgangspunkt für die Lerneinheit etablieren.",
+      "layout": "Case_Study_Analysis",
+      "key_informations": [
+        "Werkvertrag",
+        "Mängel",
+        "Haftung",
+        "Landmaschinen",
+        "Praxisproblem"
+      ]
+    },
+    {
+      "slide_number": 2,
+      "title": "Dein Fahrplan & Lernziele: Werkverträge meistern",
+      "content_description": "Klare Lernziele und eine Übersicht über die Präsentationsstruktur, um Erwartungen zu setzen und einen roten Faden zu bieten.",
+      "goal": "Den Lernenden einen Überblick über die Inhalte und den Ablauf der Präsentation geben und die Lernziele transparent machen, damit sie wissen, was sie am Ende beherrschen sollen.",
+      "layout": "table_of_contents",
+      "key_informations": [
+        "Lernziele",
+        "Agenda",
+        "Werkvertrag Definition",
+        "Abgrenzung",
+        "Mängelrechte",
+        "Praxisbeispiele"
+      ]
+    },
+    {
+      "slide_number": 3,
+      "title": "Der Fall: Reparatur eines Mähdreschers",
+      "content_description": "Detaillierte Beschreibung des Ausgangsszenarios: Ein Kunde bringt einen Mähdrescher zur Motorrevision, spezifische Vereinbarungen und der Zustand bei Übergabe.",
+      "goal": "Die Ausgangssituation des Fallbeispiels klar und umfassend darstellen, um eine gemeinsame Basis für die Analyse zu schaffen.",
+      "layout": "Case_Study_Analysis",
+      "key_informations": [
+        "Mähdrescher",
+        "Motorrevision",
+        "Werkvertrag",
+        "Vereinbarung",
+        "Ausgangslage"
+      ]
+    },
+    {
+      "slide_number": 4,
+      "title": "Die Eskalation: Neue Mängel nach der Reparatur",
+      "content_description": "Beschreibung der Probleme, die nach der Reparatur auftreten: Motorversagen, neue Geräusche, Kundenbeschwerde und Forderungen.",
+      "goal": "Die Komplexität des Falles durch die Einführung neuer Probleme und Kundenreaktionen erhöhen und die Dringlichkeit der rechtlichen Analyse verdeutlichen.",
+      "layout": "Case_Study_Analysis",
+      "key_informations": [
+        "Mängelrüge",
+        "Nachbesserung",
+        "Schadenersatzforderung",
+        "Kundenreaktion",
+        "Folgeschäden"
+      ]
+    },
+    {
+      "slide_number": 5,
+      "title": "Erste Einschätzung: Wo liegt das Problem?",
+      "content_description": "Eine Multiple-Choice-Frage, die die Lernenden auffordert, das wahrscheinlichste rechtliche Problem im Fall zu identifizieren (z.B. Mangel am Werk, Bedienungsfehler, neuer Auftrag).",
+      "goal": "Die Lernenden zu einer ersten analytischen Einschätzung des Falles anregen und ihr Verständnis der Ausgangssituation überprüfen.",
+      "layout": "Multiple_Choice_Assessment",
+      "key_informations": [
+        "Problemidentifikation",
+        "Rechtsgrundlage",
+        "Mängel",
+        "Ursachenanalyse"
+      ]
+    },
+    {
+      "slide_number": 6,
+      "title": "Was ist ein Werkvertrag? Grundlagen nach OR",
+      "content_description": "Einführung in die gesetzliche Definition des Werkvertrags (OR 363 ff.), seine Merkmale (Erfolgsorientierung, Herstellung eines Werkes) und die beteiligten Parteien (Unternehmer, Besteller).",
+      "goal": "Ein grundlegendes Verständnis des Begriffs 'Werkvertrag' und seiner rechtlichen Einordnung im Schweizer Obligationenrecht vermitteln.",
+      "layout": "Informational_Breakdown",
+      "key_informations": [
+        "OR 363",
+        "Werkvertrag Definition",
+        "Erfolgspflicht",
+        "Werklohn",
+        "Unternehmer",
+        "Besteller"
+      ]
+    },
+    {
+      "slide_number": 7,
+      "title": "Abgrenzung: Werkvertrag vs. Kaufvertrag vs. Auftrag",
+      "content_description": "Erklärung der entscheidenden Unterschiede zwischen einem Werkvertrag und ähnlichen Vertragstypen (Kaufvertrag, einfacher Auftrag) anhand von Beispielen aus dem Maschinenbereich.",
+      "goal": "Sicherstellen, dass die Lernenden verschiedene Vertragstypen korrekt zuordnen können, da dies für die Anwendung der richtigen Rechtsnormen entscheidend ist.",
+      "layout": "Dual_Column_Comparison",
+      "key_informations": [
+        "Kaufvertrag",
+        "einfacher Auftrag",
+        "Erfolgspflicht",
+        "Sorgfaltspflicht",
+        "Sachleistung",
+        "Dienstleistung"
+      ]
+    },
+    {
+      "slide_number": 8,
+      "title": "Mängelrechte beim Werkvertrag: Was tun bei Fehlern?",
+      "content_description": "Erläuterung der gesetzlichen Mängelrechte des Bestellers (Mängelrüge, Nachbesserung, Minderung, Wandelung, Schadenersatz) und der Pflichten des Unternehmers. Anwendung auf den Mähdrescher-Fall.",
+      "goal": "Die spezifischen rechtlichen Instrumente zur Behebung von Mängeln lehren und deren praktische Anwendung im Kontext des Fallbeispiels aufzeigen.",
+      "layout": "Component_Breakdown",
+      "key_informations": [
+        "Mängelrüge",
+        "Nachbesserungsrecht",
+        "Minderung",
+        "Wandelung",
+        "Schadenersatz",
+        "Verjährung"
+      ]
+    },
+    {
+      "slide_number": 9,
+      "title": "Abnahme des Werkes und Haftung",
+      "content_description": "Diskussion der Bedeutung der 'Abnahme des Werkes', ihrer Auswirkungen auf die Haftung und die Verjährungsfristen für Mängelrechte. Bezug zum Fallbeispiel.",
+      "goal": "Klarstellen, wann die Verantwortung für das Werk übergeht und welche Konsequenzen die Abnahme für die Geltendmachung von Mängeln hat.",
+      "layout": "Informational_Breakdown",
+      "key_informations": [
+        "Abnahme",
+        "Genehmigung",
+        "Versteckte Mängel",
+        "Offene Mängel",
+        "Haftungsbeginn",
+        "Verjährungsfristen"
+      ]
+    },
+    {
+      "slide_number": 10,
+      "title": "Entscheidungsfindung im Fall Mähdrescher",
+      "content_description": "Präsentation von 2-3 konkreten Handlungsoptionen für den Werkstattleiter, um auf die Kundenbeschwerde zu reagieren, basierend auf den gelernten Rechtsgrundsätzen. Die Lernenden wählen die beste Option.",
+      "goal": "Die Fähigkeit der Lernenden zur Anwendung des erworbenen Wissens in einer komplexen Situation und zur strategischen Entscheidungsfindung bewerten.",
+      "layout": "Options_and_Remedies",
+      "key_informations": [
+        "Handlungsoptionen",
+        "Rechtliche Strategie",
+        "Kundenbeziehung",
+        "Risikobewertung",
+        "Entscheidungsfindung"
+      ]
+    },
+    {
+      "slide_number": 11,
+      "title": "Analyse der Entscheidung & Best Practices",
+      "content_description": "Detailliertes Feedback zur gewählten Option, Erklärung der rechtlichen Begründung für den 'korrekten' Weg und warum andere Optionen weniger geeignet wären. Betonung von Präventionsmassnahmen.",
+      "goal": "Das Lernen durch präzise Rückmeldung verstärken, die rechtliche Argumentation vertiefen und bewährte Verfahren im Umgang mit solchen Situationen aufzeigen.",
+      "layout": "Case_Study_Analysis",
+      "key_informations": [
+        "Feedback",
+        "Rechtliche Begründung",
+        "Prävention",
+        "Kommunikation",
+        "Risikomanagement"
+      ]
+    },
+    {
+      "slide_number": 12,
+      "title": "Weitere Praxisbeispiele & Fallstricke",
+      "content_description": "Kurze Vorstellung von 1-2 weiteren häufigen Werkvertragsszenarien oder typischen Fallstricken für Werkstattleiter (z.B. Änderungen während der Arbeit, Kostenvoranschlag vs. Pauschalpreis, beigestelltes Material).",
+      "goal": "Die Anwendung der gelernten Prinzipien auf weitere relevante Situationen aus dem Arbeitsalltag erweitern und auf häufige Fehlerquellen hinweisen.",
+      "layout": "Comparative_Grid",
+      "key_informations": [
+        "Änderungen am Werk",
+        "Kostenvoranschlag",
+        "Pauschalpreis",
+        "Kundenmaterial",
+        "Haftungsausschluss",
+        "Zusatzaufträge"
+      ]
+    },
+    {
+      "slide_number": 13,
+      "title": "Kernbotschaften: Dein Werkvertrag-Kompass",
+      "content_description": "Eine visuelle Zusammenfassung der wichtigsten rechtlichen Prinzipien und praktischen Ratschläge für Werkstattleiter im Umgang mit Werkverträgen.",
+      "goal": "Die wichtigsten Lernpunkte konsolidieren und den Lernenden einen schnellen Überblick über die zentralen Erkenntnisse für die zukünftige Anwendung bieten.",
+      "layout": "Mind_map",
+      "key_informations": [
+        "Zusammenfassung",
+        "Rechtssicherheit",
+        "Vertragsmanagement",
+        "Kundenkommunikation",
+        "Dokumentation"
+      ]
+    },
+    {
+      "slide_number": 14,
+      "title": "Dein Werkzeugkasten für die Praxis & Weiterführendes",
+      "content_description": "Praktische Tipps für den Arbeitsalltag (z.B. klare Vertragsgestaltung, Dokumentation, Kommunikation) und Links zu relevanten Rechtsressourcen oder Musterverträgen.",
+      "goal": "Die Lernenden befähigen, ihr Wissen selbstbewusst anzuwenden, und ihnen Ressourcen für die weitere Vertiefung und Unterstützung im Arbeitsalltag an die Hand geben.",
+      "layout": "Options_and_Remedies",
+      "key_informations": [
+        "Checklisten",
+        "Musterverträge",
+        "Rechtsberatung",
+        "Weiterbildung",
+        "Praxistipps"
+      ]
+    }
+  ]
+}

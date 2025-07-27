@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 4: Die Eskalation – Neue Mängel nach der Reparatur</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Example: Open Sans) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f4f8; /* Light background for the slide */
+            color: #333;
+            line-height: 1.6;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 30px;
+        }
+        h1 {
+            color: #1a202c; /* Darker title */
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 2.5rem; /* Larger title */
+        }
+        h2 {
+            color: #2d3748; /* Sub-heading color */
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.75rem;
+        }
+        .case-box {
+            background-color: #e2e8f0; /* Lighter blue-gray */
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .case-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+        .timeline-container {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 30px;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #cbd5e0; /* Gray timeline line */
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 30px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -30px; /* Adjust to align with the line */
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            background-color: #4299e1; /* Blue dot */
+            border-radius: 50%;
+            border: 4px solid #ffffff; /* White border for contrast */
+            box-shadow: 0 0 0 2px #4299e1;
+        }
+        .timeline-content {
+            background-color: #f7fafc; /* Very light gray for content */
+            border-left: 5px solid #4299e1;
+            padding: 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            color: #2c5282; /* Darker blue for event titles */
+            margin-bottom: 5px;
+        }
+        .analysis-section .grid > div {
+            background-color: #f7fafc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            min-height: 250px; /* Ensure equal height */
+            display: flex;
+            flex-direction: column;
+        }
+        .analysis-section .grid > div h3 {
+            color: #2d3748;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #edf2f7;
+            padding-bottom: 10px;
+        }
+        .analysis-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .analysis-section ul li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+        .analysis-section ul li::before {
+            content: "\f058"; /* Check circle icon */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: #38a169; /* Green checkmark */
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .references-box {
+            background-color: #edf2f7; /* Light gray */
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .references-box h2 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        .references-box ul {
+            list-style: disc;
+            padding-left: 25px;
+        }
+        .references-box ul li {
+            margin-bottom: 8px;
+            color: #4a5568;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>Die Eskalation: Neue Mängel nach der Reparatur</h1>
+
+        <div class="case-box">
+            <h2><i class="fas fa-exclamation-triangle mr-3 text-red-500"></i>Der neue Ernstfall</h2>
+            <p class="text-lg text-gray-700">
+                Nur wenige Tage nach der "erfolgreichen" Reparatur des Getriebes treten am Fahrzeug von Herrn Müller <strong>gravierende neue Probleme</strong> auf. Der Motor beginnt unregelmäßig zu laufen, es sind ungewöhnliche Klopfgeräusche zu hören, und die Leistung ist stark reduziert. Herr Müller ist verärgert und besorgt, da das Fahrzeug nun in einem schlechteren Zustand zu sein scheint als vor der ersten Reparatur.
+            </p>
+        </div>
+
+        <div class="timeline-container">
+            <h2><i class="fas fa-history mr-3 text-blue-600"></i>Chronologie der Eskalation</h2>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Tag 3 nach Reparatur: Motorversagen</h3>
+                    <p>Der Motor des Fahrzeugs setzt während der Fahrt aus, begleitet von lauten, metallischen Geräuschen. Das Fahrzeug muss abgeschleppt werden.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Tag 4: Neue Geräusche & Leistungsverlust</h3>
+                    <p>Nach einem Neustart des Motors treten dauerhaft neue, besorgniserregende Geräusche auf. Die Motorleistung ist drastisch reduziert, das Fahren ist kaum noch möglich.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Tag 5: Zweite Mängelrüge des Kunden</h3>
+                    <p>Herr Müller kontaktiert die Werkstatt erneut, rügt die neuen Mängel und verlangt eine umgehende und kostenfreie Behebung. Er äußert den Verdacht, dass die neuen Probleme eine Folge der vorangegangenen Getriebereparatur sein könnten.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Tag 7: Forderung nach Rückabwicklung & Schadenersatz</h3>
+                    <p>Nachdem die Werkstatt keine zufriedenstellende Lösung anbietet, fordert Herr Müller die vollständige Rückabwicklung des Reparaturvertrags sowie Schadenersatz für die entstandenen Abschleppkosten und Nutzungsausfall.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h2 class="text-center mb-6"><i class="fas fa-magnifying-glass-chart mr-3 text-purple-600"></i>Analyse der neuen Situation</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3><i class="fas fa-bug mr-2 text-red-500"></i>Problemanalyse</h3>
+                    <ul class="text-gray-700">
+                        <li><strong>Neue Mängel:</strong> Motorversagen, ungewöhnliche Geräusche, Leistungsverlust.</li>
+                        <li><strong>Kausalzusammenhang:</strong> Starker Verdacht, dass die neuen Mängel durch die vorherige Getriebereparatur verursacht wurden (Folgeschäden).</li>
+                        <li><strong>Zweite Mängelrüge:</strong> Rechtliche Bedeutung der erneuten Beanstandung und deren Fristen.</li>
+                        <li><strong>Beweislast:</strong> Wer muss beweisen, dass die neuen Mängel auf die Reparatur zurückzuführen sind?</li>
+                        <li><strong>Kundenreaktion:</strong> Eskalation der Kundenforderungen von Nachbesserung zu Rückabwicklung und Schadenersatz.</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3><i class="fas fa-lightbulb mr-2 text-green-500"></i>Lösungsansätze & Nächste Schritte</h3>
+                    <ul class="text-gray-700">
+                        <li><strong>Sofortige Begutachtung:</strong> Notwendigkeit einer unabhängigen Sachverständigenprüfung zur Feststellung der Ursache der neuen Mängel.</li>
+                        <li><strong>Rechtliche Prüfung:</strong> Bewertung der zweiten Mängelrüge und der daraus resultierenden Rechte des Kunden (Nacherfüllung, Rücktritt, Minderung, Schadenersatz).</li>
+                        <li><strong>Verhandlungsgrundlage:</strong> Schaffung einer fundierten Basis für Verhandlungen mit der Werkstatt.</li>
+                        <li><strong>Schadenersatzansprüche:</strong> Prüfung der Rechtmäßigkeit der Forderungen nach Abschleppkosten und Nutzungsausfall.</li>
+                        <li><strong>Dokumentation:</strong> Sicherstellung lückenloser Dokumentation aller Kommunikationen und Schäden.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="references-box">
+            <h2><i class="fas fa-book-open mr-3 text-gray-700"></i>Relevante rechtliche Konzepte</h2>
+            <ul class="text-gray-700">
+                <li><strong>Mängelrüge (§ 377 HGB / § 437 BGB):</strong> Erneute und präzise Beanstandung der neuen Mängel.</li>
+                <li><strong>Nachbesserungspflicht (§ 635 BGB):</strong> Die Werkstatt hat grundsätzlich das Recht zur Nacherfüllung, aber wie oft?</li>
+                <li><strong>Schadenersatzforderung (§ 280 BGB):</strong> Anspruch auf Ersatz von Folgeschäden (Abschleppkosten, Nutzungsausfall) bei Pflichtverletzung.</li>
+                <li><strong>Rücktritt vom Vertrag (§ 323 BGB):</strong> Möglichkeit des Kunden, vom Vertrag zurückzutreten, wenn Nacherfüllung fehlschlägt oder unzumutbar ist.</li>
+                <li><strong>Beweislastumkehr (§ 477 BGB bei Verbrauchsgüterkauf):</strong> Könnte hier relevant sein, wenn es sich um einen Verbrauchsgüterkauf handelt und die Mängel innerhalb von 6 Monaten auftreten.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

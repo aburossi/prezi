@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das Jugendalter: Eine Phase des Umbruchs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Light background for the overall page */
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+            color: #1a202c; /* Darker text for headings */
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+        }
+
+        /* Custom guarantee-card styling for categories */
+        .guarantee-card {
+            background-color: #fefefe; /* Very light background for cards */
+            border-radius: 10px;
+            padding: 1.75rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #60a5fa; /* Blue border on hover */
+        }
+        .guarantee-card h3 {
+            color: #2563eb; /* Blue heading for cards */
+            margin-bottom: 0.75rem;
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+        .guarantee-card p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #4a5568;
+        }
+
+        /* Styling for list items with icons */
+        .info-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            color: #4a5568;
+        }
+        .info-list li .fas {
+            margin-right: 0.85rem;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            padding-top: 0.15rem; /* Align icon with text baseline */
+        }
+        /* Icon colors based on semantic meaning */
+        .info-list li .fa-exclamation-triangle,
+        .info-list li .fa-user-friends,
+        .info-list li .fa-bolt,
+        .info-list li .fa-frown {
+            color: #f59e0b; /* Amber for challenges/caution */
+        }
+        .info-list li .fa-lightbulb,
+        .info-list li .fa-handshake,
+        .info-list li .fa-seedling,
+        .info-list li .fa-heart {
+            color: #10b981; /* Green for opportunities/positive */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="text-4xl font-bold text-center text-gray-800">Das Jugendalter: Eine Phase des Umbruchs</h1>
+
+        <!-- Section 1: Definition of Adolescence -->
+        <div class="bg-blue-50 p-8 rounded-lg shadow-md border border-blue-200">
+            <h2 class="text-3xl font-semibold text-blue-700 mb-4">Was ist das Jugendalter?</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+                Das Jugendalter ist eine entscheidende <strong>Übergangsphase</strong> zwischen Kindheit und Erwachsensein, die typischerweise von der Pubertät bis zum jungen Erwachsenenalter reicht. Es ist geprägt von rapiden und tiefgreifenden körperlichen, kognitiven, emotionalen und sozialen Veränderungen, die die Identitätsbildung und die Entwicklung der Persönlichkeit massgeblich beeinflussen.
+            </p>
+        </div>
+
+        <!-- Section 2: Key Developmental Areas (Categories) -->
+        <div>
+            <h2 class="text-3xl font-semibold text-center mb-6 text-gray-800">Schlüsselbereiche der Entwicklung</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="guarantee-card">
+                    <h3 class="text-xl font-semibold text-blue-600">Körperliche Reifung</h3>
+                    <p>Schnelles Wachstum, hormonelle Veränderungen und die Entwicklung sekundärer Geschlechtsmerkmale. Oft verbunden mit Unsicherheiten bezüglich des eigenen Körpers und des Aussehens.</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3 class="text-xl font-semibold text-blue-600">Kognitive Entwicklung</h3>
+                    <p>Entwicklung abstrakten Denkens, Fähigkeit zur Problemlösung und kritisches Hinterfragen von Informationen. Gleichzeitig können impulsive Entscheidungen und eine eingeschränkte Risikoeinschätzung bestehen bleiben.</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3 class="text-xl font-semibold text-blue-600">Emotionale Entwicklung</h3>
+                    <p>Intensivierung von Emotionen, Suche nach der eigenen Identität und Auseinandersetzung mit Werten und Normen. Stimmungsschwankungen und erhöhte Sensibilität sind häufige Begleiterscheinungen.</p>
+                </div>
+                <div class="guarantee-card">
+                    <h3 class="text-xl font-semibold text-blue-600">Soziale Entwicklung</h3>
+                    <p>Stärkere Orientierung an Gleichaltrigen, Ablösung von den Eltern und Aufbau eigener Freundeskreise sowie erster romantischer Beziehungen. Die Peergroup wird zum wichtigen Bezugspunkt.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Challenges and Opportunities (Rules/Conditions) -->
+        <div>
+            <h2 class="text-3xl font-semibold text-center mb-6 text-gray-800">Herausforderungen & Potenziale dieser Phase</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-amber-50 p-6 rounded-lg shadow-md border border-amber-200">
+                    <h3 class="text-2xl font-semibold text-amber-700 mb-4">Typische Herausforderungen</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-exclamation-triangle"></i><span><strong>Identitätskrisen & Selbstzweifel:</strong> Die Suche nach dem 'Wer bin ich?' kann verunsichern und zu inneren Konflikten führen.</span></li>
+                        <li><i class="fas fa-user-friends"></i><span><strong>Gruppendruck & Anpassung:</strong> Der starke Wunsch nach Zugehörigkeit kann zu riskantem Verhalten oder der Vernachlässigung eigener Bedürfnisse führen.</span></li>
+                        <li><i class="fas fa-bolt"></i><span><strong>Risikobereitschaft & Impulsivität:</strong> Neue Erfahrungen werden gesucht, oft ohne volle Abschätzung der möglichen Konsequenzen.</span></li>
+                        <li><i class="fas fa-frown"></i><span><strong>Konflikte mit Autoritätspersonen:</strong> Ablösungsprozesse und die Suche nach Autonomie können zu Spannungen mit Eltern und Lehrern führen.</span></li>
+                    </ul>
+                </div>
+                <div class="bg-emerald-50 p-6 rounded-lg shadow-md border border-emerald-200">
+                    <h3 class="text-2xl font-semibold text-emerald-700 mb-4">Potenziale & Unterstützung</h3>
+                    <ul class="info-list">
+                        <li><i class="fas fa-lightbulb"></i><span><strong>Entwicklung eigener Werte & Ziele:</strong> Eine Zeit für tiefgreifende persönliche Orientierung und die Formulierung von Zukunftsplanungen.</span></li>
+                        <li><i class="fas fa-handshake"></i><span><strong>Aufbau tiefer Freundschaften:</strong> Entwicklung von Empathie, Loyalität und wichtigen sozialen Kompetenzen durch Peer-Beziehungen.</span></li>
+                        <li><i class="fas fa-seedling"></i><span><strong>Zunehmende Selbstständigkeit:</strong> Erlernen von Verantwortung, eigenständigem Handeln und der Bewältigung neuer Herausforderungen.</span></li>
+                        <li><i class="fas fa-heart"></i><span><strong>Bedarf an Verständnis & Unterstützung:</strong> Eine offene Kommunikation und ein unterstützendes Umfeld fördern eine gesunde und resiliente Entwicklung.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

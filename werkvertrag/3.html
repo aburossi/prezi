@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fallstudie: Reparatur eines Mähdreschers - Ausgangsszenario</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .case-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .case-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        }
+        .timeline-dot {
+            position: relative;
+            width: 1rem;
+            height: 1rem;
+            background-color: #3b82f6; /* blue-500 */
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .timeline-dot::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 1rem; /* Position below the dot */
+            bottom: -1rem; /* Extend downwards */
+            width: 2px;
+            background-color: #d1d5db; /* gray-300 */
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+        /* Last timeline dot should not have a line */
+        .timeline-item:last-child .timeline-dot::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen flex items-center justify-center p-6">
+
+    <div class="w-full max-w-4xl bg-white rounded-xl shadow-xl overflow-hidden">
+        <!-- Header Section -->
+        <div class="bg-gradient-to-r from-blue-600 to-blue-800 p-6 text-white text-center">
+            <h1 class="text-3xl font-bold mb-2">Der Fall: Reparatur eines Mähdreschers</h1>
+            <p class="text-blue-200 text-lg">Anwendung theoretischer Konzepte auf ein praktisches Szenario</p>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="p-8 space-y-8">
+
+            <!-- Section 1: Initial Scenario Description -->
+            <div class="case-box bg-blue-50 border-l-4 border-blue-600">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4 flex items-center">
+                    <i class="fas fa-info-circle mr-3 text-blue-500"></i> Ausgangsszenario: Die Übergabe
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    Ein Landwirt (Kunde) bringt seinen Mähdrescher der Marke "AgriGiant 5000" zur Motorrevision in die Werkstatt des Mechanikers (Unternehmer).
+                    Die Parteien schließen einen <strong>Werkvertrag</strong> über die umfassende Überholung des Motors, inklusive Austausch verschlissener Teile und einer Leistungsprüfung.
+                    Es wird vereinbart, dass der Mähdrescher nach der Revision wieder voll funktionsfähig und für die kommende Erntesaison einsatzbereit sein muss.
+                </p>
+                <p class="text-gray-700 leading-relaxed">
+                    Bei der Übergabe weist der Kunde darauf hin, dass der Mähdrescher in den letzten Wochen vor der Revision bereits erhöhten Kraftstoffverbrauch und eine leichte Rauchentwicklung zeigte.
+                    Diese Informationen werden vom Mechaniker notiert. Es wird kein detailliertes Übergabeprotokoll über den genauen Zustand aller Komponenten des Mähdreschers erstellt, lediglich eine Bestätigung des Empfangs zur Motorrevision.
+                </p>
+                <div class="mt-6 p-4 bg-blue-100 rounded-md border border-blue-200">
+                    <h3 class="text-lg font-medium text-blue-800 mb-2 flex items-center">
+                        <i class="fas fa-lightbulb mr-2 text-blue-600"></i> Kerninformationen
+                    </h3>
+                    <ul class="list-disc list-inside text-blue-700">
+                        <li><strong>Gegenstand:</strong> Mähdrescher "AgriGiant 5000"</li>
+                        <li><strong>Leistung:</strong> Umfassende Motorrevision</li>
+                        <li><strong>Vertragsart:</strong> Werkvertrag</li>
+                        <li><strong>Vereinbarung:</strong> Volle Funktionsfähigkeit für die Erntesaison</li>
+                        <li><strong>Zusatzinfo bei Übergabe:</strong> Erhöhter Kraftstoffverbrauch, leichte Rauchentwicklung</li>
+                        <li><strong>Fehlend:</strong> Detailliertes Übergabeprotokoll</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Placeholder for subsequent sections (Timeline, Analysis, Solution, Conclusion) -->
+            <div class="text-center text-gray-500 text-sm italic py-4">
+                <p>
+                    (Die folgenden Abschnitte – Ereignis-Timeline, Analyse & Lösung, und Theoretische Grundlagen – würden auf den nächsten Folien detailliert dargestellt.)
+                </p>
+                <div class="flex justify-center items-center mt-4 space-x-4">
+                    <div class="timeline-dot !bg-gray-300"></div>
+                    <div class="timeline-dot !bg-gray-300"></div>
+                    <div class="timeline-dot !bg-gray-300"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

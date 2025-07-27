@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktische Tipps: Umgang mit Emotionen und Konflikten</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome (for icons, if needed, though not explicitly in guidelines for this layout) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9fafb; /* bg-gray-50 */
+            color: #3b82f6; /* text-blue-500 */
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* full rounded */
+            font-weight: 700; /* font-bold */
+            font-size: 1.25rem; /* text-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            z-index: 10;
+            border: 2px solid #3b82f6; /* border-blue-500 */
+        }
+        .right-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            border-left-width: 8px; /* border-l-8 */
+            transition: all 0.3s ease-in-out;
+            flex: 1; /* Allow cards to grow and shrink */
+            min-width: 300px; /* Ensure cards don't get too small */
+        }
+        .right-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+        }
+        .card-blue {
+            border-color: #3b82f6; /* border-blue-500 */
+        }
+        .card-blue:hover {
+            border-color: #2563eb; /* border-blue-700 */
+        }
+        .card-green {
+            border-color: #22c55e; /* border-green-500 */
+        }
+        .card-green:hover {
+            border-color: #16a34a; /* border-green-700 */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-blue-800 mb-4">Praktische Tipps: Umgang mit Emotionen und Konflikten</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Strategien für Berufsbildner zum Umgang mit emotionalen Ausbrüchen, Konflikten und zur Förderung von Resilienz.
+            </p>
+        </header>
+
+        <!-- Main Options Section -->
+        <section class="relative flex flex-col md:flex-row justify-center items-stretch gap-8 mb-12">
+            <!-- Left Card: Option 1 -->
+            <div class="right-card card-blue">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">Option 1: Proaktiver Umgang mit Emotionen</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                    <li><strong class="text-blue-600">Aktives Zuhören:</strong> Volle Aufmerksamkeit schenken, nonverbale Signale deuten, Gefühle benennen.</li>
+                    <li><strong class="text-blue-600">Empathie zeigen:</strong> Sich in die Lage des Jugendlichen versetzen, Verständnis signalisieren, ohne zu bewerten.</li>
+                    <li><strong class="text-blue-600">Gefühle validieren:</strong> Akzeptieren, dass Emotionen da sein dürfen, auch wenn man die Ursache nicht teilt.</li>
+                    <li><strong class="text-blue-600">Ruhige Präsenz bewahren:</strong> Selbst ruhig bleiben, um Eskalation zu vermeiden und Sicherheit zu vermitteln.</li>
+                </ul>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">ODER</div>
+
+            <!-- Right Card: Option 2 -->
+            <div class="right-card card-green">
+                <h2 class="text-3xl font-bold text-green-700 mb-4">Option 2: Konstruktive Konfliktlösung</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                    <li><strong class="text-green-600">Problem klar definieren:</strong> Sachlich den Kern des Konflikts benennen, statt Schuld zuzuweisen.</li>
+                    <li><strong class="text-green-600">Win-Win-Strategien suchen:</strong> Gemeinsam Lösungen erarbeiten, die für alle Beteiligten akzeptabel sind.</li>
+                    <li><strong class="text-green-600">Grenzen setzen:</strong> Deutlich machen, welche Verhaltensweisen inakzeptabel sind und Konsequenzen aufzeigen.</li>
+                    <li><strong class="text-green-600">Mediation anbieten:</strong> Bei Bedarf als neutraler Vermittler agieren oder externe Hilfe vorschlagen.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Additional Options Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Grid Item 1: Stressmanagement -->
+            <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-purple-500 hover:shadow-2xl transition-all">
+                <h3 class="text-2xl font-bold text-purple-700 mb-3">Zusätzliche Strategie: Stressmanagement</h3>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                    <li><strong class="text-purple-600">Entspannungstechniken:</strong> Jugendliche zu Atemübungen oder kurzen Pausen anleiten.</li>
+                    <li><strong class="text-purple-600">Pausenstruktur:</strong> Regelmässige, bewusste Pausen im Arbeitsalltag fördern.</li>
+                    <li><strong class="text-purple-600">Selbstfürsorge fördern:</strong> Die Bedeutung von Schlaf, Ernährung und Freizeitaktivitäten betonen.</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 2: Resilienz fördern -->
+            <div class="bg-white p-8 rounded-lg shadow-xl border-l-8 border-orange-500 hover:shadow-2xl transition-all">
+                <h3 class="text-2xl font-bold text-orange-700 mb-3">Langfristiges Ziel: Resilienz fördern</h3>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                    <li><strong class="text-orange-600">Reflexion ermöglichen:</strong> Über schwierige Situationen sprechen und Lernerfahrungen identifizieren.</li>
+                    <li><strong class="text-orange-600">Problemlösungskompetenz stärken:</strong> Jugendliche aktiv an der Lösungsfindung beteiligen.</li>
+                    <li><strong class="text-orange-600">Positive Denkweise:</strong> Fokus auf Stärken und Erfolge legen, Rückschläge als Lernchancen sehen.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Critical Notice -->
+        <section class="bg-yellow-100 border-l-8 border-yellow-500 text-yellow-800 p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-bold mb-3">Wichtiger Hinweis: Konsistenz & Vorbildfunktion</h3>
+            <p class="text-lg">
+                Alle genannten Strategien erfordern <strong class="font-semibold">konsistente Anwendung</strong> und eine <strong class="font-semibold">authentische Vorbildfunktion</strong> des Berufsbildners.
+                Eigene Emotionen zu reflektieren und einen gesunden Umgang mit Stress vorzuleben, ist entscheidend für den Erfolg dieser Massnahmen.
+            </p>
+        </section>
+
+    </div>
+
+</body>
+</html>

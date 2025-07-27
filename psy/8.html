@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktische Tipps: Identität und Selbstwert im Betrieb fördern</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Montserrat & Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 350px; /* Ensure cards have similar height */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        .left-card {
+            border-left: 8px solid #3498db; /* Blue */
+        }
+        .right-card {
+            border-right: 8px solid #2ecc71; /* Green */
+        }
+        .vs-badge {
+            background-color: #e74c3c; /* Red */
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px; /* Pill shape */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: nowrap;
+        }
+        .icon-large {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .grid-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+        .grid-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+        .critical-notice {
+            background-color: #fef3c7; /* Light yellow */
+            border-left: 6px solid #fbbf24; /* Amber */
+            padding: 1.5rem;
+            border-radius: 10px;
+            color: #78350f; /* Darker brown for text */
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .critical-notice .fa-icon {
+            color: #fbbf24;
+            margin-right: 1rem;
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container py-10">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Praktische Tipps: Identität und Selbstwert im Betrieb fördern</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Die Förderung von Identität und Selbstwertgefühl ist entscheidend für die Entwicklung junger Berufsleute. Hier sind bewährte Ansätze für Berufsbildner.
+            </p>
+        </header>
+
+        <!-- Main Options Section -->
+        <div class="relative flex flex-col lg:flex-row items-stretch justify-center gap-8 mb-12">
+            <!-- Left Card: Option 1 -->
+            <div class="left-card card flex-1">
+                <div>
+                    <div class="text-blue-600 icon-large mb-4">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4">Autonomie & Stärken stärken</h2>
+                    <ul class="list-disc pl-5 space-y-3 text-lg text-gray-700">
+                        <li><strong>Verantwortung übertragen:</strong> Geben Sie Lernenden sinnvolle Aufgaben und Entscheidungskompetenzen.</li>
+                        <li><strong>Stärken erkennen & fördern:</strong> Helfen Sie, individuelle Talente zu identifizieren und gezielt einzusetzen.</li>
+                        <li><strong>Fehler als Lernchance:</strong> Ermutigen Sie zum Experimentieren und sehen Sie Fehler als Teil des Lernprozesses.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">ODER</div>
+
+            <!-- Right Card: Option 2 -->
+            <div class="right-card card flex-1">
+                <div>
+                    <div class="text-green-600 icon-large mb-4">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4">Kommunikation & Orientierung bieten</h2>
+                    <ul class="list-disc pl-5 space-y-3 text-lg text-gray-700">
+                        <li><strong>Konstruktives Feedback:</strong> Regelmässiges, spezifisches und ermutigendes Feedback geben.</li>
+                        <li><strong>Rollenfindung unterstützen:</strong> Klare Erwartungen formulieren und bei der beruflichen Rollenentwicklung begleiten.</li>
+                        <li><strong>Offene Kommunikation:</strong> Eine Atmosphäre schaffen, in der Fragen und Unsicherheiten offen angesprochen werden können.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Options Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Grid Item 1: Mentoring -->
+            <div class="grid-card">
+                <div class="text-purple-600 icon-large mb-3">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Professionelles Mentoring</h3>
+                <p class="text-lg text-gray-700">
+                    Etablieren Sie Mentoring-Programme, bei denen erfahrene Mitarbeitende die Jugendlichen begleiten und als Vorbilder dienen. Dies fördert die Rollenfindung und den Austausch.
+                </p>
+            </div>
+
+            <!-- Grid Item 2: Wertschätzung -->
+            <div class="grid-card">
+                <div class="text-pink-600 icon-large mb-3">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="text-2xl font-semibold mb-3">Aktive Wertschätzung</h3>
+                <p class="text-lg text-gray-700">
+                    Anerkennen Sie Leistungen und Fortschritte der Lernenden explizit. Lob, Anerkennung und das Feiern kleiner Erfolge stärken ihr Selbstvertrauen enorm.
+                </p>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="critical-notice">
+            <i class="fa-solid fa-triangle-exclamation fa-icon"></i>
+            <p class="text-lg">
+                <strong>Wichtiger Hinweis:</strong> Die Förderung von Identität und Selbstwert ist ein kontinuierlicher Prozess, der Geduld, Empathie und eine positive Grundhaltung erfordert. Es ist eine wertvolle Investition in die Zukunft der Lernenden und den Erfolg des Betriebs.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>

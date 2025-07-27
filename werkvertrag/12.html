@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 12: Weitere Praxisbeispiele & Fallstricke</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .contract-type {
+            @apply bg-white rounded-lg p-6 shadow-md flex flex-col transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-[1.02];
+        }
+        .contract-type .icon-container {
+            @apply w-16 h-16 rounded-full flex items-center justify-center mb-4;
+        }
+        .contract-type h3 {
+            @apply text-xl font-semibold mb-3;
+        }
+        .contract-type ul {
+            @apply list-disc pl-5 text-gray-700 text-sm flex-grow;
+        }
+        .contract-type ul li {
+            @apply mb-2;
+        }
+        .contract-type .example-block {
+            @apply mt-6 p-4 rounded-md text-sm italic;
+        }
+        /* Specific colors for each card */
+        .card-blue .icon-container { @apply bg-blue-100 text-blue-600; }
+        .card-blue .example-block { @apply bg-blue-50 border-blue-400 text-blue-800 border-l-4; }
+        .card-blue h3 { @apply text-blue-800; }
+
+        .card-green .icon-container { @apply bg-green-100 text-green-600; }
+        .card-green .example-block { @apply bg-green-50 border-green-400 text-green-800 border-l-4; }
+        .card-green h3 { @apply text-green-800; }
+
+        .card-purple .icon-container { @apply bg-purple-100 text-purple-600; }
+        .card-purple .example-block { @apply bg-purple-50 border-purple-400 text-purple-800 border-l-4; }
+        .card-purple h3 { @apply text-purple-800; }
+
+        .card-orange .icon-container { @apply bg-orange-100 text-orange-600; }
+        .card-orange .example-block { @apply bg-orange-50 border-orange-400 text-orange-800 border-l-4; }
+        .card-orange h3 { @apply text-orange-800; }
+
+        .article-ref {
+            @apply text-xs text-gray-500 italic mt-1;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <main class="flex-grow container mx-auto px-6 py-12">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-gray-900 mb-4">Weitere Praxisbeispiele & Fallstricke</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                Erweitern Sie Ihr Wissen über häufige Werkvertragsszenarien und typische Fehlerquellen im Werkstattalltag.
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+
+            <!-- Card 1: Änderungen am Werk -->
+            <div class="contract-type card-blue">
+                <div class="icon-container">
+                    <i class="fas fa-screwdriver-wrench text-3xl"></i>
+                </div>
+                <h3>Änderungen am Werk</h3>
+                <ul>
+                    <li><strong>Zusatzaufträge:</strong> Jede Änderung oder Erweiterung des ursprünglichen Auftrags muss klar dokumentiert und vom Kunden bestätigt werden.</li>
+                    <li><strong>Form:</strong> Schriftliche oder textliche Bestätigung (E-Mail, Messenger) ist ratsam, um Missverständnisse und spätere Streitigkeiten zu vermeiden.</li>
+                    <li><strong>Auswirkungen:</strong> Änderungen können Preis und Fertigstellungstermin beeinflussen. Dies muss dem Kunden transparent kommuniziert werden.</li>
+                    <li><strong>Abgrenzung:</strong> Geringfügige, zur Erreichung des Werkerfolgs notwendige Anpassungen sind oft vom ursprünglichen Auftrag gedeckt.</li>
+                </ul>
+                <div class="example-block">
+                    <p><strong>Beispiel:</strong> Kunde wünscht nach Start der Motorreparatur zusätzlich eine Lackierung des Ventildeckels. Dies ist ein neuer Auftrag, der schriftlich erfasst und bepreist werden muss.</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Kostenvoranschlag vs. Pauschalpreis -->
+            <div class="contract-type card-green">
+                <div class="icon-container">
+                    <i class="fas fa-calculator text-3xl"></i>
+                </div>
+                <h3>Kostenvoranschlag vs. Pauschalpreis</h3>
+                <ul>
+                    <li><strong>Kostenvoranschlag (KVA):</strong> Ist in der Regel unverbindlich. Eine Überschreitung um 10-20% (je nach Branche) muss dem Kunden unverzüglich mitgeteilt werden.</li>
+                    <li><strong>Pauschalpreis:</strong> Ist ein fester, verbindlicher Preis für eine definierte Leistung. Abweichungen gehen zu Lasten der Werkstatt, es sei denn, der Leistungsumfang ändert sich.</li>
+                    <li><strong>Risikoverteilung:</strong> Beim KVA trägt der Kunde das Risiko unvorhergesehener Kosten, beim Pauschalpreis die Werkstatt.</li>
+                    <li><strong>Dokumentation:</strong> Immer klar definieren, ob es sich um einen KVA oder einen Pauschalpreis handelt.</li>
+                </ul>
+                <div class="example-block">
+                    <p><strong>Beispiel:</strong> Ein KVA für eine Bremsenreparatur beläuft sich auf 300€. Stellt sich heraus, dass weitere Teile defekt sind und die Kosten 380€ übersteigen, muss der Kunde vorab informiert werden.</p>
+                </div>
+            </div>
+
+            <!-- Card 3: Beigestelltes Material -->
+            <div class="contract-type card-purple">
+                <div class="icon-container">
+                    <i class="fas fa-box-open text-3xl"></i>
+                </div>
+                <h3>Beigestelltes Material</h3>
+                <ul>
+                    <li><strong>Prüfpflicht:</strong> Die Werkstatt hat eine Prüfpflicht bezüglich der Eignung und Mängelfreiheit des vom Kunden beigestellten Materials.</li>
+                    <li><strong>Haftung:</strong> Für Mängel, die auf das beigestellte Material zurückzuführen sind, haftet die Werkstatt grundsätzlich nicht, wenn die Prüfpflicht erfüllt wurde.</li>
+                    <li><strong>Dokumentation:</strong> Mängel am beigestellten Material müssen dem Kunden unverzüglich mitgeteilt und dokumentiert werden.</li>
+                    <li><strong>Ablehnung:</strong> Bei offensichtlich ungeeignetem oder mangelhaftem Material kann die Werkstatt die Annahme verweigern oder auf die Risiken hinweisen.</li>
+                </ul>
+                <div class="example-block">
+                    <p><strong>Beispiel:</strong> Kunde liefert gebrauchte Ersatzteile. Die Werkstatt prüft diese auf offensichtliche Schäden. Stellt sich später ein verdeckter Materialfehler heraus, haftet die Werkstatt dafür nicht, wenn sie ihre Prüfpflicht erfüllt hat.</p>
+                </div>
+            </div>
+
+            <!-- Card 4: Haftungsausschluss & Gewährleistung -->
+            <div class="contract-type card-orange">
+                <div class="icon-container">
+                    <i class="fas fa-gavel text-3xl"></i>
+                </div>
+                <h3>Haftungsausschluss & Gewährleistung</h3>
+                <ul>
+                    <li><strong>Gewährleistung:</strong> Die gesetzliche Gewährleistung für Mängel am Werk kann bei Verbrauchern nicht ausgeschlossen werden (i.d.R. 2 Jahre).</li>
+                    <li><strong>Haftungsausschluss:</strong> Für Schäden, die nicht direkt am Werk entstehen (z.B. Folgeschäden), kann die Haftung unter bestimmten Umständen eingeschränkt werden.</li>
+                    <li><strong>Grenzen:</strong> Haftung für Vorsatz und grobe Fahrlässigkeit kann niemals ausgeschlossen werden.</li>
+                    <li><strong>Verständlichkeit:</strong> Klauseln zum Haftungsausschluss müssen klar, verständlich und transparent formuliert sein.</li>
+                </ul>
+                <div class="example-block">
+                    <p><strong>Beispiel:</strong> Ein pauschaler Haftungsausschluss für alle Folgeschäden ist oft unwirksam. Ein Ausschluss für Schäden durch unsachgemäße Nutzung des Kunden nach der Reparatur ist hingegen meist zulässig.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="w-full bg-gray-200 text-gray-600 text-center p-4 mt-12">
+        <p>Slide 12</p>
+    </footer>
+
+</body>
+</html>

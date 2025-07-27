@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entscheidungsfindung im Fall Mähdrescher</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Montserrat & Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e0e0e0;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        .left-card, .right-card {
+            border-left: 8px solid;
+        }
+        .left-card {
+            border-color: #3498db; /* Blue */
+        }
+        .right-card {
+            border-color: #e74c3c; /* Red */
+        }
+        .vs-badge {
+            background-color: #2c3e50;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            font-size: 1.25rem;
+            letter-spacing: 1px;
+        }
+        .option-icon {
+            color: #3498db; /* Blue for primary options */
+        }
+        .grid-option-icon {
+            color: #27ae60; /* Green for additional options */
+        }
+        .critical-notice {
+            background-color: #f8f8f8;
+            border-left: 6px solid #f39c12; /* Orange */
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        .critical-notice p {
+            font-size: 0.95rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container py-10">
+        <!-- Slide Title -->
+        <h1 class="text-4xl font-bold text-center mb-8 text-blue-800">
+            Entscheidungsfindung im Fall Mähdrescher
+        </h1>
+
+        <!-- Introduction -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-10 text-center">
+            <p class="text-lg text-gray-700">
+                Nach der Analyse der Kundenbeschwerde bezüglich des Mähdreschers stehen wir vor der Wahl der besten Vorgehensweise. Es gilt, die Kundenbeziehung zu wahren und gleichzeitig rechtliche Risiken zu minimieren.
+            </p>
+            <p class="text-md text-gray-600 mt-2 italic">
+                Wählen Sie die strategisch beste Option unter Berücksichtigung der gelernten Rechtsgrundsätze.
+            </p>
+        </div>
+
+        <!-- Primary Options Comparison -->
+        <div class="relative flex flex-col lg:flex-row gap-8 items-stretch mb-10">
+            <!-- Left Card: Option A -->
+            <div class="card left-card flex-1 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 flex items-center text-blue-700">
+                        <i class="fas fa-wrench option-icon mr-3 text-3xl"></i>
+                        Option A: Nachbesserung anbieten
+                    </h2>
+                    <p class="text-gray-700 mb-4">
+                        Dem Kunden eine erneute, umfassende Nachbesserung des Mähdreschers anbieten. Dies beinhaltet eine detaillierte Fehleranalyse und die Behebung aller Mängel auf Kosten der Werkstatt.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Vorteile:</h3>
+                    <ul class="list-disc pl-5 mb-4 text-gray-600">
+                        <li>Erfüllung der gesetzlichen Pflicht zur Nachbesserung (§ 439 BGB).</li>
+                        <li>Chance, das Vertrauen des Kunden zurückzugewinnen.</li>
+                        <li>Vermeidung eines sofortigen Rechtsstreits.</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Nachteile:</h3>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Zusätzliche Kosten und Arbeitszeit für die Werkstatt.</li>
+                        <li>Keine Garantie, dass der Kunde danach zufrieden ist.</li>
+                        <li>Verzögerung der endgültigen Lösung.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 italic">Rechtliche Grundlage: Vorrang des Nacherfüllungsanspruchs.</p>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">ODER</div>
+
+            <!-- Right Card: Option B -->
+            <div class="card right-card flex-1 p-6 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 flex items-center text-red-700">
+                        <i class="fas fa-handshake-slash option-icon mr-3 text-3xl"></i>
+                        Option B: Rücktritt oder Minderung prüfen
+                    </h2>
+                    <p class="text-gray-700 mb-4">
+                        Dem Kunden die Möglichkeit eines Rücktritts vom Kaufvertrag oder einer Minderung des Kaufpreises anbieten, falls die Nachbesserung bereits zweimal fehlgeschlagen ist oder unzumutbar ist.
+                    </p>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Vorteile:</h3>
+                    <ul class="list-disc pl-5 mb-4 text-gray-600">
+                        <li>Beendigung des Konflikts.</li>
+                        <li>Klarheit für beide Parteien.</li>
+                        <li>Einhaltung der gesetzlichen Bestimmungen bei Fehlschlag der Nacherfüllung (§§ 440, 323, 441 BGB).</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Nachteile:</h3>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Verlust des Geschäfts (bei Rücktritt).</li>
+                        <li>Erheblicher finanzieller Verlust (bei Rücktritt oder Minderung).</li>
+                        <li>Kann als Eingeständnis eines schwerwiegenden Fehlers interpretiert werden.</li>
+                    </ul>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-200">
+                    <p class="text-sm text-gray-500 italic">Rechtliche Grundlage: Sekundäre Gewährleistungsrechte.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Option (Grid) -->
+        <div class="card p-6 mb-10">
+            <h2 class="text-2xl font-semibold mb-6 text-center text-gray-800">
+                Weitere Handlungsoption:
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 flex items-center text-green-700">
+                        <i class="fas fa-hand-holding-heart grid-option-icon mr-3 text-2xl"></i>
+                        Option C: Kulanzlösung mit Kompromiss
+                    </h3>
+                    <p class="text-gray-700">
+                        Eine Teillösung anbieten, z.B. kostenlose Wartung für die nächste Saison, einen Rabatt auf zukünftige Ersatzteile oder eine teilweise Erstattung der Ausfallkosten, um den Kunden zu besänftigen, ohne die volle Haftung zu übernehmen.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-700">Bedingungen und Überlegungen:</h3>
+                    <ul class="list-disc pl-5 text-gray-600">
+                        <li>Nur in Kombination mit Option A oder B sinnvoll.</li>
+                        <li>Klar definierte Leistungen und deren Umfang.</li>
+                        <li>Schriftliche Vereinbarung zur Absicherung.</li>
+                        <li>Kein Präzedenzfall für zukünftige Fälle schaffen.</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 italic mt-4">Ziel: Kundenbindung trotz Schwierigkeiten.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="critical-notice">
+            <h3 class="text-xl font-bold mb-3 text-orange-700 flex items-center">
+                <i class="fas fa-exclamation-triangle text-orange-600 mr-3 text-2xl"></i>
+                Wichtiger Hinweis:
+            </h3>
+            <p class="text-gray-700">
+                Jede Entscheidung sollte nach sorgfältiger Dokumentation des Sachverhalts und, falls nötig, nach Rücksprache mit einem Rechtsexperten getroffen werden, um die Einhaltung aller gesetzlichen Vorschriften zu gewährleisten und zukünftige Risiken zu minimieren.
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

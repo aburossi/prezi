@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der defekte Traktor: Ein Werkvertrag-Dilemma</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb; /* bg-gray-50 */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for better content flow */
+            padding: 2rem 0; /* Add some vertical padding */
+        }
+
+        .slide-container {
+            max-width: 1000px;
+            width: 95%;
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-lg */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            padding: 2.5rem; /* p-10 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        .case-box {
+            background-color: #f3f4f6; /* bg-gray-100 */
+            border-left: 4px solid #3b82f6; /* border-blue-500 */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.5rem; /* rounded-md */
+            margin-bottom: 2rem; /* mb-8 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .case-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem; /* Space for the line */
+            margin-bottom: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem; /* Space for the dot */
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -0.5rem; /* Adjust to align with the line */
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: #2563eb; /* bg-blue-600 */
+            border-radius: 50%;
+            border: 2px solid #bfdbfe; /* border-blue-200 */
+            z-index: 10;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: -0.0625rem; /* Half of border width to center */
+            top: 1.5rem; /* Start after the dot */
+            bottom: -0.5rem; /* Extend below */
+            width: 2px;
+            background-color: #bfdbfe; /* bg-blue-200 */
+            z-index: 5;
+        }
+
+        .analysis-card {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .analysis-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="text-4xl font-extrabold text-blue-700 mb-8 text-center">
+            Der defekte Traktor: Ein Werkvertrag-Dilemma
+        </h1>
+
+        <!-- Initial Scenario -->
+        <div class="case-box">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-4 flex items-center">
+                <i class="fas fa-tractor mr-3 text-blue-500"></i> Das Problem: Ein Landwirt in Not
+            </h2>
+            <p class="text-lg leading-relaxed">
+                Stellen Sie sich vor, Sie sind der erfahrene Werkstattleiter der "Agrar-Service GmbH". Ein langjähriger Kunde, Herr Gruber, bringt seinen Mähdrescher in Ihre Werkstatt. Das Getriebe macht seit Wochen Probleme, und die Erntezeit steht kurz bevor. Nach eingehender Prüfung einigen Sie sich auf einen <strong>Werkvertrag</strong>: Das Getriebe soll komplett überholt und defekte Teile ausgetauscht werden, zum Festpreis von 8.500 € und einer Fertigstellungsfrist von zwei Wochen.
+            </p>
+            <p class="mt-4 text-lg leading-relaxed">
+                Zwei Wochen später holt Herr Gruber den Mähdrescher ab. Die erste Fahrt auf dem Feld verläuft vielversprechend, doch nach wenigen Stunden treten erneut laute Geräusche aus dem Getriebe auf, und die Leistung lässt nach. Herr Gruber ist verständlicherweise verärgert und verlangt sofortige Nachbesserung – oder sein Geld zurück.
+            </p>
+            <p class="mt-4 text-lg font-medium text-gray-600">
+                <i class="fas fa-question-circle mr-2 text-yellow-500"></i> Was ist hier schiefgelaufen? Wer trägt die <strong>Haftung</strong> für die <strong>Mängel</strong>? Und wie gehen Sie als Werkstattleiter nun vor, um dieses <strong>Praxisproblem</strong> zu lösen?
+            </p>
+        </div>
+
+        <!-- Timeline of Events -->
+        <h2 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+            <i class="fas fa-history mr-3 text-blue-500"></i> Chronologie der Ereignisse
+        </h2>
+        <div class="timeline mb-8">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="font-semibold text-lg text-gray-800">1. Auftragserteilung (Tag 0)</h3>
+                <p class="text-gray-600">Herr Gruber bringt Mähdrescher, Werkvertrag über Getriebeüberholung abgeschlossen (8.500 €, 2 Wochen).</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="font-semibold text-lg text-gray-800">2. Reparatur abgeschlossen (Tag 14)</h3>
+                <p class="text-gray-600">Werkstatt meldet Fertigstellung, Mähdrescher wird von Herrn Gruber abgeholt.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="font-semibold text-lg text-gray-800">3. Mängel treten auf (Tag 15)</h3>
+                <p class="text-gray-600">Nach kurzer Einsatzzeit auf dem Feld treten erneut Getriebeprobleme auf.</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3 class="font-semibold text-lg text-gray-800">4. Mängelrüge durch Kunden (Tag 16)</h3>
+                <p class="text-gray-600">Herr Gruber kontaktiert die Werkstatt, reklamiert die Mängel und fordert Nachbesserung/Geld zurück.</p>
+            </div>
+        </div>
+
+        <!-- Analysis and Solution -->
+        <h2 class="text-2xl font-semibold text-blue-600 mb-6 flex items-center">
+            <i class="fas fa-cogs mr-3 text-blue-500"></i> Analyse & Lösungsansätze
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Problemstellung & rechtliche Einordnung</h3>
+                <div class="analysis-card mb-4">
+                    <p class="font-medium text-red-600 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i> Sachmangel nach § 633 BGB</p>
+                    <p class="text-gray-700 text-sm">Die Reparatur ist mangelhaft, da das Werk nicht die vereinbarte oder gewöhnlich vorausgesetzte Beschaffenheit aufweist (Getriebe funktioniert nicht einwandfrei).</p>
+                </div>
+                <div class="analysis-card mb-4">
+                    <p class="font-medium text-red-600 mb-2"><i class="fas fa-balance-scale-right mr-2"></i> Beweislast</p>
+                    <p class="text-gray-700 text-sm">Innerhalb von 6 Monaten nach Abnahme wird vermutet, dass der Mangel bereits bei Abnahme vorlag. Danach liegt die Beweislast beim Besteller.</p>
+                </div>
+                <div class="analysis-card">
+                    <p class="font-medium text-red-600 mb-2"><i class="fas fa-calendar-times mr-2"></i> Verjährung</p>
+                    <p class="text-gray-700 text-sm">Die Mängelansprüche verjähren grundsätzlich in zwei Jahren ab Abnahme des Werkes (§ 634a BGB).</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Mögliche Rechte des Bestellers & Vorgehen</h3>
+                <div class="analysis-card mb-4">
+                    <p class="font-medium text-green-600 mb-2"><i class="fas fa-tools mr-2"></i> Nacherfüllung (§ 635 BGB)</p>
+                    <p class="text-gray-700 text-sm">Herr Gruber hat primär das Recht auf Nachbesserung (erneute Reparatur) oder Neuherstellung. Die Werkstatt muss eine angemessene Frist zur Nacherfüllung erhalten.</p>
+                </div>
+                <div class="analysis-card mb-4">
+                    <p class="font-medium text-green-600 mb-2"><i class="fas fa-hand-holding-usd mr-2"></i> Minderung, Rücktritt, Schadensersatz (§ 634 BGB)</p>
+                    <p class="text-gray-700 text-sm">Erst wenn die Nacherfüllung fehlschlägt, unzumutbar ist oder verweigert wird, kann Herr Gruber den Preis mindern, vom Vertrag zurücktreten oder Schadensersatz verlangen.</p>
+                </div>
+                <div class="analysis-card">
+                    <p class="font-medium text-green-600 mb-2"><i class="fas fa-comments mr-2"></i> Empfohlenes Vorgehen</p>
+                    <p class="text-gray-700 text-sm">Werkstatt sollte den Mähdrescher erneut prüfen, die Ursache feststellen und Herrn Gruber eine kostenlose Nachbesserung anbieten, um weitere Eskalation zu vermeiden.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Theoretical References -->
+        <div class="bg-gray-100 p-6 rounded-lg border-l-4 border-purple-500">
+            <h2 class="text-2xl font-semibold text-purple-700 mb-4 flex items-center">
+                <i class="fas fa-book-open mr-3 text-purple-600"></i> Theoretische Grundlagen: Das Bürgerliche Gesetzbuch (BGB)
+            </h2>
+            <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                <li><strong class="text-purple-800">§ 631 BGB:</strong> Vertragstypische Pflichten beim Werkvertrag</li>
+                <li><strong class="text-purple-800">§ 633 BGB:</strong> Sach- und Rechtsmangel</li>
+                <li><strong class="text-purple-800">§ 634 BGB:</strong> Rechte des Bestellers bei Mängeln</li>
+                <li><strong class="text-purple-800">§ 635 BGB:</strong> Nacherfüllung</li>
+                <li><strong class="text-purple-800">§ 637 BGB:</strong> Selbstvornahme</li>
+                <li><strong class="text-purple-800">§ 638 BGB:</strong> Minderung</li>
+                <li><strong class="text-purple-800">§ 634a BGB:</strong> Verjährung der Mängelansprüche</li>
+            </ul>
+            <p class="mt-4 text-gray-600 text-sm italic">
+                Dieses Fallbeispiel verdeutlicht die praktische Anwendung der §§ 631 ff. BGB im Kontext von Werkverträgen und Mängelhaftung.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

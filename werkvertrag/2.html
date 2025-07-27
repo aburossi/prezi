@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 2: Dein Fahrplan & Lernziele</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .slide-container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px 60px;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a202c; /* Darker text for heading */
+            margin-bottom: 40px;
+            line-height: 1.2;
+        }
+        .toc-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px; /* Space between items */
+        }
+        .toc-item {
+            position: relative;
+            overflow: hidden;
+            border-left: 6px solid #4299e1; /* Blue border */
+            background-color: #ffffff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease-in-out;
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .toc-item:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: #2b6cb0; /* Darker blue on hover */
+        }
+        .toc-number {
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 8rem; /* Large number */
+            font-weight: 700;
+            color: #e2e8f0; /* Light gray for number */
+            opacity: 0.6;
+            z-index: 0;
+            line-height: 1;
+            pointer-events: none; /* Ensure it doesn't block clicks */
+        }
+        .toc-content {
+            position: relative;
+            z-index: 1; /* Ensure content is above the number */
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            flex-grow: 1;
+        }
+        .toc-icon {
+            flex-shrink: 0;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: #ebf8ff; /* Lighter blue background for icon */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: #3182ce; /* Blue icon color */
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .toc-text {
+            flex-grow: 1;
+        }
+        .toc-text h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: #2d3748; /* Darker text for sub-heading */
+            margin-bottom: 5px;
+        }
+        .toc-text p {
+            font-size: 1.1rem;
+            color: #4a5568; /* Medium gray for description */
+            line-height: 1.5;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .slide-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            .toc-item {
+                padding: 20px;
+            }
+            .toc-number {
+                font-size: 6rem;
+                top: -10px;
+                left: -10px;
+            }
+            .toc-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+            .toc-text h3 {
+                font-size: 1.4rem;
+            }
+            .toc-text p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+            .toc-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px;
+            }
+            .toc-content {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .toc-icon {
+                margin-bottom: 10px;
+            }
+            .toc-text h3 {
+                font-size: 1.2rem;
+            }
+            .toc-text p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>Dein Fahrplan & Lernziele: Werkverträge meistern</h1>
+        <div class="toc-list">
+            <!-- Item 1: Lernziele -->
+            <div class="toc-item">
+                <span class="toc-number">01</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Lernziele dieser Präsentation</h3>
+                        <p>Was Sie am Ende dieser Präsentation wissen und können, um Werkverträge sicher zu beherrschen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Agenda -->
+            <div class="toc-item">
+                <span class="toc-number">02</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Die heutige Agenda</h3>
+                        <p>Ein Überblick über die Struktur und den Ablauf unserer gemeinsamen Reise durch die Welt der Werkverträge.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Werkvertrag Definition -->
+            <div class="toc-item">
+                <span class="toc-number">03</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Was ist ein Werkvertrag?</h3>
+                        <p>Grundlagen, wesentliche Merkmale und die rechtliche Einordnung des Werkvertrags.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Abgrenzung -->
+            <div class="toc-item">
+                <span class="toc-number">04</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-arrows-split-up-and-down"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Abgrenzung zu anderen Vertragsarten</h3>
+                        <p>Unterschiede und Gemeinsamkeiten zum Dienstvertrag, Kaufvertrag und anderen relevanten Vertragstypen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: Mängelrechte -->
+            <div class="toc-item">
+                <span class="toc-number">05</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-screwdriver-wrench"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Mängelrechte des Bestellers</h3>
+                        <p>Welche Rechte Sie als Besteller bei Mängeln haben und wie Sie diese effektiv durchsetzen können.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Praxisbeispiele -->
+            <div class="toc-item">
+                <span class="toc-number">06</span>
+                <div class="toc-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div class="toc-text">
+                        <h3>Praxisbeispiele & Fallstudien</h3>
+                        <p>Anwendung des Gelernten anhand realitätsnaher Beispiele und häufiger Herausforderungen im Werkvertragsrecht.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

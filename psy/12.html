@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktische Tipps: Soziale Dynamiken im Betrieb nutzen</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* bg-slate-50 */
+            color: #334155; /* slate-700 */
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1e293b; /* slate-900 */
+        }
+        .card {
+            transition: all 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .primary-card {
+            border-left: 8px solid;
+        }
+        .primary-card.left-card:hover {
+            border-color: #3b82f6; /* blue-500 */
+        }
+        .primary-card.right-card:hover {
+            border-color: #ef4444; /* red-500 */
+        }
+        .vs-badge {
+            background-color: #f1f5f9; /* slate-100 */
+            color: #64748b; /* slate-500 */
+            border: 2px solid #cbd5e1; /* slate-300 */
+            font-weight: 700;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px; /* full rounded */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8 flex flex-col justify-between">
+
+    <!-- Main Content Area -->
+    <div class="max-w-7xl mx-auto w-full">
+
+        <!-- Introduction Section -->
+        <div class="mb-12 text-center">
+            <h1 class="text-4xl font-extrabold mb-4 text-blue-700">Praktische Tipps: Soziale Dynamiken im Betrieb nutzen</h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                Als Berufsbildner spielen Sie eine Schlüsselrolle bei der Gestaltung des Arbeitsumfelds. Hier erfahren Sie, wie Sie soziale Dynamiken positiv beeinflussen, um Auszubildende optimal zu integrieren und ein produktives Betriebsklima zu fördern.
+            </p>
+        </div>
+
+        <!-- Primary Options Section -->
+        <div class="relative flex flex-col lg:flex-row items-center justify-center gap-8 mb-12">
+            <!-- Left Card -->
+            <div class="primary-card left-card bg-white p-8 rounded-lg shadow-md flex-1 w-full lg:w-auto border-blue-200 hover:border-blue-500">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-users text-4xl text-blue-600 mr-4"></i>
+                    <h2 class="text-2xl font-bold text-blue-800">Option A: Aktive Teambildung & Integration</h2>
+                </div>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Regelmässige Teambuilding-Aktivitäten (Ausflüge, gemeinsame Projekte).</li>
+                    <li>Etablierung von Mentoring-Programmen für neue Auszubildende.</li>
+                    <li>Förderung von Peer-Support und Zusammenarbeit unter den Lernenden.</li>
+                    <li>Gezielte Integration in bestehende Teams und Arbeitsabläufe.</li>
+                </ul>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge absolute lg:relative lg:top-auto lg:left-auto mt-4 lg:mt-0 lg:mx-4">
+                ODER
+            </div>
+
+            <!-- Right Card -->
+            <div class="primary-card right-card bg-white p-8 rounded-lg shadow-md flex-1 w-full lg:w-auto border-red-200 hover:border-red-500">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-comments text-4xl text-red-600 mr-4"></i>
+                    <h2 class="text-2xl font-bold text-red-800">Option B: Transparente Kommunikation & Feedback</h2>
+                </div>
+                <ul class="list-disc pl-6 text-gray-700 space-y-2">
+                    <li>Etablierung offener und regelmässiger Kommunikationskanäle.</li>
+                    <li>Durchführung von strukturierten Feedback-Gesprächen (individuell & Team).</li>
+                    <li>Förderung einer konstruktiven Fehlerkultur, in der Lernen im Vordergrund steht.</li>
+                    <li>Transparenz bei wichtigen Entscheidungen und Veränderungen im Betrieb.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Additional Options Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Grid Item 1 -->
+            <div class="card bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:border-green-500">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-user-tie text-3xl text-green-600 mr-4"></i>
+                    <h3 class="text-xl font-bold text-green-800">Ergänzung 1: Die Vorbildfunktion leben</h3>
+                </div>
+                <ul class="list-disc pl-6 text-gray-700 space-y-1">
+                    <li>Zeigen Sie das gewünschte Verhalten und die Werte, die Sie fördern möchten.</li>
+                    <li>Seien Sie selbst ein Beispiel für Respekt, Offenheit und Professionalität.</li>
+                    <li>Reflektieren Sie Ihr eigenes Verhalten im Umgang mit sozialen Dynamiken.</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 2 -->
+            <div class="card bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:border-purple-500">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-handshake-angle text-3xl text-purple-600 mr-4"></i>
+                    <h3 class="text-xl font-bold text-purple-800">Ergänzung 2: Konstruktiver Umgang mit Konflikten</h3>
+                </div>
+                <ul class="list-disc pl-6 text-gray-700 space-y-1">
+                    <li>Frühzeitiges Erkennen und Ansprechen von Spannungen und Konflikten.</li>
+                    <li>Vermittlung und Moderation bei Auseinandersetzungen zwischen Auszubildenden.</li>
+                    <li>Schulung der Jugendlichen in grundlegenden Konfliktlösungsstrategien.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Critical Notice Section -->
+        <div class="bg-gray-100 p-6 rounded-lg shadow-inner border-l-4 border-gray-400 text-gray-800">
+            <h3 class="text-xl font-bold mb-3 flex items-center text-gray-900">
+                <i class="fas fa-exclamation-triangle text-yellow-500 mr-3"></i> Wichtiger Hinweis:
+            </h3>
+            <p class="text-lg">
+                Alle genannten Massnahmen erfordern Konsistenz, Authentizität und Geduld. Eine positive soziale Dynamik entsteht durch kontinuierliches Engagement, die Bereitschaft, auf individuelle Bedürfnisse einzugehen, und das Schaffen eines sicheren Umfelds für alle Auszubildenden.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Optional: Footer for slide number -->
+    <div class="text-center text-gray-500 mt-8">
+        Seite 12
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weiterführende Ressourcen & Ihr Beitrag</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card-hover-effect {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .card-hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .border-primary {
+            border-color: #3b82f6; /* blue-500 */
+        }
+        .border-secondary {
+            border-color: #22c55e; /* green-500 */
+        }
+        .text-primary {
+            color: #3b82f6;
+        }
+        .text-secondary {
+            color: #22c55e;
+        }
+        .bg-primary-light {
+            background-color: #eff6ff; /* blue-50 */
+        }
+        .bg-secondary-light {
+            background-color: #f0fdf4; /* green-50 */
+        }
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f97316; /* orange-500 */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-8">
+
+    <div class="w-full max-w-6xl mx-auto">
+        <!-- Header Section -->
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Weiterführende Ressourcen & Ihr Beitrag</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Entdecken Sie Wege zur Vertiefung Ihres Wissens und Möglichkeiten, Ihre Erfahrungen aktiv einzubringen.
+            </p>
+        </header>
+
+        <!-- Primary Options Section (Side-by-Side Comparison) -->
+        <section class="relative flex flex-col md:flex-row items-stretch justify-center gap-8 mb-16">
+            <!-- VS Badge -->
+            <div class="vs-badge">ODER</div>
+
+            <!-- Left Card: Option A -->
+            <div class="left-card flex-1 bg-white border-4 border-primary rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative z-0">
+                <div class="flex items-center justify-center mb-6">
+                    <i class="fas fa-book-open text-primary text-6xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4 text-center">Option A: Vertiefung durch Ressourcen</h3>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-3 mb-6">
+                    <li><strong class="text-primary">Online-Ressourcen:</strong> Zugang zu spezialisierten Artikeln, Studien und Whitepapers.</li>
+                    <li><strong class="text-primary">Fachliteratur:</strong> Empfehlungen für Bücher und Zeitschriften zur Thematik.</li>
+                    <li><strong class="text-primary">Experten-Webinare:</strong> Aufzeichnungen und Termine für vertiefende Online-Seminare.</li>
+                </ul>
+                <div class="text-center mt-auto">
+                    <p class="text-xl font-semibold text-primary">Erweitern Sie Ihr Wissen systematisch.</p>
+                </div>
+            </div>
+
+            <!-- Right Card: Option B -->
+            <div class="right-card flex-1 bg-white border-4 border-secondary rounded-xl shadow-lg p-8 transform transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl relative z-0">
+                <div class="flex items-center justify-center mb-6">
+                    <i class="fas fa-comments text-secondary text-6xl"></i>
+                </div>
+                <h3 class="text-3xl font-bold text-gray-800 mb-4 text-center">Option B: Aktiver Austausch & Reflexion</h3>
+                <ul class="list-disc list-inside text-lg text-gray-700 space-y-3 mb-6">
+                    <li><strong class="text-secondary">Diskussionsforen:</strong> Beteiligen Sie sich an Online-Diskussionen mit Gleichgesinnten.</li>
+                    <li><strong class="text-secondary">Workshops & Meetups:</strong> Teilnahme an interaktiven Sessions und Netzwerktreffen.</li>
+                    <li><strong class="text-secondary">Peer-Learning:</strong> Lernen Sie von den Erfahrungen anderer und teilen Sie Ihre eigenen.</li>
+                </ul>
+                <div class="text-center mt-auto">
+                    <p class="text-xl font-semibold text-secondary">Teilen Sie Erfahrungen & lernen Sie von anderen.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Options Grid -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Grid Item 1: Continuous Learning -->
+            <div class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-4 card-hover-effect">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-graduation-cap text-purple-600 text-4xl mt-1"></i>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Kontinuierliche Weiterbildung</h4>
+                    <p class="text-lg text-gray-700">
+                        Bleiben Sie durch regelmässige Kurse, Zertifizierungen und Seminare auf dem neuesten Stand. Die Lernreise endet nie.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Grid Item 2: Practical Examples -->
+            <div class="bg-white rounded-xl shadow-md p-6 flex items-start space-x-4 card-hover-effect">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-lightbulb text-yellow-600 text-4xl mt-1"></i>
+                </div>
+                <div>
+                    <h4 class="text-2xl font-semibold text-gray-800 mb-2">Praxisbeispiele & Fallstudien</h4>
+                    <p class="text-lg text-gray-700">
+                        Analysieren Sie reale Szenarien und wenden Sie das Gelernte an, um ein tieferes Verständnis zu entwickeln.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Critical Notice Box -->
+        <section class="bg-gray-100 border-l-4 border-red-500 rounded-lg p-6 shadow-md flex items-start space-x-4">
+            <div class="flex-shrink-0">
+                <i class="fas fa-exclamation-triangle text-red-500 text-3xl"></i>
+            </div>
+            <div>
+                <h4 class="text-2xl font-bold text-gray-800 mb-2">Wichtiger Hinweis: Ihr Beitrag ist entscheidend!</h4>
+                <p class="text-lg text-gray-700">
+                    Die wahre Meisterschaft liegt nicht nur im Aneignen von Wissen, sondern auch in dessen Anwendung und Reflexion im eigenen Arbeitsalltag. Teilen Sie Ihre Erkenntnisse und Erfahrungen aktiv mit der Community, um gemeinsam zu wachsen.
+                </p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

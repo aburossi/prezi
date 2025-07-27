@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jugendliche im Betrieb verstehen</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (e.g., Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-color: #1a2b40; /* Dark blue background */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 4rem 8rem; /* Increased padding for better visual balance */
+            box-sizing: border-box; /* Include padding in width/height */
+        }
+        h1 {
+            font-size: 4.5rem; /* Larger for impact */
+            font-weight: 700; /* Bold */
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 900px; /* Limit width for readability */
+        }
+        h2 {
+            font-size: 2.25rem; /* Subheading size */
+            font-weight: 400; /* Regular weight */
+            line-height: 1.4;
+            max-width: 800px; /* Limit width */
+            opacity: 0.9;
+        }
+        .swiss-cross {
+            position: absolute;
+            top: 3rem;
+            right: 4rem;
+            background-color: #e03c3c; /* A distinct red for the icon background */
+            border-radius: 50%; /* Circular background */
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+        }
+        .swiss-cross i {
+            font-size: 3.5rem; /* Icon size */
+            color: #ffffff; /* White icon */
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark background */
+            color: rgba(255, 255, 255, 0.7); /* Lighter text for footer */
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            text-align: right;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Contextual Visual Symbol (Swiss Cross equivalent) -->
+        <div class="swiss-cross">
+            <i class="fas fa-user-graduate"></i> <!-- Icon representing learning/youth/education -->
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-col items-center justify-center flex-grow">
+            <h1>Jugendliche im Betrieb verstehen: Ein entwicklungspsychologischer Blick für Berufsbildner</h1>
+            <h2>Eine ansprechende Einführung, die das Thema 'Entwicklungspsychologie des Jugendalters' im Kontext der Berufsbildung vorstellt und die Relevanz für Berufsbildner hervorhebt.</h2>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer">
+            <span>Slide 1 | Entwicklungspsychologie für Berufsbildner</span>
+        </div>
+    </div>
+</body>
+</html>

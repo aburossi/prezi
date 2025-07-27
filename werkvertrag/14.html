@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide 14: Dein Werkzeugkasten für die Praxis & Weiterführendes</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts (e.g., Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .left-card, .right-card {
+            transition: all 0.3s ease-in-out;
+        }
+        .left-card:hover, .right-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .vs-badge {
+            transition: all 0.3s ease-in-out;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        /* Responsive positioning for VS badge */
+        @media (min-width: 1024px) { /* For large screens */
+            .vs-badge {
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+        @media (max-width: 1023px) { /* For small screens */
+            .vs-badge {
+                top: 0; /* Position above the cards */
+                left: 50%;
+                transform: translate(-50%, -50%); /* Adjust for vertical centering relative to its own size */
+                margin-top: -40px; /* Pull it up above the first card */
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+
+    <div class="max-w-7xl mx-auto w-full space-y-12">
+
+        <!-- Header Section -->
+        <div class="text-center">
+            <h1 class="text-4xl font-extrabold text-gray-900 sm:text-5xl lg:text-6xl leading-tight">
+                <span class="block">Dein Werkzeugkasten für die Praxis</span>
+                <span class="block text-blue-600 mt-2">& Weiterführendes</span>
+            </h1>
+            <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+                Praktische Tipps für den Arbeitsalltag und Links zu relevanten Rechtsressourcen oder Musterverträgen.
+            </p>
+        </div>
+
+        <!-- Primary Options: Side-by-Side Comparison -->
+        <div class="relative flex flex-col lg:flex-row items-center lg:items-stretch justify-center gap-8 mt-10">
+
+            <!-- Left Card: Praktische Anwendung & Absicherung -->
+            <div class="left-card flex-1 bg-white rounded-xl shadow-lg border-l-8 border-blue-600 p-8 transform flex flex-col items-start justify-between w-full lg:w-auto">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hammer text-blue-600 text-3xl mr-3"></i>
+                        <h3 class="text-3xl font-bold text-gray-900">Sofort anwendbare Praxistipps</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Direkt umsetzbare Strategien für einen sicheren Arbeitsalltag:
+                    </p>
+                    <ul class="space-y-4 text-gray-800 text-base">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Klare Vertragsgestaltung:</strong> Präzise Formulierungen, alle relevanten Punkte abdecken.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Lückenlose Dokumentation:</strong> Schriftliche Vereinbarungen, Gesprächsnotizen, E-Mails archivieren.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Proaktive Kommunikation:</strong> Erwartungen abgleichen, Konflikte frühzeitig ansprechen.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Regelmäßige Überprüfung:</strong> Verträge und Prozesse an neue Gegebenheiten anpassen.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge absolute z-10 bg-gradient-to-br from-blue-500 to-indigo-700 text-white font-extrabold text-2xl rounded-full w-20 h-20 flex items-center justify-center shadow-xl border-4 border-white">
+                ODER
+            </div>
+
+            <!-- Right Card: Vertiefung & Absicherung -->
+            <div class="right-card flex-1 bg-white rounded-xl shadow-lg border-l-8 border-purple-600 p-8 transform flex flex-col items-start justify-between w-full lg:w-auto">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-book-open text-purple-600 text-3xl mr-3"></i>
+                        <h3 class="text-3xl font-bold text-gray-900">Ressourcen für die weitere Vertiefung</h3>
+                    </div>
+                    <p class="text-gray-700 mb-6 text-lg">
+                        Empfohlene Anlaufstellen und Materialien zur Wissenserweiterung:
+                    </p>
+                    <ul class="space-y-4 text-gray-800 text-base">
+                        <li class="flex items-start">
+                            <i class="fas fa-link text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Musterverträge & Checklisten:</strong> Als Ausgangspunkt nutzen, an die eigene Situation anpassen.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-newspaper text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Fachliteratur & Blogs:</strong> Aktuelle Entwicklungen und Best Practices verfolgen.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-chalkboard-teacher text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Seminare & Workshops:</strong> Wissen erweitern, spezifische Fähigkeiten trainieren.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-users text-indigo-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <span><strong>Netzwerken:</strong> Austausch mit Kollegen und Experten in Ihrer Branche.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Options: Grid Layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            <!-- Grid Option 1: Professionelle Unterstützung -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-gray-300 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-gavel text-gray-700 text-2xl mr-3"></i>
+                    <h4 class="text-2xl font-semibold text-gray-800">Bei Unsicherheit: Rechtsberatung</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700 text-base">
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Spezialisierte Anwälte:</strong> Für komplexe Fälle oder wenn ein Streitfall droht.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Erstberatung nutzen:</strong> Oft kostengünstig, um eine erste Einschätzung zu erhalten.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Rechtsschutzversicherung prüfen:</strong> Klären Sie, ob Beratungs- und Prozesskosten gedeckt sind.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Grid Option 2: Kontinuierliche Weiterbildung -->
+            <div class="bg-white rounded-xl shadow-lg p-6 border-t-4 border-gray-300 transform transition-all duration-300 hover:scale-[1.01] hover:shadow-xl">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-graduation-cap text-gray-700 text-2xl mr-3"></i>
+                    <h4 class="text-2xl font-semibold text-gray-800">Bleiben Sie auf dem Laufenden</h4>
+                </div>
+                <ul class="space-y-3 text-gray-700 text-base">
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Gesetzesänderungen:</strong> Regelmäßig informieren (z.B. über Fachportale, Newsletter).</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Branchenstandards:</strong> Best Practices in Ihrem spezifischen Arbeitsfeld kennen und anwenden.</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-angle-right text-gray-500 mt-1 mr-2 flex-shrink-0"></i>
+                        <span><strong>Spezialisierung:</strong> Vertiefen Sie Ihr Wissen in spezifischen Rechtsgebieten, die für Sie relevant sind.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="bg-red-50 border-l-4 border-red-500 text-red-800 p-6 rounded-lg shadow-md mt-12 flex items-start space-x-4">
+            <i class="fas fa-exclamation-triangle text-red-600 text-3xl flex-shrink-0 mt-1"></i>
+            <div>
+                <h4 class="font-bold text-xl mb-2">Wichtiger Hinweis:</h4>
+                <p class="text-lg">
+                    Die hier bereitgestellten Informationen dienen der allgemeinen Orientierung und ersetzen keine individuelle Rechtsberatung. Konsultieren Sie bei spezifischen Fragen oder komplexen Sachverhalten stets einen qualifizierten Juristen oder eine spezialisierte Beratungsstelle.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abgrenzung: Werkvertrag vs. Kaufvertrag vs. Auftrag</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #334155; /* Darker text */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 2rem;
+            flex-grow: 1;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c; /* Darker title */
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .duty-card {
+            background-color: #ffffff;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .duty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .duty-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .duty-card h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        .duty-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+        }
+        .duty-card ul li {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .duty-card ul li::before {
+            content: '\f058'; /* Check circle solid icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            color: #22c55e; /* Green checkmark */
+        }
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ef4444; /* Red */
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            z-index: 10;
+            border: 4px solid #f0f4f8; /* Match background */
+        }
+        .grid-item {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s ease-in-out;
+        }
+        .grid-item:hover {
+            transform: translateY(-3px);
+        }
+        .grid-item h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1e3a8a; /* Dark blue */
+        }
+        .callout-box {
+            background-color: #e0f2fe; /* Light blue */
+            border-left: 6px solid #3b82f6; /* Medium blue border */
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #1e40af; /* Darker blue text */
+            margin-top: 2rem;
+        }
+        footer {
+            margin-top: auto;
+            padding: 1rem;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Abgrenzung: Werkvertrag vs. Kaufvertrag vs. Auftrag</h1>
+
+        <!-- Top Comparison Section -->
+        <div class="relative flex flex-col md:flex-row gap-8 mb-12">
+            <!-- Werkvertrag Card -->
+            <div class="duty-card flex-1 bg-green-50 border-b-4 border-green-500">
+                <div class="icon text-green-600">
+                    <i class="fas fa-hammer"></i>
+                </div>
+                <h2 class="text-green-800">Werkvertrag (Auftrag auf Herstellung)</h2>
+                <ul>
+                    <li><span class="font-semibold">Erfolgspflicht:</span> Herstellung eines bestimmten Werkes</li>
+                    <li><span class="font-semibold">Geschuldeter Erfolg:</span> Eine funktionierende, mangelfreie Sache (z.B. Maschine)</li>
+                    <li><span class="font-semibold">Gefahrtragung:</span> Bis zur Abnahme des Werkes beim Unternehmer</li>
+                    <li><span class="font-semibold">Mängelhaftung:</span> Gewährleistung für den Erfolg nach Abnahme</li>
+                    <li><span class="font-semibold">Beispiel:</span> Bau einer Sondermaschine nach spezifischen Kundenplänen</li>
+                </ul>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">VS</div>
+
+            <!-- Kaufvertrag Card -->
+            <div class="duty-card flex-1 bg-yellow-50 border-b-4 border-yellow-500">
+                <div class="icon text-yellow-600">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h2 class="text-yellow-800">Kaufvertrag</h2>
+                <ul>
+                    <li><span class="font-semibold">Lieferpflicht:</span> Übergabe einer bereits bestehenden Sache</li>
+                    <li><span class="font-semibold">Geschuldete Sachleistung:</span> Eine Ware, die bei Übergabe mangelfrei ist</li>
+                    <li><span class="font-semibold">Gefahrtragung:</span> Geht mit Übergabe an den Käufer über</li>
+                    <li><span class="font-semibold">Mängelhaftung:</span> Gewährleistung für Mängel, die bei Übergabe bereits bestanden</li>
+                    <li><span class="font-semibold">Beispiel:</span> Kauf einer Standard-CNC-Fräsmaschine ab Lager</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Lower Section: Grid for additional distinctions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            <!-- Einfacher Auftrag -->
+            <div class="grid-item bg-purple-50">
+                <h3 class="text-purple-800"><i class="fas fa-handshake mr-2"></i> Einfacher Auftrag (Dienstleistung)</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><span class="font-semibold">Sorgfaltspflicht:</span> Tätigwerden im Interesse des Auftraggebers</li>
+                    <li><span class="font-semibold">Keine Erfolgspflicht:</span> Es wird kein bestimmter Erfolg geschuldet</li>
+                    <li><span class="font-semibold">Geschuldete Leistung:</span> Eine Dienstleistung, z.B. Beratung oder Wartung</li>
+                    <li><span class="font-semibold">Beispiel:</span> Regelmäßige Wartung einer Maschine ohne Reparaturversprechen, Prozessberatung</li>
+                </ul>
+            </div>
+
+            <!-- Fokus der Pflicht -->
+            <div class="grid-item bg-blue-50">
+                <h3 class="text-blue-800"><i class="fas fa-bullseye mr-2"></i> Fokus der Pflicht</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><span class="font-semibold">Werkvertrag:</span> Herstellung eines konkreten Werkes (Erfolg)</li>
+                    <li><span class="font-semibold">Kaufvertrag:</span> Übergabe einer bestimmten Sache (Sachleistung)</li>
+                    <li><span class="font-semibold">Einfacher Auftrag:</span> Erbringung einer Dienstleistung (Sorgfalt)</li>
+                </ul>
+            </div>
+
+            <!-- Beispiele im Maschinenbereich -->
+            <div class="grid-item bg-red-50">
+                <h3 class="text-red-800"><i class="fas fa-industry mr-2"></i> Beispiele (Maschinenbereich)</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><span class="font-semibold">Werkvertrag:</span> Entwicklung und Bau einer neuen Produktionslinie</li>
+                    <li><span class="font-semibold">Kaufvertrag:</span> Bestellung von Standard-Ersatzteilen für Maschinen</li>
+                    <li><span class="font-semibold">Einfacher Auftrag:</span> Schulung des Bedienpersonals für eine neue Maschine</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Callout Box / Educational Goal Summary -->
+        <div class="callout-box mt-10">
+            <p><i class="fas fa-lightbulb text-blue-600 mr-2"></i> <span class="font-bold">Wichtiger Hinweis:</span> Die korrekte Abgrenzung dieser Vertragstypen ist entscheidend, da sie die Anwendung unterschiedlicher Rechtsnormen (z.B. bzgl. Gewährleistung, Gefahrtragung, Kündigungsmöglichkeiten) und damit die Rechte und Pflichten der Vertragsparteien maßgeblich beeinflusst.</p>
+        </div>
+    </div>
+
+    <footer>
+        Slide 7
+    </footer>
+</body>
+</html>
