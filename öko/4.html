@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labels: Dein Wegweiser im Produktdschungel</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+        }
+        .contract-type {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .contract-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .article-ref {
+            font-style: italic;
+            font-size: 0.85em;
+            color: #666;
+        }
+        /* Custom colors for cards */
+        .bg-fairtrade { background-color: #E6F7D9; } /* Light Green */
+        .text-fairtrade { color: #5CB85C; }
+        .border-fairtrade { border-color: #5CB85C; }
+
+        .bg-bio { background-color: #D9EDF7; } /* Light Blue */
+        .text-bio { color: #337AB7; }
+        .border-bio { border-color: #337AB7; }
+
+        .bg-sustainable { background-color: #F7E6D9; } /* Light Orange */
+        .text-sustainable { color: #F0AD4E; }
+        .border-sustainable { border-color: #F0AD4E; }
+
+        .bg-energy { background-color: #F7D9ED; } /* Light Purple */
+        .text-energy { color: #924B92; }
+        .border-energy { border-color: #924B92; }
+
+        /* Ensure text contrast for icons */
+        .w-12.h-12 i {
+            color: white;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100 flex flex-col justify-between p-8">
+
+    <main class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-12 text-gray-900">Labels: Dein Wegweiser im Produktdschungel</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Card 1: Fairtrade -->
+            <div class="contract-type bg-fairtrade p-8 rounded-lg shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-fairtrade text-white flex items-center justify-center mb-4 shadow-inner" style="background-color: #5CB85C;">
+                        <i class="fas fa-handshake fa-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-fairtrade">Fairtrade</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li>Gütesiegel für fairen Handel nach internationalen Standards.</li>
+                        <li>Preise über Weltmarktpreis für höheres, verlässlicheres Einkommen der Produzenten.</li>
+                        <li>Einhaltung internationaler Umwelt- und Sozialstandards (z.B. Verbot von Kinderarbeit).</li>
+                        <li>Fokus auf Waren aus Entwicklungsländern (landwirtschaftliche Erzeugnisse, Handwerk).</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-fairtrade pl-4 py-2 bg-white bg-opacity-70 rounded-r-md">
+                    <p class="font-medium text-gray-800">
+                        <span class="text-fairtrade font-bold">Beispiel:</span> Max-Havelaar-Stiftung als bekannteste Organisation; Produkte mit Fairtrade-Stickern.
+                    </p>
+                </div>
+                <p class="article-ref mt-4 text-right">Quelle: S. 37-38</p>
+            </div>
+
+            <!-- Card 2: Bio-Labels -->
+            <div class="contract-type bg-bio p-8 rounded-lg shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-bio text-white flex items-center justify-center mb-4 shadow-inner" style="background-color: #337AB7;">
+                        <i class="fas fa-leaf fa-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-bio">Bio-Labels</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li>Label für kontrollierte biologische Produktion in Landwirtschaft und Verarbeitung.</li>
+                        <li>Fokus auf biologische, naturnahe und nachhaltige Produktionsweisen.</li>
+                        <li>Verzicht auf Tropenhölzer und gentechnisch veränderte Lebensmittel.</li>
+                        <li>Berücksichtigt Tierwohl und Umweltschutz.</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-bio pl-4 py-2 bg-white bg-opacity-70 rounded-r-md">
+                    <p class="font-medium text-gray-800">
+                        <span class="text-bio font-bold">Beispiel:</span> Coop Naturaplan Bio, Migros Bio als bekannte Schweizer Bio-Labels.
+                    </p>
+                </div>
+                <p class="article-ref mt-4 text-right">Quelle: S. 37</p>
+            </div>
+
+            <!-- Card 3: IP-Suisse & FSC -->
+            <div class="contract-type bg-sustainable p-8 rounded-lg shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-sustainable text-white flex items-center justify-center mb-4 shadow-inner" style="background-color: #F0AD4E;">
+                        <i class="fas fa-seedling fa-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-sustainable">IP-Suisse & FSC</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li><span class="font-semibold">IP-Suisse:</span> Garantiert umwelt- und tiergerechte Bewirtschaftung.</li>
+                        <li><span class="font-semibold">IP-Suisse:</span> Hochwertige Produkte nach kontrollierten Richtlinien.</li>
+                        <li><span class="font-semibold">FSC (Forest Stewardship Council):</span> Zertifikat für nachhaltig bewirtschaftete Wälder.</li>
+                        <li>Fördert verantwortungsvollen Umgang mit natürlichen Ressourcen.</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-sustainable pl-4 py-2 bg-white bg-opacity-70 rounded-r-md">
+                    <p class="font-medium text-gray-800">
+                        <span class="text-sustainable font-bold">Beispiel:</span> Fleisch aus artgerechter Tierhaltung (IP-Suisse), Holzprodukte aus nachhaltiger Forstwirtschaft (FSC).
+                    </p>
+                </div>
+                <p class="article-ref mt-4 text-right">Quelle: S. 37</p>
+            </div>
+
+            <!-- Card 4: Energielabel -->
+            <div class="contract-type bg-energy p-8 rounded-lg shadow-md flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-full bg-energy text-white flex items-center justify-center mb-4 shadow-inner" style="background-color: #924B92;">
+                        <i class="fas fa-bolt fa-xl"></i>
+                    </div>
+                    <h2 class="text-2xl font-semibold mb-4 text-energy">Energielabel</h2>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                        <li>Hilft beim Kauf von energieeffizienten Elektrogeräten.</li>
+                        <li>Deklariert den Energieverbrauch von Geräten.</li>
+                        <li>Klassifizierung von A+++ (sehr effizient) bis G (weniger effizient).</li>
+                        <li>Ermöglicht informierte Entscheidungen zur Reduzierung des Energieverbrauchs.</li>
+                    </ul>
+                </div>
+                <div class="border-l-4 border-energy pl-4 py-2 bg-white bg-opacity-70 rounded-r-md">
+                    <p class="font-medium text-gray-800">
+                        <span class="text-energy font-bold">Beispiel:</span> Kühlschränke, Waschmaschinen oder Backöfen mit der besten Energieeffizienzklasse (z.B. A+++).
+                    </p>
+                </div>
+                <p class="article-ref mt-4 text-right">Quelle: S. 38</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="text-center text-gray-500 text-sm mt-8">
+        Seite 4
+    </footer>
+
+</body>
+</html>

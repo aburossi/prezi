@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fairtrade: Gerechtigkeit im Handel</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f4f8; /* Light background for the whole slide */
+            color: #333;
+            line-height: 1.6;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 20px;
+        }
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #4a5568;
+            margin-bottom: 15px;
+        }
+        .bg-blue-50 {
+            background-color: #eff6ff; /* Light blue for definition */
+            border-left: 6px solid #3b82f6; /* Blue accent */
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        .bg-blue-50 p {
+            font-size: 1.15rem;
+            color: #2c5282;
+            line-height: 1.8;
+        }
+        .guarantee-card {
+            background-color: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        .guarantee-card .icon {
+            font-size: 3rem;
+            color: #4299e1; /* Blue icon color */
+            margin-bottom: 15px;
+        }
+        .guarantee-card h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: #2b6cb0;
+        }
+        .guarantee-card p {
+            font-size: 0.95rem;
+            color: #4a5568;
+        }
+        .bg-amber-50 {
+            background-color: #fffbeb; /* Light amber for rules section */
+            border-left: 6px solid #f6ad55; /* Amber accent */
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #4a5568;
+        }
+        ul li .fas {
+            margin-right: 12px;
+            font-size: 1.3rem;
+            line-height: 1.6; /* Align icon with text */
+            flex-shrink: 0;
+        }
+        .icon-check { color: #38a169; } /* Green for positive */
+        .icon-info { color: #4299e1; } /* Blue for info */
+        .icon-warning { color: #ed8936; } /* Orange for caution */
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>Fairtrade: Gerechtigkeit im Handel</h1>
+
+        <!-- Section 1: Definition -->
+        <div class="bg-blue-50">
+            <h2>Was ist Fairtrade?</h2>
+            <p>
+                Fairtrade (Fairer Handel) ist ein <strong>kontrollierter Handel</strong>, bei dem die Preise für gehandelte Produkte üblicherweise 
+                über dem jeweiligen Weltmarktpreis angesetzt werden. Dies ermöglicht Produzenten ein <strong>höheres und verlässlicheres Einkommen</strong> 
+                als im herkömmlichen Handel.
+            </p>
+        </div>
+
+        <!-- Section 2: Key Aspects (Grid of Cards) -->
+        <h2 class="text-center mb-8">Ziele und Kernprinzipien des Fairen Handels</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-hand-holding-usd"></i></div>
+                <h3>Stabiles Einkommen</h3>
+                <p>Sicherstellung eines gerechten und stabilen Einkommens für Produzenten, oft durch Mindestpreise, die über dem Weltmarkt liegen.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-leaf"></i></div>
+                <h3>Umweltstandards</h3>
+                <p>Einhaltung internationaler Umweltstandards in der Produktion, Förderung nachhaltiger Anbaumethoden und Ressourcenschonung.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <h3>Sozialstandards</h3>
+                <p>Gewährleistung fairer Arbeitsbedingungen, Verbot von Kinderarbeit und Diskriminierung sowie Schutz der Gesundheit und Sicherheit der Arbeiter.</p>
+            </div>
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-globe-americas"></i></div>
+                <h3>Fokus auf Entwicklungsländer</h3>
+                <p>Konzentriert sich primär auf den Export von Waren aus Entwicklungsländern in Industrieländer, um lokale Gemeinschaften zu stärken.</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Rules and Examples (Two Columns) -->
+        <h2 class="text-center mb-8">Anwendungsbereiche und Organisationen</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-amber-50">
+                <h3>Wichtige Merkmale</h3>
+                <ul>
+                    <li><i class="fas fa-info-circle icon-info"></i> Produkte umfassen landwirtschaftliche Erzeugnisse, traditionelles Handwerk, Industrieprodukte und weiten sich zunehmend auf Bereiche wie den Tourismus aus.</li>
+                    <li><i class="fas fa-check-circle icon-check"></i> Fairtrade fördert nachhaltige und ethische Produktionsbedingungen, die über die reinen Preisabsprachen hinausgehen.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Bekannte Organisationen & Kennzeichnung</h3>
+                <ul>
+                    <li><i class="fas fa-building icon-info"></i> Die <strong>Max-Havelaar-Stiftung</strong> ist eine der bekanntesten Fairtrade-Organisationen in der Schweiz, die sich für die Verbreitung fairer Produkte einsetzt.</li>
+                    <li><i class="fas fa-tag icon-check"></i> Produkte, die den Fairtrade-Standards entsprechen, sind mit speziellen Fairtrade-Labels oder -Stickern gekennzeichnet, um Konsumenten Orientierung zu bieten.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

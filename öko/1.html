@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ökologie im Umfeld</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f0f0; /* Light background for the overall page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .slide {
+            width: 100vw;
+            height: 56.25vw; /* 16:9 aspect ratio (9 / 16 * 100) */
+            max-width: 1600px; /* Max width for larger screens */
+            max-height: 900px; /* Max height for larger screens */
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+
+        /* Responsive scaling for the slide */
+        @media (max-aspect-ratio: 16/9) {
+            .slide {
+                height: 100vh;
+                width: calc(100vh * 16 / 9);
+            }
+        }
+        @media (min-aspect-ratio: 16/9) {
+            .slide {
+                width: 100vw;
+                height: calc(100vw * 9 / 16);
+            }
+        }
+
+        .swiss-cross {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: #ef4444; /* Red color */
+            font-size: 4rem;
+            opacity: 0.8;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 4.5rem; /* Larger font for main title */
+            font-weight: 700;
+            color: #1a202c; /* Dark text */
+            text-align: center;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 80%;
+        }
+
+        h2 {
+            font-size: 2.25rem; /* Subheading font size */
+            font-weight: 400;
+            color: #4a5568; /* Slightly lighter text */
+            text-align: center;
+            max-width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header Icon (Swiss Cross - contextual symbol) -->
+        <div class="swiss-cross">
+            <i class="fas fa-leaf"></i> <!-- Using a leaf icon for ecology -->
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="flex flex-col items-center justify-center flex-grow">
+            <h1>Ökologie im Umfeld: Dein Einfluss auf eine nachhaltige Zukunft</h1>
+            <h2>Alltagsentscheidungen für eine bessere Welt</h2>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer">
+            <span>Ökologie im Umfeld</span>
+            <span>Seite 1</span>
+        </div>
+    </div>
+</body>
+</html>

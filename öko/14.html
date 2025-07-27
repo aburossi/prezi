@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zusammenfassung: Dein Beitrag zählt!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            position: relative;
+        }
+        .swiss-red {
+            color: #FF0000;
+        }
+        .swiss-bg-red {
+            background-color: #FF0000;
+        }
+        /* Custom styling for the mermaid container to ensure it's centered and has a background */
+        .mermaid {
+            margin: 0 auto; /* Centers the block element horizontally */
+            padding: 20px; /* Adds space around the diagram */
+            background-color: white; /* Provides a clear background for the diagram */
+            border-radius: 8px; /* Softens the corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col">
+        <!-- Header with decorative element -->
+        <div class="w-full py-6 px-10 flex items-center">
+            <div class="w-16 h-16 rounded-full swiss-bg-red flex items-center justify-center mr-4">
+                <i class="fas fa-leaf text-white text-3xl"></i> <!-- Contextual icon for sustainability -->
+            </div>
+            <h1 class="text-4xl font-bold">Zusammenfassung: Dein Beitrag zählt!</h1>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="flex-grow flex flex-col items-center justify-center px-10 pb-10">
+            <!-- Mermaid mind map container -->
+            <div class="mermaid max-w-5xl w-full">
+                mindmap
+                    root((Dein Beitrag zählt!))
+                        Nachhaltiger Konsum
+                            Ökologische Kriterien
+                                Bio-Produkte
+                                Nachhaltige Produktion (FSC)
+                                Artgerechte Tierhaltung
+                            Ethische Kriterien
+                                Fairer Handel (Fairtrade)
+                                Faire Löhne
+                                Keine Kinderarbeit
+                            Orientierungshilfen
+                                Lebensmittellabels
+                                Energielabel
+                        Abfallmanagement
+                            Abfallhierarchie
+                                Vermeiden
+                                Vermindern (Wiederverwendung)
+                                Verwerten (Recycling)
+                            Herausforderungen
+                                Steigende Abfallmenge
+                                Komplexität Recycling (Kunststoff)
+                                Littering (Kosten, Umwelt)
+                            Lösungen
+                                Sorgfältiges Trennen
+                                Sensibilisierung (IGSU)
+                                Gesetzgebung (USG, Verursacherprinzip)
+                        Individuelle Verantwortung
+                            Bewusste Kaufentscheidungen
+                            Aktive Abfalltrennung
+                            Engagement für Umweltschutz
+                        Ziele
+                            Ressourcenschonung
+                            Umweltschutz
+                            Nachhaltige Zukunft
+            </div>
+            
+            <!-- Key information summary box -->
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md w-3/4 border-l-4 border-red-600 summary-box">
+                <h3 class="text-xl font-bold mb-2 swiss-red">Wichtige Erkenntnisse</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                    <li><b>Nachhaltiger Konsum:</b> Bewusste Kaufentscheidungen nach ökologischen & ethischen Kriterien.</li>
+                    <li><b>Abfallhierarchie:</b> Vermeiden > Vermindern > Verwerten – der beste Abfall ist keiner.</li>
+                    <li><b>Labels:</b> Helfen bei der Orientierung für nachhaltige Produkte (z.B. Fairtrade, Bio, Energielabel).</li>
+                    <li><b>Individuelle Verantwortung:</b> Jeder kann durch Konsum- und Entsorgungsverhalten beitragen.</li>
+                    <li><b>Umweltschutz:</b> Reduzierung von Abfall und Littering schützt Umwelt und spart Kosten.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="w-full py-3 px-10 flex justify-between items-center bg-gray-100">
+            <div class="text-sm text-gray-600">Nachhaltigkeit im Alltag</div>
+            <div class="text-sm text-gray-600">14/XX</div> <!-- Placeholder for total slides -->
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            flowchart: { useMaxWidth: false, htmlLabels: true },
+            themeVariables: {
+                primaryColor: '#FF0000', /* Using red as an accent color consistent with example */
+                primaryBorderColor: '#FF0000',
+                lineColor: '#CCCCCC',
+                secondaryColor: '#f8f9fa'
+            }
+        });
+    </script>
+</body>
+</html>

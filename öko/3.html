@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewusst Einkaufen</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light background for the slide */
+            color: #333;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 2rem; /* Spacing between main sections */
+        }
+        .section-title {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 700; /* font-bold */
+            color: #1a202c; /* gray-900 */
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .definition-box {
+            background-color: #eff6ff; /* bg-blue-50 */
+            padding: 2rem;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #3b82f6; /* blue-500 */
+        }
+        .definition-box h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600; /* font-semibold */
+            color: #1e40af; /* blue-800 */
+            margin-bottom: 1rem;
+        }
+        .definition-box p {
+            font-size: 1.125rem; /* text-lg */
+            line-height: 1.6;
+            color: #2c5282; /* blue-900 */
+        }
+        .guarantee-card {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-top: 4px solid transparent; /* Placeholder for color */
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        .guarantee-card-fairtrade { border-top-color: #22c55e; /* green-500 */ }
+        .guarantee-card-bio { border-top-color: #84cc16; /* lime-500 */ }
+        .guarantee-card-ipsuisse { border-top-color: #ef4444; /* red-500 */ }
+        .guarantee-card-energy { border-top-color: #f97316; /* orange-500 */ }
+
+        .guarantee-card h4 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600;
+            color: #1f2937; /* gray-800 */
+            margin-bottom: 0.75rem;
+        }
+        .guarantee-card p {
+            font-size: 1rem; /* text-base */
+            color: #4b5563; /* gray-600 */
+            line-height: 1.5;
+        }
+        .rules-section {
+            background-color: #fffbeb; /* bg-amber-50 */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #fbbf24; /* amber-400 */
+        }
+        .rules-section h3 {
+            font-size: 1.5rem; /* text-2xl */
+            font-weight: 600;
+            color: #b45309; /* amber-800 */
+            margin-bottom: 1rem;
+        }
+        .rules-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .rules-section li {
+            font-size: 1.125rem; /* text-lg */
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: flex-start;
+            color: #78350f; /* amber-900 */
+        }
+        .rules-section li .fas {
+            margin-right: 0.75rem;
+            color: #f59e0b; /* amber-500 */
+            font-size: 1.25rem;
+            line-height: inherit; /* Align icon with text baseline */
+            padding-top: 0.125rem; /* Fine-tune vertical alignment */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1 class="section-title">Bewusst einkaufen: Ökologisch & Ethisch</h1>
+
+        <!-- Section 1: Foundational Definition -->
+        <div class="definition-box">
+            <h3>Grundlagen bewussten Konsums</h3>
+            <p>
+                Bewusstes Einkaufen bedeutet, Produkte nach <strong>ökologischen</strong> und <strong>ethischen</strong> Kriterien auszuwählen, um einen positiven Einfluss auf Umwelt, Gesellschaft und Tierwohl zu nehmen.
+            </p>
+            <p class="mt-4">
+                <strong>Ökologische Kriterien:</strong> Fokus auf biologische, naturnahe und nachhaltige Produktion.
+                <br>
+                <strong>Ethische Kriterien:</strong> Berücksichtigung fairer Produktions- und Arbeitsbedingungen.
+            </p>
+        </div>
+
+        <!-- Section 2: Categorization/Examples (Guarantees/Labels) -->
+        <div>
+            <h2 class="section-title mt-8 mb-6">Empfehlenswerte Labels & Kriterien</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="guarantee-card guarantee-card-fairtrade">
+                    <i class="fas fa-handshake text-4xl mb-3 text-green-600"></i>
+                    <h4>Fairtrade</h4>
+                    <p>Gütesiegel für fairen Handel: höhere und verlässlichere Einkommen für Produzenten, Einhaltung internationaler Umwelt- und Sozialstandards (z.B. keine Kinderarbeit).</p>
+                </div>
+                <div class="guarantee-card guarantee-card-bio">
+                    <i class="fas fa-seedling text-4xl mb-3 text-lime-600"></i>
+                    <h4>Bio-Labels (z.B. Bio Suisse)</h4>
+                    <p>Kontrollierte biologische Produktion von landwirtschaftlichen und verarbeiteten Produkten, die naturnah und nachhaltig sind.</p>
+                </div>
+                <div class="guarantee-card guarantee-card-ipsuisse">
+                    <i class="fas fa-tractor text-4xl mb-3 text-red-600"></i>
+                    <h4>IP-Suisse</h4>
+                    <p>Garantie für integrierte Produktion: umwelt- und tiergerechte Bewirtschaftung sowie qualitativ hochstehende Produkte nach kontrollierten Richtlinien.</p>
+                </div>
+                <div class="guarantee-card guarantee-card-energy">
+                    <i class="fas fa-bolt text-4xl mb-3 text-orange-600"></i>
+                    <h4>Energielabel</h4>
+                    <p>Hilft beim Kauf nachhaltiger Elektrogeräte durch Deklaration des Energieverbrauchs (Klassen A+++ bis G).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Specific Rules and Conditions -->
+        <div>
+            <h2 class="section-title mt-8 mb-6">Konkrete Regeln und Anforderungen</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="rules-section">
+                    <h3><i class="fas fa-leaf mr-2 text-amber-500"></i>Ökologische Aspekte</h3>
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> Biologische, naturnahe & nachhaltige Produktion.</li>
+                        <li><i class="fas fa-times-circle"></i> Verzicht auf Tropenhölzer & gentechnisch veränderte Lebensmittel.</li>
+                        <li><i class="fas fa-paw"></i> Artgerechte Tierhaltung bei Fleisch- und Milchprodukten.</li>
+                        <li><i class="fas fa-flask-vial"></i> Kosmetikprodukte ohne Tierversuche.</li>
+                    </ul>
+                </div>
+                <div class="rules-section">
+                    <h3><i class="fas fa-users mr-2 text-amber-500"></i>Ethische Aspekte</h3>
+                    <ul>
+                        <li><i class="fas fa-hand-holding-usd"></i> Faire Löhne für Produzenten und Arbeiter.</li>
+                        <li><i class="fas fa-child-reaching"></i> Strenges Verbot von Kinderarbeit.</li>
+                        <li><i class="fas fa-globe"></i> Einhaltung internationaler Umwelt- und Sozialstandards.</li>
+                        <li><i class="fas fa-building"></i> Transparenz bei Produktions- und Arbeitsbedingungen.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

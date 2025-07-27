@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein nächster Schritt: Aktiv werden!</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            background-color: #f0f4f8; /* Light background for the slide */
+        }
+        h1, h2, h3 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        .left-card:hover {
+            border-color: #34D399; /* Green for left option */
+        }
+        .right-card:hover {
+            border-color: #60A5FA; /* Blue for right option */
+        }
+        .vs-badge {
+            background-color: #4B5563; /* Darker gray for badge */
+            color: #ffffff;
+            font-weight: bold;
+            border-radius: 9999px; /* Fully rounded */
+            padding: 8px 20px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+        .grid-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .grid-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .critical-notice {
+            background-color: #FEEBCB; /* Light orange/yellow background */
+            color: #9A3412; /* Darker orange/brown text */
+            border-left: 6px solid #F59E0B; /* Orange border */
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .critical-notice h3 {
+            color: #9A3412;
+        }
+    </style>
+</head>
+<body class="p-8">
+    <div class="slide-container">
+        <!-- Slide Title -->
+        <h1 class="text-4xl text-center mb-10 text-gray-800">Dein nächster Schritt: Aktiv werden!</h1>
+
+        <!-- Introduction/Context -->
+        <div class="text-lg text-gray-700 mb-12 text-center leading-relaxed">
+            <p>Du hast viel über nachhaltigen Konsum, Abfallvermeidung und Recycling gelernt. Jetzt ist es Zeit, dieses Wissen in die Tat umzusetzen und aktiv zu werden für eine nachhaltigere Zukunft.</p>
+            <p class="mt-2 font-semibold">Wähle deinen Weg und mach den Unterschied!</p>
+        </div>
+
+        <!-- Two Primary Options (Side-by-Side) with VS badge -->
+        <div class="relative flex flex-col lg:flex-row items-center justify-center gap-8 mb-16">
+            <!-- Left Card: Further Resources -->
+            <div class="card left-card flex-1 p-8 lg:p-10 min-h-[400px] flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-green-600 mb-6 flex items-center">
+                        <i class="fas fa-book-open mr-3"></i> 1. Informiere dich weiter!
+                    </h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Nutze die folgenden Quellen, um dein Wissen zu vertiefen und dich über aktuelle Entwicklungen zu informieren:</p>
+                    <ul class="list-disc pl-6 text-gray-800 space-y-3">
+                        <li><strong class="text-green-700">Labels & Produkte:</strong>
+                            <ul class="list-inside ml-4 mt-1 space-y-1">
+                                <li><a href="https://www.labelinfo.ch/" target="_blank" class="text-blue-600 hover:underline">labelinfo.ch</a> (Umfassende Label-Informationen)</li>
+                                <li><a href="https://www.maxhavelaar.ch/" target="_blank" class="text-blue-600 hover:underline">Max Havelaar</a> (Fairtrade-Produkte)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="text-green-700">Umweltschutz & Konsumentenschutz:</strong>
+                            <ul class="list-inside ml-4 mt-1 space-y-1">
+                                <li><a href="https://www.wwf.ch/" target="_blank" class="text-blue-600 hover:underline">WWF Schweiz</a> (Umweltschutzorganisation)</li>
+                                <li><a href="https://www.konsumentenschutz.ch/" target="_blank" class="text-blue-600 hover:underline">Stiftung für Konsumentenschutz (SKS)</a></li>
+                                <li><a href="https://www.bafu.admin.ch/bafu/de/home.html" target="_blank" class="text-blue-600 hover:underline">BAFU</a> (Bundesamt für Umwelt)</li>
+                            </ul>
+                        </li>
+                        <li><strong class="text-green-700">Anti-Littering:</strong>
+                            <ul class="list-inside ml-4 mt-1 space-y-1">
+                                <li><a href="https://www.igsu.ch/" target="_blank" class="text-blue-600 hover:underline">IGSU</a> (Interessengemeinschaft saubere Umwelt)</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge absolute lg:static my-4 lg:my-0">ODER</div>
+
+            <!-- Right Card: Practical Daily Tips -->
+            <div class="card right-card flex-1 p-8 lg:p-10 min-h-[400px] flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-bold text-blue-600 mb-6 flex items-center">
+                        <i class="fas fa-lightbulb mr-3"></i> 2. Handle bewusst im Alltag!
+                    </h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">Jede kleine Entscheidung zählt. Hier sind konkrete Schritte, die du sofort umsetzen kannst:</p>
+                    <ul class="list-disc pl-6 text-gray-800 space-y-3">
+                        <li><strong class="text-blue-700">Abfallmanagement nach BAFU-Prinzip:</strong>
+                            <ul class="list-inside ml-4 mt-1 space-y-1">
+                                <li><strong>Vermeiden:</strong> Kaufe weniger, wähle wiederverwendbare Produkte (z.B. Stofftaschen, Trinkflaschen). Vermeide Einweggeschirr.</li>
+                                <li><strong>Vermindern/Wiederverwenden:</strong> Gib Produkten ein zweites Leben. Repariere statt wegzuwerfen. Spende Kleidung.</li>
+                                <li><strong>Verwerten:</strong> Trenne Abfall korrekt (Papier, Karton, Glas, PET, Aluminium, Elektroschrott). Achte auf sortenreine Trennung.</li>
+                            </ul>
+                        </li>
+                        <li><strong class="text-blue-700">Bewusster Konsum:</strong>
+                            <ul class="list-inside ml-4 mt-1 space-y-1">
+                                <li>Achte beim Einkauf auf anerkannte Labels (Bio, Fairtrade, IP-Suisse, FSC, Energieetikette).</li>
+                                <li>Wähle Produkte aus artgerechter Tierhaltung und ohne Tierversuche.</li>
+                                <li>Vermeide Littering – entsorge Abfall immer in den dafür vorgesehenen Behältern.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Option/Conditions (Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <!-- Left Grid Item: Dein Engagement -->
+            <div class="grid-card">
+                <h3 class="text-2xl font-bold text-purple-600 mb-4 flex items-center">
+                    <i class="fas fa-hands-helping mr-3"></i> 3. Engagiere dich!
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">Werde Teil der Lösung, indem du aktiv mitmachst und dich für eine saubere Umwelt einsetzt:</p>
+                <ul class="list-disc pl-6 text-gray-800 space-y-2">
+                    <li>Nimm am Clean-Up-Day teil oder organisiere selbst eine Aufräumaktion in deiner Gemeinde.</li>
+                    <li>Unterstütze Umweltschutzorganisationen durch Spenden oder ehrenamtliche Arbeit.</li>
+                    <li>Informiere Freunde und Familie über nachhaltige Praktiken und motiviere sie zum Mitmachen.</li>
+                </ul>
+            </div>
+
+            <!-- Right Grid Item: Langfristiger Lebensstil -->
+            <div class="grid-card">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-4 flex items-center">
+                    <i class="fas fa-leaf mr-3"></i> 4. Denke langfristig!
+                </h3>
+                <p class="text-gray-700 leading-relaxed mb-4">Nachhaltigkeit ist eine Reise, kein Ziel. Integriere diese Prinzipien dauerhaft in dein Leben:</p>
+                <ul class="list-disc pl-6 text-gray-800 space-y-2">
+                    <li>Hinterfrage deine Konsumgewohnheiten kritisch und suche nach langlebigen Alternativen.</li>
+                    <li>Informiere dich kontinuierlich über neue nachhaltige Lösungen und Technologien.</li>
+                    <li>Sei ein Vorbild für andere und zeige, wie ein umweltbewusster Lebensstil aussehen kann.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="critical-notice bg-gray-100">
+            <h3 class="text-2xl font-bold mb-3 flex items-center">
+                <i class="fas fa-exclamation-triangle mr-3"></i> Wichtiger Hinweis: Das Verursacherprinzip
+            </h3>
+            <p class="text-lg leading-relaxed">
+                Denke daran: Gemäss dem Umweltschutz-Gesetz (USG) trägt der Verursacher die Kosten der Entsorgung. Deine bewussten Entscheidungen helfen nicht nur der Umwelt, sondern auch deinem Geldbeutel und der Gesellschaft, indem sie unnötige Kosten (z.B. für Littering) vermeiden.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

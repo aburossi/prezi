@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Littering: Ein teures Ärgernis mit Folgen</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light background for the slide */
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            padding: 40px;
+        }
+        .guarantee-card {
+            background-color: #f9fafb;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .guarantee-card h3 {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        .guarantee-card p {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .section-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .definition-box {
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .definition-box h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+        .definition-box p {
+            font-size: 1.15rem;
+            color: #2d3748;
+            line-height: 1.7;
+        }
+        .rule-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .rule-list li .fas {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            padding-top: 2px; /* Align icon with text baseline */
+        }
+        .rule-list li span {
+            flex: 1;
+            color: #4a5568;
+        }
+        .icon-check { color: #38a169; } /* Green for positive */
+        .icon-times { color: #e53e3e; } /* Red for negative/prohibition */
+        .icon-info { color: #3182ce; } /* Blue for general info */
+        .icon-warning { color: #dd6b20; } /* Orange for caution */
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Main Title -->
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-10">Littering: Ein teures Ärgernis mit Folgen</h1>
+
+        <!-- Definition Section -->
+        <div class="definition-box bg-blue-50">
+            <h2 class="text-blue-800">Was ist Littering?</h2>
+            <p class="text-lg text-blue-700">
+                Littering bezeichnet das <strong>Wegwerfen und Liegenlassen von Abfällen im öffentlichen Raum</strong>,
+                anstatt sie ordnungsgemäss in den dafür vorgesehenen Entsorgungsstellen zu deponieren.
+            </p>
+        </div>
+
+        <!-- Categorization/Impacts Section -->
+        <h2 class="section-heading">Die vielfältigen Konsequenzen von Littering</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Economic Consequences Card -->
+            <div class="guarantee-card">
+                <h3 class="text-xl">
+                    <i class="fas fa-money-bill-wave text-green-600 mr-3"></i>Ökonomische Folgen
+                </h3>
+                <p>
+                    Littering verursacht erhebliche Reinigungskosten. In der Schweiz belaufen sich diese auf jährlich rund <strong>200 Millionen Franken</strong>.
+                    75% dieser Kosten tragen die Gemeinden, der Rest entfällt auf den öffentlichen Verkehr.
+                    Häufig sind Verpackungen von Take-aways, Getränken, Zeitungen und Zigarettenstummel betroffen.
+                </p>
+            </div>
+
+            <!-- Ecological Consequences Card -->
+            <div class="guarantee-card">
+                <h3 class="text-xl">
+                    <i class="fas fa-leaf text-green-600 mr-3"></i>Ökologische Auswirkungen
+                </h3>
+                <p>
+                    Der achtlos weggeworfene Abfall führt zur <strong>Verunreinigung von Böden, Pflanzen und Gewässern</strong>.
+                    Die Materialien können nicht in den Stoffkreislauf zurückgeführt und somit nicht recycelt werden,
+                    was die Umwelt zusätzlich belastet und Ressourcen verschwendet.
+                </p>
+            </div>
+
+            <!-- Social Consequences Card (Spans two columns for better layout with 3 items) -->
+            <div class="guarantee-card md:col-span-2">
+                <h3 class="text-xl">
+                    <i class="fas fa-users text-green-600 mr-3"></i>Soziale Auswirkungen und Imageverlust
+                </h3>
+                <p>
+                    Littering reduziert die <strong>Lebensqualität und das Wohlbefinden der Bevölkerung</strong>.
+                    Es verschlechtert zudem das Image von Städten, Gemeinden und Naherholungsgebieten,
+                    was sich negativ auf Tourismus und lokale Attraktivität auswirken kann.
+                </p>
+            </div>
+        </div>
+
+        <!-- Rules and Conditions Section -->
+        <h2 class="section-heading">Massnahmen gegen Littering</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Legal Measures Column -->
+            <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-amber-800 mb-4">
+                    <i class="fas fa-gavel text-amber-600 mr-2"></i>Gesetzliche Massnahmen und Bussen
+                </h3>
+                <ul class="rule-list">
+                    <li><i class="fas fa-info-circle icon-info"></i><span>Seit fast 10 Jahren versuchen Bund, Kantone und Gemeinden, Littering mit Bussen zu ahnden.</span></li>
+                    <li><i class="fas fa-check-circle icon-check"></i><span>Kantone wie Aargau und Uri verhängen eine einheitliche Ordnungsbusse von <strong>300 Franken</strong>.</span></li>
+                    <li><i class="fas fa-exclamation-triangle icon-warning"></i><span>In Zürich und anderen Kantonen kostet das Wegwerfen von Zigarettenstummeln oder Spucken <strong>80 Franken</strong>.</span></li>
+                </ul>
+            </div>
+
+            <!-- Prevention and Awareness Column -->
+            <div class="bg-amber-50 p-6 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-amber-800 mb-4">
+                    <i class="fas fa-lightbulb text-amber-600 mr-2"></i>Sensibilisierung und Prävention
+                </h3>
+                <ul class="rule-list">
+                    <li><i class="fas fa-hands-helping icon-info"></i><span>Die <strong>Interessengemeinschaft saubere Umwelt (IGSU)</strong> setzt auf Sensibilisierung und Prävention.</span></li>
+                    <li><i class="fas fa-school icon-check"></i><span>IGSU führt Informationskampagnen an Schulen durch und organisiert den jährlichen <strong>Clean-Up-Day</strong>.</span></li>
+                    <li><i class="fas fa-handshake icon-info"></i><span>Partner der IGSU sind privatwirtschaftliche Recycling-Unternehmen sowie Grosshändler wie Coop, Migros und McDonald's.</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

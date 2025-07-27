@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was du heute lernst & unser Fahrplan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .toc-item {
+            transition: all 0.3s ease-in-out;
+            border-left: 4px solid; /* Base for border-l-4 */
+        }
+        .toc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .toc-number {
+            line-height: 1;
+            user-select: none;
+        }
+        .toc-icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .toc-item:hover .toc-icon {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="h-screen bg-gradient-to-br from-blue-50 to-indigo-100 text-gray-800 flex items-center justify-center">
+
+    <div class="max-w-6xl mx-auto py-12 px-6">
+        <h1 class="text-5xl font-extrabold text-center text-gray-900 mb-12 leading-tight">
+            Was du heute lernst & unser Fahrplan
+        </h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- TOC Item 1: Lernziele -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-green-500 hover:border-green-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">01</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-3xl">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Lernziele des Moduls</h3>
+                        <p class="text-gray-600">Was du in dieser Präsentation lernen und verstehen wirst.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOC Item 2: Nachhaltiger Konsum -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-blue-500 hover:border-blue-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">02</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 text-3xl">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Nachhaltiger Konsum</h3>
+                        <p class="text-gray-600">Ökologische und ethische Kriterien beim bewussten Einkaufen.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOC Item 3: Labels & Zertifikate -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-purple-500 hover:border-purple-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">03</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 text-3xl">
+                        <i class="fas fa-tags"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Labels & Zertifikate</h3>
+                        <p class="text-gray-600">Wichtige Gütesiegel für Lebensmittel und Energieeffizienz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOC Item 4: Abfallminderung & Entsorgung -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-yellow-500 hover:border-yellow-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">04</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-600 text-3xl">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Abfallminderung & Entsorgung</h3>
+                        <p class="text-gray-600">Umgang mit Abfall, Recycling und Verbrennung in der Schweiz.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOC Item 5: Littering & Prävention -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-red-500 hover:border-red-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">05</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-red-100 flex items-center justify-center text-red-600 text-3xl">
+                        <i class="fas fa-trash-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Littering & Prävention</h3>
+                        <p class="text-gray-600">Folgen von Littering und Massnahmen zur Vermeidung.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TOC Item 6: Zusammenfassung & Fragen -->
+            <div class="toc-item relative p-6 rounded-lg shadow-lg bg-white border-teal-500 hover:border-teal-600 overflow-hidden">
+                <span class="toc-number absolute top-4 right-6 text-7xl font-extrabold text-gray-200 opacity-70 z-0">06</span>
+                <div class="relative z-10 flex items-start gap-4">
+                    <div class="toc-icon flex-shrink-0 w-14 h-14 rounded-full bg-teal-100 flex items-center justify-center text-teal-600 text-3xl">
+                        <i class="fas fa-question-circle"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-1">Zusammenfassung & Fragen</h3>
+                        <p class="text-gray-600">Festigung des Gelernten und Raum für Diskussion.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
