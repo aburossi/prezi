@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was du heute lernst & unser Fahrplan</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .toc-item {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 0.5rem; /* rounded-lg */
+            padding: 1.5rem; /* p-6 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+            border-left: 4px solid #3B82F6; /* border-l-4 border-blue-500 */
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        .toc-item:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* hover:shadow-lg */
+            border-color: #1D4ED8; /* hover:border-blue-700 */
+            transform: scale(1.01); /* hover:scale-[1.01] */
+        }
+        .toc-number {
+            position: absolute;
+            top: 1rem; /* top-4 */
+            right: 1.5rem; /* right-6 */
+            font-size: 4rem; /* text-6xl */
+            font-weight: 800; /* font-extrabold */
+            color: rgba(59, 130, 246, 0.1); /* text-blue-100 with opacity */
+            z-index: 0;
+            line-height: 1; /* Adjust line height to prevent cutting off */
+        }
+        .toc-item-content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem; /* gap-4 */
+        }
+        .toc-icon {
+            flex-shrink: 0;
+            width: 3.5rem; /* w-14 */
+            height: 3.5rem; /* h-14 */
+            border-radius: 9999px; /* rounded-full */
+            background-color: #3B82F6; /* bg-blue-500 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff; /* text-white */
+            font-size: 1.5rem; /* text-2xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+        }
+        .toc-item h3 {
+            margin-bottom: 0.25rem; /* mb-1 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-8">
+    <div class="max-w-4xl w-full bg-white rounded-lg shadow-xl p-10">
+        <h1 class="text-4xl font-bold text-gray-800 mb-10 text-center">Was du heute lernst & unser Fahrplan</h1>
+
+        <div class="space-y-6">
+            <!-- Item 1: Lernziele -->
+            <div class="toc-item">
+                <span class="toc-number">01</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Lernziele & Einführung</h3>
+                        <p class="text-gray-600 text-base">Erfahre, welche zentralen Aspekte der Sachversicherungen du heute kennenlernen wirst.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Kaskoversicherung -->
+            <div class="toc-item">
+                <span class="toc-number">02</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-car-crash"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Kaskoversicherung</h3>
+                        <p class="text-gray-600 text-base">Was Teil- und Vollkasko für dein Auto bedeuten und wann sie sinnvoll sind.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3: Rechtsschutzversicherung -->
+            <div class="toc-item">
+                <span class="toc-number">03</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Rechtsschutzversicherung</h3>
+                        <p class="text-gray-600 text-base">Wann eine Rechtsschutzversicherung hilft und welche Leistungen sie bietet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4: Gebäudeversicherung -->
+            <div class="toc-item">
+                <span class="toc-number">04</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Gebäudeversicherung</h3>
+                        <p class="text-gray-600 text-base">Schutz für dein Eigenheim: Obligatorisch und unerlässlich.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5: Hausratversicherung -->
+            <div class="toc-item">
+                <span class="toc-number">05</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Hausratversicherung</h3>
+                        <p class="text-gray-600 text-base">Dein Hab und Gut im Haus geschützt: Von Feuer bis Diebstahl.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 6: Unterversicherung -->
+            <div class="toc-item">
+                <span class="toc-number">06</span>
+                <div class="toc-item-content">
+                    <div class="toc-icon">
+                        <i class="fa-solid fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-gray-800">Unterversicherung</h3>
+                        <p class="text-gray-600 text-base">Die Gefahr der Unterversicherung verstehen und wie du sie vermeidest.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

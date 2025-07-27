@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gebäude- und Hausratversicherung: Ihr Zuhause geschützt</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (e.g., Inter) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #333;
+        }
+        .slide-container {
+            min-height: 100vh;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .duty-card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-xl */
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1; /* Allow cards to grow and shrink */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Distribute content vertically */
+            border-top: 8px solid; /* For color coding */
+        }
+        .duty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .duty-card.card-blue {
+            border-color: #3b82f6; /* blue-500 */
+        }
+        .duty-card.card-green {
+            border-color: #22c55e; /* green-500 */
+        }
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            font-weight: bold;
+            padding: 0.75rem 1.25rem;
+            border-radius: 9999px; /* full rounded */
+            z-index: 10;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            font-size: 1.125rem;
+        }
+        .list-icon {
+            color: #3b82f6; /* blue-500 for list items */
+            margin-right: 0.5rem;
+        }
+        .summary-box {
+            background-color: #e0f2fe; /* blue-100 */
+            border-left: 6px solid #3b82f6; /* blue-500 */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            color: #1e40af; /* blue-800 */
+        }
+        .summary-box strong {
+            color: #1c3c7a; /* Darker blue for emphasis */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="slide-container">
+        <!-- Slide Title -->
+        <h1 class="text-4xl font-extrabold text-center text-gray-900 mb-12 leading-tight">
+            Gebäude- und Hausratversicherung: Ihr Zuhause geschützt
+        </h1>
+
+        <!-- Dual-Column Comparison Section -->
+        <div class="relative flex justify-center items-stretch gap-8 mt-12 mb-16 max-w-6xl mx-auto">
+
+            <!-- VS Badge -->
+            <div class="vs-badge">VS</div>
+
+            <!-- Gebäudeversicherung Card (Left Column) -->
+            <div class="duty-card card-blue">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-building text-blue-500 text-4xl mr-4"></i>
+                    <h2 class="text-3xl font-bold text-blue-700">Gebäudeversicherung</h2>
+                </div>
+                <ul class="space-y-4 text-lg text-gray-700 flex-grow">
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Zielgruppe:</span> Besitzer von Häusern oder Eigentumswohnungen.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Obligatorisch:</span> In den meisten Kantonen der Schweiz.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Deckung:</span> Schäden an Gebäuden und deren festen Bestandteilen.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Grunddeckung:</span> Feuer, Wasser, Elementarereignisse (z.B. Hochwasser, Hagel, Schneerutsche).</li>
+                </ul>
+                <div class="mt-8 p-4 bg-blue-50 rounded-lg text-blue-800 text-sm italic">
+                    <i class="fas fa-info-circle mr-2"></i> Schützt die Bausubstanz Ihrer Immobilie.
+                </div>
+            </div>
+
+            <!-- Hausratversicherung Card (Right Column) -->
+            <div class="duty-card card-green">
+                <div class="flex items-center mb-6">
+                    <i class="fas fa-couch text-green-500 text-4xl mr-4"></i>
+                    <h2 class="text-3xl font-bold text-green-700">Hausratversicherung</h2>
+                </div>
+                <ul class="space-y-4 text-lg text-gray-700 flex-grow">
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Zielgruppe:</span> Inhalt Ihrer Wohnung oder Ihres Hauses.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Deckung:</span> Schäden durch Feuer, Wasser, Glasbruch und Diebstahl.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Ersatzwert:</span> Bei Brand werden zerstörte Gegenstände zum Neuwert ersetzt.</li>
+                    <li><i class="fas fa-check-circle list-icon"></i> <span class="font-semibold">Wichtig:</span> Exakten Neuwert des Hausrats mitteilen, um Unterversicherung zu vermeiden.</li>
+                </ul>
+                <div class="mt-8 p-4 bg-green-50 rounded-lg text-green-800 text-sm italic">
+                    <i class="fas fa-lightbulb mr-2"></i> Schützt Ihre persönlichen Gegenstände und Möbel.
+                </div>
+            </div>
+        </div>
+
+        <!-- Supplementary Section: Unterversicherung -->
+        <div class="max-w-4xl mx-auto mt-16">
+            <div class="summary-box">
+                <h3 class="text-2xl font-bold mb-4 text-blue-900"><i class="fas fa-exclamation-triangle mr-2"></i> Achtung: Das Prinzip der Unterversicherung</h3>
+                <p class="mb-4">
+                    Eine <strong>Unterversicherung</strong> tritt auf, wenn die im Versicherungsvertrag angegebene Summe kleiner ist als der tatsächliche Neuwert des versicherten Hausrats.
+                </p>
+                <p class="mb-4">
+                    Im Schadenfall werden die Leistungen der Versicherung proportional zur Unterversicherung gekürzt.
+                </p>
+                <div class="bg-blue-50 p-4 rounded-md border border-blue-200">
+                    <h4 class="font-semibold text-blue-800 mb-2">Beispiel zur Unterversicherung (Schadensrechnung):</h4>
+                    <ul class="list-disc list-inside text-blue-700">
+                        <li>Wert im Versicherungsvertrag: <span class="font-mono text-lg">Fr. 30'000.–</span></li>
+                        <li>Tatsächlicher Wert des Hausrats: <span class="font-mono text-lg">Fr. 50'000.–</span></li>
+                        <li>Schaden durch Zimmerbrand: <span class="font-mono text-lg">Fr. 15'000.–</span></li>
+                        <li><strong class="text-blue-900">Versicherung bezahlt (3/5 des Schadens): <span class="font-mono text-lg">Fr. 9'000.–</span></strong></li>
+                        <li><strong class="text-red-700">Nicht gedeckter Schaden: <span class="font-mono text-lg">Fr. 6'000.–</span></strong></li>
+                    </ul>
+                    <p class="mt-4 italic text-sm">
+                        Es lohnt sich nicht, Prämien durch eine zu niedrige Versicherungssumme zu sparen, da dies im Schadenfall zu erheblichen eigenen Kosten führen kann.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer (optional) -->
+        <div class="text-center text-gray-500 text-sm mt-16">
+            Seite 9 | Lehrmittel Allgemeinbildung, S. 149
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wissenstest: Kaskoversicherung</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .guarantee-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-center p-8">
+
+    <div class="max-w-6xl w-full space-y-8">
+        <!-- Slide Title -->
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-4 text-center">
+            Wissenstest: Kaskoversicherung
+        </h1>
+
+        <!-- Top Section: Introduction/Definition (using .bg-blue-50) -->
+        <div class="bg-blue-50 p-8 rounded-lg shadow-lg text-center border-b-4 border-blue-200">
+            <h2 class="text-3xl font-semibold text-blue-800 mb-4">
+                Überprüfen Sie Ihr Wissen zu Kaskoversicherungen
+            </h2>
+            <p class="text-gray-700 text-lg leading-relaxed">
+                Dieser Test hilft Ihnen, Ihr Verständnis der Vollkaskodeckung und des Diebstahlschutzes zu festigen.
+                Die Fragen basieren auf den Aufgaben 5.1 und 5.2 aus "Das weiss ich jetzt!" (Lehrmittel Allgemeinbildung, Seite 149).
+            </p>
+        </div>
+
+        <!-- Middle Section: Questions (using .grid.grid-cols-2 and .guarantee-card) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Question 1 Card -->
+            <div class="guarantee-card bg-white p-8 rounded-lg shadow-md border-t-4 border-purple-400">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-question-circle text-purple-600 text-3xl mr-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Frage 5.1</h3>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Welche Schäden deckt eine Vollkaskoversicherung?
+                </p>
+            </div>
+
+            <!-- Question 2 Card -->
+            <div class="guarantee-card bg-white p-8 rounded-lg shadow-md border-t-4 border-green-400">
+                <div class="flex items-center mb-4">
+                    <i class="fas fa-question-circle text-green-600 text-3xl mr-4"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Frage 5.2</h3>
+                </div>
+                <p class="text-gray-700 text-lg leading-relaxed">
+                    Ihr Auto wurde gestohlen. Welche Versicherung kommt für den Schaden auf?
+                </p>
+            </div>
+        </div>
+
+        <!-- Bottom Section: Key Takeaways/Solutions (using .bg-amber-50 and li > .fas) -->
+        <div class="bg-amber-50 p-8 rounded-lg shadow-lg border-b-4 border-amber-200">
+            <h2 class="text-3xl font-semibold text-amber-800 mb-6">
+                Lösungen & wichtige Erkenntnisse
+            </h2>
+            <ul class="space-y-4 text-gray-700 text-lg">
+                <li>
+                    <i class="fas fa-check-circle text-green-600 mr-3"></i>
+                    Die <strong>Vollkaskoversicherung</strong> deckt zusätzlich zur Teilkasko auch selbst verschuldete Kollisionsschäden am eigenen Fahrzeug ab.
+                </li>
+                <li>
+                    <i class="fas fa-car-crash text-blue-600 mr-3"></i>
+                    Bei <strong>Diebstahl</strong> des eigenen Fahrzeugs kommt die <strong>Teilkaskoversicherung</strong> für den Schaden auf.
+                </li>
+                <li>
+                    <i class="fas fa-info-circle text-yellow-600 mr-3"></i>
+                    Für Fahrzeuge mit geringem Wert ist eine Vollkaskoversicherung aufgrund hoher Prämien oft nicht sinnvoll. Bei geleasten Fahrzeugen ist sie meist obligatorisch.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

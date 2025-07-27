@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Sachversicherungs-Check</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* A neutral background for the page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+        .slide {
+            width: 100%;
+            max-width: 1280px; /* Max-width for large screens */
+            min-height: 720px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 16px;
+        }
+        .quiz-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .quiz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        .option {
+            transition: all 0.2s ease;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #f0f9ff;
+            border-color: #93c5fd;
+        }
+        .option.correct {
+            background-color: #dcfce7;
+            border-color: #22c55e;
+            animation: pulse-green 1.5s infinite;
+        }
+        .option.incorrect {
+            background-color: #fee2e2;
+            border-color: #ef4444;
+            animation: pulse-red 1.5s infinite;
+        }
+        .feedback {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+            border-radius: 8px;
+        }
+        .feedback.show {
+            max-height: 200px; /* Adjust based on content */
+            margin-top: 1rem; /* Add space when it appears */
+            padding: 0.75rem; /* This is equivalent to Tailwind's p-3 */
+        }
+        .progress-bar-bg {
+            background-color: #e5e7eb;
+        }
+        .progress-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
+            transition: width 0.5s ease-out;
+        }
+        .quiz-header {
+            background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+        }
+        .quiz-number {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: #3b82f6;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .nav-button {
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Header with blue accent -->
+        <div class="h-16 bg-blue-600 w-full flex items-center justify-between px-8 rounded-t-lg">
+            <h2 class="text-white text-2xl font-medium">Interaktive Folie – Multi-Fragen-Quiz</h2>
+            <div class="text-white text-lg font-light">Testen Sie Ihr Wissen über Sachversicherungen</div>
+        </div>
+        
+        <!-- Main content area -->
+        <div class="flex-grow flex flex-col px-12 py-8 overflow-y-auto">
+            <!-- Title -->
+            <div class="mb-6">
+                <h1 class="text-4xl font-bold text-gray-800">Dein Sachversicherungs-Check</h1>
+                <div class="w-32 h-1 bg-blue-500 mt-2 rounded"></div>
+            </div>
+            
+            <!-- Progress bar -->
+            <div class="w-full progress-bar-bg rounded-full mb-8">
+                <div id="progressBar" class="progress-bar" style="width: 0%;"></div>
+            </div>
+            
+            <!-- Quiz content -->
+            <div class="quiz-card p-6 mb-6">
+                <!-- Question 1 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">1</div>
+                        <h3 class="text-xl font-bold text-gray-800">Was deckt eine Teilkaskoversicherung ab?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Selbstverschuldete Kollisionsschäden am eigenen Fahrzeug.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Schäden durch Diebstahl, Elementarereignisse oder Glasbruch.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Alle selbstverschuldeten Schäden am eigenen Fahrzeug sowie Schäden, die durch Dritte verursacht wurden.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium"></p>
+                    </div>
+                </div>
+                
+                <!-- Question 2 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">2</div>
+                        <h3 class="text-xl font-bold text-gray-800">Wann ist eine Vollkaskoversicherung für ein Auto in der Regel nicht sinnvoll?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Wenn das Fahrzeug neu gekauft wurde.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Bei einem Auto mit geringem Zeitwert, da die Prämien oft zu teuer sind.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Wenn das Fahrzeug geleast ist, da in diesem Fall keine zusätzliche Absicherung erforderlich ist.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium"></p>
+                    </div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">3</div>
+                        <h3 class="text-xl font-bold text-gray-800">Welche der folgenden Leistungen wird typischerweise von einer Rechtsschutzversicherung übernommen?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Direkte Bezahlung von Reparaturkosten nach einem Unfall.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Deckung von medizinischen Kosten nach einem Unfall, die nicht von der Krankenversicherung übernommen werden.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Übernahme von Abklärungen, Expertisen und Prozesskosten sowie Bereitstellung eines Anwalts.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium"></p>
+                    </div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">4</div>
+                        <h3 class="text-xl font-bold text-gray-800">Was bedeutet der Begriff "Neuwert" im Kontext der Hausratversicherung?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Der aktuelle Wert des Gegenstands zum Zeitpunkt des Schadens.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Der Betrag, der notwendig ist, um einen zerstörten Gegenstand neu zu kaufen.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Der Wert, den der Gegenstand vor dem Schaden hatte, abzüglich einer Wertminderung durch Abnutzung.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium"></p>
+                    </div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="quiz-question mb-8">
+                    <div class="flex items-center mb-4">
+                        <div class="quiz-number mr-3">5</div>
+                        <h3 class="text-xl font-bold text-gray-800">Welche Auswirkung hat eine Unterversicherung bei der Hausratversicherung im Schadensfall?</h3>
+                    </div>
+                    
+                    <div class="space-y-3 ml-12">
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Die Versicherung zahlt gar nichts.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="true">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Die Leistungen der Versicherung werden im Verhältnis zur Unterversicherung gekürzt.</span>
+                        </div>
+                        <div class="option p-3 rounded-lg flex items-center" data-correct="false">
+                            <div class="w-6 h-6 rounded-full border-2 border-gray-300 mr-3 flex-shrink-0"></div>
+                            <span>Die Prämien werden rückwirkend erhöht, um die Differenz zum tatsächlichen Wert auszugleichen.</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feedback">
+                        <p class="font-medium"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation buttons -->
+            <div class="flex justify-between mt-auto pt-6">
+                <button id="resetButton" class="nav-button bg-gray-200 text-gray-700 px-6 py-3 rounded-lg flex items-center font-medium">
+                    <i class="fas fa-redo mr-2"></i>
+                    <span>Zurücksetzen</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="h-12 bg-blue-600 w-full flex items-center justify-between px-8 rounded-b-lg">
+            <span class="text-white text-sm">Sachversicherungs-Check</span>
+            <span id="progressText" class="text-white text-sm">0/5</span>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // --- Get all necessary elements ---
+            const questions = document.querySelectorAll('.quiz-question');
+            const resetButton = document.getElementById('resetButton');
+            const progressBar = document.getElementById('progressBar');
+            const progressText = document.getElementById('progressText');
+            const totalQuestions = questions.length;
+            let questionsAnswered = 0;
+
+            // --- Explanations for each question ---
+            const explanations = [
+                "Die Teilkaskoversicherung deckt genau definierte Schäden am eigenen Fahrzeug ab, wie Diebstahl, Elementarereignisse (z.B. Hagel, Hochwasser), Feuer oder Glasbruch.", // Q1
+                "Eine Vollkaskoversicherung ist bei Fahrzeugen mit geringem Zeitwert oft nicht sinnvoll, da die Prämien im Verhältnis zum möglichen Ersatzwert bei einem Totalschaden zu hoch sind.", // Q2
+                "Die Rechtsschutzversicherung übernimmt Abklärungen und Expertisen, bezahlt und stellt einen Anwalt und deckt die Prozesskosten bei rechtlichen Auseinandersetzungen ab.", // Q3
+                "Bei der Hausratversicherung werden im Brandfall alle zerstörten Gegenstände zum Neuwert ersetzt, d.h., es wird der Betrag bezahlt, der für die Wiederbeschaffung eines gleichwertigen neuen Gegenstands nötig ist.", // Q4
+                "Bei einer Unterversicherung, wenn die versicherte Summe kleiner ist als der tatsächliche Wert des Hausrats, werden die Leistungen der Versicherung im Schadensfall proportional gekürzt." // Q5
+            ];
+
+
+            // --- Function to update the progress bar and text ---
+            function updateProgress() {
+                // Ensure questionsAnswered does not exceed totalQuestions
+                if (questionsAnswered < totalQuestions) {
+                    questionsAnswered++;
+                }
+                const percentage = (questionsAnswered / totalQuestions) * 100;
+                progressBar.style.width = `${percentage}%`;
+                progressText.textContent = `${questionsAnswered}/${totalQuestions}`;
+            }
+
+            // --- Initialize each question ---
+            questions.forEach((question, index) => {
+                const options = question.querySelectorAll('.option');
+                const feedbackElement = question.querySelector('.feedback');
+                const feedbackParagraph = feedbackElement.querySelector('p');
+                const correctExplanation = explanations[index]; // Get explanation for this specific question
+                let answered = false;
+
+                // Hide feedback initially by ensuring it has no 'show' class
+                feedbackElement.classList.remove('show');
+
+                options.forEach(option => {
+                    option.addEventListener('click', function() {
+                        if (answered) return; // Prevent re-answering
+                        answered = true;
+                        updateProgress();
+
+                        // Disable all options in this question after answering
+                        options.forEach(opt => {
+                            opt.style.pointerEvents = 'none';
+                            opt.style.cursor = 'default';
+                        });
+
+                        const isCorrect = this.getAttribute('data-correct') === 'true';
+                        const radioCircle = this.querySelector('.w-6');
+
+                        if (isCorrect) {
+                            // --- Correct answer logic ---
+                            this.classList.add('correct');
+                            radioCircle.classList.remove('border-gray-300');
+                            radioCircle.classList.add('bg-green-500', 'border-green-500');
+                            radioCircle.innerHTML = `<i class="fas fa-check text-white text-xs flex items-center justify-center h-full"></i>`;
+
+                            // Style and populate feedback for correct answer
+                            feedbackElement.classList.add('bg-green-50');
+                            feedbackParagraph.classList.add('text-green-700');
+                            feedbackParagraph.innerHTML = `<i class="fas fa-check-circle mr-2"></i>${correctExplanation}`;
+
+                        } else {
+                            // --- Incorrect answer logic ---
+                            this.classList.add('incorrect');
+                            radioCircle.classList.remove('border-gray-300');
+                            radioCircle.classList.add('bg-red-500', 'border-red-500');
+                            radioCircle.innerHTML = `<i class="fas fa-times text-white text-xs flex items-center justify-center h-full"></i>`;
+
+                            // Highlight the correct option
+                            const correctOption = question.querySelector('.option[data-correct="true"]');
+                            if (correctOption) {
+                                correctOption.classList.add('correct');
+                                const correctRadio = correctOption.querySelector('.w-6');
+                                correctRadio.classList.remove('border-gray-300');
+                                correctRadio.classList.add('bg-green-500', 'border-green-500');
+                                correctRadio.innerHTML = `<i class="fas fa-check text-white text-xs flex items-center justify-center h-full"></i>`;
+                            }
+                            
+                            // Style and populate feedback for incorrect answer
+                            feedbackElement.classList.add('bg-red-50');
+                            feedbackParagraph.classList.add('text-red-700');
+                            feedbackParagraph.innerHTML = `<i class="fas fa-times-circle mr-2"></i><b>Leider falsch.</b> ${correctExplanation}`;
+                        }
+
+                        // Show the feedback element
+                        feedbackElement.classList.add('show');
+                    });
+                });
+            });
+
+            // --- Reset button functionality ---
+            resetButton.addEventListener('click', () => {
+                location.reload();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaskoversicherungen: Teilkasko vs. Vollkasko</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom right, #f0f4f8, #e2e8f0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        h1, h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a202c;
+        }
+        .duty-card {
+            flex: 1;
+            max-width: 48%;
+            border-radius: 1.5rem; /* More rounded */
+            padding: 2.5rem; /* More padding */
+            transition: all 0.3s ease-in-out;
+            border-width: 2px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .duty-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .duty-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            border-radius: 50%;
+            padding: 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .duty-card h2 {
+            font-size: 2.25rem; /* text-4xl */
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .duty-card ul {
+            list-style: none;
+            padding: 0;
+            width: 100%;
+        }
+        .duty-card li {
+            font-size: 1.125rem; /* text-lg */
+            margin-bottom: 0.75rem;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.4;
+        }
+        .duty-card li::before {
+            content: '\f00c'; /* Font Awesome check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0.1rem;
+            font-size: 1.25rem;
+        }
+        .vs-badge {
+            z-index: 10;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .grid-item {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .grid-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.08);
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div class="container mx-auto p-8 flex-grow">
+        <h1 class="text-5xl font-extrabold mb-12 text-center text-gray-800 leading-tight">
+            Kaskoversicherungen: Teilkasko vs. Vollkasko
+        </h1>
+
+        <div class="relative flex justify-center items-stretch gap-10 mb-16 px-4">
+            <!-- Teilkaskoversicherung Card -->
+            <div class="duty-card bg-gradient-to-br from-blue-50 to-blue-100 border-blue-400 text-blue-900">
+                <div class="icon text-blue-600"><i class="fas fa-shield-alt"></i></div>
+                <h2 class="text-blue-800">Teilkaskoversicherung</h2>
+                <p class="text-lg mb-4 text-blue-700 font-medium">Deckung von genau definierten Schäden am eigenen Fahrzeug:</p>
+                <ul>
+                    <li>Diebstahl des Fahrzeugs</li>
+                    <li>Elementarereignisse (z.B. Hochwasser, Hagel, Schneerutsche)</li>
+                    <li>Feuer (Brand, Explosion)</li>
+                    <li>Glasbruch (Scheiben, Scheinwerfer)</li>
+                    <li>Vandalenakte & mutwillige Beschädigungen</li>
+                    <li>Kollision mit Tieren</li>
+                    <li>Marderschäden</li>
+                </ul>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-6 shadow-2xl border-4 border-gray-300 text-gray-800 font-extrabold text-2xl z-10 flex items-center justify-center w-24 h-24">
+                VS
+            </div>
+
+            <!-- Vollkaskoversicherung Card -->
+            <div class="duty-card bg-gradient-to-br from-green-50 to-green-100 border-green-400 text-green-900">
+                <div class="icon text-green-600"><i class="fas fa-car-crash"></i></div>
+                <h2 class="text-green-800">Vollkaskoversicherung</h2>
+                <p class="text-lg mb-4 text-green-700 font-medium">Umfassendere Deckung, zusätzlich zur Teilkasko:</p>
+                <ul>
+                    <li>Alle Leistungen der Teilkaskoversicherung</li>
+                    <li class="text-green-800 font-semibold">Selbst verschuldete Kollisionsschäden am eigenen Fahrzeug</li>
+                    <li class="text-green-800 font-semibold">Schäden durch unbekannte Fahrzeuge (Parkschäden)</li>
+                    <li>Schäden durch plötzliche Bremsmanöver</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Supplementary Points Section -->
+        <div class="bg-gray-50 p-10 rounded-xl shadow-inner mb-12 border border-gray-200">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Wichtige Aspekte der Kaskoversicherung</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid-item p-6 bg-white rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center">
+                    <div class="text-4xl text-purple-500 mb-4"><i class="fas fa-money-bill-wave"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Totalschaden & Zeitwert</h3>
+                    <p class="text-gray-600">Bei einem Totalschaden wird der Zeitwert des Fahrzeuges ersetzt, nicht der Neuwert.</p>
+                </div>
+                <div class="grid-item p-6 bg-white rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center">
+                    <div class="text-4xl text-orange-500 mb-4"><i class="fas fa-car-side"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Sinnhaftigkeit bei geringem Wert</h3>
+                    <p class="text-gray-600">Für Autos mit geringem Wert ist eine Vollkaskoversicherung oft nicht sinnvoll, da die Prämien im Verhältnis zum Wert zu hoch sind.</p>
+                </div>
+                <div class="grid-item p-6 bg-white rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center">
+                    <div class="text-4xl text-teal-500 mb-4"><i class="fas fa-file-contract"></i></div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-700">Pflicht bei Leasingfahrzeugen</h3>
+                    <p class="text-gray-600">Bei geleasten Fahrzeugen ist eine Vollkaskoversicherung in den meisten Fällen obligatorisch.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Callout Box -->
+        <div class="bg-blue-50 p-8 rounded-lg border-l-8 border-blue-500 text-blue-800 font-medium text-xl shadow-md">
+            <p class="mb-2"><i class="fas fa-lightbulb text-blue-600 mr-3"></i> <strong>Fazit:</strong> Die Wahl zwischen Teil- und Vollkasko hängt stark vom Fahrzeugwert, dem Alter und der persönlichen Risikobereitschaft ab.</p>
+            <p>Die Teilkasko deckt unverschuldete Schäden durch externe Einflüsse, während die Vollkasko zusätzlich selbst verursachte Kollisionsschäden abdeckt und somit einen umfassenderen Schutz bietet.</p>
+        </div>
+    </div>
+
+    <footer class="text-center text-gray-500 mt-10 mb-6 text-sm">
+        <p>Quelle: Lehrmittel Allgemeinbildung, Seite 148</p>
+        <p>&copy; 2023 Kaskoversicherungen. Alle Rechte vorbehalten.</p>
+    </footer>
+</body>
+</html>

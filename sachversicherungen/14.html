@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wichtigkeit im Alltag & Weiterführendes</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: #34495e;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .intro-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .option-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent; /* Default border */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Ensure cards are same height */
+        }
+        .option-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        .option-card.left-card:hover {
+            border-color: #3498db; /* Blue for left card */
+        }
+        .option-card.right-card:hover {
+            border-color: #e74c3c; /* Red for right card */
+        }
+        .option-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            color: #2980b9;
+            margin-bottom: 15px;
+        }
+        .option-card.right-card h3 {
+            color: #c0392b;
+        }
+        .option-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+        .option-card ul li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+        .option-card ul li:before {
+            content: "\f058"; /* Font Awesome check-circle */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #27ae60;
+            margin-right: 10px;
+        }
+
+        .vs-badge {
+            background-color: #34495e;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 15px 25px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ecf0f1;
+        }
+
+        .grid-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+        .grid-item h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 8px;
+        }
+        .grid-item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .grid-item ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+            color: #555;
+        }
+        .grid-item ul li:before {
+            content: "\f067"; /* Font Awesome plus */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #8e44ad;
+            margin-right: 8px;
+            font-size: 0.8em;
+        }
+        .critical-notice {
+            background-color: #ecf0f1;
+            border-left: 6px solid #f39c12;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            font-size: 1.1rem;
+            color: #333;
+            line-height: 1.6;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .critical-notice strong {
+            color: #d35400;
+        }
+        .critical-notice i {
+            margin-right: 10px;
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <h1>Wichtigkeit im Alltag & Weiterführendes</h1>
+
+        <p class="intro-text">
+            Sachversicherungen sind ein zentraler Bestandteil der persönlichen Finanzplanung und schützen Ihr Eigentum vor unvorhergesehenen Ereignissen. Um optimal abgesichert zu sein, ist es wichtig, die verfügbaren Optionen zu kennen und proaktiv zu handeln.
+        </p>
+
+        <div class="relative flex flex-col lg:flex-row justify-between items-stretch lg:space-x-8 mb-12">
+            <!-- Left Card: Proaktive Beratung -->
+            <div class="flex-1 mb-8 lg:mb-0">
+                <div class="option-card left-card">
+                    <div>
+                        <h3><i class="fas fa-comments text-blue-500 mr-3"></i> Proaktive Versicherungsberatung</h3>
+                        <p class="text-gray-700">
+                            Suchen Sie das Gespräch mit einem unabhängigen Versicherungsberater, um Ihre individuellen Bedürfnisse zu klären.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Persönliche Situation analysieren lassen</li>
+                            <li><i class="fas fa-check-circle"></i> Deckungsumfang und Ausschlüsse verstehen</li>
+                            <li><i class="fas fa-check-circle"></i> Fragen zu Prämien und Selbstbehalten stellen</li>
+                            <li><i class="fas fa-check-circle"></i> Langfristige Absicherung planen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VS Badge -->
+            <div class="vs-badge">ODER</div>
+
+            <!-- Right Card: Bestehende Verträge prüfen -->
+            <div class="flex-1">
+                <div class="option-card right-card">
+                    <div>
+                        <h3><i class="fas fa-file-contract text-red-500 mr-3"></i> Bestehende Verträge prüfen</h3>
+                        <p class="text-gray-700">
+                            Überprüfen Sie regelmässig Ihre bestehenden Versicherungsverträge auf Aktualität und Angemessenheit.
+                        </p>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Unterversicherung vermeiden (z.B. Hausrat Neuwert)</li>
+                            <li><i class="fas fa-check-circle"></i> Anpassungen bei Lebensveränderungen vornehmen</li>
+                            <li><i class="fas fa-check-circle"></i> Kleingedrucktes und Klauseln verstehen</li>
+                            <li><i class="fas fa-check-circle"></i> Vergleich mit aktuellen Angeboten</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-center mb-8">Weiterführende Informationen & Ressourcen</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Grid Item 1: Weiterführende Links -->
+            <div class="grid-item">
+                <h4><i class="fas fa-link text-purple-600 mr-2"></i> Nützliche Links zur Vertiefung</h4>
+                <p class="text-gray-600 mb-4">Erkunden Sie offizielle Quellen und unabhängige Portale für weitere Einblicke:</p>
+                <ul>
+                    <li><i class="fas fa-plus"></i> Konsumentenschutzorganisationen</li>
+                    <li><i class="fas fa-plus"></i> Bundesamt für Privatversicherungen (FINMA)</li>
+                    <li><i class="fas fa-plus"></i> Vergleichsportale für Versicherungen</li>
+                    <li><i class="fas fa-plus"></i> Branchenverbände der Versicherer</li>
+                </ul>
+            </div>
+
+            <!-- Grid Item 2: Praktische Ressourcen -->
+            <div class="grid-item">
+                <h4><i class="fas fa-book-open text-purple-600 mr-2"></i> Praktische Ressourcen für den Alltag</h4>
+                <p class="text-gray-600 mb-4">Nutzen Sie diese Hilfsmittel, um Ihr Wissen anzuwenden und Entscheidungen zu treffen:</p>
+                <ul>
+                    <li><i class="fas fa-plus"></i> Musterverträge und Checklisten</li>
+                    <li><i class="fas fa-plus"></i> Online-Rechner für Prämien</li>
+                    <li><i class="fas fa-plus"></i> Broschüren und Ratgeber von Versicherern</li>
+                    <li><i class="fas fa-plus"></i> Workshops oder Info-Veranstaltungen</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Critical Notice -->
+        <div class="critical-notice">
+            <i class="fas fa-exclamation-triangle"></i> <strong>Wichtiger Hinweis:</strong>
+            Versicherung ist Vertrauenssache und erfordert Eigeninitiative. Passen Sie Ihren Versicherungsschutz regelmässig an Ihre Lebenssituation an, um im Ernstfall optimal geschützt zu sein und unerwartete Kosten zu vermeiden. Informieren Sie sich stets umfassend!
+        </div>
+    </div>
+</body>
+</html>

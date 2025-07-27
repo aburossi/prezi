@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaskoversicherung: Wann ist sie sinnvoll?</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+        .guarantee-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            padding: 1.5rem; /* p-6 */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 1px solid #e2e8f0; /* border-gray-200 */
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .guarantee-card h3 {
+            font-weight: 700; /* font-bold */
+            color: #1a202c; /* text-gray-900 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+        .guarantee-card p {
+            color: #4a5568; /* text-gray-700 */
+            font-size: 0.95rem; /* text-sm or text-base */
+            line-height: 1.6;
+        }
+        .bg-blue-50 {
+            background-color: #eff6ff; /* Tailwind blue-50 */
+        }
+        .bg-amber-50 {
+            background-color: #fffbeb; /* Tailwind amber-50 */
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gray-100 p-8 flex flex-col items-center justify-center">
+
+    <div class="max-w-6xl w-full bg-white rounded-2xl shadow-xl p-10 space-y-10">
+
+        <!-- Slide Title -->
+        <h1 class="text-4xl font-extrabold text-gray-800 mb-8 text-center leading-tight">
+            Kaskoversicherung: Wann ist sie sinnvoll?
+        </h1>
+
+        <!-- Top Definition Section -->
+        <div class="bg-blue-50 p-8 rounded-xl shadow-md text-center">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4">Grundlagen der Kaskoversicherung</h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Die Kaskoversicherung ist eine Sachversicherung, die Schäden am eigenen Fahrzeug abdeckt.
+                Die Entscheidung für eine Vollkaskoversicherung hängt stark vom Fahrzeugwert und der Art des Besitzes ab,
+                da sie über die Basisabsicherung hinausgeht.
+            </p>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Teilkaskoversicherung Card -->
+            <div class="guarantee-card">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-car-crash text-blue-500 text-3xl mr-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900">Teilkaskoversicherung</h3>
+                </div>
+                <p class="text-gray-700">
+                    Die Teilkaskoversicherung deckt genau definierte Schäden am eigenen Fahrzeug. Dazu gehören:
+                </p>
+                <ul class="list-none mt-4 space-y-2 text-gray-700">
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Diebstahl</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Elementarereignisse (z.B. Hochwasser, Hagel, Schneerutsche)</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Feuer und Glasbruch</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Kollision mit Tieren, Marder</li>
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Mutwillige Beschädigungen (Vandalismus)</li>
+                </ul>
+            </div>
+
+            <!-- Vollkaskoversicherung Card -->
+            <div class="guarantee-card">
+                <div class="flex items-center mb-3">
+                    <i class="fas fa-shield-alt text-green-500 text-3xl mr-4"></i>
+                    <h3 class="text-xl font-bold text-gray-900">Vollkaskoversicherung</h3>
+                </div>
+                <p class="text-gray-700">
+                    Die Vollkaskoversicherung bietet einen umfassenderen Schutz. Sie deckt:
+                </p>
+                <ul class="list-none mt-4 space-y-2 text-gray-700">
+                    <li><i class="fas fa-check-circle text-green-500 mr-2"></i> Alle Leistungen der Teilkaskoversicherung</li>
+                    <li><i class="fas fa-plus-circle text-purple-500 mr-2"></i> Zusätzlich: Selbst verschuldete Kollisionsschäden am eigenen Fahrzeug</li>
+                    <li><i class="fas fa-info-circle text-blue-500 mr-2"></i> Bietet Schutz auch bei Unfällen, die man selbst verursacht hat.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Rules and Conditions Section -->
+        <div class="bg-amber-50 p-8 rounded-xl shadow-md">
+            <h2 class="text-2xl font-bold text-amber-800 mb-6 text-center">Entscheidungskriterien für die Vollkasko</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Column 1: Fahrzeugwert & Zeitwert -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-euro-sign text-amber-600 mr-3"></i> Fahrzeugwert und Zeitwert
+                    </h3>
+                    <ul class="list-none space-y-4 text-gray-700">
+                        <li>
+                            <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+                            <strong>Zeitwert:</strong> Bei einem Totalschaden wird der Zeitwert des Fahrzeuges ersetzt. Dies ist der Wert des Fahrzeugs zum Zeitpunkt des Schadens, unter Berücksichtigung von Alter, Zustand und Laufleistung.
+                        </li>
+                        <li>
+                            <i class="fas fa-times-circle text-red-500 mr-2"></i>
+                            <strong>Geringer Fahrzeugwert:</strong> Für ein Auto mit geringem Wert ist eine Vollkaskoversicherung oft nicht sinnvoll, da die Prämien im Verhältnis zum potenziellen Ersatzwert sehr hoch sein können.
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 2: Leasing & Prämien -->
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                        <i class="fas fa-file-contract text-amber-600 mr-3"></i> Leasing und Prämien
+                    </h3>
+                    <ul class="list-none space-y-4 text-gray-700">
+                        <li>
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <strong>Leasingfahrzeuge:</strong> Bei geleasten Fahrzeugen ist eine Vollkaskoversicherung meistens Pflicht, um den Wert des Fahrzeugs für den Leasinggeber abzusichern.
+                        </li>
+                        <li>
+                            <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                            <strong>Kosten-Nutzen-Rechnung:</strong> Hohe Prämien können die Kosten-Nutzen-Rechnung bei älteren Fahrzeugen negativ beeinflussen, selbst wenn ein Totalschaden eintritt, da der Zeitwert nur einen Bruchteil des Neuwerts ausmacht.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

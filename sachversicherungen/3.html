@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Was sind Sachversicherungen?</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .guarantee-card {
+            @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-center text-center transition-transform transform hover:scale-105 hover:shadow-lg;
+        }
+        .guarantee-card .icon {
+            @apply text-5xl mb-4 text-blue-600;
+        }
+        .guarantee-card h3 {
+            @apply text-xl font-semibold mb-2 text-gray-900;
+        }
+        .guarantee-card p {
+            @apply text-gray-600 text-sm;
+        }
+        .info-box {
+            @apply p-6 rounded-lg shadow-md;
+        }
+        .list-item-icon {
+            @apply text-lg mr-2;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 p-8 min-h-screen flex flex-col">
+
+    <div class="max-w-7xl mx-auto w-full">
+        <!-- Slide Title -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">
+            Was sind Sachversicherungen?
+        </h1>
+
+        <!-- Section 1: Definition -->
+        <div class="bg-blue-50 info-box mb-12 border-l-4 border-blue-500">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-4 flex items-center">
+                <i class="fas fa-info-circle text-blue-600 text-3xl mr-3"></i>
+                Grundlagen der Sachversicherungen
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                <strong class="text-blue-700">Sachversicherungen</strong> beziehen sich auf das <strong class="text-blue-700">persönliche Eigentum</strong> und dienen dazu, finanzielle Schäden an materiellen Gütern abzusichern. Sie schützen vor unvorhergesehenen Ereignissen, die Ihr Hab und Gut beschädigen oder zerstören könnten.
+            </p>
+        </div>
+
+        <!-- Section 2: Categorization Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <!-- Card 1: Kaskoversicherungen -->
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-car-crash"></i></div>
+                <h3>Kaskoversicherungen (Auto)</h3>
+                <p>Schützt Ihr Fahrzeug vor Schäden durch Diebstahl, Elementarereignisse (Hochwasser, Hagel), Feuer, Glasbruch, Vandalismus und Kollisionen.</p>
+            </div>
+
+            <!-- Card 2: Rechtsschutzversicherung -->
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-gavel"></i></div>
+                <h3>Rechtsschutzversicherung</h3>
+                <p>Deckt Kosten für rechtliche Abklärungen, Anwälte und Gerichtsprozesse bei Streitigkeiten, z.B. nach einem Verkehrsunfall.</p>
+            </div>
+
+            <!-- Card 3: Gebäudeversicherung -->
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-building"></i></div>
+                <h3>Gebäudeversicherung</h3>
+                <p>Für Haus- oder Wohnungseigentümer; deckt Schäden an Gebäuden durch Wasser, Feuer und Elementarereignisse. Oft obligatorisch.</p>
+            </div>
+
+            <!-- Card 4: Hausratversicherung -->
+            <div class="guarantee-card">
+                <div class="icon"><i class="fas fa-couch"></i></div>
+                <h3>Hausratversicherung</h3>
+                <p>Schützt Ihr Inventar vor Schäden durch Feuer, Wasser, Glasbruch und Diebstahl. Bei Brand werden zerstörte Gegenstände zum Neuwert ersetzt.</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Rules and Conditions -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Column 1: Kasko & Rechtsschutz Details -->
+            <div class="bg-amber-50 info-box border-l-4 border-amber-500">
+                <h2 class="text-2xl font-semibold text-amber-800 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-circle text-amber-600 text-3xl mr-3"></i>
+                    Wichtige Details zu Kasko & Rechtsschutz
+                </h2>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-car-side list-item-icon text-amber-600 mt-1"></i>
+                        <div>
+                            <strong class="text-amber-700">Vollkaskoversicherung:</strong> Bei Totalschaden wird der Zeitwert des Fahrzeuges ersetzt.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-times-circle list-item-icon text-red-500 mt-1"></i>
+                        <div>
+                            <strong class="text-amber-700">Vollkasko Sinnhaftigkeit:</strong> Nicht sinnvoll bei geringem Fahrzeugwert (Prämien zu teuer).
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle list-item-icon text-green-500 mt-1"></i>
+                        <div>
+                            <strong class="text-amber-700">Vollkasko Pflicht:</strong> Bei geleasten Fahrzeugen ist eine Vollkaskoversicherung meist obligatorisch.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-gavel list-item-icon text-amber-600 mt-1"></i>
+                        <div>
+                            <strong class="text-amber-700">Leistungen der Rechtsschutzversicherung:</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1">
+                                <li class="flex items-center"><i class="fas fa-check list-item-icon text-green-500"></i>Übernimmt Abklärungen und Expertisen.</li>
+                                <li class="flex items-center"><i class="fas fa-check list-item-icon text-green-500"></i>Bezahlt und stellt einen Anwalt.</li>
+                                <li class="flex items-center"><i class="fas fa-check list-item-icon text-green-500"></i>Übernimmt die Prozesskosten.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Column 2: Hausratversicherung - Underinsurance -->
+            <div class="bg-red-50 info-box border-l-4 border-red-500">
+                <h2 class="text-2xl font-semibold text-red-800 mb-4 flex items-center">
+                    <i class="fas fa-exclamation-triangle text-red-600 text-3xl mr-3"></i>
+                    Die Hausratversicherung – Achtung Unterversicherung!
+                </h2>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-question-circle list-item-icon text-red-600 mt-1"></i>
+                        <div>
+                            <strong class="text-red-700">Definition Unterversicherung:</strong> Die versicherte Summe ist kleiner als der tatsächliche Neuwert der versicherten Gegenstände.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-hand-point-right list-item-icon text-red-600 mt-1"></i>
+                        <div>
+                            <strong class="text-red-700">Auswirkung:</strong> Jegliche Leistungen der Versicherung werden im Schadensfall im Verhältnis zur Unterversicherung gekürzt.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-calculator list-item-icon text-red-600 mt-1"></i>
+                        <div>
+                            <strong class="text-red-700">Beispiel zur Unterversicherung (Schadensrechnung):</strong>
+                            <ul class="list-disc list-inside ml-4 mt-1 space-y-1 text-sm">
+                                <li>Wert im Versicherungsvertrag: Fr. 30'000.–</li>
+                                <li>Tatsächlicher Wert: Fr. 50'000.–</li>
+                                <li>Schaden durch Zimmerbrand: Fr. 15'000.–</li>
+                                <li>Versicherung bezahlt (3/5 des Schadens): Fr. 9'000.–</li>
+                                <li>Nicht gedeckter Schaden: Fr. 6'000.–</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-lightbulb list-item-icon text-red-600 mt-1"></i>
+                        <div>
+                            <strong class="text-red-700">Merke:</strong> Es lohnt sich nicht, über den Versicherungswert Prämien zu sparen, da diese ohnehin niedrig sind und im Schadensfall hohe Einbussen drohen.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

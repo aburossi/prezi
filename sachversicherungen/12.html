@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachversicherungen im Überblick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arial:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            position: relative;
+        }
+        .swiss-red {
+            color: #FF0000;
+        }
+        .swiss-bg-red {
+            background-color: #FF0000;
+        }
+        /* Specific styling for Mermaid diagram to ensure it fits and looks good */
+        .mermaid {
+            margin: 0 auto; /* Center the mermaid container */
+            padding: 20px; /* Add some internal padding */
+            border-radius: 8px;
+            background-color: #ffffff; /* White background for the diagram */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col">
+        <!-- Header -->
+        <div class="w-full py-6 px-10 flex items-center">
+            <div class="swiss-bg-red rounded-full w-14 h-14 flex items-center justify-center mr-4 shadow-lg">
+                <i class="fas fa-box-open text-white text-2xl"></i> 
+            </div>
+            <h1 class="text-4xl font-bold text-gray-800">Sachversicherungen im Überblick</h1>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex-grow flex flex-col items-center justify-center px-10 pb-10">
+            <!-- Mermaid mind map container -->
+            <div class="mermaid max-w-5xl w-full" id="mindmap">
+                mindmap
+                    root((Sachversicherungen))
+                        Kaskoversicherungen
+                            Teilkasko
+                                Diebstahl
+                                Elementarereignisse (Hochwasser, Hagel)
+                                Feuer, Glasbruch
+                                Vandalismus, Tierkollision
+                            Vollkasko
+                                Teilkasko-Leistungen +
+                                Selbstverschuldete Kollisionen
+                                Zeitwert bei Totalschaden
+                                Oft Pflicht bei Leasing
+                        Rechtsschutzversicherung
+                            Leistungen
+                                Abklärungen & Expertisen
+                                Anwaltskosten & -stellung
+                                Prozesskostenübernahme
+                        Gebäudeversicherung
+                            Für Haus-/Wohnungsbesitzer
+                            In meisten Kantonen obligatorisch
+                            Schäden an Gebäuden & Bestandteilen
+                            Grunddeckung: Wasser, Feuer, Elementarereignisse
+                        Hausratversicherung
+                            Schäden durch Feuer, Wasser, Glasbruch, Diebstahl
+                            Zerstörte Gegenstände zum Neuwert (Brand)
+                            Wichtig: Exakter Neuwert versichern
+                            Unterversicherung
+                                Versicherte Summe < Tatsächlicher Wert
+                                Leistungen proportional gekürzt
+            </div>
+            
+            <!-- Key information box -->
+            <div class="summary-box mt-8 bg-white p-6 rounded-lg shadow-xl w-3/4 border-l-4 border-red-600">
+                <h3 class="text-xl font-bold mb-3 swiss-red">Wichtige Fakten zu Sachversicherungen</h3>
+                <ul class="list-disc pl-5 space-y-2 text-gray-700">
+                    <li>Schützen persönliches Eigentum vor finanziellen Schäden.</li>
+                    <li>Umfassen Fahrzeug-, Rechts-, Gebäude- und Hausratversicherungen.</li>
+                    <li>Die Vollkaskoversicherung deckt auch selbstverschuldete Kollisionen am eigenen Fahrzeug.</li>
+                    <li>Eine Rechtsschutzversicherung hilft bei der Deckung von Anwalts- und Prozesskosten.</li>
+                    <li>Bei der Hausratversicherung ist die korrekte Versicherungssumme entscheidend, um Unterversicherung zu vermeiden.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="w-full py-3 px-10 flex justify-between items-center bg-gray-100 border-t border-gray-200">
+            <div class="text-sm text-gray-600">Finanzielle Absicherung des Eigentums</div>
+            <div class="text-sm text-gray-600">Seite 12</div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            mindmap: { useMaxWidth: false, htmlLabels: true },
+            themeVariables: {
+                primaryColor: '#FF0000',
+                primaryBorderColor: '#FF0000',
+                lineColor: '#CCCCCC',
+                secondaryColor: '#f8f9fa',
+                tertiaryColor: '#e0e0e0',
+                nodeBorder: '#999999',
+                mainBkg: '#ffffff',
+                lineColor: '#666666',
+                textColor: '#333333'
+            }
+        });
+    </script>
+</body>
+</html>
