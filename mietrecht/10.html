@@ -4,159 +4,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Der Umzug: Gut geplant ist halb gezügelt</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome CDN -->
+    <title>Nächste Schritte & Wo du mehr erfährst</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to right, #e0f2f7, #e3f2fd); /* Light blue gradient */
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
         }
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
-        .essentials-card {
-            border-left: 8px solid #3b82f6; /* Blue border */
-            background-color: #eff6ff; /* Light blue background */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out;
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
         }
-        .essentials-card:hover {
-            transform: translateY(-5px);
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
         }
-        .feature-box {
-            background-color: #ffffff;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        .header p {
+            font-size: 1.2rem;
+            color: #555;
         }
-        .feature-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+        /* Options and Remedies Specific Styles */
+        .relative.flex {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: stretch; /* Ensure cards stretch to same height */
+            gap: 2rem;
+            margin-bottom: 3rem;
         }
-        .icon-circle {
-            background-color: #bfdbfe; /* Light blue */
-            color: #1e40af; /* Darker blue */
+
+        .card {
+            flex: 1;
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+            padding: 2.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .bg-gray-50 {
-            background-color: #f9fafb;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease-in-out;
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
-        .bg-gray-50:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
         }
-        .bg-blue-50 {
-            background-color: #eff6ff;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            transition: transform 0.3s ease-in-out;
+        .card-content ul {
+            list-style: none;
+            padding: 0;
         }
-        .bg-blue-50:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        .card-content ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: #444;
+        }
+        .card-content ul li::before {
+            content: "\f058"; /* Font Awesome check-circle icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #27ae60; /* Green checkmark */
+            font-size: 1.2rem;
+        }
+
+        .left-card {
+            border-left: 8px solid #3498db; /* Blue accent */
+        }
+        .right-card {
+            border-right: 8px solid #e67e22; /* Orange accent */
+        }
+
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            border: 4px solid #95a5a6;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #95a5a6;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid-section {
+            background-color: #fdfdfd;
+            border-radius: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+        }
+        .grid-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .grid-item {
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            background-color: #ecf0f1;
+            transition: background-color 0.3s ease;
+            height: 100%; /* Ensure equal height */
+        }
+        .grid-item:hover {
+            background-color: #dde1e2;
+        }
+        .grid-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 1rem;
+        }
+        .grid-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        .grid-item ul li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            font-size: 1rem;
+            color: #555;
+        }
+        .grid-item ul li::before {
+            content: "\f0a9"; /* Font Awesome hand-point-right icon */
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #8e44ad; /* Purple accent */
+            font-size: 1.1rem;
+        }
+
+        .notice-box {
+            background-color: #e7f3ff; /* Light blue */
+            border-left: 6px solid #2196f3; /* Darker blue border */
+            border-radius: 0.75rem;
+            padding: 2rem;
+            font-size: 1.1rem;
+            color: #333;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .notice-box h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2196f3;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        .notice-box h3 i {
+            margin-right: 0.8rem;
+            font-size: 1.8rem;
+        }
+        .notice-box p {
+            margin-bottom: 0.5rem;
+        }
+        .source-ref {
+            font-size: 0.9rem;
+            color: #777;
+            text-align: right;
+            margin-top: 1.5rem;
         }
     </style>
 </head>
-<body class="min-h-screen p-8 text-gray-800 flex flex-col justify-between">
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nächste Schritte & Wo du mehr erfährst</h1>
+            <p>Anregungen für die Anwendung des Gelernten im Alltag und Hinweise auf weiterführende Ressourcen.</p>
+        </header>
 
-    <!-- Header Section -->
-    <header class="text-center mb-12">
-        <h1 class="text-5xl font-bold text-blue-700 leading-tight mb-4">Der Umzug: Gut geplant ist halb gezügelt</h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Praktische Tipps und eine Checkliste für die sorgfältige Vorbereitung und Durchführung eines Umzugs.</p>
-        <p class="text-md text-gray-500 mt-2"><em>(Lehrmittel S. 327)</em></p>
-    </header>
-
-    <!-- Main Content Area - Essentials Card -->
-    <section class="essentials-card p-8 rounded-2xl mb-12">
-        <h2 class="text-3xl font-semibold text-blue-800 mb-8 text-center">Ihre Schlüssel zum stressfreien Umzug</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Feature Box 1: Freier Tag -->
-            <div class="feature-box p-6 flex flex-col items-center text-center">
-                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-briefcase fa-3x"></i>
+        <section class="relative flex">
+            <div class="card left-card">
+                <h2 class="card-title">Praktische Anwendung im Alltag</h2>
+                <div class="card-content">
+                    <ul>
+                        <li>
+                            <strong>Mietzins-Faustregel beachten:</strong> Die Obergrenze für den Mietzins (inkl. Nebenkosten) sollte nicht mehr als 30% des Einkommens betragen.
+                            <span class="source-ref">(Lehrmittel S. 326)</span>
+                        </li>
+                        <li>
+                            <strong>Wohnungssuche strategisch angehen:</strong> Nutze verschiedene Kanäle wie Internetportale, Mund-zu-Mund-Propaganda, Anschlagbretter und Zeitungsinserate.
+                            <span class="source-ref">(Lehrmittel S. 326)</span>
+                        </li>
+                        <li>
+                            <strong>Umzug frühzeitig planen:</strong> Rechtzeitig freien Tag einfordern, Offerten für Zügelfirmen einholen, Verpackungsmaterial beschaffen und Adressänderungen mitteilen.
+                            <span class="source-ref">(Lehrmittel S. 327)</span>
+                        </li>
+                    </ul>
                 </div>
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">Recht auf freien Tag</h3>
-                <p class="text-gray-700">Informieren Sie sich über Ihren Anspruch auf einen bezahlten freien Tag für den Umzug bei Ihrem Arbeitgeber. Planen Sie diesen frühzeitig ein.</p>
             </div>
 
-            <!-- Feature Box 2: Logistik & Vorbereitung -->
-            <div class="feature-box p-6 flex flex-col items-center text-center">
-                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-box-open fa-3x"></i>
-                </div>
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">Umzugsorganisation</h3>
-                <p class="text-gray-700">Holen Sie Offerten von Zügelfirmen ein oder organisieren Sie Helfer und ein Fahrzeug. Beschaffen Sie ausreichend Verpackungsmaterial und beschriften Sie Kisten präzise. Reservieren Sie Parkplätze.</p>
-            </div>
+            <div class="vs-badge">ODER</div>
 
-            <!-- Feature Box 3: Administrative Aufgaben -->
-            <div class="feature-box p-6 flex flex-col items-center text-center">
-                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
-                    <i class="fas fa-address-card fa-3x"></i>
+            <div class="card right-card">
+                <h2 class="card-title">Vertiefung & Absicherung</h2>
+                <div class="card-content">
+                    <ul>
+                        <li>
+                            <strong>Mietkaution verstehen:</strong> Bis zu drei Monatsmieten können als Kaution fällig werden.
+                            <span class="source-ref">(Lehrmittel S. 327)</span>
+                        </li>
+                        <li>
+                            <strong>Mietkautionsversicherung als Alternative:</strong> Eine bargeldlose Option, die sich gegenüber dem Vermieter verbürgt.
+                            <span class="source-ref">(Lehrmittel S. 327)</span>
+                        </li>
+                        <li>
+                            <strong>Vor- und Nachteile abwägen:</strong>
+                            <ul>
+                                <li class="!before:content-['\f00c'] !before:text-green-600">Vorteil: Keine Barzahlung der Kaution, geringerer administrativer Aufwand für Vermieter.</li>
+                                <li class="!before:content-['\f00d'] !before:text-red-600">Nachteil: Jährliche Prämien/Gebühren, Versicherung übernimmt keine Schäden, Kündigung erfordert Unterschriften von Mieter und Vermieter.</li>
+                            </ul>
+                            <span class="source-ref">(Lehrmittel S. 327)</span>
+                        </li>
+                    </ul>
                 </div>
-                <h3 class="text-xl font-semibold text-blue-700 mb-2">Administrative Aufgaben</h3>
-                <p class="text-gray-700">Teilen Sie Ämtern, Unternehmen, Versicherungen und Bekannten Ihre neue Adresse mit. Notieren Sie Zählerstände (Strom, Gas, Wasser, Heizung) in alter und neuer Wohnung.</p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Two-Column Section - Related Considerations -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <!-- Card 1: Why Plan? -->
-        <div class="bg-gray-50 p-6 rounded-xl">
-            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
-                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i> Warum gute Planung wichtig ist
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-                Eine sorgfältige und frühzeitige Vorbereitung spart Ihnen nicht nur viel Zeit und Geld, sondern reduziert auch erheblich Stress und Ärger. Ein gut durchdachter Umzug ist ein entspannter Umzug.
+        <section class="grid-section">
+            <h2>Wo du Unterstützung findest</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid-item">
+                    <h3><i class="fas fa-gavel text-purple-700 mr-2"></i> Der Mieterverband</h3>
+                    <ul>
+                        <li>
+                            <strong>Rechtliche Beratung:</strong> Bei Fragen oder Problemen rund ums Mietrecht.
+                        </li>
+                        <li>
+                            <strong>Interessenvertretung:</strong> Setzt sich für die Rechte der Mieter ein.
+                        </li>
+                        <li>
+                            <strong>Informationsquelle:</strong> Bietet Merkblätter und Informationen zu aktuellen Themen.
+                        </li>
+                    </ul>
+                </div>
+                <div class="grid-item">
+                    <h3><i class="fas fa-globe text-purple-700 mr-2"></i> Digitale Helfer & Online-Ressourcen</h3>
+                    <ul>
+                        <li>
+                            <strong>Wohnungsportale:</strong> Websites wie immoscout24.ch oder homegate.ch für die Wohnungssuche.
+                            <span class="source-ref">(Lehrmittel S. 326)</span>
+                        </li>
+                        <li>
+                            <strong>Vergleichsportale:</strong> Für Mietkautionsversicherungen oder Umzugsofferten.
+                        </li>
+                        <li>
+                            <strong>Informationsseiten:</strong> Allgemeine Informationen zum Mietrecht in der Schweiz.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="notice-box">
+            <h3><i class="fas fa-exclamation-triangle"></i> Wichtiger Hinweis</h3>
+            <p>
+                Ein fundiertes Wissen über deine Rechte und Pflichten als Mieter ist entscheidend für ein reibungsloses Mietverhältnis.
+                Nutze die im Lehrmittel (S. 326-327) und hier genannten Ressourcen, um dich umfassend zu informieren.
+                Bei Unsicherheiten oder komplexen Situationen ist es ratsam, frühzeitig professionelle Hilfe, z.B. durch den Mieterverband, in Anspruch zu nehmen.
             </p>
-        </div>
-
-        <!-- Card 2: Avoid Mistakes -->
-        <div class="bg-gray-50 p-6 rounded-xl">
-            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
-                <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i> Häufige Fehler vermeiden
-            </h3>
-            <p class="text-gray-700 leading-relaxed">
-                Unterschätzen Sie niemals den Aufwand eines Umzugs! Beginnen Sie frühzeitig mit der Planung, holen Sie mehrere Offerten ein und erstellen Sie eine detaillierte Checkliste, um nichts Wichtiges zu vergessen.
-            </p>
-        </div>
-    </section>
-
-    <!-- Three-Column Section - Practical Advice -->
-    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <!-- Advice 1: Checklist -->
-        <div class="bg-blue-50 p-6 rounded-xl text-center">
-            <i class="fas fa-list-check fa-3x text-blue-600 mb-4"></i>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Checkliste nutzen</h3>
-            <p class="text-gray-700">Eine detaillierte Umzugs-Checkliste hilft Ihnen, den Überblick zu behalten und keine wichtigen Schritte zu vergessen.</p>
-        </div>
-
-        <!-- Advice 2: Start Early -->
-        <div class="bg-blue-50 p-6 rounded-xl text-center">
-            <i class="fas fa-clock fa-3x text-blue-600 mb-4"></i>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Frühzeitig beginnen</h3>
-            <p class="text-gray-700">Beginnen Sie die Umzugsplanung idealerweise Wochen, wenn nicht Monate, im Voraus, um Hektik zu vermeiden.</p>
-        </div>
-
-        <!-- Advice 3: Accept Help -->
-        <div class="bg-blue-50 p-6 rounded-xl text-center">
-            <i class="fas fa-people-carry-box fa-3x text-blue-600 mb-4"></i>
-            <h3 class="text-xl font-semibold text-blue-800 mb-2">Hilfe annehmen</h3>
-            <p class="text-gray-700">Scheuen Sie sich nicht, Aufgaben zu delegieren oder professionelle Hilfe in Anspruch zu nehmen, wenn nötig.</p>
-        </div>
-    </section>
-
-    <!-- Footer - Lehrmittel Reference -->
-    <footer class="text-center text-gray-500 text-sm mt-auto pt-8">
-        <p>Lehrmittel: S. 327</p>
-    </footer>
-
+        </section>
+    </div>
 </body>
 </html>
