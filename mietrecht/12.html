@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dein Weg zur eigenen Wohnung: Die wichtigsten Schritte im Überblick</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            overflow: hidden;
+            background: linear-gradient(to bottom right, #f8f9fa, #e9ecef);
+            position: relative;
+        }
+        .swiss-red {
+            color: #FF0000;
+        }
+        .swiss-bg-red {
+            background-color: #FF0000;
+        }
+        .mermaid {
+            margin: 0 auto;
+            max-width: 90%; /* Adjust as needed to prevent overflow */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide flex flex-col">
+        <!-- Header with decorative element and source reference -->
+        <div class="w-full py-6 px-10 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="swiss-bg-red rounded-full w-12 h-12 flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-house text-white text-2xl"></i>
+                </div>
+                <h1 class="text-4xl font-bold">Dein Weg zur eigenen Wohnung: Die wichtigsten Schritte im Überblick</h1>
+            </div>
+            <div class="text-lg text-gray-600">Lehrmittel S. 326-327</div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="flex-grow flex flex-col items-center justify-center px-10 pb-10">
+            <!-- Mermaid mind map -->
+            <div class="mermaid w-full max-w-5xl" id="mindmap">
+                mindmap
+                    root((Dein Weg zur eigenen Wohnung))
+                        Finanzielle Überlegungen
+                            Mietzins-Faustregel
+                                Max. 30% des Einkommens
+                            WG-Option
+                        Wohnungssuche
+                            Online-Portale
+                                immoscout24.ch
+                                homegate.ch
+                            Netzwerk
+                                Mund-zu-Mund-Propaganda
+                            Lokale Quellen
+                                Anschlagbretter
+                                Zeitungsinserate
+                            Eigeninserat
+                        Mietkaution
+                            Höhe
+                                Bis zu 3 Monatsmieten
+                            Optionen
+                                Barzahlung
+                                Mietkautionsversicherung
+                                    Vorteile
+                                        Keine Barzahlung nötig
+                                        Weniger Admin. für Vermieter
+                                    Nachteile
+                                        Jährliche Prämien/Gebühren
+                                        Versicherung zahlt nicht für Schäden
+                                        Kündigung braucht beide Unterschriften
+                        Umzug & Planung
+                            Vorbereitung
+                                Rechtlicher Umzugstag
+                                Offerten Zügelfirmen
+                                Verpackungsmaterial
+                                Kisten beschriften
+                                Möbel demontieren
+                            Logistik
+                                Parkplätze reservieren
+                            Administration
+                                Adressänderung melden
+                                    Ämter
+                                    Versicherungen
+                                    Bekannte
+                                Zählerstände notieren
+            </div>
+            
+            <!-- Key information box -->
+            <div class="mt-8 bg-white p-6 rounded-lg shadow-md w-3/4 border-l-4 border-red-600 summary-box">
+                <h3 class="text-xl font-bold mb-2 swiss-red">Wichtige Erkenntnisse</h3>
+                <ul class="list-disc pl-5 space-y-1 text-gray-700">
+                    <li>Der Mietzins sollte idealerweise nicht mehr als 30% des Einkommens betragen.</li>
+                    <li>Nutze vielfältige Kanäle für die Wohnungssuche (online, Mund-zu-Mund, Inserate).</li>
+                    <li>Die Mietkaution kann bis zu 3 Monatsmieten betragen; prüfe Alternativen zur Barzahlung.</li>
+                    <li>Eine gute Umzugsplanung spart Zeit, Geld und Stress (Adressänderungen, Zählerstände, Helfer).</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="w-full py-3 px-10 flex justify-between items-center bg-gray-100">
+            <div class="text-sm text-gray-600">Einführung ins Mietrecht Schweiz</div>
+            <div class="text-sm text-gray-600">12</div>
+        </div>
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            securityLevel: 'loose',
+            mindmap: {
+                // Configuration specific to mindmap diagrams
+                // For example, to adjust node spacing or font sizes
+            },
+            themeVariables: {
+                primaryColor: '#FF0000',
+                primaryBorderColor: '#FF0000',
+                lineColor: '#CCCCCC',
+                secondaryColor: '#f8f9fa',
+                tertiaryColor: '#e0e0e0',
+                nodeBorder: '#999999',
+                mainBkg: '#FFFFFF',
+                textColor: '#333333'
+            }
+        });
+    </script>
+</body>
+</html>

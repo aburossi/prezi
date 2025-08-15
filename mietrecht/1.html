@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die erste eigene Wohnung in der Schweiz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (though not explicitly used for the Swiss Cross here, it's a dependency) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #1a202c; /* Dark background for the page */
+        }
+
+        /* The primary container for the slide, defining the 16:9 aspect ratio */
+        .slide {
+            width: 100vw;
+            height: 56.25vw; /* 9 / 16 * 100vw */
+            max-height: 100vh;
+            max-width: 177.77vh; /* 16 / 9 * 100vh */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2d3748; /* Slightly lighter dark background for the slide */
+            color: #ffffff; /* White text */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+            overflow: hidden; /* Ensure content doesn't spill out */
+        }
+
+        /* Custom styling for the Swiss Cross icon */
+        .swiss-cross {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            width: 80px;
+            height: 80px;
+            background-color: #e53e3e; /* Red color */
+            border-radius: 50%; /* Circular shape */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .swiss-cross .cross-bar {
+            position: absolute;
+            background-color: white;
+            border-radius: 2px; /* Slightly rounded corners for the bars */
+        }
+
+        .swiss-cross .vertical-bar {
+            width: 20%;
+            height: 60%;
+        }
+
+        .swiss-cross .horizontal-bar {
+            width: 60%;
+            height: 20%;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent dark background */
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #a0aec0; /* Lighter gray for footer text */
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <!-- Swiss Cross Icon (top-right) -->
+        <div class="swiss-cross">
+            <div class="cross-bar vertical-bar"></div>
+            <div class="cross-bar horizontal-bar"></div>
+        </div>
+
+        <!-- Main Content Area (centrally aligned) -->
+        <div class="text-center px-16">
+            <h1 class="text-6xl font-bold mb-6 leading-tight text-blue-200">
+                Die erste eigene Wohnung in der Schweiz: Dein Weg zum selbstständigen Wohnen
+            </h1>
+            <h2 class="text-4xl font-semibold text-gray-300">
+                Mietrecht, Wohnungssuche & Umzug: Ein umfassender Überblick
+            </h2>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="footer">
+            <p>Lehrmittel: S. 326-327 | © 2023 [Your Name/Organization]</p>
+        </div>
+    </div>
+</body>
+</html>

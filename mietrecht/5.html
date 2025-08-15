@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wohnungssuche: So findest du dein neues Zuhause</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .slide-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .essentials-card {
+            border-left: 8px solid #3b82f6; /* Blue border */
+            background-color: #eff6ff; /* Light blue background */
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+        .feature-box {
+            background-color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid #e5e7eb; /* Light gray border */
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        }
+        .icon-circle {
+            background-color: #bfdbfe; /* Lighter blue */
+            color: #1e40af; /* Darker blue */
+            width: 3.5rem;
+            height: 3.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .bg-gray-50-card {
+            background-color: #f9fafb; /* Tailwind's bg-gray-50 */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e5e7eb;
+        }
+        .bg-blue-50-card {
+            background-color: #eff6ff; /* Tailwind's bg-blue-50 */
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            border: 1px solid #bfdbfe;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <div class="slide-container">
+        <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Wohnungssuche: So findest du dein neues Zuhause</h1>
+
+        <!-- Main Highlighted Section: Core Components (.essentials-card) -->
+        <div class="essentials-card">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6">Effektive Vorgehensweisen bei der Wohnungssuche</h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Die Wohnungssuche ist ein wichtiger Schritt in ein selbst gestaltetes Leben. Eine vielseitige Strategie erhöht deine Chancen erheblich.
+                <span class="block text-sm text-gray-600 mt-2"> (Lehrmittel S. 326)</span>
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature Box 1: Internet (.feature-box) -->
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Internetportale</h3>
+                    <p class="text-gray-700">Nutze spezialisierte Websites wie immoscout24.ch oder homegate.ch für eine breite Auswahl an Inseraten.</p>
+                </div>
+
+                <!-- Feature Box 2: Mund-zu-Mund-Propaganda (.feature-box) -->
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mund-zu-Mund-Propaganda</h3>
+                    <p class="text-gray-700">Informiere Freunde, Familie und Bekannte über deine Suche – oft ergeben sich die besten Gelegenheiten durch persönliche Kontakte.</p>
+                </div>
+
+                <!-- Feature Box 3: Anschlagbretter (.feature-box) -->
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Anschlagbretter</h3>
+                    <p class="text-gray-700">Halte Ausschau an öffentlichen Anschlagbrettern in Grossverteilern, Warenhäusern, am Arbeitsplatz oder in Schulen.</p>
+                </div>
+
+                <!-- Feature Box 4: Zeitungsinserate (.feature-box) -->
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Zeitungsinserate</h3>
+                    <p class="text-gray-700">Beachte die Rubrik "Wohnungsmarkt" in lokalen oder regionalen Zeitungen – hier finden sich oft noch exklusive Angebote.</p>
+                </div>
+
+                <!-- Feature Box 5: Selber inserieren (.feature-box) -->
+                <div class="feature-box">
+                    <div class="icon-circle">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Selber inserieren</h3>
+                    <p class="text-gray-700">Erwäge, selbst ein Inserat aufzugeben, um Vermieter direkt zu erreichen und deine Wünsche zu kommunizieren.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Two-column section for related topics (.grid.grid-cols-2, .bg-gray-50) -->
+        <div class="grid lg:grid-cols-2 gap-6 mb-10">
+            <!-- Card 1: Grundsätzliche Überlegungen (.bg-gray-50) -->
+            <div class="bg-gray-50-card">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                    <i class="fas fa-calculator text-blue-600 mr-3"></i> Grundsätzliche Überlegungen
+                </h3>
+                <p class="text-gray-700 mb-3">
+                    Bevor du mit der Wohnungssuche beginnst, kalkuliere dein Budget. Eine Faustregel besagt, dass der Mietzins inklusive Nebenkosten nicht mehr als <strong>30 Prozent deines Einkommens</strong> betragen sollte.
+                </p>
+                <p class="text-sm text-gray-600 mt-3"> (Lehrmittel S. 326)</p>
+            </div>
+
+            <!-- Card 2: Mietkaution (.bg-gray-50) -->
+            <div class="bg-gray-50-card">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4 flex items-center">
+                    <i class="fas fa-hand-holding-usd text-blue-600 mr-3"></i> Mietkaution
+                </h3>
+                <p class="text-gray-700 mb-3">
+                    Nach der Zusage für eine Wohnung wird oft eine Mietkaution fällig, die bis zu drei Monatsmieten betragen kann. Dies dient als Sicherheit für den Vermieter.
+                </p>
+                <p class="text-sm text-gray-600 mt-3"> (Lehrmittel S. 327)</p>
+            </div>
+        </div>
+
+        <!-- Three-column section for supplementary points (.bg-blue-50) -->
+        <div class="bg-blue-50-card">
+            <h2 class="text-2xl font-semibold text-blue-800 mb-6">Weitere wichtige Aspekte rund um den Umzug</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Column 1: Mietkautionsversicherung Vorteile -->
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3 flex items-center">
+                        <i class="fas fa-shield-alt mr-2"></i> Mietkautionsversicherung (Vorteile)
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Mieter muss Kaution nicht bar bezahlen.</li>
+                        <li>Vermieter muss kein separates Konto verwalten.</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-3"> (Lehrmittel S. 327)</p>
+                </div>
+
+                <!-- Column 2: Mietkautionsversicherung Nachteile -->
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3 flex items-center">
+                        <i class="fas fa-exclamation-triangle mr-2"></i> Mietkautionsversicherung (Nachteile)
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Zusätzliche Prämien und Verwaltungsgebühren.</li>
+                        <li>Versicherung übernimmt keine Schäden.</li>
+                        <li>Kündigung erfordert Unterschriften von Mieter und Vermieter.</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-3"> (Lehrmittel S. 327)</p>
+                </div>
+
+                <!-- Column 3: Zügeltipps -->
+                <div>
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3 flex items-center">
+                        <i class="fas fa-box-open mr-2"></i> Praktische Zügeltipps
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Rechtlich zustehenden freien Tag einfordern.</li>
+                        <li>Offerten von Zügelfirmen einholen / Helfende organisieren.</li>
+                        <li>Genügend Verpackungsmaterial beschaffen.</li>
+                        <li>Kisten beschriften, Möbel demontieren.</li>
+                        <li>Parkplätze reservieren.</li>
+                        <li>Adressänderung bekannt geben.</li>
+                        <li>Zählerstände notieren.</li>
+                    </ul>
+                    <p class="text-sm text-gray-600 mt-3"> (Lehrmittel S. 327)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

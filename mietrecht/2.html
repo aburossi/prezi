@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lernziele und Ablauf - Mietrecht Schweiz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts (e.g., Poppins for headings, Open Sans for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .toc-item {
+            position: relative;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+        }
+        .toc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            background-color: #f0f9ff; /* Light blue background on hover */
+            border-color: #3b82f6; /* Blue border on hover */
+        }
+        .toc-number {
+            position: absolute;
+            top: -10px; /* Adjust as needed */
+            left: -10px; /* Adjust as needed */
+            font-size: 8rem; /* Large number */
+            font-weight: 700;
+            color: rgba(209, 213, 219, 0.4); /* Light gray, semi-transparent */
+            z-index: 0; /* Behind other content */
+            line-height: 1;
+        }
+        .toc-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* Size of the circular icon background */
+            height: 60px;
+            border-radius: 50%;
+            background-color: #bfdbfe; /* Light blue background */
+            color: #1e40af; /* Darker blue icon color */
+            font-size: 2rem;
+            z-index: 1; /* Above the number */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+        .toc-item:hover .toc-icon {
+            background-color: #3b82f6; /* Blue background on hover */
+            color: white; /* White icon on hover */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-8">
+
+    <div class="max-w-4xl w-full bg-white rounded-lg shadow-xl p-10 relative overflow-hidden">
+        <!-- Main Title -->
+        <h1 class="text-4xl font-bold text-gray-800 mb-10 text-center leading-tight">
+            Lernziele und Ablauf
+        </h1>
+
+        <!-- Table of Contents Items -->
+        <div class="space-y-6">
+
+            <!-- Item 1: Lernziele & Einführung -->
+            <div class="toc-item flex items-start p-6 rounded-lg bg-gray-50 border-l-4 border-blue-200">
+                <span class="toc-number">01</span>
+                <div class="toc-icon mr-5">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Lernziele & Einführung</h3>
+                    <p class="text-gray-700">Was wir heute lernen werden und ein erster Überblick über das Mietrecht in der Schweiz.</p>
+                </div>
+            </div>
+
+            <!-- Item 2: Wohnungssuche & Grundsätzliches -->
+            <div class="toc-item flex items-start p-6 rounded-lg bg-gray-50 border-l-4 border-blue-200">
+                <span class="toc-number">02</span>
+                <div class="toc-icon mr-5">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Wohnungssuche & Grundsätzliche Überlegungen</h3>
+                    <p class="text-gray-700">Tipps zur effektiven Wohnungssuche und finanzielle Aspekte. <span class="font-semibold text-blue-700">(Lehrmittel S. 326)</span></p>
+                </div>
+            </div>
+
+            <!-- Item 3: Mietkaution -->
+            <div class="toc-item flex items-start p-6 rounded-lg bg-gray-50 border-l-4 border-blue-200">
+                <span class="toc-number">03</span>
+                <div class="toc-icon mr-5">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Die Mietkaution</h3>
+                    <p class="text-gray-700">Bedeutung, Arten (Barzahlung vs. Mietkautionsversicherung) und deren Vor- & Nachteile. <span class="font-semibold text-blue-700">(Lehrmittel S. 327)</span></p>
+                </div>
+            </div>
+
+            <!-- Item 4: Umzugstipps -->
+            <div class="toc-item flex items-start p-6 rounded-lg bg-gray-50 border-l-4 border-blue-200">
+                <span class="toc-number">04</span>
+                <div class="toc-icon mr-5">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Gut geplant ist halb gezügelt: Umzugstipps</h3>
+                    <p class="text-gray-700">Praktische Ratschläge für einen stressfreien Umzug. <span class="font-semibold text-blue-700">(Lehrmittel S. 327)</span></p>
+                </div>
+            </div>
+
+            <!-- Item 5: Fragen & Lehrmittelbezug -->
+            <div class="toc-item flex items-start p-6 rounded-lg bg-gray-50 border-l-4 border-blue-200">
+                <span class="toc-number">05</span>
+                <div class="toc-icon mr-5">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <div class="relative z-10">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-1">Fragen & Lehrmittelbezug</h3>
+                    <p class="text-gray-700">Raum für Fragen und Hinweise zur Vertiefung im Lehrmittel.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

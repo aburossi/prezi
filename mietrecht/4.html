@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzielle Planung: Was kann ich mir leisten?</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .slide-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            background-color: #f8fafc; /* Light background for the slide */
+        }
+        /* Custom styles for the interactive cards */
+        .guarantee-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0; /* Light border */
+        }
+        .guarantee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+        .guarantee-card h3 {
+            color: #1e3a8a; /* Darker blue for card headings */
+            margin-bottom: 0.75rem;
+        }
+        .guarantee-card p {
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+        /* Styles for the information boxes */
+        .info-box {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        /* Specific background and border colors as per guidelines */
+        .bg-blue-50 {
+            background-color: #eff6ff; /* Light blue */
+            border: 1px solid #bfdbfe; /* Blue border */
+        }
+        .bg-amber-50 {
+            background-color: #fffbeb; /* Light amber */
+            border: 1px solid #fcd34d; /* Amber border */
+        }
+        /* Text colors for consistency */
+        .text-blue-800 { color: #1e40af; }
+        .text-amber-800 { color: #b45309; }
+        /* Icon colors for semantic meaning */
+        .text-green-600 { color: #16a34a; } /* Success/Check */
+        .text-red-600 { color: #dc2626; }   /* Warning/Danger (not used in this slide, but good to have) */
+        .text-yellow-600 { color: #d97706; } /* Caution/Tip */
+        .text-blue-600 { color: #2563eb; }  /* Info */
+
+        .source-ref {
+            font-size: 0.85rem;
+            color: #6b7280;
+            margin-top: 1rem;
+            text-align: right;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="slide-container max-w-6xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold text-gray-800 mb-2">Finanzielle Planung: Was kann ich mir leisten?</h1>
+            <p class="text-lg text-gray-600">Ein Leitfaden für den Einstieg ins Mietrecht in der Schweiz</p>
+        </header>
+
+        <!-- Section 1: Foundational Definition/Core Concept (bg-blue-50) -->
+        <div class="info-box bg-blue-50 text-blue-800 mb-8">
+            <h2 class="text-2xl font-semibold mb-3">Grundlegende Überlegungen zur Mietzinsfähigkeit</h2>
+            <p class="text-lg leading-relaxed">
+                Eine eigene Wohnung zu haben, ist ein wichtiger Schritt in ein selbst gestaltetes Leben. Bevor Sie eine Wohnung suchen, sollten Sie sich deshalb die Frage stellen, welchen Mietzins Sie sich leisten können.
+            </p>
+            <p class="text-md mt-2 italic">
+                <i class="fas fa-book-open mr-2"></i>Lehrmittel S. 326
+            </p>
+        </div>
+
+        <!-- Section 2: Categorization/Aspects (grid grid-cols-2 with guarantee-card) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-8">
+            <div class="guarantee-card">
+                <h3 class="text-xl font-semibold mb-3">Die 30-Prozent-Regel</h3>
+                <p>Als Faustregel gilt: Der Mietzins inklusive Nebenkosten sollte nicht mehr als 30 Prozent des Bruttoeinkommens betragen.</p>
+                <p class="text-sm mt-3 text-gray-500"><i class="fas fa-calculator mr-2"></i>Wichtige Budgetierungsrichtlinie</p>
+            </div>
+            <div class="guarantee-card">
+                <h3 class="text-xl font-semibold mb-3">Nebenkosten berücksichtigen</h3>
+                <p>Vergessen Sie nicht, dass zum reinen Mietzins noch Nebenkosten für Heizung, Wasser, Strom etc. hinzukommen. Diese können einen erheblichen Teil der monatlichen Ausgaben ausmachen.</p>
+                <p class="text-sm mt-3 text-gray-500"><i class="fas fa-lightbulb mr-2"></i>Oft unterschätzt, aber entscheidend</p>
+            </div>
+            <div class="guarantee-card">
+                <h3 class="text-xl font-semibold mb-3">Vorteile des Zusammenwohnens</h3>
+                <p>Gerade zu Beginn der Erwerbstätigkeit kann es sich lohnen, mit anderen Personen (z.B. Partner/in, WG) eine Wohnung zu beziehen, um die Mietkosten zu halbieren und die Auswahl zu vergrössern.</p>
+                <p class="text-sm mt-3 text-gray-500"><i class="fas fa-users mr-2"></i>Kostenersparnis & mehr Optionen</p>
+            </div>
+            <div class="guarantee-card">
+                <h3 class="text-xl font-semibold mb-3">Langfristige finanzielle Stabilität</h3>
+                <p>Eine sorgfältige Planung des Mietzinses im Verhältnis zum Einkommen ist entscheidend für Ihre langfristige finanzielle Stabilität und vermeidet unnötigen Stress.</p>
+                <p class="text-sm mt-3 text-gray-500"><i class="fas fa-chart-line mr-2"></i>Grundlage für ein entspanntes Wohnen</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Rules/Conditions (grid grid-cols-2 with bg-amber-50 and li > .fas) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="info-box bg-amber-50 text-amber-800">
+                <h3 class="text-2xl font-semibold mb-4">Wichtige Budgetierungs-Tipps</h3>
+                <ul class="list-none space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-green-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Einkommen realistisch einschätzen:</b> Berechnen Sie Ihr Nettoeinkommen genau, um Ihre maximale Mietzinsfähigkeit zu bestimmen.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-exclamation-triangle text-yellow-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Puffer einplanen:</b> Halten Sie einen finanziellen Puffer für unvorhergesehene Ausgaben oder Mieterhöhungen bereit.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-info-circle text-blue-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Nebenkosten im Auge behalten:</b> Fragen Sie immer nach den geschätzten Nebenkosten, bevor Sie einen Mietvertrag unterschreiben.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="info-box bg-amber-50 text-amber-800">
+                <h3 class="text-2xl font-semibold mb-4">Strategien zur Kostenoptimierung</h3>
+                <ul class="list-none space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-handshake text-blue-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Wohngemeinschaft (WG):</b> Eine WG kann die Mietlast erheblich senken und den Einstieg in den Wohnungsmarkt erleichtern.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-search-dollar text-green-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Günstigere Lagen prüfen:</b> Erwägen Sie Wohnungen in weniger zentralen oder aufstrebenden Quartieren, die oft günstiger sind.
+                        </span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-balance-scale text-yellow-600 mt-1 mr-3"></i>
+                        <span>
+                            <b>Prioritäten setzen:</b> Überlegen Sie, welche Wohnungsmerkmale für Sie unverzichtbar sind und wo Sie Kompromisse eingehen können.
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="source-ref mt-8">
+            <p class="text-gray-500">Referenz: Lehrmittel S. 326</p>
+        </div>
+    </div>
+</body>
+</html>

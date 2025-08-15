@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Der Umzug: Gut geplant ist halb gezügelt</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins for headings, Open Sans for body -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #e0f2f7, #e3f2fd); /* Light blue gradient */
+        }
+        h1, h2, h3 {
+            font-family: 'Poppins', sans-serif;
+        }
+        .essentials-card {
+            border-left: 8px solid #3b82f6; /* Blue border */
+            background-color: #eff6ff; /* Light blue background */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease-in-out;
+        }
+        .essentials-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-box {
+            background-color: #ffffff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .icon-circle {
+            background-color: #bfdbfe; /* Light blue */
+            color: #1e40af; /* Darker blue */
+        }
+        .bg-gray-50 {
+            background-color: #f9fafb;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out;
+        }
+        .bg-gray-50:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .bg-blue-50 {
+            background-color: #eff6ff;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease-in-out;
+        }
+        .bg-blue-50:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-8 text-gray-800 flex flex-col justify-between">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-blue-700 leading-tight mb-4">Der Umzug: Gut geplant ist halb gezügelt</h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Praktische Tipps und eine Checkliste für die sorgfältige Vorbereitung und Durchführung eines Umzugs.</p>
+        <p class="text-md text-gray-500 mt-2"><em>(Lehrmittel S. 327)</em></p>
+    </header>
+
+    <!-- Main Content Area - Essentials Card -->
+    <section class="essentials-card p-8 rounded-2xl mb-12">
+        <h2 class="text-3xl font-semibold text-blue-800 mb-8 text-center">Ihre Schlüssel zum stressfreien Umzug</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature Box 1: Freier Tag -->
+            <div class="feature-box p-6 flex flex-col items-center text-center">
+                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-briefcase fa-3x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Recht auf freien Tag</h3>
+                <p class="text-gray-700">Informieren Sie sich über Ihren Anspruch auf einen bezahlten freien Tag für den Umzug bei Ihrem Arbeitgeber. Planen Sie diesen frühzeitig ein.</p>
+            </div>
+
+            <!-- Feature Box 2: Logistik & Vorbereitung -->
+            <div class="feature-box p-6 flex flex-col items-center text-center">
+                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-box-open fa-3x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Umzugsorganisation</h3>
+                <p class="text-gray-700">Holen Sie Offerten von Zügelfirmen ein oder organisieren Sie Helfer und ein Fahrzeug. Beschaffen Sie ausreichend Verpackungsmaterial und beschriften Sie Kisten präzise. Reservieren Sie Parkplätze.</p>
+            </div>
+
+            <!-- Feature Box 3: Administrative Aufgaben -->
+            <div class="feature-box p-6 flex flex-col items-center text-center">
+                <div class="icon-circle w-20 h-20 rounded-full flex items-center justify-center mb-4">
+                    <i class="fas fa-address-card fa-3x"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-blue-700 mb-2">Administrative Aufgaben</h3>
+                <p class="text-gray-700">Teilen Sie Ämtern, Unternehmen, Versicherungen und Bekannten Ihre neue Adresse mit. Notieren Sie Zählerstände (Strom, Gas, Wasser, Heizung) in alter und neuer Wohnung.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Column Section - Related Considerations -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Card 1: Why Plan? -->
+        <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-yellow-500 mr-3"></i> Warum gute Planung wichtig ist
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+                Eine sorgfältige und frühzeitige Vorbereitung spart Ihnen nicht nur viel Zeit und Geld, sondern reduziert auch erheblich Stress und Ärger. Ein gut durchdachter Umzug ist ein entspannter Umzug.
+            </p>
+        </div>
+
+        <!-- Card 2: Avoid Mistakes -->
+        <div class="bg-gray-50 p-6 rounded-xl">
+            <h3 class="text-2xl font-semibold text-gray-700 mb-4 flex items-center">
+                <i class="fas fa-exclamation-triangle text-red-500 mr-3"></i> Häufige Fehler vermeiden
+            </h3>
+            <p class="text-gray-700 leading-relaxed">
+                Unterschätzen Sie niemals den Aufwand eines Umzugs! Beginnen Sie frühzeitig mit der Planung, holen Sie mehrere Offerten ein und erstellen Sie eine detaillierte Checkliste, um nichts Wichtiges zu vergessen.
+            </p>
+        </div>
+    </section>
+
+    <!-- Three-Column Section - Practical Advice -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- Advice 1: Checklist -->
+        <div class="bg-blue-50 p-6 rounded-xl text-center">
+            <i class="fas fa-list-check fa-3x text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">Checkliste nutzen</h3>
+            <p class="text-gray-700">Eine detaillierte Umzugs-Checkliste hilft Ihnen, den Überblick zu behalten und keine wichtigen Schritte zu vergessen.</p>
+        </div>
+
+        <!-- Advice 2: Start Early -->
+        <div class="bg-blue-50 p-6 rounded-xl text-center">
+            <i class="fas fa-clock fa-3x text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">Frühzeitig beginnen</h3>
+            <p class="text-gray-700">Beginnen Sie die Umzugsplanung idealerweise Wochen, wenn nicht Monate, im Voraus, um Hektik zu vermeiden.</p>
+        </div>
+
+        <!-- Advice 3: Accept Help -->
+        <div class="bg-blue-50 p-6 rounded-xl text-center">
+            <i class="fas fa-people-carry-box fa-3x text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-semibold text-blue-800 mb-2">Hilfe annehmen</h3>
+            <p class="text-gray-700">Scheuen Sie sich nicht, Aufgaben zu delegieren oder professionelle Hilfe in Anspruch zu nehmen, wenn nötig.</p>
+        </div>
+    </section>
+
+    <!-- Footer - Lehrmittel Reference -->
+    <footer class="text-center text-gray-500 text-sm mt-auto pt-8">
+        <p>Lehrmittel: S. 327</p>
+    </footer>
+
+</body>
+</html>
